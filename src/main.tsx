@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Navbar from './layouts/Navbar.tsx';
+import Navbar from './layouts/Navbar';
 
-import Error from './pages/Error.tsx';
-import Home from './pages/Home.tsx';
+import Error from './pages/Error';
+import Home from './pages/Home';
 
 import './styles/rectify.scss';
 import './styles/root.scss';
