@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     appType: 'spa',
     base: '/',
-    envDir: 'root',
+    envDir: '.',
     envPrefix: 'VITE_',
     logLevel: 'info',
     publicDir: 'public',
