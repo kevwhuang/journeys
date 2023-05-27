@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "homepage": "https://www.journeys-app.com",
     "license": "GPL-3.0+",
     "author": "Kevin Huang",
@@ -15,7 +15,6 @@
         "@emotion/styled": "*",
         "@mui/icons-material": "*",
         "@mui/material": "*",
-        "@reduxjs/toolkit": "*",
         "axios": "*",
         "cookie": "*",
         "react": "*",
@@ -35,11 +34,13 @@
         "@typescript-eslint/eslint-plugin": "*",
         "@typescript-eslint/parser": "*",
         "@vitejs/plugin-react-swc": "*",
+        "autoprefixer": "*",
         "eslint": "*",
         "eslint-plugin-react-hooks": "*",
         "eslint-plugin-react-refresh": "*",
         "sass": "*",
         "typescript": "*",
-        "vite": "*"
+        "vite": "*",
+        "vite-plugin-pwa": "*"
     }
 }
