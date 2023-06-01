@@ -1,14 +1,16 @@
 {
     "name": "journeys",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "homepage": "https://www.journeys-app.com",
     "license": "GPL-3.0+",
     "author": "Kevin Huang",
     "scripts": {
-        "build": "tsc && vite build",
+        "build": "vite build",
         "dev": "vite",
         "lint": "eslint src --ext ts,tsx",
-        "start": "vite preview"
+        "prebuild": "tsc",
+        "start": "vite preview",
+        "test": "vitest"
     },
     "dependencies": {
         "@emotion/react": "*",
@@ -19,16 +21,19 @@
         "cookie": "*",
         "react": "*",
         "react-dom": "*",
-        "react-redux": "*",
+        "react-hook-form": "*",
         "react-router-dom": "*",
-        "uuid": "*"
+        "swr": "*",
+        "uuid": "*",
+        "zustand": "*"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "*",
+        "@testing-library/react": "*",
         "@types/cookie": "*",
         "@types/node": "*",
         "@types/react": "*",
         "@types/react-dom": "*",
-        "@types/react-redux": "*",
         "@types/react-router-dom": "*",
         "@types/uuid": "*",
         "@typescript-eslint/eslint-plugin": "*",
@@ -38,9 +43,11 @@
         "eslint": "*",
         "eslint-plugin-react-hooks": "*",
         "eslint-plugin-react-refresh": "*",
+        "jsdom": "*",
         "sass": "*",
         "typescript": "*",
         "vite": "*",
-        "vite-plugin-pwa": "*"
+        "vite-plugin-pwa": "*",
+        "vitest": "*"
     }
 }
