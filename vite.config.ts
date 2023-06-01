@@ -17,7 +17,7 @@ const assets: string[] = [
 
 const manifest: Partial<ManifestOptions> = {
     background_color: '#000000',
-    description: '',
+    description: 'Journeys™ is an exploration app that unveils the world around you as you travel.',
     dir: 'ltr',
     display: 'standalone',
     lang: 'en',
