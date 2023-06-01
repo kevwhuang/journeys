@@ -27,7 +27,10 @@ const manifest: Partial<ManifestOptions> = {
     short_name: 'journeys',
     start_url: '/',
     theme_color: '#000000',
-    categories: [],
+    categories: [
+        'exploration',
+        'travel',
+    ],
     icons: [
         {
             purpose: 'any',

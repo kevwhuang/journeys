@@ -1,0 +1,11 @@
+@use '../_root' as *;
+
+.hero {
+    background: $color-2;
+}
+
+.hero__title {
+    h1 {
+        font-size: $font-6;
+    }
+}
