@@ -1,9 +1,21 @@
 {
     "name": "journeys",
-    "version": "0.0.8",
+    "version": "0.1.0",
+    "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
+    "keywords": [
+        "exploration",
+        "travel"
+    ],
     "homepage": "https://www.journeys-app.com",
+    "bugs": {
+        "url": "https://github.com/kevwhuang/journeys/issues"
+    },
     "license": "GPL-3.0+",
     "author": "Kevin Huang",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kevwhuang/journeys.git"
+    },
     "scripts": {
         "build": "vite build",
         "dev": "vite",

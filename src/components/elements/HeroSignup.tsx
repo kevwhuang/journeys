@@ -2,9 +2,9 @@ import React from 'react';
 
 function HeroSignup(): React.ReactElement {
     return (
-        <section className="hero__signup">
-            <input type="text" hidden />
-            <button hidden></button>
+        <section className="hero__signup" hidden>
+            <input type="text" />
+            <button></button>
         </section>
     );
 }

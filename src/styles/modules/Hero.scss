@@ -1,10 +1,8 @@
 @use '../_root' as *;
 
-.hero {
-    background: $color-2;
-}
+.hero {}
 
-.hero__title {
+.hero__content {
     article {
         font-size: $font-3;
     }
@@ -19,3 +17,5 @@
         }
     }
 }
+
+.hero__signup {}

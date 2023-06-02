@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 
-const initialize: State = {};
+const initialize: State = {
+    status: false,
+    page: 'pins',
+    theme: 'dark',
+};
 
 const useZustand = create<Actions & State>(() => ({
     ...initialize,
