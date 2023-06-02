@@ -6,13 +6,11 @@ import Status from '../components/modules/Status';
 
 function Home(): React.ReactElement {
     return (
-        <>
-            <main id="home">
-                <Status />
-                <Hero />
-                <Footer />
-            </main>
-        </>
+        <main id="home">
+            <Status />
+            <Hero />
+            <Footer />
+        </main>
     );
 }
 
