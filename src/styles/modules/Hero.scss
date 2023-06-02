@@ -1,11 +1,21 @@
 @use '../_root' as *;
 
 .hero {
-    background: $color-4;
+    background: $color-2;
 }
 
 .hero__title {
+    article {
+        font-size: $font-3;
+    }
+
     h1 {
+        font-family: 'Libre Franklin';
         font-size: $font-6;
+        font-style: italic;
+
+        span {
+            font-family: 'Noto Emoji';
+        }
     }
 }
