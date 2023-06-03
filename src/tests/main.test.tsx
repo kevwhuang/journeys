@@ -18,7 +18,7 @@ import Home from '../pages/Home';
 import Map from '../pages/Map';
 import Pins from '../pages/Pins';
 import Pins_Single from '../pages/Pins_Single';
-import PrivacyPolicy from '../pages/PrivacyPolicy';
+import Privacy from '../pages/Privacy';
 import Profile from '../pages/Profile';
 import Profile_Single from '../pages/Profile_Single';
 import Rankings from '../pages/Rankings';
@@ -74,8 +74,8 @@ describe('Render', () => {
             expect(document.body).toBeInTheDocument();
         });
 
-        test('PrivacyPolicy', () => {
-            render(<PrivacyPolicy />);
+        test('Privacy', () => {
+            render(<Privacy />);
             expect(document.body).toBeInTheDocument();
         });
 

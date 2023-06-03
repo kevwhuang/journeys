@@ -14,9 +14,8 @@ $color-b: #f4a261;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 675px;
+    height: clamp(500px, calc(100vh - 60px), 1000px);
     justify-content: center;
-    max-height: calc(100vh - 60px);
     padding-left: 150px;
     transition: filter 2s;
     transition-delay: 1s;
@@ -28,7 +27,7 @@ $color-b: #f4a261;
 }
 
 .hero__actions {
-    animation: hero-reveal 1s 8s ease-out forwards;
+    animation: hero-reveal 1s 6s ease-out forwards;
     font-family:
         'Source Code Pro',
         'Courier New',
@@ -87,8 +86,8 @@ $color-b: #f4a261;
     max-width: 650px;
 
     article {
-        animation: hero-reveal 1s 6s ease-out forwards;
-        background: rgba(255, 255, 255, 3%);
+        animation: hero-reveal 1s 5s ease-out forwards;
+        background: rgba(255, 255, 255, 5%);
         border-radius: 10px;
         color: $color-b;
         font-family:
@@ -98,7 +97,7 @@ $color-b: #f4a261;
         font-size: $font-3;
         font-weight: 300;
         margin: 20px 0 0 100px;
-        mix-blend-mode: exclusion;
+        mix-blend-mode: difference;
         opacity: 0;
         padding: 20px;
         width: 550px;
@@ -123,8 +122,8 @@ $color-b: #f4a261;
 
         span:first-child {
             animation:
-                hero-bug 10s 12s infinite,
-                hero-reveal 1s 10s ease-out forwards;
+                hero-bug 10s 8s infinite,
+                hero-reveal 1s 7s ease-out forwards;
             display: inline-block;
             font-family: 'Noto Emoji';
             opacity: 0;

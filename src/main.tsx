@@ -17,7 +17,7 @@ import Home from './pages/Home';
 import Map from './pages/Map';
 import Pins from './pages/Pins';
 import Pins_Single from './pages/Pins_Single';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import Privacy from './pages/Privacy';
 import Profile from './pages/Profile';
 import Profile_Single from './pages/Profile_Single';
 import Rankings from './pages/Rankings';
@@ -46,7 +46,7 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="map" element={<Map />} />
         <Route path="pins" element={<Pins />} />
         <Route path="pins/:id" element={<Pins_Single />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="profile" element={<Profile />} />
         <Route path="profile/:id" element={<Profile_Single />} />
         <Route path="rankings" element={<Rankings />} />

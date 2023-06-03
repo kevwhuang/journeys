@@ -9,6 +9,10 @@
     --color-6: #898e96;
 }
 
+::selection {
+    background: $color-6;
+}
+
 html {
     background: $color-1;
     color: $color-5;
