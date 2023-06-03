@@ -1,5 +1,19 @@
 @use '_root' as *;
 
+@keyframes hero-background {
+    10% {
+        background-position: center 40%;
+    }
+
+    90% {
+        background-position: center 100%;
+    }
+
+    100% {
+        background-position: center 100%;
+    }
+}
+
 @keyframes hero-bug {
     10% {
         transform: rotate(5deg) scale(-1, 1) translate(-5px);
@@ -34,6 +48,24 @@
     }
 }
 
+@keyframes hero-cursor {
+    15% {
+        border-color: transparent;
+    }
+
+    20% {
+        border-color: #e76f51;
+    }
+
+    95% {
+        border-color: #e76f51;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
 @keyframes hero-ellipsis {
     50% {
         opacity: 1;
@@ -51,5 +83,15 @@
 @keyframes hero-reveal {
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes hero-typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }

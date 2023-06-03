@@ -1,0 +1,20 @@
+@use '../_root' as *;
+
+#not-found {
+    section {
+        align-items: center;
+        background: url(https://images.unsplash.com/photo-1470770841072-f978cf4d019e);
+        background-position: 100% 100%;
+        background-size: cover;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+
+        h1 {
+            background: rgba(0, 0, 0, 50%);
+            font-size: $font-6;
+            opacity: 20px;
+            padding: 20px 40px;
+        }
+    }
+}
