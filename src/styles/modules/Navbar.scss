@@ -1,6 +1,10 @@
 @use '../_root' as *;
 
-.navbar {}
+.navbar {
+    background: $color-2;
+    grid-area: navbar;
+    width: 250px;
+}
 
 .navbar__logo {}
 

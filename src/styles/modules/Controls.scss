@@ -1,6 +1,9 @@
 @use '../_root' as *;
 
-.controls {}
+.controls {
+    grid-area: controls;
+    height: 60px;
+}
 
 .controls__navbar {}
 

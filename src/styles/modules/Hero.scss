@@ -1,21 +1,94 @@
 @use '../_root' as *;
 
-.hero {}
+$color-a: #e76f51;
+$color-b: #f4a261;
+
+.hero {
+    background: url(https://images.unsplash.com/photo-1469105692624-86ae1dbf4c23);
+    background-attachment: fixed;
+    background-position: 50% 30%;
+    background-size: cover;
+    height: 675px;
+    max-height: calc(100vh - 60px);
+    padding: 40px;
+}
+
+.hero__actions {
+    margin-left: 300px;
+
+    a {
+        display: inline-block;
+        font-size: $font-3;
+        font-weight: bold;
+        padding: 10px 30px;
+        text-transform: lowercase;
+        transition: all 200ms;
+        user-select: none;
+
+        &:active {
+            transform: scale(.95);
+        }
+
+        &:first-child {
+            background: $color-b;
+            border: 1px solid $color-b;
+            color: $color-5;
+            margin-right: 50px;
+
+            &:visited {
+                color: $color-5;
+            }
+
+            &:hover {
+                background: $color-a;
+                border-color: $color-a;
+            }
+        }
+
+        &:last-child {
+            border: 1px solid $color-b;
+            color: $color-b;
+
+            &:visited {
+                color: $color-b;
+            }
+
+            &:hover {
+                background: $color-a;
+                border-color: $color-a;
+                color: $color-5;
+            }
+        }
+    }
+}
 
 .hero__content {
+    color: $color-a;
+    margin: 10px 0 20px 30px;
+    max-width: 900px;
+
     article {
         font-size: $font-3;
+        margin-left: 100px;
+        width: 500px;
     }
 
     h1 {
         font-family: 'Libre Franklin';
         font-size: $font-6;
         font-style: italic;
+        padding-bottom: 10px;
+        user-select: none;
 
-        span {
+        span:first-child {
+            display: inline-block;
             font-family: 'Noto Emoji';
+            transform: scale(-1, 1);
+        }
+
+        span:last-child {
+            animation: blink 1s infinite;
+            color: $color-b;
         }
     }
 }
-
-.hero__signup {}

@@ -1,1 +1,15 @@
 @use '_root' as *;
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
