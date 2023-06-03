@@ -8,13 +8,18 @@ $color-b: #f4a261;
     background-attachment: fixed;
     background-position: 50% 30%;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
     height: 675px;
+    justify-content: center;
     max-height: calc(100vh - 60px);
-    padding: 40px;
+    padding-left: 150px;
 }
 
 .hero__actions {
+    animation: hero-reveal 1s 3s ease-out forwards;
     margin-left: 300px;
+    opacity: 0;
 
     a {
         display: inline-block;
@@ -31,7 +36,7 @@ $color-b: #f4a261;
 
         &:first-child {
             background: $color-b;
-            border: 1px solid $color-b;
+            border: 2px solid $color-b;
             color: $color-5;
             margin-right: 50px;
 
@@ -46,7 +51,7 @@ $color-b: #f4a261;
         }
 
         &:last-child {
-            border: 1px solid $color-b;
+            border: 2px solid $color-b;
             color: $color-b;
 
             &:visited {
@@ -63,32 +68,44 @@ $color-b: #f4a261;
 }
 
 .hero__content {
-    color: $color-a;
-    margin: 10px 0 20px 30px;
+    margin-bottom: 20px;
     max-width: 900px;
 
     article {
+        animation: hero-reveal 1s 2s ease-out forwards;
+        color: $color-b;
         font-size: $font-3;
         margin-left: 100px;
+        mix-blend-mode: exclusion;
+        opacity: 0;
         width: 500px;
     }
 
     h1 {
+        animation: hero-reveal 1s 1s ease-out forwards;
+        color: $color-a;
         font-family: 'Libre Franklin';
         font-size: $font-6;
         font-style: italic;
-        padding-bottom: 10px;
+        opacity: 0;
+        padding-bottom: 20px;
         user-select: none;
+        white-space: nowrap;
 
         span:first-child {
+            animation:
+                hero-bug 10s 6s infinite,
+                hero-reveal 1s 4s ease-out forwards;
             display: inline-block;
             font-family: 'Noto Emoji';
+            opacity: 0;
             transform: scale(-1, 1);
+            vertical-align: text-top;
         }
 
         span:last-child {
-            animation: blink 1s infinite;
-            color: $color-b;
+            animation: hero-ellipsis 1s infinite;
+            font-weight: 500;
         }
     }
 }
