@@ -16,7 +16,7 @@ function PolicyPartC(): React.ReactElement {
             <h4>Contact Us</h4>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
-                <li>By email: hello@journeys-app.com</li>
+                <li>By email: kevin@aephonics.com</li>
             </ul>
         </section>
     );

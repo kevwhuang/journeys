@@ -2,6 +2,7 @@
 @use 'sass:color';
 
 @import url(https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap);
 
 $color-a: #e76f51;
@@ -37,7 +38,7 @@ $color-b: #f4a261;
         'Source Code Pro',
         'Courier New',
         monospace;
-    margin-left: 300px;
+    margin: 20px 0 0 300px;
     opacity: 0;
 
     a {

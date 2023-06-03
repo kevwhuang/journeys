@@ -9,7 +9,7 @@ function HeroContent(): React.ReactElement {
                 <span>...</span>
             </h1>
             <article>
-                Journeys is an exploration app that unveils the world around you as you travel.
+                <b>Journeys</b> is an exploration app that unveils the world around you as you travel.
                 Welcoming all hikers, bikers, drivers, adventurers, and nomads to explore!
             </article>
         </section>
