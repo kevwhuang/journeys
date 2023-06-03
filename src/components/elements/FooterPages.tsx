@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function FooterPages(): React.ReactElement {
     return (
-        <section className="footer__pages" hidden>
+        <section className="footer__pages">
             <ul>
                 <li>
                     <Link to="about">About</Link>

@@ -1,7 +1,6 @@
 @use '../_root' as *;
 
 .controls {
-    border-bottom: 1px solid $color-6;
     grid-area: controls;
     height: 60px;
 }

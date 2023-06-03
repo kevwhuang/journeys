@@ -1,13 +1,16 @@
 import React from 'react';
 
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 function FooterSocials(): React.ReactElement {
     return (
-        <section className="footer__socials" hidden>
+        <section className="footer__socials">
             <a href="https://www.instagram.com" target="_blank">
-                <img src="" alt="" />
+                <InstagramIcon />
             </a>
             <a href="https://github.com/kevwhuang/journeys" target="_blank">
-                <img src="" alt="" />
+                <GitHubIcon />
             </a>
         </section>
     );
