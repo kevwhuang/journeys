@@ -1,9 +1,17 @@
-interface Actions { }
+interface Actions {
+    toggleNavbar: () => void,
+}
 
-interface Config { }
+interface Config {
+    refreshInterval: number,
+}
 
 interface State {
-    status: boolean,
-    page: 'home' | 'map' | 'pins' | 'profile' | 'rankings',
+    authenticated: boolean,
+    flag: string,
+    navbar: boolean,
+    notifications: number,
+    page: 'about' | 'contact' | 'guide' | 'home' | 'map' | 'pins' | 'profile' | 'rankings',
+    power: boolean,
     theme: 'dark' | 'light',
 }

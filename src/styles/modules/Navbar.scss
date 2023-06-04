@@ -1,9 +1,20 @@
 @use '../_root' as *;
 
-.navbar {
+%default {
     background: $color-2;
     grid-area: navbar;
-    // width: 250px;
+    transition: width 1s;
+    z-index: 90;
+}
+
+.navbar {
+    @extend %default;
+    width: 250px;
+}
+
+.navbar--closed {
+    @extend %default;
+    width: 0;
 }
 
 .navbar__logo {}

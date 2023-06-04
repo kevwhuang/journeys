@@ -10,10 +10,12 @@ import '../../styles/modules/Controls.scss';
 function Controls(): React.ReactElement {
     return (
         <aside className="controls">
-            <ControlsNavbar />
-            <ControlsUser />
-            <ControlsSearch />
-            <ControlsSystem />
+            <div className="controls--container">
+                <ControlsNavbar />
+                <ControlsUser />
+                <ControlsSearch />
+                <ControlsSystem />
+            </div>
         </aside>
     );
 }

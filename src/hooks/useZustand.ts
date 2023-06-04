@@ -1,13 +1,18 @@
 import { create } from 'zustand';
 
 const initialize: State = {
-    status: false,
+    authenticated: false,
+    flag: 'US',
+    navbar: false,
+    notifications: 0,
     page: 'pins',
+    power: false,
     theme: 'dark',
 };
 
-const useZustand = create<Actions & State>(() => ({
+const useZustand = create<Actions & State>(set => ({
     ...initialize,
+    toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
 }));
 
 export default useZustand;

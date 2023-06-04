@@ -33,8 +33,11 @@ import './styles/main.scss';
 import './styles/utilities.scss';
 import './styles/keyframes.scss';
 import './styles/media.scss';
+import './styles/dev.scss';
 
-const config: Config = {};
+const config: Config = {
+    refreshInterval: 3600e3,
+};
 
 const router: any = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Display />} errorElement={<Error />}>
