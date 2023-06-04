@@ -21,7 +21,7 @@ import Privacy from './pages/Privacy';
 import Profile from './pages/Profile';
 import Profile_Single from './pages/Profile_Single';
 import Rankings from './pages/Rankings';
-import TermsOfService from './pages/TermsOfService';
+import Terms from './pages/Terms';
 
 import Error from './pages/status/Error';
 import Fallback from './pages/status/Fallback';
@@ -53,7 +53,7 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="profile" element={<Profile />} />
         <Route path="profile/:id" element={<Profile_Single />} />
         <Route path="rankings" element={<Rankings />} />
-        <Route path="terms-of-service" element={<TermsOfService />} />
+        <Route path="terms" element={<Terms />} />
     </Route>
 ));
 

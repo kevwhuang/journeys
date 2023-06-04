@@ -1,8 +1,12 @@
 import React from 'react';
 
+import useTitle from '../../hooks/useTitle';
+
 import '../../styles/status/Fallback.scss';
 
 function Fallback(): React.ReactElement {
+    useTitle('Journeys | Secret');
+
     return (
         <main id="fallback">
             <section>

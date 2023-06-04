@@ -1,8 +1,12 @@
 import React from 'react';
 
+import useTitle from '../../hooks/useTitle';
+
 import '../../styles/status/NotFound.scss';
 
 function NotFound(): React.ReactElement {
+    useTitle('Journeys | 404');
+
     return (
         <main id="not-found">
             <section>

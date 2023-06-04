@@ -22,7 +22,7 @@ import Privacy from '../pages/Privacy';
 import Profile from '../pages/Profile';
 import Profile_Single from '../pages/Profile_Single';
 import Rankings from '../pages/Rankings';
-import TermsOfService from '../pages/TermsOfService';
+import Terms from '../pages/Terms';
 
 import Error from '../pages/status/Error';
 import Fallback from '../pages/status/Fallback';
@@ -94,8 +94,8 @@ describe('Render', () => {
             expect(document.body).toBeInTheDocument();
         });
 
-        test('TermsOfService', () => {
-            render(<TermsOfService />);
+        test('Terms', () => {
+            render(<Terms />);
             expect(document.body).toBeInTheDocument();
         });
     });

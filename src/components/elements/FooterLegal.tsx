@@ -12,7 +12,7 @@ function FooterLegal(): React.ReactElement {
                     <Link to="privacy">Privacy</Link>
                 </li>
                 <li>
-                    <Link to="terms-of-service">Terms of Service</Link>
+                    <Link to="terms">Terms</Link>
                 </li>
             </ul>
         </section>

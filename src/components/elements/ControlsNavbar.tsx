@@ -1,9 +1,9 @@
 import React from 'react';
 
-import useStore from '../../hooks/useZustand';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+
+import useStore from '../../hooks/useZustand';
 
 function ControlsNavbar(): React.ReactElement {
     const [navbar, toggleNavbar] = useStore(s => [s.navbar, s.toggleNavbar]);
