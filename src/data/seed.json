@@ -1,0 +1,37 @@
+[
+    {
+        "profile": {
+            "email": "kevin@aephonics.com",
+            "username": "johndoe69",
+            "first": "John",
+            "last": "Doe",
+            "country": "US",
+            "bio": "I'm an avid animal adventurer.",
+            "photo": "https://images.unsplash.com/photo-1503308823166-13ce184e3007",
+            "page": "https://www.journeys-app.com",
+            "registered": null
+        },
+        "settings": {
+            "theme": 1,
+            "units": 1,
+            "map": 2,
+            "sync": null
+        },
+        "records": {
+            "notifications": [
+                {
+                    "subject": "Welcome!",
+                    "message": "Embark on your first Journey.",
+                    "priority": 0
+                }
+            ],
+            "pins": [
+                {
+                    "lat": 30.266666,
+                    "long": -97.733330
+                }
+            ],
+            "experience": 1e6
+        }
+    }
+]
