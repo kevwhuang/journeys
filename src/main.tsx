@@ -27,6 +27,8 @@ import Error from './pages/status/Error';
 import Fallback from './pages/status/Fallback';
 import NotFound from './pages/status/NotFound';
 
+import './features/secret';
+
 import './styles/rectify.scss';
 import './styles/root.scss';
 import './styles/main.scss';

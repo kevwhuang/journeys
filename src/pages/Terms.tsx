@@ -4,6 +4,7 @@ import useTitle from '../hooks/useTitle';
 
 function Terms(): React.ReactElement {
     useTitle('Journeys | Terms');
+    scroll(0, 0);
 
     return (
         <main id="terms">

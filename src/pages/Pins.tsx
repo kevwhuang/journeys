@@ -4,6 +4,7 @@ import useTitle from '../hooks/useTitle';
 
 function Pins(): React.ReactElement {
     useTitle('Journeys | Pins');
+    scroll(0, 0);
 
     return (
         <main id="pins">
