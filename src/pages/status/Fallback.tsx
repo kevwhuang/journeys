@@ -1,11 +1,15 @@
 import React from 'react';
 
 import useTitle from '../../hooks/useTitle';
+import useZustand from '../../hooks/useZustand';
 
 import '../../styles/status/Fallback.scss';
 
 function Fallback(): React.ReactElement {
+    const changePage = useZustand(s => s.changePage);
+
     useTitle('Journeys | Secret');
+    React.useEffect(() => changePage(''));
 
     return (
         <main id="fallback">

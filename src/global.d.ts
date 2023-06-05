@@ -1,4 +1,5 @@
 interface Actions {
+    changePage: (page: Page) => void,
     toggleNavbar: () => void,
 }
 
@@ -30,7 +31,7 @@ interface UserProfile {
 }
 
 interface UserRecords {
-    experience: bigint,
+    experience: number,
     notifications: Notifications[],
     pins: Pins[],
 }
@@ -48,7 +49,7 @@ type Notifications = {
     subject: string,
 };
 
-type Page = 'about' | 'contact' | 'guide' | 'home' | 'map' | 'pins' | 'profile' | 'rankings';
+type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map' | 'pins' | 'profile' | 'rankings';
 
 type Pins = {
     lat: number,

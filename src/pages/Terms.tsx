@@ -1,10 +1,14 @@
 import React from 'react';
 
 import useTitle from '../hooks/useTitle';
+import useZustand from '../hooks/useZustand';
 
 function Terms(): React.ReactElement {
-    useTitle('Journeys | Terms');
+    const changePage = useZustand(s => s.changePage);
+
     scroll(0, 0);
+    useTitle('Journeys | Terms');
+    React.useEffect(() => changePage(''));
 
     return (
         <main id="terms">

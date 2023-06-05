@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useStore from '../../hooks/useZustand';
+import useZustand from '../../hooks/useZustand';
 
 import NavbarLogo from '../elements/NavbarLogo';
 import NavbarPages from '../elements/NavbarPages';
@@ -9,14 +9,17 @@ import NavbarProfile from '../elements/NavbarProfile';
 import '../../styles/modules/Navbar.scss';
 
 function Navbar(): React.ReactElement {
-    const navbar = useStore(s => s.navbar);
+    const navbar = useZustand(s => s.navbar);
 
     return (
-        <nav className={navbar ? 'navbar' : 'navbar--closed'}>
-            <NavbarLogo />
-            <NavbarProfile />
-            <NavbarPages />
-        </nav>
+        <>
+            <nav className={navbar ? 'navbar' : 'navbar--closed'}>
+                <NavbarLogo />
+                <NavbarProfile />
+                <NavbarPages />
+            </nav>
+            <div className={navbar ? 'navbar__gutter' : 'navbar__gutter--closed'}></div>
+        </>
     );
 }
 

@@ -1,10 +1,12 @@
 import React from 'react';
 
+import logo from '../../assets/logo-512x512.png';
+
 function NavbarLogo(): React.ReactElement {
     return (
-        <section className="navbar__logo" hidden>
-            <img src="" alt="" />
-            <span title="journeys"></span>
+        <section className="navbar__logo">
+            <img src={logo} alt="Journeys logo." draggable="false" />
+            <span>Journeys</span>
         </section>
     );
 }

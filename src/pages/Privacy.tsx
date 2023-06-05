@@ -1,12 +1,16 @@
 import React from 'react';
 
+import useTitle from '../hooks/useTitle';
+import useZustand from '../hooks/useZustand';
+
 import Policy from '../components/modules/Policy';
 
-import useTitle from '../hooks/useTitle';
-
 function Privacy(): React.ReactElement {
-    useTitle('Journeys | Privacy');
+    const changePage = useZustand(s => s.changePage);
+
     scroll(0, 0);
+    useTitle('Journeys | Privacy');
+    React.useEffect(() => changePage(''));
 
     return (
         <main id="privacy">
