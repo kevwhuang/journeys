@@ -1,3 +1,5 @@
+import ranks from '../data/ranks.json';
+
 const levels: number[] = calculateLevels();
 
 function calculateLevels(): number[] {
@@ -22,21 +24,10 @@ function useRanking(experience: number): string {
             break;
         }
 
-        if (i === 1000) level = 1000;
+        if (i === 1000) return 'Divine';
     }
 
-    if (level === 0) return 'Uninitiated';
-    if (level < 100) return 'Novice';
-    if (level < 200) return 'Scout';
-    if (level < 300) return 'Prospector';
-    if (level < 400) return 'Surveyor';
-    if (level < 500) return 'Pathfinder';
-    if (level < 600) return 'Traveler';
-    if (level < 700) return 'Explorer';
-    if (level < 800) return 'Adventurer';
-    if (level < 900) return 'Globetrotter';
-    if (level < 1000) return 'Superhuman';
-    return 'Immortal';
+    return (ranks[Math.ceil(level / 50)]);
 }
 
 export default useRanking;

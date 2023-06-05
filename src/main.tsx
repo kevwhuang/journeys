@@ -47,6 +47,8 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="*" element={<NotFound />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="error" element={<Error />} />
+        <Route path="fallback" element={<Fallback />} />
         <Route path="guide" element={<Guide />} />
         <Route path="map" element={<Map />} />
         <Route path="pins" element={<Pins />} />
