@@ -7,8 +7,9 @@
         background-position: center;
         background-size: cover;
         display: flex;
-        height: 100%;
+        height: 100vh;
         justify-content: center;
+        user-select: none;
 
         h1 {
             background: rgba(0, 0, 0, 50%);

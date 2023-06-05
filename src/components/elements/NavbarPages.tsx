@@ -1,48 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import GavelOutlinedIcon from '@mui/icons-material/GavelOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import LeaderboardOutlinedIcon from '@mui/icons-material/LeaderboardOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import PinDropOutlinedIcon from '@mui/icons-material/PinDropOutlined';
+import PrivacyTipOutlinedIcon from '@mui/icons-material/PrivacyTipOutlined';
 
 import useZustand from '../../hooks/useZustand';
 
-interface Props {
-    counter?: number,
-    icon: React.ReactElement,
-    label: string,
-    to: string,
-}
-
-function Item(props: Props): React.ReactElement {
-    const page = useZustand(s => s.page);
-    const { counter, icon, label, to } = props;
-
-    function setClass() {
-        try {
-            return label === `${page[0].toUpperCase()}${page.slice(1)}` ? 'active' : '';
-        } catch {
-            return '';
-        }
-    }
-
-    return (
-        <li className={setClass()}>
-            <Link to={to}>
-                <span>
-                    {icon}
-                    {label}
-                </span>
-                {counter && <span>{counter}</span>}
-            </Link>
-        </li>
-    );
-}
+import NavbarPagesItem from './NavbarPagesItem';
 
 function NavbarPages(): React.ReactElement {
     const pins = useZustand(s => s.records.pins);
@@ -50,48 +21,58 @@ function NavbarPages(): React.ReactElement {
     return (
         <section className="navbar__pages">
             <ul>
-                <Item
+                <NavbarPagesItem
                     icon={<HomeOutlinedIcon />}
-                    label="Home"
                     to="/"
+                    label="Home"
                 />
-                <Item
+                <NavbarPagesItem
                     icon={<MapOutlinedIcon />}
-                    label="Map"
                     to="map"
+                    label="Map"
                 />
-                <Item
-                    counter={pins.length}
+                <NavbarPagesItem
                     icon={<PinDropOutlinedIcon />}
-                    label="Pins"
                     to="pins"
+                    label="Pins"
+                    counter={pins.length}
                 />
-                <Item
+                <NavbarPagesItem
                     icon={<LeaderboardOutlinedIcon />}
-                    label="Rankings"
                     to="rankings"
+                    label="Rankings"
                 />
-                <Item
+                <NavbarPagesItem
                     icon={<AccountBoxOutlinedIcon />}
-                    label="Profile"
                     to="profile"
+                    label="Profile"
                 />
             </ul>
             <ul>
-                <Item
-                    icon={<DescriptionOutlinedIcon />}
-                    label="Guide"
+                <NavbarPagesItem
+                    icon={<ArticleOutlinedIcon />}
                     to="guide"
+                    label="Guide"
                 />
-                <Item
+                <NavbarPagesItem
                     icon={<InfoOutlinedIcon />}
-                    label="About"
                     to="about"
+                    label="About"
                 />
-                <Item
+                <NavbarPagesItem
                     icon={<EmailOutlinedIcon />}
-                    label="Contact"
                     to="contact"
+                    label="Contact"
+                />
+                <NavbarPagesItem
+                    icon={<GavelOutlinedIcon />}
+                    to="terms"
+                    label="Terms"
+                />
+                <NavbarPagesItem
+                    icon={<PrivacyTipOutlinedIcon />}
+                    to="privacy"
+                    label="Privacy"
                 />
             </ul>
         </section>

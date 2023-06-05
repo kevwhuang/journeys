@@ -2,21 +2,46 @@
 
 .controls {
     grid-area: controls;
-    height: 60px;
 }
 
 .controls--container {
+    align-items: center;
     background: $color-1;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
     height: 60px;
     position: fixed;
     width: 100%;
     z-index: 100;
 }
 
-.controls__navbar {}
+.controls__navbar {
+    margin: 0 5px;
 
-.controls__search {}
+    svg {
+        border-radius: 50%;
+        font-size: $font-5;
+        padding: 5px;
+        transition: background-color 250ms, padding 250ms;
 
-.controls__system {}
+        &:hover {
+            background: rgba(150, 150, 150, 15%);
+        }
 
-.controls__user {}
+        &:active {
+            padding: 8px;
+        }
+    }
+}
+
+.controls__search {
+    visibility: hidden;
+}
+
+.controls__system {
+    visibility: hidden;
+}
+
+.controls__user {
+    visibility: hidden;
+}

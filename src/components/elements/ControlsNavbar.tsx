@@ -3,6 +3,8 @@ import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
+import MuiTooltip from '../libraries/MuiTooltip';
+
 import useZustand from '../../hooks/useZustand';
 
 function ControlsNavbar(): React.ReactElement {
@@ -10,10 +12,12 @@ function ControlsNavbar(): React.ReactElement {
 
     return (
         <section className="controls__navbar">
-            {navbar
-                ? <MenuOpenIcon onClick={() => toggleNavbar()} />
-                : <MenuIcon onClick={() => toggleNavbar()} />
-            }
+            <MuiTooltip title="Toggle navbar" offset="-5px">
+                {navbar
+                    ? <MenuOpenIcon onClick={() => toggleNavbar()} />
+                    : <MenuIcon onClick={() => toggleNavbar()} />
+                }
+            </MuiTooltip>
         </section>
     );
 }

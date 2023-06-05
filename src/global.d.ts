@@ -49,7 +49,8 @@ type Notifications = {
     subject: string,
 };
 
-type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map' | 'pins' | 'profile' | 'rankings';
+type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
+    | 'pins' | 'privacy' | 'profile' | 'rankings' | 'terms';
 
 type Pins = {
     lat: number,

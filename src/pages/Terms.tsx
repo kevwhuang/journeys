@@ -8,7 +8,7 @@ function Terms(): React.ReactElement {
 
     scroll(0, 0);
     useTitle('Journeys | Terms');
-    React.useEffect(() => changePage(''));
+    React.useEffect(() => changePage('terms'));
 
     return (
         <main id="terms">

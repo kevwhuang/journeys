@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
+    Navigate,
     Route,
     RouterProvider,
     createBrowserRouter,
@@ -50,6 +51,7 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="error" element={<Error />} />
         <Route path="fallback" element={<Fallback />} />
         <Route path="guide" element={<Guide />} />
+        <Route path="home" element={<Navigate to="/" replace={true} />} />
         <Route path="map" element={<Map />} />
         <Route path="pins" element={<Pins />} />
         <Route path="pins/:id" element={<Pins_Single />} />
