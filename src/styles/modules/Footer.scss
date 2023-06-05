@@ -1,6 +1,7 @@
 @use '../_root' as *;
 
 .footer {
+    cursor: default;
     display: grid;
     grid-template-areas:
         'logo pages socials'
@@ -102,7 +103,9 @@
                 letter-spacing: 4px;
                 padding: 5px 10px;
                 text-transform: uppercase;
-                transition: all 250ms;
+                transition:
+                    background-color 250ms,
+                    color 250ms;
 
                 &:visited {
                     color: $color-5;
@@ -126,7 +129,9 @@
         color: $color-5;
         font-size: $font-5;
         margin: 10px;
-        transition: all 250ms;
+        transition:
+            color 250ms,
+            scale 250ms;
 
         &:hover {
             color: $color-4;
