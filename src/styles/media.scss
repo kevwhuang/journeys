@@ -1,42 +1,5 @@
 @use '_root' as *;
 
-@media (prefers-color-scheme: light) {
-    $color-hover: rgba(0, 0, 0, 15%);
-
-    :root {
-        --color-1: #f3f4f5;
-        --color-2: #f3f4f5;
-        --color-3: #407ad6;
-        --color-4: #d3382f;
-        --color-5: #202021;
-        --color-6: #696a6b;
-    }
-
-    .footer {
-        .footer__pages ul li a:hover {
-            background: $color-hover;
-        }
-    }
-
-    .navbar {
-        border-right: 1px solid $color-5;
-
-        .navbar__pages ul li {
-            &:hover {
-                background: $color-hover;
-            }
-
-            &.active {
-                background: $color-hover;
-            }
-
-            a span:nth-of-type(2) {
-                color: $color-1;
-            }
-        }
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;

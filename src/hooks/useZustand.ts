@@ -20,15 +20,15 @@ const initialize: State = {
         username: seed[0].profile.username || '',
     },
     records: {
-        experience: seed[0].records.experience || 0,
+        experience: seed[0].records.experience,
         notifications: seed[0].records.notifications || [],
         pins: seed[0].records.pins || {},
     },
     settings: {
-        map: seed[0].settings.map || 2,
+        map: seed[0].settings.map,
         sync: seed[0].settings.sync || new Date(),
-        theme: seed[0].settings.theme || 1,
-        units: seed[0].settings.units || 1,
+        theme: seed[0].settings.theme,
+        units: seed[0].settings.units,
     },
     tracks: null,
 };
@@ -36,10 +36,26 @@ const initialize: State = {
 const useZustand = create<Actions & State>(set => ({
     ...initialize,
     changePage: page => set(() => ({ page })),
-    toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
-    toggleTheme: theme => set(s => ({ settings: { ...s.settings, theme } })),
-    togglePower: () => set(s => ({ power: !(s.power) })),
     toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
+    toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
+    togglePower: () => set(s => ({ power: !(s.power) })),
+    toggleTheme: theme => set(s => toggleThemeAction(s, theme)),
 }));
+
+function toggleThemeAction(s: State, theme: number): Partial<State> {
+    if (!theme) {
+        const link: HTMLLinkElement = document.createElement('link');
+
+        link.rel = 'stylesheet';
+        link.href = '/media/light.css';
+        document.head.appendChild(link);
+    } else {
+        const x = document.head.querySelector('[href="/media/light.css"]');
+
+        x && x.remove();
+    }
+
+    return ({ settings: { ...s.settings, theme } });
+}
 
 export default useZustand;

@@ -1,0 +1,37 @@
+:root {
+    --color-1: #f3f4f5;
+    --color-2: #f3f4f5;
+    --color-3: #407ad6;
+    --color-4: #d3382f;
+    --color-5: #202021;
+    --color-6: #696a6b;
+    --color-hover: rgba(0, 0, 0, 15%);
+}
+
+.controls--container {
+    border-bottom: 1px solid var(--color-5);
+}
+
+.controls__system span {
+    color: var(--color-1);
+}
+
+.footer__pages ul li a:hover {
+    background: var(--color-hover);
+}
+
+.navbar {
+    border-right: 1px solid var(--color-5);
+}
+
+.navbar__pages ul li:hover {
+    background: var(--color-hover);
+}
+
+.navbar__pages ul li.active {
+    background: var(--color-hover);
+}
+
+.navbar__pages ul li a span:nth-of-type(2) {
+    color: var(--color-1);
+}

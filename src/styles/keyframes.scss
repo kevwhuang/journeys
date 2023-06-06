@@ -81,8 +81,13 @@
 }
 
 @keyframes hero-reveal {
+    from {
+        visibility: visible;
+    }
+
     to {
         opacity: 1;
+        visibility: visible;
     }
 }
 

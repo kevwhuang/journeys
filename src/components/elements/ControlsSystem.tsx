@@ -10,15 +10,20 @@ import VerticalAlignTopOutlinedIcon from '@mui/icons-material/VerticalAlignTopOu
 
 import useZustand from '../../hooks/useZustand';
 
+import ControlsSystemModal from './ControlsSystemModal';
 import MuiTooltip from '../libraries/MuiTooltip';
 
 function ControlsSystem(): React.ReactElement {
+    // const [showModal, setShowModal] = React.useState(false);
     const state = useZustand();
 
     return (
         <section className="controls__system">
             <MuiTooltip title="Refresh">
-                <RefreshOutlinedIcon onClick={() => { }} />
+                <RefreshOutlinedIcon
+                    className={state.page === 'rankings' ? 'active' : ''}
+                    onClick={() => { }}
+                />
             </MuiTooltip>
             <MuiTooltip title="Top">
                 <VerticalAlignTopOutlinedIcon onClick={() => scroll(0, 0)} />
@@ -26,6 +31,10 @@ function ControlsSystem(): React.ReactElement {
             <MuiTooltip title="Notifications">
                 <NotificationsNoneOutlinedIcon />
             </MuiTooltip>
+            <ControlsSystemModal />
+            <span aria-label={`${state.records.notifications.length} notifications.`}>
+                {state.records.notifications.length}
+            </span>
             <MuiTooltip title={state.settings.theme ? 'Dark' : 'Light'}>
                 {state.settings.theme
                     ? <DarkModeOutlinedIcon onClick={() => state.toggleTheme(0)} />
