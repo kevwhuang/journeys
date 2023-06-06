@@ -8,7 +8,7 @@ function calculateLevels(): number[] {
     let current: number = 1;
 
     while (current <= 1000) {
-        levels.push(Math.trunc((levels[levels.length - 1] / 1e4 + FACTOR * current) * 1e4));
+        levels.push(Math.trunc(((levels[levels.length - 1] / 1e4) + (FACTOR * current)) * 1e4));
         current++;
     }
 

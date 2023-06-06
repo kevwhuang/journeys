@@ -5,7 +5,7 @@ import logo from '../../assets/logo-512x512.png';
 function NavbarLogo(): React.ReactElement {
     return (
         <section className="navbar__logo">
-            <img src={logo} alt="Journeys logo." draggable="false" />
+            <img src={logo} alt="Logo" draggable="false" />
             <span>Journeys</span>
         </section>
     );

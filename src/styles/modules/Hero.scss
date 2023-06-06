@@ -1,16 +1,12 @@
 @use 'sass:color';
 @use '../_root' as *;
 
-@import url(https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap);
-
 $color-a: #e76f51;
 $color-b: #f4a261;
 
 .hero {
     animation: hero-background 60s 10s ease-in-out infinite alternate;
-    background: url(https://images.unsplash.com/photo-1469105692624-86ae1dbf4c23);
+    background: url(../../assets/hero.webp);
     background-attachment: fixed;
     background-position: center 40%;
     background-size: cover;

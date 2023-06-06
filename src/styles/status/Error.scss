@@ -3,12 +3,13 @@
 #error {
     section {
         align-items: center;
-        background: url(https://images.unsplash.com/photo-1515404929826-76fff9fef6fe);
+        background: url(../../assets/error.webp);
         background-position: center;
         background-size: cover;
         display: flex;
         height: calc(100vh - 60px);
         margin: auto;
+        max-height: 1440px;
         justify-content: center;
         user-select: none;
 

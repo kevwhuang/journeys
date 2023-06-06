@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 
+import profile from '../assets/profile.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
@@ -14,7 +15,7 @@ const initialize: State = {
         first: seed[0].profile.first || '',
         last: seed[0].profile.last || '',
         page: seed[0].profile.page || '',
-        photo: seed[0].profile.photo || '',
+        photo: seed[0].profile.photo || profile,
         registered: seed[0].profile.registered || new Date(),
         username: seed[0].profile.username || '',
     },

@@ -95,6 +95,7 @@
                 align-items: center;
                 color: $color-6;
                 display: flex;
+                font-weight: 500;
                 justify-content: space-between;
                 letter-spacing: 2px;
                 padding: 5px 10%;
@@ -142,6 +143,7 @@
         mask-image: linear-gradient(black, black);
         object-fit: cover;
         object-position: center;
+        text-align: center;
         width: 120px;
     }
 
