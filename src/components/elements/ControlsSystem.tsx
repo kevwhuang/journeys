@@ -15,12 +15,16 @@ import MuiTooltip from '../libraries/MuiTooltip';
 function ControlsSystem(): React.ReactElement {
     const state = useZustand();
 
+    function handleClick() {
+        return;
+    }
+
     return (
         <section className="controls__system">
             <MuiTooltip title="Refresh">
                 <RefreshOutlinedIcon
                     className={state.page === 'rankings' ? 'active' : ''}
-                    onClick={() => { }}
+                    onClick={handleClick}
                 />
             </MuiTooltip>
             <MuiTooltip title="Top">

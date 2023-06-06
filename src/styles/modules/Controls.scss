@@ -5,10 +5,7 @@
     cursor: pointer;
     font-size: $font-5;
     padding: 6px;
-    transition:
-        background-color 250ms,
-        opacity 250ms,
-        padding 250ms;
+    transition: all 250ms;
 
     &:hover {
         background: rgba(150, 150, 150, 15%);
@@ -46,6 +43,29 @@
 
     svg {
         @extend %svg;
+
+        &:nth-of-type(3) {
+            background: none;
+            border-radius: 0;
+            cursor: default;
+            padding: 6px;
+
+            &.s0 {
+                opacity: 20%;
+            }
+
+            &.s1 {
+                color: $color-6;
+            }
+
+            &.s3 {
+                color: $color-4;
+            }
+        }
+
+        &.active {
+            color: $color-4;
+        }
     }
 }
 
@@ -235,7 +255,7 @@
         }
 
         &:nth-of-type(3) {
-            transition: color 250ms;
+            transition: all 250ms;
 
             &.active {
                 color: $color-3;

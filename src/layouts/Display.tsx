@@ -9,8 +9,10 @@ import Navbar from '../components/modules/Navbar';
 let initialized = false;
 
 function Display(): React.ReactElement {
+    const theme = useZustand(s => s.settings.theme);
+
     if (!initialized) {
-        if (useZustand(s => s.settings.theme) === 0) {
+        if (!theme) {
             const link = document.createElement('link');
 
             link.rel = 'stylesheet';

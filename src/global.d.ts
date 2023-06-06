@@ -2,6 +2,7 @@ interface Actions {
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
     toggleAuthenticated: () => void,
+    toggleFocus: () => void,
     toggleModalNotifications: () => void,
     toggleNavbar: () => void,
     togglePower: () => void,
@@ -14,6 +15,7 @@ interface Config {
 
 interface State {
     authenticated: boolean,
+    focus: boolean,
     modals: Modals,
     navbar: boolean,
     page: Page_,
@@ -21,6 +23,7 @@ interface State {
     profile: UserProfile,
     records: UserRecords,
     settings: UserSettings,
+    signal: Signal_,
     tracks: unknown,
 }
 
@@ -67,3 +70,5 @@ type Pin_ = {
     lat: number,
     long: number,
 };
+
+type Signal_ = 0 | 1 | 2 | 3;

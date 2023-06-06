@@ -7,13 +7,14 @@ import seed from '../data/seed.json';
 
 const initialize: State = {
     authenticated: true,
+    focus: true,
     modals: {
         gallery: false,
         notifications: false,
     },
     navbar: true,
     page: 'home',
-    power: false,
+    power: true,
     profile: {
         bio: seed[0].profile.bio || '',
         country: seed[0].profile.country || 'US',
@@ -36,6 +37,7 @@ const initialize: State = {
         theme: seed[0].settings.theme,
         units: seed[0].settings.units,
     },
+    signal: 3,
     tracks: null,
 };
 
@@ -44,6 +46,7 @@ const useZustand = create<Actions & State>(set => ({
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),
     toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
+    toggleFocus: () => set(s => ({ focus: !(s.focus) })),
     toggleModalNotifications: () => set(s => actions.toggleModalNotificationsAction(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
     togglePower: () => set(s => ({ power: !(s.power) })),

@@ -24,19 +24,20 @@ module.exports = {
     },
     rules: {
         // PROJECT
+        '@typescript-eslint/ban-ts-comment': 0,
         '@typescript-eslint/no-explicit-any': 0,
         '@typescript-eslint/no-inferrable-types': 0,
         'camelcase': 0,
         'comma-dangle': 0,
         'function-paren-newline': 0,
         'id-length': 0,
+        'indent': 0,
         'max-len': 0,
         'no-plusplus': 0,
         'no-undef': 0,
         // OPTIONS
         'arrow-parens': [2, 'as-needed'],
         'func-style': [2, 'declaration'],
-        'indent': [2, 4],
         'newline-per-chained-call': [2, { ignoreChainWithDepth: 4 }],
         'object-curly-spacing': [2, 'always'],
         'one-var': [2, 'never'],
