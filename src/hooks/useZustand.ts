@@ -1,10 +1,16 @@
 import { create } from 'zustand';
 
+import actions from '../features/actions';
+
 import profile from '../assets/profile.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
     authenticated: true,
+    modals: {
+        gallery: false,
+        notifications: false,
+    },
     navbar: true,
     page: 'home',
     power: false,
@@ -36,26 +42,12 @@ const initialize: State = {
 const useZustand = create<Actions & State>(set => ({
     ...initialize,
     changePage: page => set(() => ({ page })),
+    deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),
     toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
+    toggleModalNotifications: () => set(s => actions.toggleModalNotificationsAction(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
     togglePower: () => set(s => ({ power: !(s.power) })),
-    toggleTheme: theme => set(s => toggleThemeAction(s, theme)),
+    toggleTheme: theme => set(s => actions.toggleThemeAction(s, theme)),
 }));
-
-function toggleThemeAction(s: State, theme: number): Partial<State> {
-    if (!theme) {
-        const link: HTMLLinkElement = document.createElement('link');
-
-        link.rel = 'stylesheet';
-        link.href = '/media/light.css';
-        document.head.appendChild(link);
-    } else {
-        const x = document.head.querySelector('[href="/media/light.css"]');
-
-        x && x.remove();
-    }
-
-    return ({ settings: { ...s.settings, theme } });
-}
 
 export default useZustand;

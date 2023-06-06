@@ -41,6 +41,9 @@ $color-b: #f4a261;
     visibility: hidden;
 
     a {
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 19%),
+            0 6px 6px rgba(0, 0, 0, 23%);
         display: inline-block;
         font-size: $font-3;
         font-weight: 600;

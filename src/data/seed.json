@@ -20,9 +20,19 @@
         "records": {
             "notifications": [
                 {
-                    "subject": "Welcome!",
-                    "message": "Embark on your first Journey.",
+                    "subject": "Theme Switching",
+                    "message": "Light mode is now supported.",
                     "priority": 0
+                },
+                {
+                    "subject": "Setup Profile",
+                    "message": "Add your first and last name.",
+                    "priority": 1
+                },
+                {
+                    "subject": "Welcome",
+                    "message": "Embark on your first Journey.",
+                    "priority": 2
                 }
             ],
             "pins": [

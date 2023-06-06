@@ -1,6 +1,8 @@
 interface Actions {
     changePage: (page: Page) => void,
+    deleteNotification: (index: number) => void,
     toggleAuthenticated: () => void,
+    toggleModalNotifications: () => void,
     toggleNavbar: () => void,
     togglePower: () => void,
     toggleTheme: (theme: number) => void,
@@ -12,8 +14,9 @@ interface Config {
 
 interface State {
     authenticated: boolean,
+    modals: Modals,
     navbar: boolean,
-    page: Page,
+    page: Page_,
     power: boolean,
     profile: UserProfile,
     records: UserRecords,
@@ -35,8 +38,8 @@ interface UserProfile {
 
 interface UserRecords {
     experience: number,
-    notifications: Notifications[],
-    pins: Pins[],
+    notifications: Notification_[],
+    pins: Pin_[],
 }
 
 interface UserSettings {
@@ -46,16 +49,21 @@ interface UserSettings {
     units: number,
 }
 
-type Notifications = {
+type Modals = {
+    gallery: boolean,
+    notifications: boolean,
+};
+
+type Notification_ = {
     message: string,
     priority: number,
     subject: string,
 };
 
-type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
+type Page_ = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
     | 'pins' | 'privacy' | 'profile' | 'rankings' | 'terms';
 
-type Pins = {
+type Pin_ = {
     lat: number,
     long: number,
 };
