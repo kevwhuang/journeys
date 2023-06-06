@@ -20,7 +20,7 @@ function MuiTooltip(props: Props): React.ReactElement {
         color: '#f3f4f5',
         fontFamily: 'SF Pro Display',
         fontSize: '16px',
-        top: props.offset || '',
+        top: props.offset || '-5px',
         userSelect: 'none',
         '& .MuiTooltip-arrow': {
             color: theme ? '#407ad6' : '#d3382f',
@@ -32,6 +32,7 @@ function MuiTooltip(props: Props): React.ReactElement {
             arrow
             title={props.title}
             enterDelay={props.delay || 1500}
+            leaveDelay={100}
             TransitionComponent={Zoom}
             componentsProps={{ tooltip: { sx } }}
         >

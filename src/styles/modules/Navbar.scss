@@ -1,9 +1,9 @@
 @use '../_root' as *;
 
-%default {
+%navbar {
     background: $color-2;
     bottom: 0;
-    cursor: default;
+    cursor: navbar;
     overflow-x: hidden;
     overscroll-behavior: contain;
     position: fixed;
@@ -14,12 +14,12 @@
 }
 
 .navbar {
-    @extend %default;
+    @extend %navbar;
     width: 250px;
 }
 
 .navbar--closed {
-    @extend %default;
+    @extend %navbar;
     width: 0;
 }
 

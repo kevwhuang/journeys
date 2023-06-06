@@ -37,6 +37,9 @@ const useZustand = create<Actions & State>(set => ({
     ...initialize,
     changePage: page => set(() => ({ page })),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
+    toggleTheme: theme => set(s => ({ settings: { ...s.settings, theme } })),
+    togglePower: () => set(s => ({ power: !(s.power) })),
+    toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
 }));
 
 export default useZustand;

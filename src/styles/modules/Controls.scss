@@ -1,5 +1,23 @@
 @use '../_root' as *;
 
+%svg {
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: $font-5;
+    padding: 6px;
+    transition:
+        background-color 250ms,
+        padding 250ms;
+
+    &:hover {
+        background: rgba(150, 150, 150, 15%);
+    }
+
+    &:active {
+        padding: 8px;
+    }
+}
+
 .controls {
     grid-area: controls;
 }
@@ -7,45 +25,101 @@
 .controls--container {
     align-items: center;
     background: $color-1;
+    border-bottom: 2px solid $color-2;
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto auto 1fr auto;
     height: 60px;
     position: fixed;
+    transition: width 1s;
     user-select: none;
-    width: 100%;
+    width: calc(100vw - 250px);
     z-index: 100;
+
+    &.full {
+        width: 100vw;
+    }
+}
+
+.controls__map {
+    display: flex;
+
+    svg {
+        @extend %svg;
+    }
 }
 
 .controls__navbar {
-    margin: 0 5px;
+    display: flex;
+    margin-left: 5px;
 
     svg {
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: $font-5;
-        padding: 6px;
-        transition:
-            background-color 250ms,
-            padding 250ms;
-
-        &:hover {
-            background: rgba(150, 150, 150, 15%);
-        }
-
-        &:active {
-            padding: 8px;
-        }
+        @extend %svg;
+        color: $color-3;
     }
 }
 
 .controls__search {
-    visibility: hidden;
+    align-items: center;
+    display: flex;
+    margin: 0 5%;
+
+    input {
+        border: none;
+        border-radius: 20px;
+        caret-color: $color-3;
+        font-size: $font-3;
+        height: 40px;
+        letter-spacing: 1px;
+        outline: 1px solid transparent;
+        padding: 5px 20px;
+        transition:
+            background-color 250ms,
+            outline 250ms;
+        width: 100%;
+
+        &:disabled {
+            cursor: default;
+        }
+
+        &:hover {
+            background: $color-2;
+        }
+
+        &:focus {
+            background: $color-2;
+            outline: 1px solid $color-3;
+        }
+
+        &::placeholder {
+            letter-spacing: normal;
+        }
+    }
+
+    svg {
+        font-size: $font-4;
+        margin-right: 5px;
+        opacity: 20%;
+        transition:
+            color 500ms,
+            opacity 500ms;
+        vertical-align: bottom;
+
+        &.active {
+            color: $color-3;
+            opacity: 1;
+        }
+    }
 }
 
 .controls__system {
-    visibility: hidden;
-}
+    display: flex;
+    margin-right: 5px;
 
-.controls__user {
-    visibility: hidden;
+    svg {
+        @extend %svg;
+
+        &:last-of-type {
+            color: $color-3;
+        }
+    }
 }

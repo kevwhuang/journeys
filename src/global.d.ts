@@ -1,6 +1,9 @@
 interface Actions {
     changePage: (page: Page) => void,
     toggleNavbar: () => void,
+    toggleTheme: (theme: number) => void,
+    togglePower: () => void,
+    toggleAuthenticated: () => void,
 }
 
 interface Config {
