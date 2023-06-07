@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 
 import actions from '../features/actions';
+import {
+    Notification_,
+    Pin,
+} from '../features/classes';
 
 import profile from '../assets/profile.webp';
 import seed from '../data/seed.json';
@@ -28,8 +32,8 @@ const initialize: State = {
     },
     records: {
         experience: seed[0].records.experience,
-        notifications: seed[0].records.notifications || [],
-        pins: seed[0].records.pins || {},
+        notifications: seed[0].records.notifications || [new Notification_('Subject', 'Message')],
+        pins: seed[0].records.pins || [new Pin(0, 0)],
     },
     settings: {
         map: seed[0].settings.map,

@@ -18,12 +18,12 @@ interface State {
     focus: boolean,
     modals: Modals,
     navbar: boolean,
-    page: Page_,
+    page: Page,
     power: boolean,
     profile: UserProfile,
     records: UserRecords,
     settings: UserSettings,
-    signal: Signal_,
+    signal: Signal,
     tracks: unknown,
 }
 
@@ -42,7 +42,7 @@ interface UserProfile {
 interface UserRecords {
     experience: number,
     notifications: Notification_[],
-    pins: Pin_[],
+    pins: Pin[],
 }
 
 interface UserSettings {
@@ -63,12 +63,12 @@ type Notification_ = {
     subject: string,
 };
 
-type Page_ = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
+type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
     | 'pins' | 'privacy' | 'profile' | 'rankings' | 'terms';
 
-type Pin_ = {
+type Pin = {
     lat: number,
     long: number,
 };
 
-type Signal_ = 0 | 1 | 2 | 3;
+type Signal = 0 | 1 | 2 | 3;
