@@ -9,7 +9,7 @@ const initialize: State = {
     authenticated: true,
     focus: true,
     modals: {
-        gallery: false,
+        collage: false,
         notifications: false,
     },
     navbar: true,

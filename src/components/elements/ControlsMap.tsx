@@ -4,6 +4,7 @@ import NavigationIcon from '@mui/icons-material/Navigation';
 import NavigationOutlinedIcon from '@mui/icons-material/NavigationOutlined';
 import PowerIcon from '@mui/icons-material/Power';
 import PowerOffOutlinedIcon from '@mui/icons-material/PowerOffOutlined';
+import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import SignalCellularAlt1BarOutlinedIcon from '@mui/icons-material/SignalCellularAlt1BarOutlined';
 import SignalCellularAlt2BarOutlinedIcon from '@mui/icons-material/SignalCellularAlt2BarOutlined';
 import SignalCellularAltOutlinedIcon from '@mui/icons-material/SignalCellularAltOutlined';
@@ -34,8 +35,15 @@ function ControlsMap(): React.ReactElement {
         signalStatus = 'Strong';
     }
 
+    function handleClick() {
+        return;
+    }
+
     return (
         <section className="controls__map">
+            <MuiTooltip title={signalStatus}>
+                {signal}
+            </MuiTooltip>
             <MuiTooltip title={state.power ? 'On' : 'Off'}>
                 {state.power
                     ? <PowerIcon
@@ -54,8 +62,11 @@ function ControlsMap(): React.ReactElement {
                     : <NavigationOutlinedIcon onClick={() => state.toggleFocus()} />
                 }
             </MuiTooltip>
-            <MuiTooltip title={signalStatus}>
-                {signal}
+            <MuiTooltip title="Pin">
+                <PushPinOutlinedIcon
+                    className={state.page === 'map' ? 'active' : ''}
+                    onClick={handleClick}
+                />
             </MuiTooltip>
         </section>
     );

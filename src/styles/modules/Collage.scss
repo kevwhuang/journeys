@@ -1,0 +1,13 @@
+@use '../_root' as *;
+
+.collage {}
+
+.collage__heading {}
+
+.collage__images {
+    display: grid;
+}
+
+.collage__modal {
+    &.closed {}
+}

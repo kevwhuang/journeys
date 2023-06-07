@@ -44,7 +44,7 @@
     svg {
         @extend %svg;
 
-        &:nth-of-type(3) {
+        &:nth-of-type(1) {
             background: none;
             border-radius: 0;
             cursor: default;
@@ -63,6 +63,20 @@
             }
         }
 
+        &:nth-of-type(4) {
+            &:not(.active) {
+                background: transparent;
+                cursor: default;
+                opacity: 20%;
+                padding: 6px;
+                pointer-events: none;
+            }
+
+            &.active {
+                color: $color-5;
+            }
+        }
+
         &.active {
             color: $color-4;
         }
@@ -74,7 +88,7 @@
     background: $color-2;
     border: 1px solid $color-3;
     border-radius: 5px;
-    max-height: 270px;
+    max-height: 280px;
     overflow: scroll;
     position: fixed;
     right: 20px;
@@ -83,6 +97,10 @@
         max-height 500ms ease-out,
         visibility 500ms;
     width: 300px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     &.closed {
         max-height: 0;

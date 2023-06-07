@@ -53,7 +53,7 @@ interface UserSettings {
 }
 
 type Modals = {
-    gallery: boolean,
+    collage: boolean,
     notifications: boolean,
 };
 
