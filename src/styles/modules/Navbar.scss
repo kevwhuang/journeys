@@ -11,6 +11,10 @@
     transition: width 1s;
     user-select: none;
     z-index: 100;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .navbar {
@@ -144,6 +148,7 @@
         object-fit: cover;
         object-position: center;
         text-align: center;
+        user-select: none;
         width: 120px;
     }
 

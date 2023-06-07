@@ -10,15 +10,11 @@ $color-b: #f4a261;
     background-attachment: fixed;
     background-position: center 40%;
     background-size: cover;
-    box-shadow:
-        0 10px 20px rgba(64, 122, 214, 19%),
-        0 6px 6px rgba(64, 122, 214, 23%);
     cursor: default;
     display: flex;
     flex-direction: column;
     height: clamp(500px, calc(100vh - 60px), 1440px);
     justify-content: center;
-    margin-bottom: 20px;
     padding-left: 150px;
     transition: filter 2s;
     transition-delay: 1s;
@@ -72,6 +68,7 @@ $color-b: #f4a261;
         }
 
         &:last-child {
+            background: rgba(0, 0, 0, 20%);
             border: 2px solid $color-b;
             color: $color-b;
 

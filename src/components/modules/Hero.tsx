@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HeroContent from '../elements/HeroContent';
 import HeroActions from '../elements/HeroActions';
+import HeroContent from '../elements/HeroContent';
 
 import '../../styles/modules/Hero.scss';
 

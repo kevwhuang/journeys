@@ -9,6 +9,19 @@
     --color-6: #898e96;
 }
 
+::-webkit-scrollbar {
+    height: 2px;
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-3;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 ::selection {
     background: $color-6;
 }
@@ -20,7 +33,6 @@ html {
         'SF Pro Display',
         'Helvetica Neue',
         sans-serif;
-    overflow-x: hidden;
 }
 
 main {

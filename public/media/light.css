@@ -16,6 +16,10 @@
     color: var(--color-1);
 }
 
+.features__part-a {
+    background: rgba(0, 0, 0, 5%);
+}
+
 .footer__pages ul li a:hover {
     background: var(--color-hover);
 }
