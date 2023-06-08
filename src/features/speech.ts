@@ -1,6 +1,18 @@
 import commands from '../data/commands.json';
 
-try {
+const query: any = { name: 'microphone' };
+
+navigator.permissions.query(query)
+    .then((res: PermissionStatus): void => {
+        res.onchange = (): void => {
+            res.state === 'denied' && location.reload();
+        };
+
+        res.state !== 'denied' && initiateSpeech();
+    })
+    .catch(Function);
+
+function initiateSpeech(): void {
     const commandsList: any = structuredClone(commands);
     const speech: SpeechSynthesis = speechSynthesis;
     // @ts-ignore
@@ -38,7 +50,6 @@ try {
             = new SpeechSynthesisUtterance((response && response[0]) ?? 'unknown command');
 
         speechUtterance.voice = voice;
-
         lastResponse = command;
         speech.speak(speechUtterance);
 
@@ -49,4 +60,4 @@ try {
             link && link.click();
         }
     }
-} catch { }
+}
