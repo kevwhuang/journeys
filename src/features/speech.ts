@@ -27,7 +27,8 @@ try {
             .map((result: any): string => result[0].transcript);
 
         e.results[0].isFinal
-            && lastResponse !== command[0]
+            && command[0].length
+            && command[0] !== lastResponse
             && speak(command[0]);
     }
 
@@ -42,7 +43,8 @@ try {
         speech.speak(speechUtterance);
 
         if (response) {
-            const link: null | HTMLElement = document.querySelector(`a[href="/${commandsList[command][1]}"]`);
+            const link: null | HTMLElement
+                = document.querySelector(`a[href="/${commandsList[command][1]}"]`);
 
             link && link.click();
         }
