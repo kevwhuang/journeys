@@ -19,6 +19,7 @@ function Home(): React.ReactElement {
             <Hero />
             <Features />
             <Collage />
+            <div className="home__gutter"></div>
             <Footer />
         </main>
     );

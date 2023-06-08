@@ -1,11 +1,186 @@
 @use '../_root' as *;
 
-.collage {}
+.collage {
+    background: $color-2;
+    padding: 10vh 5vw;
+}
 
-.collage__heading {}
+.collage__heading {
+    display: none;
+}
 
 .collage__images {
     display: grid;
+    gap: 5px;
+    grid-template-areas:
+        'i01 i12 i06 i06 i02'
+        'i10 i12 i08 i08 i08'
+        'i10 i12 i03 i13 i11'
+        'i09 i09 i09 i13 i11'
+        'i04 i07 i07 i13 i05';
+    height: clamp(420px, calc(80vh - 60px), 1440px);
+    margin: auto;
+    width: clamp(480px, auto, 2560px);
+
+    div {
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        height: 100%;
+        opacity: 80%;
+        position: relative;
+        transition:
+            all 1s,
+            opacity 500ms ease-in-out;
+        width: 100%;
+
+        &:hover {
+            opacity: 100%;
+            z-index: 10;
+        }
+
+        &:nth-child(1) {
+            background-image: url(../../assets/collage/thumbnails/1-bali-jungle-thumbnail.webp);
+            background-position: left 0 top 50%;
+            grid-area: i01;
+            z-index: 20;
+
+            &:hover {
+                scale: 115%;
+                transform-origin: bottom right;
+            }
+        }
+
+        &:nth-child(2) {
+            background-image: url(../../assets/collage/thumbnails/2-bonneville-salt-flats-thumbnail.webp);
+            background-position: left 50% top 0;
+            grid-area: i02;
+            z-index: 20;
+
+            &:hover {
+                scale: 115%;
+                transform-origin: bottom left;
+            }
+        }
+
+        &:nth-child(3) {
+            background-image: url(../../assets/collage/thumbnails/3-tokyo-street-thumbnail.webp);
+            grid-area: i03;
+            z-index: 20;
+
+            &:hover {
+                scale: 125%;
+            }
+        }
+
+        &:nth-child(4) {
+            background-image: url(../../assets/collage/thumbnails/4-enchanted-rock-thumbnail.webp);
+            background-position: left 50% top 0;
+            grid-area: i04;
+            z-index: 20;
+
+            &:hover {
+                scale: 115%;
+                transform-origin: top right;
+            }
+        }
+
+        &:nth-child(5) {
+            background-image: url(../../assets/collage/thumbnails/5-torres-del-paine-thumbnail.webp);
+            grid-area: i05;
+            z-index: 20;
+
+            &:hover {
+                scale: 115%;
+                transform-origin: top left;
+            }
+        }
+
+        &:nth-child(6) {
+            background-image: url(../../assets/collage/thumbnails/6-norway-fjord-thumbnail.webp);
+            background-position: left 0 top 50%;
+            bottom: 0;
+            grid-area: i06;
+
+            &:hover {
+                bottom: 20%;
+                height: 120%;
+            }
+        }
+
+        &:nth-child(7) {
+            background-image: url(../../assets/collage/thumbnails/7-iceland-northern-lights-thumbnail.webp);
+            background-position: left 0 bottom 25%;
+            grid-area: i07;
+
+            &:hover {
+                height: 120%;
+            }
+        }
+
+        &:nth-child(8) {
+            background-image: url(../../assets/collage/thumbnails/8-lake-baikal-thumbnail.webp);
+            background-position: left 0 top 15%;
+            grid-area: i08;
+
+            &:hover {
+                width: 105%;
+            }
+        }
+
+        &:nth-child(9) {
+            background-image: url(../../assets/collage/thumbnails/9-cappadocia-thumbnail.webp);
+            grid-area: i09;
+            right: 0;
+
+            &:hover {
+                right: 5%;
+                width: 105%;
+            }
+        }
+
+        &:nth-child(10) {
+            background-image: url(../../assets/collage/thumbnails/10-zhangjiajie-thumbnail.webp);
+            grid-area: i10;
+            right: 0;
+
+            &:hover {
+                right: 10%;
+                width: 110%;
+            }
+        }
+
+        &:nth-child(11) {
+            background-image: url(../../assets/collage/thumbnails/11-antelope-canyon-thumbnail.webp);
+            background-position: left 50% bottom 25%;
+            grid-area: i11;
+
+            &:hover {
+                width: 110%;
+            }
+        }
+
+        &:nth-child(12) {
+            background-image: url(../../assets/collage/thumbnails/12-manhattan-thumbnail.webp);
+            background-position: left 0 bottom 25%;
+            bottom: 0;
+            grid-area: i12;
+
+            &:hover {
+                bottom: 5%;
+                height: 105%;
+            }
+        }
+
+        &:nth-child(13) {
+            background-image: url(../../assets/collage/thumbnails/13-maldives-resort-thumbnail.webp);
+            grid-area: i13;
+
+            &:hover {
+                height: 105%;
+            }
+        }
+    }
 }
 
 .collage__modal {

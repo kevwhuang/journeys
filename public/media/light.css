@@ -8,6 +8,10 @@
     --color-hover: rgba(0, 0, 0, 15%);
 }
 
+.collage__images div {
+    opacity: 90%;
+}
+
 .controls--container {
     border-bottom: 1px solid var(--color-5);
 }

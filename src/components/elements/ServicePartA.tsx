@@ -15,32 +15,32 @@ function ServicePartA(): React.ReactElement {
             <p>All users who are minors in the jurisdiction in which they reside (generally under the age of 18) must have the permission of, and be directly supervised by, their parent or guardian to use the Services. If you are a minor, you must have your parent or guardian read and agree to these Legal Terms prior to you using the Services.</p>
             <p>We recommend that you print a copy of these Legal Terms for your records.</p>
             <h5>TABLE OF CONTENTS</h5>
-            <p><a href="#chapter-1">1. OUR SERVICES</a></p>
-            <p><a href="#chapter-2">2. INTELLECTUAL PROPERTY RIGHTS</a></p>
-            <p><a href="#chapter-3">3. USER REPRESENTATIONS</a></p>
-            <p><a href="#chapter-4">4. USER REGISTRATION</a></p>
-            <p><a href="#chapter-5">5. PROHIBITED ACTIVITIES</a></p>
-            <p><a href="#chapter-6">6. USER GENERATED CONTRIBUTIONS</a></p>
-            <p><a href="#chapter-7">7. CONTRIBUTION LICENSE</a></p>
-            <p><a href="#chapter-8">8. MOBILE APPLICATION LICENSE</a></p>
-            <p><a href="#chapter-9">9. SOCIAL MEDIA</a></p>
-            <p><a href="#chapter-10">10. THIRD-PARTY WEBSITES AND CONTENT</a></p>
-            <p><a href="#chapter-11">11. SERVICES MANAGEMENT</a></p>
-            <p><a href="#chapter-12">12. PRIVACY POLICY</a></p>
-            <p><a href="#chapter-13">13. COPYRIGHT INFRINGEMENTS</a></p>
-            <p><a href="#chapter-14">14. TERM AND TERMINATION</a></p>
-            <p><a href="#chapter-15">15. MODIFICATIONS AND INTERRUPTIONS</a></p>
-            <p><a href="#chapter-16">16. GOVERNING LAW</a></p>
-            <p><a href="#chapter-17">17. DISPUTE RESOLUTION</a></p>
-            <p><a href="#chapter-18">18. CORRECTIONS</a></p>
-            <p><a href="#chapter-19">19. DISCLAIMER</a></p>
-            <p><a href="#chapter-20">20. LIMITATIONS OF LIABILITY</a></p>
-            <p><a href="#chapter-21">21. INDEMNIFICATION</a></p>
-            <p><a href="#chapter-22">22. USER DATA</a></p>
-            <p><a href="#chapter-23">23. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</a></p>
-            <p><a href="#chapter-24">24. CALIFORNIA USERS AND RESIDENTS</a></p>
-            <p><a href="#chapter-25">25. MISCELLANEOUS</a></p>
-            <p><a href="#chapter-26">26. CONTACT US</a></p>
+            <p><a href="#article1">1. OUR SERVICES</a></p>
+            <p><a href="#article2">2. INTELLECTUAL PROPERTY RIGHTS</a></p>
+            <p><a href="#article3">3. USER REPRESENTATIONS</a></p>
+            <p><a href="#article4">4. USER REGISTRATION</a></p>
+            <p><a href="#article5">5. PROHIBITED ACTIVITIES</a></p>
+            <p><a href="#article6">6. USER GENERATED CONTRIBUTIONS</a></p>
+            <p><a href="#article7">7. CONTRIBUTION LICENSE</a></p>
+            <p><a href="#article8">8. MOBILE APPLICATION LICENSE</a></p>
+            <p><a href="#article9">9. SOCIAL MEDIA</a></p>
+            <p><a href="#article10">10. THIRD-PARTY WEBSITES AND CONTENT</a></p>
+            <p><a href="#article11">11. SERVICES MANAGEMENT</a></p>
+            <p><a href="#article12">12. PRIVACY POLICY</a></p>
+            <p><a href="#article13">13. COPYRIGHT INFRINGEMENTS</a></p>
+            <p><a href="#article14">14. TERM AND TERMINATION</a></p>
+            <p><a href="#article15">15. MODIFICATIONS AND INTERRUPTIONS</a></p>
+            <p><a href="#article16">16. GOVERNING LAW</a></p>
+            <p><a href="#article17">17. DISPUTE RESOLUTION</a></p>
+            <p><a href="#article18">18. CORRECTIONS</a></p>
+            <p><a href="#article19">19. DISCLAIMER</a></p>
+            <p><a href="#article20">20. LIMITATIONS OF LIABILITY</a></p>
+            <p><a href="#article21">21. INDEMNIFICATION</a></p>
+            <p><a href="#article22">22. USER DATA</a></p>
+            <p><a href="#article23">23. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</a></p>
+            <p><a href="#article24">24. CALIFORNIA USERS AND RESIDENTS</a></p>
+            <p><a href="#article25">25. MISCELLANEOUS</a></p>
+            <p><a href="#article26">26. CONTACT US</a></p>
         </section>
     );
 }

@@ -18,6 +18,10 @@
 
 #home {
     display: block;
+
+    .home__gutter {
+        height: 30px;
+    }
 }
 
 #map {}
@@ -36,4 +40,6 @@
 
 #rankings {}
 
-#terms {}
+#terms {
+    display: block;
+}

@@ -68,7 +68,7 @@
 
 @keyframes hero-ellipsis {
     50% {
-        opacity: 1;
+        opacity: 100%;
     }
 
     95% {
@@ -76,7 +76,7 @@
     }
 
     100% {
-        opacity: 1;
+        opacity: 100%;
     }
 }
 
@@ -86,7 +86,7 @@
     }
 
     to {
-        opacity: 1;
+        opacity: 100%;
         visibility: visible;
     }
 }

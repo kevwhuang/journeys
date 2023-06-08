@@ -3,8 +3,6 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
-import Collage from '../components/modules/Collage';
-
 function About(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -14,7 +12,6 @@ function About(): React.ReactElement {
 
     return (
         <main id="about">
-            <Collage />
         </main>
     );
 }
