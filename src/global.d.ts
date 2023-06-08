@@ -24,6 +24,7 @@ interface State {
     records: UserRecords,
     settings: UserSettings,
     signal: Signal,
+    speech: boolean,
     tracks: unknown,
 }
 

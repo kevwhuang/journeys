@@ -29,6 +29,7 @@ import Fallback from './pages/status/Fallback';
 import NotFound from './pages/status/NotFound';
 
 import './features/secret';
+import './features/speech';
 
 import './styles/rectify.scss';
 import './styles/root.scss';

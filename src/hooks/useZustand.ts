@@ -42,6 +42,7 @@ const initialize: State = {
         units: seed[0].settings.units,
     },
     signal: 3,
+    speech: true,
     tracks: null,
 };
 

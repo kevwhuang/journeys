@@ -1,0 +1,22 @@
+{
+    "go to home": [
+        "okay, going to home",
+        ""
+    ],
+    "go to map": [
+        "okay, going to map",
+        "map"
+    ],
+    "go to pins": [
+        "okay, going to pins",
+        "pins"
+    ],
+    "go to profile": [
+        "okay, going to profile",
+        "profile"
+    ],
+    "go to rankings": [
+        "okay, going to rankings",
+        "rankings"
+    ]
+}
