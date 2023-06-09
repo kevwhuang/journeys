@@ -5,7 +5,12 @@
     --color-4: #d3382f;
     --color-5: #202021;
     --color-6: #696a6b;
+    --color-bg: rgba(0, 0, 0, 5%);
     --color-hover: rgba(0, 0, 0, 15%);
+}
+
+.collage {
+    background: var(--color-bg);
 }
 
 .collage__images div {
@@ -21,7 +26,11 @@
 }
 
 .features__part-a {
-    background: rgba(0, 0, 0, 5%);
+    background: var(--color-bg);
+}
+
+.features__part-b {
+    background: var(--color-bg);
 }
 
 .footer__pages ul li a:hover {

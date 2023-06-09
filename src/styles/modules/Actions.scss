@@ -5,48 +5,105 @@
 }
 
 .actions__headings {
+    animation-play-state: paused; //
     height: 100%;
+
+    &.play {
+        animation-play-state: running; //
+    }
 
     .actions__headings--container {
         align-items: center;
+        animation-play-state: inherit; //
         display: flex;
         height: 100%;
         justify-content: center;
 
         span {
+            animation-play-state: inherit; //
+            color: $color-b;
+            font-family: 'Libre Franklin';
             font-size: $font-7;
-            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 5px;
+            opacity: 0;
+            position: absolute;
+            user-select: none;
+            white-space: nowrap;
+            word-spacing: 5px;
 
             &:nth-child(1) {
-                display: none;
+                animation: actions-heading 1s 500ms;
+                color: $color-b;
             }
 
             &:nth-child(2) {
-                display: none;
+                animation: actions-heading 1s 1.5s;
+                color: $color-a;
             }
 
             &:nth-child(3) {
-                display: none;
+                animation: actions-heading 1s 2.5s;
+                color: $color-b;
             }
 
             &:nth-child(4) {
-                display: none;
+                animation: actions-heading 1s 3.5s;
+                color: $color-a;
             }
 
             &:nth-child(5) {
-                display: none;
+                animation: actions-heading 1s 4.5s;
+                color: $color-b;
             }
 
             &:nth-child(6) {
-                display: none;
+                animation: actions-heading 1s 5.5s;
+                color: $color-a;
             }
 
             &:nth-child(7) {
-                display: none;
+                animation: actions-heading 4s 7s;
+                color: $color-5;
+                font-weight: 600;
+
+                u {
+                    &:nth-child(1) {
+                        color: $color-b;
+                    }
+
+                    &:nth-child(2) {
+                        color: $color-a;
+                        text-decoration: none;
+                    }
+                }
             }
 
             &:nth-child(8) {
-                display: none;
+                align-items: center;
+                animation: actions-final 4s 12s forwards;
+                color: $color-4;
+                display: flex;
+                font-style: italic;
+                font-weight: 600;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 20%);
+
+                img {
+                    animation: actions-reveal 1s 17s forwards;
+                    display: inline;
+                    filter: saturate(150%);
+                    height: $font-6 * 1.5;
+                    opacity: 0;
+                    padding-left: calc($font-6 / 2);
+                    visibility: hidden;
+                }
+
+                u {
+                    animation: actions-wink 500ms 16s;
+                    text-decoration: none;
+                    transform-origin: bottom left;
+                    transition: transform 1s;
+                }
             }
         }
     }

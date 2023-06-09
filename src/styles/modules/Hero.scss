@@ -1,9 +1,6 @@
 @use 'sass:color';
 @use '../_root' as *;
 
-$color-a: #e76f51;
-$color-b: #f4a261;
-
 .hero {
     animation: hero-background 60s 10s ease-in-out infinite alternate;
     background: url(../../assets/hero.webp);
@@ -68,7 +65,7 @@ $color-b: #f4a261;
         }
 
         &:last-child {
-            background: rgba(0, 0, 0, 20%);
+            background: rgba(0, 0, 0, 50%);
             border: 2px solid $color-b;
             color: $color-b;
 

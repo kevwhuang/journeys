@@ -1,5 +1,55 @@
 @use '_root' as *;
 
+@keyframes actions-final {
+    0% {
+        letter-spacing: 0;
+    }
+
+    25% {
+        letter-spacing: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        letter-spacing: 1vw;
+    }
+
+    100% {
+        letter-spacing: 5px;
+        opacity: 1;
+    }
+}
+
+@keyframes actions-heading {
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+}
+
+@keyframes actions-reveal {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes actions-wink {
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
 @keyframes hero-background {
     10% {
         background-position: center 40%;

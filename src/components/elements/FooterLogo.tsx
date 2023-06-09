@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../assets/logo-512x512.png';
+import logo from '../../assets/logo.png';
 
 function FooterLogo(): React.ReactElement {
     return (

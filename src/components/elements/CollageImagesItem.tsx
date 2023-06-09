@@ -17,12 +17,7 @@ function CollageImagesItem(props: Props): React.ReactElement {
             const modal = document.querySelector('.collage__modal');
 
             modal && modal.classList.remove('closed');
-
-            if (import.meta.env.VITE_ENVIRONMENT === 'DEVELOPMENT') {
-                changeGallery(`/public/assets/collage/${source}.webp`);
-            } else if (import.meta.env.VITE_ENVIRONMENT === 'PRODUCTION') {
-                changeGallery(`/assets/collage/${source}.webp`);
-            }
+            changeGallery(`/assets/collage/${source}.webp`);
         });
     }
 
