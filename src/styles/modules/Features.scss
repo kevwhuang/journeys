@@ -51,11 +51,10 @@ $color-b: #f4a261;
 }
 
 .features__part-a {
-    background: $color-2;
     padding: 40px;
 
     svg {
-        color: $color-a;
+        color: $color-b;
     }
 
     .features__part-a--container {
@@ -64,10 +63,11 @@ $color-b: #f4a261;
 }
 
 .features__part-b {
+    background: $color-2;
     padding: 40px;
 
     svg {
-        color: $color-b;
+        color: $color-a;
     }
 
     .features__part-b--container {

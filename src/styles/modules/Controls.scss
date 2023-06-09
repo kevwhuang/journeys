@@ -18,23 +18,23 @@
 
 .controls {
     grid-area: controls;
-}
 
-.controls--container {
-    align-items: center;
-    background: $color-1;
-    border-bottom: 2px solid $color-2;
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    height: 60px;
-    position: fixed;
-    transition: width 1s;
-    user-select: none;
-    width: calc(100vw - 250px);
-    z-index: 100;
+    .controls--container {
+        align-items: center;
+        background: $color-1;
+        border-bottom: 2px solid $color-2;
+        display: grid;
+        grid-template-columns: auto auto 1fr auto;
+        height: 60px;
+        position: fixed;
+        transition: width 1s;
+        user-select: none;
+        width: calc(100vw - 250px);
+        z-index: 100;
 
-    &.full {
-        width: 100vw;
+        &.full {
+            width: 100vw;
+        }
     }
 }
 
