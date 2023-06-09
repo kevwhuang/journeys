@@ -1,26 +1,25 @@
 @use '../_root' as *;
 
 .actions {
-    height: 300px;
+    height: 380px;
 }
 
 .actions__headings {
-    animation-play-state: paused; //
     height: 100%;
-
-    &.play {
-        animation-play-state: running; //
-    }
 
     .actions__headings--container {
         align-items: center;
-        animation-play-state: inherit; //
         display: flex;
         height: 100%;
         justify-content: center;
 
         span {
-            animation-play-state: inherit; //
+            @mixin play {
+                &.play {
+                    animation-play-state: running;
+                }
+            }
+
             color: $color-b;
             font-family: 'Libre Franklin';
             font-size: $font-7;
@@ -33,37 +32,44 @@
             word-spacing: 5px;
 
             &:nth-child(1) {
-                animation: actions-heading 1s 500ms;
+                @include play;
+                animation: actions-heading 1s 500ms paused;
                 color: $color-b;
             }
 
             &:nth-child(2) {
-                animation: actions-heading 1s 1.5s;
+                @include play;
+                animation: actions-heading 1s 1.5s paused;
                 color: $color-a;
             }
 
             &:nth-child(3) {
-                animation: actions-heading 1s 2.5s;
+                @include play;
+                animation: actions-heading 1s 2.5s paused;
                 color: $color-b;
             }
 
             &:nth-child(4) {
-                animation: actions-heading 1s 3.5s;
+                @include play;
+                animation: actions-heading 1s 3.5s paused;
                 color: $color-a;
             }
 
             &:nth-child(5) {
-                animation: actions-heading 1s 4.5s;
+                @include play;
+                animation: actions-heading 1s 4.5s paused;
                 color: $color-b;
             }
 
             &:nth-child(6) {
-                animation: actions-heading 1s 5.5s;
+                @include play;
+                animation: actions-heading 1s 5.5s paused;
                 color: $color-a;
             }
 
             &:nth-child(7) {
-                animation: actions-heading 4s 7s;
+                @include play;
+                animation: actions-heading 5s 7s paused;
                 color: $color-5;
                 font-weight: 600;
 
@@ -75,13 +81,44 @@
                     &:nth-child(2) {
                         color: $color-a;
                         text-decoration: none;
+
+                        i {
+                            @mixin bounce($delay: 0) {
+                                @include play;
+                                animation: actions-bounce 1s ease paused;
+                                animation-delay: $delay + 8.5s;
+                            }
+
+                            display: inline-block;
+
+                            &:nth-child(1) {
+                                @include bounce;
+                            }
+
+                            &:nth-child(2) {
+                                @include bounce(150ms);
+                            }
+
+                            &:nth-child(3) {
+                                @include bounce(300ms);
+                            }
+
+                            &:nth-child(4) {
+                                @include bounce(450ms);
+                            }
+
+                            &:nth-child(5) {
+                                @include bounce(600ms);
+                            }
+                        }
                     }
                 }
             }
 
             &:nth-child(8) {
+                @include play;
                 align-items: center;
-                animation: actions-final 4s 12s forwards;
+                animation: actions-final 4s 13s forwards paused;
                 color: $color-4;
                 display: flex;
                 font-style: italic;
@@ -89,7 +126,8 @@
                 text-shadow: 2px 2px 2px rgba(0, 0, 0, 20%);
 
                 img {
-                    animation: actions-reveal 1s 17s forwards;
+                    @include play;
+                    animation: actions-reveal 1s 17s forwards paused;
                     display: inline;
                     filter: saturate(150%);
                     height: $font-6 * 1.5;
@@ -99,7 +137,8 @@
                 }
 
                 u {
-                    animation: actions-wink 500ms 16s;
+                    @include play;
+                    animation: actions-wink 500ms 17s paused;
                     text-decoration: none;
                     transform-origin: bottom left;
                     transition: transform 1s;
