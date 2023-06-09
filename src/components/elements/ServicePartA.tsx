@@ -3,9 +3,9 @@ import React from 'react';
 function ServicePartA(): React.ReactElement {
     return (
         <section className="service__part-a">
-            <h4>TERMS OF SERVICE</h4>
+            <h4>Terms of Service</h4>
             <p>Last updated: June 15, 2023</p>
-            <h5>AGREEMENT TO OUR LEGAL TERMS</h5>
+            <h5>Agreement to Our Legal Terms</h5>
             <p>We are Journeys ("<strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>," "<strong>our</strong>"), a company registered in Texas, United States at 1100 Congress Ave., Austin, TX 78747.</p>
             <p>We operate the website <a href="https://www.journeys-app.com" target="_blank">https://www.journeys-app.com</a> (the "<strong>Site</strong>"), the mobile application Journeys (the "<strong>App</strong>"), as well as any other related products and services that refer or link to these legal terms (the "<strong>Legal Terms</strong>") (collectively, the "<strong>Services</strong>").</p>
             <p>Journeys is an exploration app that unveils the world around you as you travel.</p>
@@ -14,7 +14,7 @@ function ServicePartA(): React.ReactElement {
             <p>We will provide you with prior notice of any scheduled changes to the Services you are using. The modified Legal Terms will become effective upon posting or notifying you by kevin@aephonics.com, as stated in the email message. By continuing to use the Services after the effective date of any changes, you agree to be bound by the modified terms.</p>
             <p>All users who are minors in the jurisdiction in which they reside (generally under the age of 18) must have the permission of, and be directly supervised by, their parent or guardian to use the Services. If you are a minor, you must have your parent or guardian read and agree to these Legal Terms prior to you using the Services.</p>
             <p>We recommend that you print a copy of these Legal Terms for your records.</p>
-            <h5>TABLE OF CONTENTS</h5>
+            <h5>Table of Contents</h5>
             <p><a href="#article1">1. OUR SERVICES</a></p>
             <p><a href="#article2">2. INTELLECTUAL PROPERTY RIGHTS</a></p>
             <p><a href="#article3">3. USER REPRESENTATIONS</a></p>

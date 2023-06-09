@@ -9,6 +9,17 @@
     --color-6: #898e96;
 }
 
+::view-transition-new(root) {
+    animation-delay: 500ms;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
 ::-webkit-scrollbar {
     height: 2px;
     width: 2px;

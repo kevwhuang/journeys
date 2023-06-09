@@ -1,4 +1,5 @@
 interface Actions {
+    changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
     toggleAuthenticated: () => void,
@@ -16,6 +17,7 @@ interface Config {
 interface State {
     authenticated: boolean,
     focus: boolean,
+    gallery: string,
     modals: Modals,
     navbar: boolean,
     page: Page,

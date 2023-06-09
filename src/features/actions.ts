@@ -1,6 +1,7 @@
 function deleteNotificationAction(s: State, index: number): Partial<State> {
-    // @ts-ignore
-    const notifications = [...s.records.notifications].filter((e, i) => i !== index);
+    const notifications: Notification_[]
+        // @ts-ignore
+        = [...s.records.notifications].filter((e: Notification_, i: number): boolean => i !== index);
 
     return ({ records: { ...s.records, notifications } });
 }
@@ -17,7 +18,7 @@ function toggleThemeAction(s: State, theme: number): Partial<State> {
         link.href = '/media/light.css';
         document.head.appendChild(link);
     } else {
-        const x = document.head.querySelector('[href="/media/light.css"]');
+        const x: null | Element = document.head.querySelector('[href="/media/light.css"]');
 
         x && x.remove();
     }

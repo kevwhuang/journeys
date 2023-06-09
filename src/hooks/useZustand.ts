@@ -12,11 +12,12 @@ import seed from '../data/seed.json';
 const initialize: State = {
     authenticated: true,
     focus: true,
+    gallery: '',
     modals: {
         collage: false,
         notifications: false,
     },
-    navbar: true,
+    navbar: false,
     page: 'home',
     power: true,
     profile: {
@@ -48,6 +49,7 @@ const initialize: State = {
 
 const useZustand = create<Actions & State>(set => ({
     ...initialize,
+    changeGallery: gallery => set(() => ({ gallery })),
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),
     toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),

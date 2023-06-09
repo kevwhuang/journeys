@@ -10,6 +10,9 @@
 }
 
 .collage__images {
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 19%),
+        0 6px 6px rgba(0, 0, 0, 23%);
     display: grid;
     gap: 5px;
     grid-template-areas:
@@ -98,7 +101,7 @@
 
         &:nth-child(6) {
             background-image: url(../../assets/collage/thumbnails/6-norway-fjord-thumbnail.webp);
-            background-position: left 0 top 50%;
+            background-position: left 0 top 25%;
             bottom: 0;
             grid-area: i06;
 
@@ -181,8 +184,42 @@
             }
         }
     }
+
+    &.lazy {
+        div {
+            background-image: none;
+        }
+    }
 }
 
 .collage__modal {
-    &.closed {}
+    align-items: center;
+    background: rgba(0, 0, 0, 75%);
+    cursor: pointer;
+    display: flex;
+    height: calc(100vh - 60px);
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 60px;
+    transition: all 1s;
+    user-select: none;
+    width: 100vw;
+    z-index: 100;
+
+    img {
+        cursor: default;
+        max-height: 90%;
+        max-width: 90%;
+        object-fit: contain;
+    }
+
+    &.closed {
+        display: none;
+    }
+
+    &.navbar {
+        left: 250px;
+        width: calc(100vw - 250px);
+    }
 }
