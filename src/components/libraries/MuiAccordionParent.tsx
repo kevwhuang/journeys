@@ -27,7 +27,7 @@ function MuiAccordion(props: Props): React.ReactElement {
                 aria-controls={`accordion-${aria}-0-content`}
                 expandIcon={<ExpandMoreOutlinedIcon />}
             >
-                <h2>{header}</h2>
+                <h2>{header.toUpperCase()}</h2>
             </AccordionSummary>
             <AccordionDetails>
                 <p>{content}</p>

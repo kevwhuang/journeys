@@ -5,23 +5,80 @@
     max-width: 1366px;
     padding: 40px 80px;
 
-    h2 {}
+    h2 {
+        font-size: $font-3;
+        margin: 10px 0;
+    }
 
-    p {}
+    p {
+        color: $color-6;
+        font-size: $font-3;
+        padding-bottom: 20px;
+    }
+
+    .MuiAccordion-root {
+        background: $color-2;
+        color: $color-5;
+        padding: 0 20px;
+
+        .MuiAccordion-root {
+            &:last-of-type {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .MuiAccordionDetails-root {
+        padding: 0 20px;
+    }
+
+    .MuiAccordionSummary-root {
+        transition: color 100ms;
+
+        &:hover {
+            color: $color-4;
+
+            svg {
+                color: $color-4;
+            }
+        }
+    }
+
+    .MuiSvgIcon-root {
+        color: $color-5;
+        font-size: $font-4;
+        transition: color 100ms;
+    }
 }
 
-.accordions__account {}
+.accordions__account {
+    padding-bottom: 20px;
+}
 
-.accordions__data-storage {}
+.accordions__data-storage {
+    padding-bottom: 20px;
+}
 
-.accordions__general {}
+.accordions__general {
+    padding-bottom: 20px;
+}
 
-.accordions__map {}
+.accordions__map {
+    padding-bottom: 20px;
+}
 
-.accordions__pins {}
+.accordions__pins {
+    padding-bottom: 20px;
+}
 
-.accordions__rankings {}
+.accordions__rankings {
+    padding-bottom: 20px;
+}
 
-.accordions__setup {}
+.accordions__setup {
+    padding-bottom: 20px;
+}
 
-.accordions__special-features {}
+.accordions__special-features {
+    padding-bottom: 20px;
+}
