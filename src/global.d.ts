@@ -66,8 +66,8 @@ type Notification_ = {
     subject: string,
 };
 
-type Page = '' | 'about' | 'contact' | 'guide' | 'home' | 'map'
-    | 'pins' | 'privacy' | 'profile' | 'rankings' | 'terms';
+type Page = '' | 'about' | 'account' | 'contact' | 'guide' | 'home'
+    | 'map' | 'pins' | 'privacy' | 'rankings' | 'terms';
 
 type Pin = {
     lat: number,

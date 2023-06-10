@@ -44,8 +44,8 @@ function NavbarPages(): React.ReactElement {
                 />
                 <NavbarPagesItem
                     icon={<AccountBoxOutlinedIcon />}
-                    to="profile"
-                    label="Profile"
+                    to="account"
+                    label="Account"
                 />
             </ul>
             <ul>

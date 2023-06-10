@@ -12,6 +12,8 @@ import { SWRConfig } from 'swr';
 import Display from './layouts/Display';
 
 import About from './pages/About';
+import Account from './pages/Account';
+import Account_Single from './pages/Account_Single';
 import Contact from './pages/Contact';
 import Guide from './pages/Guide';
 import Home from './pages/Home';
@@ -19,8 +21,6 @@ import Map from './pages/Map';
 import Pins from './pages/Pins';
 import Pins_Single from './pages/Pins_Single';
 import Privacy from './pages/Privacy';
-import Profile from './pages/Profile';
-import Profile_Single from './pages/Profile_Single';
 import Rankings from './pages/Rankings';
 import Terms from './pages/Terms';
 
@@ -49,6 +49,8 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="about" element={<About />} />
+        <Route path="account" element={<Account />} />
+        <Route path="account/:id" element={<Account_Single />} />
         <Route path="contact" element={<Contact />} />
         <Route path="error" element={<Error />} />
         <Route path="fallback" element={<Fallback />} />
@@ -58,8 +60,6 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="pins" element={<Pins />} />
         <Route path="pins/:id" element={<Pins_Single />} />
         <Route path="privacy" element={<Privacy />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="profile/:id" element={<Profile_Single />} />
         <Route path="rankings" element={<Rankings />} />
         <Route path="terms" element={<Terms />} />
     </Route>

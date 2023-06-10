@@ -5,32 +5,32 @@ import MuiAccordionParent from '../libraries/MuiAccordionParent';
 
 import { lorem50, lorem200 } from '../../data/lorem';
 
-function AccordionsRankings(): React.ReactElement {
+function AccordionsAccount(): React.ReactElement {
     return (
-        <section className="accordions__rankings">
+        <section className="accordions__account">
             <MuiAccordionParent
-                aria="rankings"
-                header="Rankings"
+                aria="account"
+                header="Account"
                 content={lorem50}
             >
                 <MuiAccordion
-                    aria="rankings-1"
-                    header="Leaderboard"
+                    aria="account-1"
+                    header="User Profile"
                     content={lorem200}
                 />
                 <MuiAccordion
-                    aria="rankings-2"
-                    header="Titles"
+                    aria="account-2"
+                    header="Settings"
                     content={lorem200}
                 />
                 <MuiAccordion
-                    aria="rankings-3"
-                    header="Trophies"
+                    aria="account-3"
+                    header="Notifications"
                     content={lorem200}
                 />
                 <MuiAccordion
-                    aria="rankings-4"
-                    header="Rewards"
+                    aria="account-4"
+                    header="Authentication"
                     content={lorem200}
                 />
             </MuiAccordionParent>
@@ -38,4 +38,4 @@ function AccordionsRankings(): React.ReactElement {
     );
 }
 
-export default AccordionsRankings;
+export default AccordionsAccount;

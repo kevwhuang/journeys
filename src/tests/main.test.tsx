@@ -12,6 +12,8 @@ import {
 import Display from '../layouts/Display';
 
 import About from '../pages/About';
+import Account from '../pages/Account';
+import Account_Single from '../pages/Account_Single';
 import Contact from '../pages/Contact';
 import Guide from '../pages/Guide';
 import Home from '../pages/Home';
@@ -19,8 +21,6 @@ import Map from '../pages/Map';
 import Pins from '../pages/Pins';
 import Pins_Single from '../pages/Pins_Single';
 import Privacy from '../pages/Privacy';
-import Profile from '../pages/Profile';
-import Profile_Single from '../pages/Profile_Single';
 import Rankings from '../pages/Rankings';
 import Terms from '../pages/Terms';
 
@@ -41,6 +41,16 @@ describe('Render', () => {
     describe('Pages', () => {
         test('About', () => {
             render(<About />);
+            expect(document.body).toBeInTheDocument();
+        });
+
+        test('Account', () => {
+            render(<Account />);
+            expect(document.body).toBeInTheDocument();
+        });
+
+        test('Account_Single', () => {
+            render(<Account_Single />);
             expect(document.body).toBeInTheDocument();
         });
 
@@ -76,16 +86,6 @@ describe('Render', () => {
 
         test('Privacy', () => {
             render(<Privacy />);
-            expect(document.body).toBeInTheDocument();
-        });
-
-        test('Profile', () => {
-            render(<Profile />);
-            expect(document.body).toBeInTheDocument();
-        });
-
-        test('Profile_Single', () => {
-            render(<Profile_Single />);
             expect(document.body).toBeInTheDocument();
         });
 

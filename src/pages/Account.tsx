@@ -3,17 +3,17 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
-function Profile_Single(): React.ReactElement {
+function Account(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
     scroll(0, 0);
-    useTitle('Journeys | Profile');
-    React.useEffect(() => changePage(''));
+    useTitle('Journeys | Account');
+    React.useEffect(() => changePage('account'));
 
     return (
-        <main id="profile_single">
+        <main id="account">
         </main>
     );
 }
 
-export default Profile_Single;
+export default Account;

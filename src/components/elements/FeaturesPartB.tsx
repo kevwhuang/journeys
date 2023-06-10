@@ -13,7 +13,7 @@ function FeaturesPartB(): React.ReactElement {
                     <h2>Trophies</h2>
                     <p>
                         Gain experience and levels to unlock new titles and customization rewards.
-                        Compete against friends and strangers to ascend the leaderboards and unlock trophies.
+                        Compete against friends and strangers to ascend the leaderboard and unlock trophies.
                     </p>
                 </article>
                 <article>

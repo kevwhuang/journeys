@@ -7,7 +7,7 @@ addEventListener('keyup', (e: KeyboardEvent): void => {
         'map',
         'pins',
         'rankings',
-        'profile',
+        'account',
         'guide',
         'about',
         'contact',
