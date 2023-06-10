@@ -1,0 +1,25 @@
+@use '../_root' as *;
+
+.accordions {
+    margin: auto;
+    max-width: 1366px;
+    padding: 40px 80px;
+
+    h2 {}
+
+    p {}
+}
+
+.accordions__data-storage {}
+
+.accordions__general {}
+
+.accordions__map {}
+
+.accordions__pins {}
+
+.accordions__profile {}
+
+.accordions__rankings {}
+
+.accordions__special-features {}

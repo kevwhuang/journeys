@@ -18,7 +18,7 @@
     }
 
     60% {
-        transform: scale(1, 1) translateY(10px);
+        transform: scale(1, 1) translateY(-10px);
     }
 
     65% {
@@ -67,11 +67,15 @@
 }
 
 @keyframes actions-reveal {
-    from {
+    0% {
         visibility: visible;
     }
 
-    to {
+    75% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 1;
         visibility: visible;
     }

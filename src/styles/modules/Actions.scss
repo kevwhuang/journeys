@@ -25,8 +25,11 @@
             font-size: $font-7;
             font-weight: 500;
             letter-spacing: 5px;
+            max-width: calc(100vw - 80px);
             opacity: 0;
+            overflow-x: hidden;
             position: absolute;
+            transition: max-width 1s;
             user-select: none;
             white-space: nowrap;
             word-spacing: 5px;
@@ -96,19 +99,19 @@
                             }
 
                             &:nth-child(2) {
-                                @include bounce(150ms);
+                                @include bounce(100ms);
                             }
 
                             &:nth-child(3) {
-                                @include bounce(300ms);
+                                @include bounce(200ms);
                             }
 
                             &:nth-child(4) {
-                                @include bounce(450ms);
+                                @include bounce(300ms);
                             }
 
                             &:nth-child(5) {
-                                @include bounce(600ms);
+                                @include bounce(400ms);
                             }
                         }
                     }
@@ -127,7 +130,7 @@
 
                 img {
                     @include play;
-                    animation: actions-reveal 1s 17s forwards paused;
+                    animation: actions-reveal 3s 17s forwards paused;
                     display: inline;
                     filter: saturate(150%);
                     height: $font-6 * 1.5;
@@ -143,6 +146,10 @@
                     transform-origin: bottom left;
                     transition: transform 1s;
                 }
+            }
+
+            &.opened {
+                max-width: calc(100vw - 80px - 250px);
             }
         }
     }

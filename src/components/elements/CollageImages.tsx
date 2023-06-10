@@ -50,7 +50,7 @@ function CollageImages(): React.ReactElement {
             ref={ref}
         >
             {images.map((aria, i) => (
-                <CollageImagesItem key={uuid()} aria={aria} source={sources[i]} />
+                <CollageImagesItem key={uuid()} source={sources[i]} data-title={aria} />
             ))}
         </section>
     );

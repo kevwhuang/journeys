@@ -28,6 +28,7 @@ import Error from './pages/status/Error';
 import Fallback from './pages/status/Fallback';
 import NotFound from './pages/status/NotFound';
 
+import './features/keyboard';
 import './features/secret';
 import './features/speech';
 

@@ -3,12 +3,11 @@ import React from 'react';
 import useZustand from '../../hooks/useZustand';
 
 interface Props {
-    aria: string,
     source: string,
+    'data-title': string,
 }
 
 function CollageImagesItem(props: Props): React.ReactElement {
-    const { aria, source } = props;
     const changeGallery = useZustand(s => s.changeGallery);
 
     function handleClick() {
@@ -17,14 +16,13 @@ function CollageImagesItem(props: Props): React.ReactElement {
             const modal = document.querySelector('.collage__modal');
 
             modal && modal.classList.remove('closed');
-            changeGallery(`/assets/collage/${source}.webp`);
+            changeGallery(`/assets/collage/${props.source}.webp`);
         });
     }
 
     return (
         <div
             className="collage__images--item"
-            aria-label={aria}
             onClick={handleClick}
         />
     );

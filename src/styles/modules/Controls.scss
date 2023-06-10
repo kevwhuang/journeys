@@ -26,13 +26,16 @@
         display: grid;
         grid-template-columns: auto auto 1fr auto;
         height: 60px;
+        max-width: 2560px - 250px;
         position: fixed;
         transition: width 1s;
         user-select: none;
         width: calc(100vw - 250px);
+        margin: auto;
         z-index: 100;
 
         &.full {
+            max-width: 2560px;
             width: 100vw;
         }
     }

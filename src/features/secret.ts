@@ -13,7 +13,7 @@ const secret2: Secret = {
     sequence: [],
 };
 
-addEventListener('keyup', (e: { key: string }): void => {
+addEventListener('keyup', (e: KeyboardEvent): void => {
     const { CODE: c, sequence: s }: Secret = secret1;
 
     s.push(e.key);
@@ -21,7 +21,7 @@ addEventListener('keyup', (e: { key: string }): void => {
     s.join('').includes(c) && alert('The secret code is 404512.');
 });
 
-addEventListener('keyup', (e: { key: string }): void => {
+addEventListener('keyup', (e: KeyboardEvent): void => {
     const { CODE: c, sequence: s }: Secret = secret2;
 
     s.push(e.key);

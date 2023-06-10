@@ -1,42 +1,53 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import useZustand from '../../hooks/useZustand';
+
 const options = {
     threshold: 1,
     triggerOnce: true,
 };
 
 function ActionsHeadings(): React.ReactElement {
+    const navbar = useZustand(s => s.navbar);
     const { inView, ref } = useInView(options);
+
+    function getClassName() {
+        let className = inView ? 'play' : '';
+
+        if (navbar) className += ' opened';
+
+        return className;
+    }
 
     return (
         <section className="actions__headings" ref={ref}>
             <div className="actions__headings--container">
-                <span className={inView ? 'play' : ''}>WALK</span>
-                <span className={inView ? 'play' : ''}>BIKE</span>
-                <span className={inView ? 'play' : ''}>RIDE</span>
-                <span className={inView ? 'play' : ''}>DRIVE</span>
-                <span className={inView ? 'play' : ''}>SAIL</span>
-                <span className={inView ? 'play' : ''}>FLY</span>
-                <span className={inView ? 'play' : ''}>
+                <span className={getClassName()}>WALK</span>
+                <span className={getClassName()}>BIKE</span>
+                <span className={getClassName()}>RIDE</span>
+                <span className={getClassName()}>DRIVE</span>
+                <span className={getClassName()}>SAIL</span>
+                <span className={getClassName()}>FLY</span>
+                <span className={getClassName()}>
                     the&nbsp;
                     <u>choice</u>
                     &nbsp;is&nbsp;
                     <u>
-                        <i className={inView ? 'play' : ''}>y</i>
-                        <i className={inView ? 'play' : ''}>o</i>
-                        <i className={inView ? 'play' : ''}>u</i>
-                        <i className={inView ? 'play' : ''}>r</i>
-                        <i className={inView ? 'play' : ''}>s&nbsp;</i>
+                        <i className={getClassName()}>y</i>
+                        <i className={getClassName()}>o</i>
+                        <i className={getClassName()}>u</i>
+                        <i className={getClassName()}>r</i>
+                        <i className={getClassName()}>s&nbsp;</i>
                         …
                     </u>
                 </span>
-                <span className={inView ? 'play' : ''}>
+                <span className={getClassName()}>
                     see
-                    <u className={inView ? 'play' : ''}>k&nbsp;</u>
+                    <u className={getClassName()}>k&nbsp;</u>
                     adventure
                     <img
-                        className={inView ? 'play' : ''}
+                        className={getClassName()}
                         src={inView ? '/assets/rotating-earth.gif' : ''}
                         draggable="false"
                     />
