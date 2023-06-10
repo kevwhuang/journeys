@@ -1,6 +1,15 @@
+function addNotificationAction(s: State, notification: Notification_): Partial<State> {
+    const previous: Notification_[] = [...s.records.notifications];
+
+    if (previous.length === 20) previous.pop();
+
+    const notifications: Notification_[] = [notification].concat(previous);
+
+    return ({ records: { ...s.records, notifications } });
+}
+
 function deleteNotificationAction(s: State, index: number): Partial<State> {
     const notifications: Notification_[]
-        // @ts-ignore
         = [...s.records.notifications].filter((e: Notification_, i: number): boolean => i !== index);
 
     return ({ records: { ...s.records, notifications } });
@@ -27,6 +36,7 @@ function toggleThemeAction(s: State, theme: number): Partial<State> {
 }
 
 export default {
+    addNotificationAction,
     deleteNotificationAction,
     toggleModalNotificationsAction,
     toggleThemeAction,

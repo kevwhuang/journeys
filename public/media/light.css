@@ -21,6 +21,10 @@
     border-bottom: 2px solid var(--color-5);
 }
 
+.controls__toast {
+    color: var(--color-1);
+}
+
 .controls__system span {
     color: var(--color-1);
 }

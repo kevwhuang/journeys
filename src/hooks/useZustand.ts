@@ -2,8 +2,8 @@ import { create } from 'zustand';
 
 import actions from '../features/actions';
 import {
-    Notification_,
-    Pin,
+    _Notification,
+    _Pin,
 } from '../features/classes';
 
 import profile from '../assets/profile.webp';
@@ -33,8 +33,8 @@ const initialize: State = {
     },
     records: {
         experience: seed[0].records.experience,
-        notifications: seed[0].records.notifications || [new Notification_('Subject', 'Message')],
-        pins: seed[0].records.pins || [new Pin(0, 0)],
+        notifications: seed[0].records.notifications || [new _Notification('Subject', 'Message')],
+        pins: seed[0].records.pins || [new _Pin(0, 0)],
     },
     settings: {
         map: seed[0].settings.map,
@@ -49,6 +49,7 @@ const initialize: State = {
 
 const useZustand = create<Actions & State>(set => ({
     ...initialize,
+    addNotification: notification => set(s => actions.addNotificationAction(s, notification)),
     changeGallery: gallery => set(() => ({ gallery })),
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),

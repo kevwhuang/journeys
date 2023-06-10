@@ -1,4 +1,5 @@
 interface Actions {
+    addNotification: (notification: Notification_) => void,
     changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
