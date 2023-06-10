@@ -1,6 +1,10 @@
 @use '_root' as *;
 
-#about {}
+#about {
+    display: block;
+    overflow-x: hidden;
+    padding: 0 80px;
+}
 
 #account {}
 

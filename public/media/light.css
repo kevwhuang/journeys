@@ -52,3 +52,7 @@
 .navbar__pages ul li a span:nth-of-type(2) {
     color: var(--color-1);
 }
+
+.story__content .story__content--item {
+    background: var(--color-bg);
+}

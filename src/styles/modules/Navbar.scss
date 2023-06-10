@@ -59,6 +59,7 @@
 
     span {
         color: $color-4;
+        cursor: default;
         font-family: 'Libre Franklin';
         font-size: $font-3;
         font-weight: 500;
@@ -136,6 +137,7 @@
 .navbar__profile {
     align-items: center;
     border-bottom: 1px solid $color-6;
+    cursor: default;
     display: flex;
     flex-direction: column;
     padding: 10px 0 20px;

@@ -18,6 +18,7 @@ function MuiTooltip(props: Props): React.ReactElement {
     const sx = {
         bgcolor: theme ? '#407ad6' : '#d3382f',
         color: '#f3f4f5',
+        cursor: 'default',
         fontFamily: 'SF Pro Display',
         fontSize: '16px',
         top: props.offset || '-5px',

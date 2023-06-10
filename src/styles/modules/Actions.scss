@@ -1,6 +1,7 @@
 @use '../_root' as *;
 
 .actions {
+    cursor: default;
     height: 380px;
 }
 
@@ -129,6 +130,14 @@
                 text-shadow: 3px 3px 3px rgba(0, 0, 0, 50%);
                 text-transform: uppercase;
 
+                i {
+                    @include play;
+                    animation: actions-wink 500ms 17s paused;
+                    font-style: normal;
+                    transform-origin: bottom left;
+                    transition: transform 1s;
+                }
+
                 img {
                     @include play;
                     animation: actions-reveal 3s 17s forwards paused;
@@ -138,14 +147,6 @@
                     opacity: 0;
                     padding-left: calc($font-6 / 2);
                     visibility: hidden;
-                }
-
-                i {
-                    @include play;
-                    animation: actions-wink 500ms 17s paused;
-                    font-style: normal;
-                    transform-origin: bottom left;
-                    transition: transform 1s;
                 }
             }
 

@@ -4,6 +4,7 @@ import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
 import Accordions from '../components/modules/Accordions';
+import Footer from '../components/modules/Footer';
 
 function Guide(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
@@ -15,6 +16,7 @@ function Guide(): React.ReactElement {
     return (
         <main id="guide">
             <Accordions />
+            <Footer />
         </main>
     );
 }

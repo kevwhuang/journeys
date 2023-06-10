@@ -3,7 +3,10 @@ import React from 'react';
 import MuiAccordion from '../libraries/MuiAccordion';
 import MuiAccordionParent from '../libraries/MuiAccordionParent';
 
-import { lorem50, lorem200 } from '../../data/lorem';
+import {
+    lorem50,
+    lorem200,
+} from '../../data/lorem';
 
 function AccordionsAccount(): React.ReactElement {
     return (

@@ -139,6 +139,7 @@
                     user-select: text;
 
                     &:first-of-type {
+                        cursor: default;
                         margin-bottom: 5px;
                         user-select: none;
                     }
@@ -222,6 +223,10 @@
         &::placeholder {
             letter-spacing: normal;
         }
+    }
+
+    label {
+        cursor: default;
     }
 
     svg {

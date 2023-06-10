@@ -3,6 +3,8 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
+import Footer from '../components/modules/Footer';
+
 function Contact(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -12,6 +14,7 @@ function Contact(): React.ReactElement {
 
     return (
         <main id="contact">
+            <Footer />
         </main>
     );
 }

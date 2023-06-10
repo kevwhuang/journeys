@@ -3,6 +3,9 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
+import Footer from '../components/modules/Footer';
+import Story from '../components/modules/Story';
+
 function About(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -12,6 +15,8 @@ function About(): React.ReactElement {
 
     return (
         <main id="about">
+            <Story />
+            <Footer />
         </main>
     );
 }
