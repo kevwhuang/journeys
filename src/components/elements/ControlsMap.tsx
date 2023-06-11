@@ -1,4 +1,5 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 import NavigationIcon from '@mui/icons-material/Navigation';
 import NavigationOutlinedIcon from '@mui/icons-material/NavigationOutlined';
@@ -14,6 +15,9 @@ import SignalCellularConnectedNoInternet0BarOutlinedIcon
 import useZustand from '../../hooks/useZustand';
 
 import MuiTooltip from '../libraries/MuiTooltip';
+
+import toastOptions from '../../features/toastOptions';
+import { _Pin } from '../../features/classes';
 
 function ControlsMap(): React.ReactElement {
     const state = useZustand();
@@ -36,11 +40,26 @@ function ControlsMap(): React.ReactElement {
     }
 
     function handleClick() {
-        return;
+        if (state.records.pins.length === 100) {
+            return toast('You\'ve reached the 100 pin limit.', { ...toastOptions, icon: '✘' });
+        }
+
+        if (state.records.pins.length) {
+            const current = { lat: state.position.lat, long: state.position.long };
+            const old = state.records.pins[0];
+
+            if (JSON.stringify(current) !== JSON.stringify(old)) {
+                state.addPin(new _Pin(state.position.lat, state.position.long));
+            }
+        }
     }
 
     return (
         <section className="controls__map">
+            <Toaster
+                gutter={20}
+                containerStyle={{ bottom: 20, right: 20 }}
+            />
             <MuiTooltip title={signalStatus}>
                 {signal}
             </MuiTooltip>
@@ -64,7 +83,7 @@ function ControlsMap(): React.ReactElement {
             </MuiTooltip>
             <MuiTooltip title="Pin">
                 <PushPinOutlinedIcon
-                    className={state.page === 'map' ? 'active' : ''}
+                    className={state.power ? 'active' : ''}
                     onClick={handleClick}
                 />
             </MuiTooltip>

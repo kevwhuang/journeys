@@ -1,3 +1,5 @@
+'use strict';
+
 addEventListener('keyup', (e: KeyboardEvent): void => {
     if (!e.isTrusted || !e.ctrlKey) return;
 

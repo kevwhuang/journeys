@@ -1,0 +1,10 @@
+@use '../_root' as *;
+
+.geolocator {}
+
+.geolocator__core {
+    .geolocator__core--temp {
+        font-size: $font-3;
+        padding: 20px;
+    }
+}

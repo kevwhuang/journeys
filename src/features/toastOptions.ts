@@ -1,3 +1,5 @@
+'use strict';
+
 const toastOptions: any = {
     ariaProps: {
         role: 'status',

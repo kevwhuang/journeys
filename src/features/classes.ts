@@ -1,3 +1,5 @@
+'use strict';
+
 class _Notification {
     constructor(subject: string, message: string, priority?: 0 | 1 | 2) {
         this.message = message;

@@ -1,5 +1,6 @@
 interface Actions {
     addNotification: (notification: Notification_) => void,
+    addPin: (pin: Position) => void,
     changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
@@ -9,6 +10,9 @@ interface Actions {
     toggleNavbar: () => void,
     togglePower: () => void,
     toggleTheme: (theme: number) => void,
+    updatePosition: (lat: number, long: number) => void,
+    updateSignal: (strength: Signal) => void,
+    updateTracks: (point: string) => void,
 }
 
 interface Config {
@@ -22,13 +26,14 @@ interface State {
     modals: Modals,
     navbar: boolean,
     page: Page,
+    position: Position,
     power: boolean,
     profile: UserProfile,
     records: UserRecords,
     settings: UserSettings,
     signal: Signal,
     speech: boolean,
-    tracks: unknown,
+    tracks: Set,
 }
 
 interface UserProfile {
@@ -46,7 +51,7 @@ interface UserProfile {
 interface UserRecords {
     experience: number,
     notifications: Notification_[],
-    pins: Pin[],
+    pins: Position[],
 }
 
 interface UserSettings {
@@ -70,7 +75,7 @@ type Notification_ = {
 type Page = '' | 'about' | 'account' | 'contact' | 'guide' | 'home'
     | 'map' | 'pins' | 'privacy' | 'rankings' | 'terms';
 
-type Pin = {
+type Position = {
     lat: number,
     long: number,
 };

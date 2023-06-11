@@ -1,3 +1,5 @@
+'use strict';
+
 function addNotificationAction(s: State, notification: Notification_): Partial<State> {
     const previous: Notification_[] = [...s.records.notifications];
 
@@ -6,6 +8,13 @@ function addNotificationAction(s: State, notification: Notification_): Partial<S
     const notifications: Notification_[] = [notification].concat(previous);
 
     return ({ records: { ...s.records, notifications } });
+}
+
+function addPinAction(s: State, pin: Position): Partial<State> {
+    const previous: Position[] = [...s.records.pins];
+    const pins: Position[] = [pin].concat(previous);
+
+    return ({ records: { ...s.records, pins } });
 }
 
 function deleteNotificationAction(s: State, index: number): Partial<State> {
@@ -37,6 +46,7 @@ function toggleThemeAction(s: State, theme: number): Partial<State> {
 
 export default {
     addNotificationAction,
+    addPinAction,
     deleteNotificationAction,
     toggleModalNotificationsAction,
     toggleThemeAction,

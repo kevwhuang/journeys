@@ -19,7 +19,11 @@ const initialize: State = {
     },
     navbar: false,
     page: 'home',
-    power: false,
+    position: {
+        lat: 0,
+        long: 0,
+    },
+    power: true,
     profile: {
         bio: seed[0].profile.bio || '',
         country: seed[0].profile.country || 'US',
@@ -42,14 +46,15 @@ const initialize: State = {
         theme: seed[0].settings.theme,
         units: seed[0].settings.units,
     },
-    signal: 3,
+    signal: 0,
     speech: true,
-    tracks: null,
+    tracks: new Set(),
 };
 
 const useZustand = create<Actions & State>(set => ({
     ...initialize,
     addNotification: notification => set(s => actions.addNotificationAction(s, notification)),
+    addPin: pin => set(s => actions.addPinAction(s, pin)),
     changeGallery: gallery => set(() => ({ gallery })),
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),
@@ -59,6 +64,9 @@ const useZustand = create<Actions & State>(set => ({
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
     togglePower: () => set(s => ({ power: !(s.power) })),
     toggleTheme: theme => set(s => actions.toggleThemeAction(s, theme)),
+    updatePosition: (lat, long) => set(() => ({ position: { lat, long } })),
+    updateSignal: strength => set(() => ({ signal: strength })),
+    updateTracks: point => set(s => ({ tracks: new Set([point, ...s.tracks]) })),
 }));
 
 export default useZustand;

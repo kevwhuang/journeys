@@ -37,7 +37,7 @@ module.exports = {
         'no-undef': 0,
         // OPTIONS
         'arrow-parens': [2, 'as-needed'],
-        'func-style': [2, 'declaration'],
+        'func-style': [2, 'declaration', { 'allowArrowFunctions': true }],
         'new-cap': [2, { newIsCapExceptionPattern: '^webkit' }],
         'newline-per-chained-call': [2, { ignoreChainWithDepth: 4 }],
         'object-curly-spacing': [2, 'always'],

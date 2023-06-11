@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import useZustand from '../hooks/useZustand';
 
 import Controls from '../components/modules/Controls';
+// import Geolocator from '../components/modules/Geolocator';
 import Navbar from '../components/modules/Navbar';
 
 let initialized = false;
@@ -28,6 +29,7 @@ function Display(): React.ReactElement {
             <Controls />
             <Navbar />
             <Outlet />
+            {/* <Geolocator /> */}
         </div>
     );
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 interface Secret {
     code: string,
     sequence: string[],

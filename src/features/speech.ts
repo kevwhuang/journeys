@@ -1,3 +1,5 @@
+'use strict';
+
 import commands from '../data/commands.json';
 
 const query: any = { name: 'microphone' };
