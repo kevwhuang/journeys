@@ -11,12 +11,32 @@
         "okay, going to pins",
         "pins"
     ],
+    "go to rankings": [
+        "okay, going to rankings",
+        "rankings"
+    ],
     "go to account": [
         "okay, going to account",
         "account"
     ],
-    "go to rankings": [
-        "okay, going to rankings",
-        "rankings"
+    "go to guide": [
+        "okay, going to guide",
+        "guide"
+    ],
+    "go to about": [
+        "okay, going to about",
+        "about"
+    ],
+    "go to contact": [
+        "okay, going to contact",
+        "contact"
+    ],
+    "go to terms": [
+        "okay, going to terms",
+        "terms"
+    ],
+    "go to privacy": [
+        "okay, going to privacy",
+        "privacy"
     ]
 }

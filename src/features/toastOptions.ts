@@ -3,7 +3,7 @@ const toastOptions: Object = {
         role: 'status',
         'aria-live': 'polite',
     },
-    duration: 3000,
+    duration: 3e3,
     icon: '✔',
     position: 'bottom-right',
     style: {

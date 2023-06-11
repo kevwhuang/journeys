@@ -36,7 +36,7 @@ function FormMain(): React.ReactElement {
             />
             <form onSubmit={onSubmit(handleSubmit)}>
                 <h2>Let's Chat</h2>
-                <div className="form__main--input">
+                <div className="form__main--field">
                     <label htmlFor="input-name">Name</label>
                     <input
                         id="input-name"
@@ -46,7 +46,7 @@ function FormMain(): React.ReactElement {
                         {...register('name')}
                     />
                 </div>
-                <div className="form__main--input">
+                <div className="form__main--field">
                     <label htmlFor="input-email">Email</label>
                     <input
                         id="input-email"
@@ -55,7 +55,7 @@ function FormMain(): React.ReactElement {
                         {...register('email')}
                     />
                 </div>
-                <div className="form__main--input">
+                <div className="form__main--field">
                     <label htmlFor="input-category">Category</label>
                     <select
                         id="input-category"
@@ -66,11 +66,12 @@ function FormMain(): React.ReactElement {
                         <option value="Business">Business</option>
                     </select>
                 </div>
-                <div className="form__main--input">
+                <div className="form__main--field">
                     <label htmlFor="input-message">Message</label>
                     <textarea
                         id="input-message"
                         maxLength={1000}
+                        required
                         {...register('message')}
                     >
                     </textarea>
