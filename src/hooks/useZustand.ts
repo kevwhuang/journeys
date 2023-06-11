@@ -10,8 +10,8 @@ import profile from '../assets/profile.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
-    authenticated: true,
-    focus: true,
+    authenticated: false,
+    focus: false,
     gallery: '',
     modals: {
         collage: false,
@@ -19,7 +19,7 @@ const initialize: State = {
     },
     navbar: false,
     page: 'home',
-    power: true,
+    power: false,
     profile: {
         bio: seed[0].profile.bio || '',
         country: seed[0].profile.country || 'US',

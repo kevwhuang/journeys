@@ -1,5 +1,5 @@
 import React from 'react';
-import emailjs from '@emailjs/browser';
+import { send } from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 
@@ -19,14 +19,14 @@ function FormMain(): React.ReactElement {
     function handleSubmit(data: any) {
         const $KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-        emailjs.send('service_journeys', 'template_journeys', data, $KEY)
+        send('service_journeys', 'template_journeys', data, $KEY)
             .then(() => toast('Your message has been delivered.', toastOptions))
             .catch(() => toast('Your message failed to deliver.', { ...toastOptions, icon: '✘' }));
     }
 
     React.useEffect(() => {
         if (formState.isSubmitSuccessful) reset(defaultValues);
-    }, [formState]);
+    }, [formState, reset]);
 
     return (
         <section className="form__main">

@@ -11,6 +11,7 @@ import {
 } from '../../data/lorem';
 
 const options = {
+    delay: 250,
     threshold: 0.8,
     triggerOnce: true,
 };

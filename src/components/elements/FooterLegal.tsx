@@ -9,10 +9,10 @@ function FooterLegal(): React.ReactElement {
                     <p>© 2023 Journeys &nbsp;|&nbsp; All rights reserved.</p>
                 </li>
                 <li>
-                    <Link to="terms">Terms</Link>
+                    <Link to="../terms">Terms</Link>
                 </li>
                 <li>
-                    <Link to="privacy">Privacy</Link>
+                    <Link to="../privacy">Privacy</Link>
                 </li>
             </ul>
         </section>

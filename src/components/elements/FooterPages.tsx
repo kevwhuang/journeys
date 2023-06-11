@@ -6,13 +6,13 @@ function FooterPages(): React.ReactElement {
         <section className="footer__pages">
             <ul>
                 <li>
-                    <Link to="guide">Guide</Link>
+                    <Link to="../guide">Guide</Link>
                 </li>
                 <li>
-                    <Link to="about">About</Link>
+                    <Link to="../about">About</Link>
                 </li>
                 <li>
-                    <Link to="contact">Contact</Link>
+                    <Link to="../contact">Contact</Link>
                 </li>
             </ul>
         </section>

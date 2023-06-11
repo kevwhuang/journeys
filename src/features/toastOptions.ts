@@ -1,9 +1,9 @@
-const toastOptions: Object = {
+const toastOptions: any = {
     ariaProps: {
         role: 'status',
         'aria-live': 'polite',
     },
-    duration: 3e3,
+    duration: 3000,
     icon: '✔',
     position: 'bottom-right',
     style: {
