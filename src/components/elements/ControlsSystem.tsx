@@ -13,25 +13,8 @@ import useZustand from '../../hooks/useZustand';
 
 import MuiTooltip from '../libraries/MuiTooltip';
 
+import toastOptions from '../../features/toastOptions';
 import { _Notification } from '../../features/classes';
-
-const options: any = {
-    ariaProps: {
-        role: 'status',
-        'aria-live': 'polite',
-    },
-    duration: 3000,
-    icon: '✅',
-    position: 'bottom-right',
-    style: {
-        background: '#407ad6',
-        borderRadius: '10px',
-        color: '#f3f4f5',
-        cursor: 'default',
-        padding: '10px 20px',
-        userSelect: 'none',
-    },
-};
 
 function ControlsSystem(): React.ReactElement {
     const state = useZustand();
@@ -43,7 +26,7 @@ function ControlsSystem(): React.ReactElement {
     function handleClickTheme(theme: number) {
         const subject = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
 
-        toast(subject, options);
+        toast(subject, toastOptions);
         state.addNotification(new _Notification('Action', subject, 0));
         state.toggleTheme(theme);
     }

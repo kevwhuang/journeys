@@ -1,6 +1,5 @@
 import React from 'react';
 
-import CollageHeading from '../elements/CollageHeading';
 import CollageImages from '../elements/CollageImages';
 import CollageModal from '../modals/CollageModal';
 
@@ -10,7 +9,6 @@ function Collage(): React.ReactElement {
     return (
         <section className="collage">
             <CollageModal />
-            <CollageHeading />
             <CollageImages />
         </section>
     );

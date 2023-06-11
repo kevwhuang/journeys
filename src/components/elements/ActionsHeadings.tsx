@@ -9,7 +9,6 @@ const options = {
 };
 
 function ActionsHeadings(): React.ReactElement {
-    const LINK = 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif';
     const navbar = useZustand(s => s.navbar);
     const { inView, ref } = useInView(options);
 
@@ -49,7 +48,7 @@ function ActionsHeadings(): React.ReactElement {
                     adventure
                     <img
                         className={getClassName()}
-                        src={inView ? LINK : ''}
+                        src={inView ? '/assets/rotating-earth.gif' : ''}
                         draggable="false"
                     />
                 </span>

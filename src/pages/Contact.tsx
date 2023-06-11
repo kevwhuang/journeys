@@ -4,6 +4,7 @@ import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
 import Footer from '../components/modules/Footer';
+import Form from '../components/modules/Form';
 
 function Contact(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
@@ -14,6 +15,7 @@ function Contact(): React.ReactElement {
 
     return (
         <main id="contact">
+            <Form />
             <Footer />
         </main>
     );
