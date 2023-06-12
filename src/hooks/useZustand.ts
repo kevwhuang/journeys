@@ -38,7 +38,7 @@ const initialize: State = {
     records: {
         experience: seed[0].records.experience,
         notifications: seed[0].records.notifications || [new _Notification('Subject', 'Message')],
-        pins: seed[0].records.pins || [new _Pin(0, 0)],
+        pins: initPins(),
     },
     settings: {
         map: seed[0].settings.map,
@@ -68,6 +68,13 @@ const useZustand = create<Actions & State>(set => ({
     updateSignal: strength => set(() => ({ signal: strength })),
     updateTracks: point => set(s => actions.updateTracksAction(s, point)),
 }));
+
+function initPins(): Position[] {
+    const pins: null | string = localStorage.getItem('pins');
+
+    if (pins === null || pins === '{}') return [];
+    else return JSON.parse(pins);
+}
 
 function initTracks(): Set<string> {
     const tracks: null | string = localStorage.getItem('tracks');

@@ -51,6 +51,8 @@ function ControlsMap(): React.ReactElement {
             if (JSON.stringify(current) !== JSON.stringify(old)) {
                 state.addPin(new _Pin(state.position.lat, state.position.long));
             }
+        } else {
+            state.addPin(new _Pin(state.position.lat, state.position.long));
         }
     }
 

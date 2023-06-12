@@ -14,6 +14,8 @@ function addPinAction(s: State, pin: Position): Partial<State> {
     const previous: Position[] = [...s.records.pins];
     const pins: Position[] = [pin].concat(previous);
 
+    localStorage.setItem('pins', JSON.stringify(pins));
+
     return ({ records: { ...s.records, pins } });
 }
 
