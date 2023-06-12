@@ -3,6 +3,8 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
+import Profile from '../components/modules/Profile';
+
 function Account_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -12,6 +14,7 @@ function Account_Single(): React.ReactElement {
 
     return (
         <main id="account_single">
+            <Profile />
         </main>
     );
 }

@@ -3,6 +3,8 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
+import Point from '../components/modules/Point';
+
 function Pins_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -12,6 +14,7 @@ function Pins_Single(): React.ReactElement {
 
     return (
         <main id="pins_single">
+            <Point />
         </main>
     );
 }

@@ -4,6 +4,7 @@ import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
 import Geolocator from '../components/modules/Geolocator';
+import Overlay from '../components/modules/Overlay';
 
 function Map(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
@@ -15,6 +16,7 @@ function Map(): React.ReactElement {
     return (
         <main id="map">
             <Geolocator />
+            <Overlay />
         </main>
     );
 }

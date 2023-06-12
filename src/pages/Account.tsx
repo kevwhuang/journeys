@@ -3,6 +3,8 @@ import React from 'react';
 import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
+import Settings from '../components/modules/Settings';
+
 function Account(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
@@ -12,6 +14,7 @@ function Account(): React.ReactElement {
 
     return (
         <main id="account">
+            <Settings />
         </main>
     );
 }
