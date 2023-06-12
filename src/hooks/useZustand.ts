@@ -48,7 +48,7 @@ const initialize: State = {
     },
     signal: 0,
     speech: true,
-    tracks: new Set(),
+    tracks: initTracks(),
 };
 
 const useZustand = create<Actions & State>(set => ({
@@ -66,7 +66,14 @@ const useZustand = create<Actions & State>(set => ({
     toggleTheme: theme => set(s => actions.toggleThemeAction(s, theme)),
     updatePosition: (lat, long) => set(() => ({ position: { lat, long } })),
     updateSignal: strength => set(() => ({ signal: strength })),
-    updateTracks: point => set(s => ({ tracks: new Set([point, ...s.tracks]) })),
+    updateTracks: point => set(s => actions.updateTracksAction(s, point)),
 }));
+
+function initTracks(): Set<string> {
+    const tracks: null | string = localStorage.getItem('tracks');
+
+    if (tracks === null || tracks === '{}') return new Set();
+    else return new Set(JSON.parse(tracks));
+}
 
 export default useZustand;

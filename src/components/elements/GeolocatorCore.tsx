@@ -15,7 +15,7 @@ function GeolocatorCore(): React.ReactElement {
         = useZustand(s => [s.updatePosition, s.updateSignal, s.updateTracks]);
 
     React.useEffect(() => {
-        (function () {
+        (function geolocation() {
             const geo = navigator.geolocation;
 
             if (!initialized && geo) {
@@ -49,15 +49,15 @@ function GeolocatorCore(): React.ReactElement {
                 else if (pos.coords.accuracy >= 10) updateSignal(2);
                 else updateSignal(1);
             }
-        })();
-    }, [power]);
+        }());
+    }, [power, updateSignal]);
 
     React.useEffect(() => {
-        if (currentPosition.length) {
+        if (power && currentPosition.length) {
             updatePosition(Number(currentPosition[0]), Number(currentPosition[1]));
             updateTracks(String(currentPosition));
         }
-    }, [currentPosition]);
+    }, [currentPosition, updatePosition, updateTracks]);
 
     return (
         <section className="geolocator__core">

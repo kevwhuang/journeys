@@ -44,10 +44,18 @@ function toggleThemeAction(s: State, theme: number): Partial<State> {
     return ({ settings: { ...s.settings, theme } });
 }
 
+function updateTracksAction(s: State, point: string): Partial<State> {
+    const tracks: Set<string> = new Set([point, ...s.tracks]);
+
+    localStorage.setItem('tracks', JSON.stringify([...tracks]));
+    return ({ tracks });
+}
+
 export default {
     addNotificationAction,
     addPinAction,
     deleteNotificationAction,
     toggleModalNotificationsAction,
     toggleThemeAction,
+    updateTracksAction
 };
