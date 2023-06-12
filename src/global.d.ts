@@ -4,6 +4,7 @@ interface Actions {
     changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
+    deletePin: (index: number) => void,
     toggleAuthenticated: () => void,
     toggleFocus: () => void,
     toggleModalNotifications: () => void,

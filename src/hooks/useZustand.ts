@@ -58,6 +58,7 @@ const useZustand = create<Actions & State>(set => ({
     changeGallery: gallery => set(() => ({ gallery })),
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotificationAction(s, index)),
+    deletePin: index => set(s => actions.deletePinAction(s, index)),
     toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
     toggleFocus: () => set(s => ({ focus: !(s.focus) })),
     toggleModalNotifications: () => set(s => actions.toggleModalNotificationsAction(s)),

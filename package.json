@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.5.4",
+    "version": "0.5.6",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -33,6 +33,7 @@
         "@mui/material": "*",
         "axios": "*",
         "cookie": "*",
+        "google-map-react": "*",
         "react": "*",
         "react-dom": "*",
         "react-hook-form": "*",

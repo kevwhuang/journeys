@@ -10,7 +10,7 @@ let initialized = false;
 
 function GeolocatorCore(): React.ReactElement {
     const [currentPosition, setCurrentPosition]: any = React.useState([]);
-    const [pins, power, tracks] = useZustand(s => [s.records.pins, s.power, s.tracks]);
+    const [power, tracks] = useZustand(s => [s.power, s.tracks]);
     const [updatePosition, updateSignal, updateTracks]
         = useZustand(s => [s.updatePosition, s.updateSignal, s.updateTracks]);
 
@@ -65,27 +65,13 @@ function GeolocatorCore(): React.ReactElement {
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
             />
-            <div className="geolocator__core--temp">
-                [tracks]
-                {[...tracks].map(point => (
-                    <p key={uuid()}>
-                        lat: {point.slice(0, point.indexOf(','))}
-                        {' | '}
-                        long: {point.slice(point.indexOf(',') + 1)}
-                    </p>
-                ))}
-            </div>
-            <br />
-            <div className="geolocator__core--temp">
-                [pins]
-                {[...pins].map(pin => (
-                    <p key={uuid()}>
-                        lat: {pin.lat}
-                        {' | '}
-                        long: {pin.long}
-                    </p>
-                ))}
-            </div>
+            {[...tracks].map(point => (
+                <p key={uuid()}>
+                    lat: {point.slice(0, point.indexOf(','))}
+                    {' | '}
+                    long: {point.slice(point.indexOf(',') + 1)}
+                </p>
+            ))}
         </section>
     );
 }

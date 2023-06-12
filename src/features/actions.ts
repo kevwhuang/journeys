@@ -15,7 +15,6 @@ function addPinAction(s: State, pin: Position): Partial<State> {
     const pins: Position[] = [pin].concat(previous);
 
     localStorage.setItem('pins', JSON.stringify(pins));
-
     return ({ records: { ...s.records, pins } });
 }
 
@@ -24,6 +23,14 @@ function deleteNotificationAction(s: State, index: number): Partial<State> {
         = [...s.records.notifications].filter((e: Notification_, i: number): boolean => i !== index);
 
     return ({ records: { ...s.records, notifications } });
+}
+
+function deletePinAction(s: State, index: number): Partial<State> {
+    const pins: Position[]
+        = [...s.records.pins].filter((e: Position, i: number): boolean => i !== index);
+
+    localStorage.setItem('pins', JSON.stringify(pins));
+    return ({ records: { ...s.records, pins } });
 }
 
 function toggleModalNotificationsAction(s: State): Partial<State> {
@@ -57,6 +64,7 @@ export default {
     addNotificationAction,
     addPinAction,
     deleteNotificationAction,
+    deletePinAction,
     toggleModalNotificationsAction,
     toggleThemeAction,
     updateTracksAction
