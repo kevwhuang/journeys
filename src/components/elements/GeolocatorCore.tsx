@@ -20,9 +20,9 @@ function GeolocatorCore(): React.ReactElement {
 
             if (!initialized && geo) {
                 if (navigator.userAgent.search(/Macintosh|Windows NT/) === -1) {
-                    toast('You are on a mobile device.', toastOptions);
+                    toast('You are tracking on a mobile device.', toastOptions);
                 } else {
-                    toast('You are on a computer.', toastOptions);
+                    toast('You are tracking on a computer.', toastOptions);
                 }
 
                 initialized = true;
@@ -57,7 +57,7 @@ function GeolocatorCore(): React.ReactElement {
             updatePosition(Number(currentPosition[0]), Number(currentPosition[1]));
             updateTracks(String(currentPosition));
         }
-    }, [currentPosition, updatePosition, updateTracks]);
+    }, [currentPosition, power, updatePosition, updateTracks]);
 
     return (
         <section className="geolocator__core">

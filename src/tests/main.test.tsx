@@ -100,7 +100,7 @@ describe('Render', () => {
         });
     });
 
-    describe('Statuses', () => {
+    describe.only('Statuses', () => {
         test('Error', () => {
             render(<Error />);
             expect(document.body).toBeInTheDocument();

@@ -3,7 +3,7 @@
 function addNotificationAction(s: State, notification: Notification_): Partial<State> {
     const previous: Notification_[] = [...s.records.notifications];
 
-    if (previous.length === 20) previous.pop();
+    previous.length === 20 && previous.pop();
 
     const notifications: Notification_[] = [notification].concat(previous);
 

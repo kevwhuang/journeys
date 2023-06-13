@@ -21,22 +21,25 @@ import { _Pin } from '../../features/classes';
 
 function ControlsMap(): React.ReactElement {
     const state = useZustand();
+    let signal;
+    let signalStatus;
 
-    let signal: React.ReactElement;
-    let signalStatus: string;
-
-    if (!state.signal) {
-        signal = <SignalCellularConnectedNoInternet0BarOutlinedIcon className="s0" />;
-        signalStatus = 'No Signal';
-    } else if (state.signal === 1) {
-        signal = <SignalCellularAlt1BarOutlinedIcon className="s1" />;
-        signalStatus = 'Weak';
-    } else if (state.signal === 2) {
-        signal = <SignalCellularAlt2BarOutlinedIcon className="s2" />;
-        signalStatus = 'Medium';
-    } else {
-        signal = <SignalCellularAltOutlinedIcon className="s3" />;
-        signalStatus = 'Strong';
+    switch (state.signal) {
+        case 0:
+            signal = <SignalCellularConnectedNoInternet0BarOutlinedIcon className="s0" />;
+            signalStatus = 'No Signal';
+            break;
+        case 1:
+            signal = <SignalCellularAlt1BarOutlinedIcon className="s1" />;
+            signalStatus = 'Weak';
+            break;
+        case 2:
+            signal = <SignalCellularAlt2BarOutlinedIcon className="s2" />;
+            signalStatus = 'Medium';
+            break;
+        case 3:
+            signal = <SignalCellularAltOutlinedIcon className="s3" />;
+            signalStatus = 'Strong';
     }
 
     function handleClick() {

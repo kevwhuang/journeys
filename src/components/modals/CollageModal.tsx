@@ -17,7 +17,11 @@ function ControlsModal(): React.ReactElement {
             className={modal ? 'collage__modal' : 'collage__modal closed'}
             onClick={e => handleClick(e)}
         >
-            <img src={gallery} alt="Modal" draggable="false" />
+            <img
+                src={gallery}
+                alt="Modal"
+                draggable="false"
+            />
         </section>
     );
 }

@@ -8,10 +8,8 @@ import MuiTooltip from '../libraries/MuiTooltip';
 
 function ControlsSearch(): React.ReactElement {
     const inputRef = React.useRef<any>();
-    const [search, setSearch]: [string, React.Dispatch<React.SetStateAction<string>>]
-        = React.useState('');
-
     const page = useZustand(s => s.page);
+    const [search, setSearch] = React.useState('');
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
         search;

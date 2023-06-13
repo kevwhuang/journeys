@@ -1,10 +1,7 @@
 import { create } from 'zustand';
 
 import actions from '../features/actions';
-import {
-    _Notification,
-    _Pin,
-} from '../features/classes';
+import { _Notification } from '../features/classes';
 
 import defaultProfile from '../assets/default-profile.webp';
 import seed from '../data/seed.json';
@@ -74,14 +71,14 @@ function initPins(): Position[] {
     const pins: null | string = localStorage.getItem('pins');
 
     if (pins === null || pins === '{}') return [];
-    else return JSON.parse(pins);
+    return JSON.parse(pins);
 }
 
 function initTracks(): Set<string> {
     const tracks: null | string = localStorage.getItem('tracks');
 
     if (tracks === null || tracks === '{}') return new Set();
-    else return new Set(JSON.parse(tracks));
+    return new Set(JSON.parse(tracks));
 }
 
 export default useZustand;

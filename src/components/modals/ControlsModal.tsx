@@ -9,7 +9,7 @@ function ControlsModal(): React.ReactElement {
     const [deleteNotification, modal, notifications]
         = useZustand(s => [s.deleteNotification, s.modals.notifications, s.records.notifications]);
 
-    function getPriority(priority: number): string {
+    function getPriority(priority: number) {
         switch (priority) {
             case 0:
                 return 'low';
@@ -20,7 +20,7 @@ function ControlsModal(): React.ReactElement {
         }
     }
 
-    function isPlural(length: number): string {
+    function isPlural(length: number) {
         return length === 1 ? 'Notification' : 'Notifications';
     }
 

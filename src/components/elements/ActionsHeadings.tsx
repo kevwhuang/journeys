@@ -18,7 +18,6 @@ function ActionsHeadings(): React.ReactElement {
         let className = inView ? 'play' : '';
 
         if (navbar) className += ' opened';
-
         return className;
     }
 

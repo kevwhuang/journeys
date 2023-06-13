@@ -1,13 +1,13 @@
 import React from 'react';
 
-import FormMain from '../elements/FormMain';
+import FormContact from '../elements/FormContact';
 
 import '../../styles/modules/Form.scss';
 
 function Form(): React.ReactElement {
     return (
         <section className="form">
-            <FormMain />
+            <FormContact />
         </section>
     );
 }

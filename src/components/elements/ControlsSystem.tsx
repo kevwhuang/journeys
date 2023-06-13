@@ -26,9 +26,9 @@ function ControlsSystem(): React.ReactElement {
     function handleClickTheme(theme: number) {
         const subject = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
 
-        toast(subject, toastOptions);
         state.addNotification(new _Notification('Action', subject, 0));
         state.toggleTheme(theme);
+        toast(subject, toastOptions);
     }
 
     return (

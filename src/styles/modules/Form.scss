@@ -6,7 +6,7 @@
     width: 600px;
 }
 
-.form__main {
+.form__contact {
     background: $color-2;
     padding: 40px;
 
@@ -44,7 +44,7 @@
         user-select: none;
     }
 
-    .form__main--field {
+    .form__contact--field {
         margin-bottom: 20px;
 
         &:nth-of-type(2) {

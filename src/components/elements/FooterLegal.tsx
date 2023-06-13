@@ -6,7 +6,9 @@ function FooterLegal(): React.ReactElement {
         <section className="footer__legal">
             <ul>
                 <li>
-                    <p>© 2023 Journeys &nbsp;|&nbsp; All rights reserved.</p>
+                    <p>
+                        © 2023 Journeys &nbsp;|&nbsp; All rights reserved.
+                    </p>
                 </li>
                 <li>
                     <Link to="../terms">Terms</Link>
