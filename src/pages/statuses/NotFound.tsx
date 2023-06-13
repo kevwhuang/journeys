@@ -3,21 +3,21 @@ import React from 'react';
 import useTitle from '../../hooks/useTitle';
 import useZustand from '../../hooks/useZustand';
 
-import '../../styles/status/Error.scss';
+import '../../styles/statuses/NotFound.scss';
 
-function Error(): React.ReactElement {
+function NotFound(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
-    useTitle('Journeys | 400');
+    useTitle('Journeys | 404');
     React.useEffect(() => changePage(''));
 
     return (
-        <main id="error">
+        <main id="not-found">
             <section>
-                <h1>400: Unknown Error</h1>
+                <h1>404: Page Not Found</h1>
             </section>
         </main>
     );
 }
 
-export default Error;
+export default NotFound;

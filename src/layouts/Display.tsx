@@ -14,7 +14,7 @@ function Display(): React.ReactElement {
 
     if (!initialized) {
         if (!theme) {
-            const link = document.createElement('link');
+            const link: HTMLLinkElement = document.createElement('link');
 
             link.rel = 'stylesheet';
             link.href = '/media/light.css';
@@ -26,10 +26,10 @@ function Display(): React.ReactElement {
 
     return (
         <div id="display">
+            {/* <Geolocator /> */}
             <Controls />
             <Navbar />
             <Outlet />
-            {/* <Geolocator /> */}
         </div>
     );
 }

@@ -6,7 +6,7 @@ import {
     _Pin,
 } from '../features/classes';
 
-import profile from '../assets/profile.webp';
+import defaultProfile from '../assets/default-profile.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
@@ -31,7 +31,7 @@ const initialize: State = {
         first: seed[0].profile.first || '',
         last: seed[0].profile.last || '',
         page: seed[0].profile.page || '',
-        photo: seed[0].profile.photo || profile,
+        photo: seed[0].profile.photo || defaultProfile,
         registered: seed[0].profile.registered || new Date(),
         username: seed[0].profile.username || '',
     },

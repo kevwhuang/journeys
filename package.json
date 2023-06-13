@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.5.6",
+    "version": "0.5.7",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -12,6 +12,7 @@
     },
     "license": "UNLICENSED",
     "author": "Kevin Huang",
+    "main": "server/express.mjs",
     "repository": {
         "type": "git",
         "url": "https://github.com/kevwhuang/journeys.git"
@@ -22,8 +23,11 @@
         "lint": "eslint src --ext js,cjs,mjs,jsx,ts,tsx",
         "prebuild": "tsc",
         "preview": "vite preview",
-        "start": "",
-        "test": "vitest"
+        "test": "vitest",
+        "deploy": "gcloud app deploy",
+        "nodemon": "nodemon server/express.mjs",
+        "postdeploy": "gcloud app deploy",
+        "start": "NODE_ENV=production ts-node server/express.mjs"
     },
     "dependencies": {
         "@emailjs/browser": "*",
@@ -42,7 +46,18 @@
         "react-router-dom": "*",
         "swr": "*",
         "uuid": "*",
-        "zustand": "*"
+        "zustand": "*",
+        "compression": "*",
+        "cookie-parser": "*",
+        "cors": "*",
+        "dotenv": "*",
+        "express": "*",
+        "express-actuator": "*",
+        "express-async-handler": "*",
+        "express-openid-connect": "*",
+        "express-session": "*",
+        "helmet": "*",
+        "mysql": "*"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "*",
@@ -66,7 +81,9 @@
         "typescript": "*",
         "vite": "*",
         "vite-plugin-pwa": "*",
-        "vitest": "*"
+        "vitest": "*",
+        "nodemon": "*",
+        "ts-node": "*"
     },
     "private": true
 }

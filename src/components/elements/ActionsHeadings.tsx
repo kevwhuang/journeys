@@ -3,6 +3,8 @@ import { useInView } from 'react-intersection-observer';
 
 import useZustand from '../../hooks/useZustand';
 
+const SOURCE = 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif';
+
 const options = {
     threshold: 1,
     triggerOnce: true,
@@ -48,7 +50,7 @@ function ActionsHeadings(): React.ReactElement {
                     adventure
                     <img
                         className={getClassName()}
-                        src={inView ? '/assets/rotating-earth.gif' : ''}
+                        src={inView ? SOURCE : ''}
                         draggable="false"
                     />
                 </span>

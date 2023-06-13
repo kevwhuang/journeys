@@ -24,9 +24,9 @@ import Privacy from './pages/Privacy';
 import Rankings from './pages/Rankings';
 import Terms from './pages/Terms';
 
-import Error from './pages/status/Error';
-import Fallback from './pages/status/Fallback';
-import NotFound from './pages/status/NotFound';
+import Error from './pages/statuses/Error';
+import Fallback from './pages/statuses/Fallback';
+import NotFound from './pages/statuses/NotFound';
 
 import './features/keyboard';
 import './features/secret';
@@ -45,20 +45,24 @@ const config: Config = {
 };
 
 const router: any = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={<Display />} errorElement={<Error />}>
+    <Route path="" element={<Display />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="about" element={<About />} />
-        <Route path="account" element={<Account />} />
-        <Route path="account/:id" element={<Account_Single />} />
+        <Route path="account">
+            <Route path="" element={<Account />} />
+            <Route path=":id" element={<Account_Single />} />
+        </Route>
         <Route path="contact" element={<Contact />} />
         <Route path="error" element={<Error />} />
         <Route path="fallback" element={<Fallback />} />
         <Route path="guide" element={<Guide />} />
         <Route path="home" element={<Navigate to="/" replace={true} />} />
         <Route path="map" element={<Map />} />
-        <Route path="pins" element={<Pins />} />
-        <Route path="pins/:id" element={<Pins_Single />} />
+        <Route path="pins">
+            <Route path="" element={<Pins />} />
+            <Route path=":id" element={<Pins_Single />} />
+        </Route>
         <Route path="privacy" element={<Privacy />} />
         <Route path="rankings" element={<Rankings />} />
         <Route path="terms" element={<Terms />} />

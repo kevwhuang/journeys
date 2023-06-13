@@ -1,10 +1,10 @@
 @use '../_root' as *;
 
-#fallback {
+#error {
     section {
         align-items: center;
-        background: url(../../assets/fallback.webp);
-        background-position: center 100%;
+        background: url(../../assets/statuses/error.webp);
+        background-position: center;
         background-size: cover;
         display: flex;
         height: calc(100vh - 60px);

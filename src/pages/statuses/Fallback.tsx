@@ -3,7 +3,7 @@ import React from 'react';
 import useTitle from '../../hooks/useTitle';
 import useZustand from '../../hooks/useZustand';
 
-import '../../styles/status/Fallback.scss';
+import '../../styles/statuses/Fallback.scss';
 
 function Fallback(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);

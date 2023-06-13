@@ -1,6 +1,6 @@
 'use strict';
 
-import commands from '../data/commands.json';
+import voiceCommands from '../data/voiceCommands.json';
 
 const query: any = { name: 'microphone' };
 
@@ -10,19 +10,18 @@ navigator.permissions.query(query)
             res.state === 'denied' && location.reload();
         };
 
-        res.state !== 'denied' && initiateSpeech();
+        res.state !== 'denied' && speech();
     })
     .catch(Function);
 
-function initiateSpeech(): void {
-    const commandsList: any = structuredClone(commands);
+function speech(): void {
+    const commandsList: any = structuredClone(voiceCommands);
     const speech: SpeechSynthesis = speechSynthesis;
     // @ts-ignore
     const speechGrammar: webkitSpeechGrammarList = new webkitSpeechGrammarList();
     // @ts-ignore
     const speechRecognition: webkitSpeechRecognition = new webkitSpeechRecognition();
     const voice: SpeechSynthesisVoice = speech.getVoices()[51];
-
     let lastResponse: string;
 
     speechRecognition.continuous = false;
@@ -32,11 +31,11 @@ function initiateSpeech(): void {
     speechRecognition.maxAlternatives = 1;
 
     speechRecognition.addEventListener('end', speechRecognition.start);
-    speechRecognition.addEventListener('result', handleSpeech);
+    speechRecognition.addEventListener('result', handleCommand);
 
     speechRecognition.start();
 
-    function handleSpeech(e: any): void {
+    function handleCommand(e: any): void {
         const command: string[] = Array.from(e.results)
             .map((result: any): string => result[0].transcript);
 
@@ -51,8 +50,8 @@ function initiateSpeech(): void {
         const speechUtterance: SpeechSynthesisUtterance
             = new SpeechSynthesisUtterance((response && response[0]) ?? 'unknown command');
 
-        speechUtterance.voice = voice;
         lastResponse = command;
+        speechUtterance.voice = voice;
         speech.speak(speechUtterance);
 
         if (response) {
