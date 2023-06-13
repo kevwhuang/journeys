@@ -2,7 +2,11 @@
 
 .collage {
     background: $color-2;
-    padding: 10vh 5vw;
+    padding: max(10vh, 80px) max(5vw, 80px);
+}
+
+.collage--gutter {
+    height: 40px;
 }
 
 .collage__images {
@@ -14,14 +18,14 @@
         'i10 i12 i03 i13 i11'
         'i09 i09 i09 i13 i11'
         'i04 i07 i07 i13 i05';
-    height: clamp(420px, calc(80vh - 60px), 1440px);
+    height: clamp(calc(480px - 60px), calc(80vh - 60px), calc(1440px - 60px));
     margin: auto;
     width: clamp(480px, auto, 2560px);
 
     div {
         box-shadow:
-            0 10px 20px rgba(0, 0, 0, 19%),
-            0 6px 6px rgba(0, 0, 0, 23%);
+            0 10px 20px rgba(0, 0, 0, 20%),
+            0 6px 6px rgba(0, 0, 0, 25%);
         background-position: center;
         background-size: cover;
         cursor: pointer;

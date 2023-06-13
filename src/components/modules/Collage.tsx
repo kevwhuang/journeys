@@ -7,10 +7,13 @@ import '../../styles/modules/Collage.scss';
 
 function Collage(): React.ReactElement {
     return (
-        <section className="collage">
-            <CollageModal />
-            <CollageImages />
-        </section>
+        <>
+            <section className="collage">
+                <CollageModal />
+                <CollageImages />
+            </section>
+            <div className="collage--gutter"></div>
+        </>
     );
 }
 

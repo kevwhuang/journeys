@@ -21,7 +21,6 @@ function Home(): React.ReactElement {
             <Features />
             <Actions />
             <Collage />
-            <div className="home--gutter"></div>
             <Footer />
         </main>
     );
