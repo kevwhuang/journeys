@@ -1,3 +1,5 @@
+'use strict';
+
 import rankings from '../data/rankings.json';
 
 const levels: number[] = calculateLevels();

@@ -1,6 +1,8 @@
+'use strict';
+
 interface Actions {
-    addNotification: (notification: Notification_) => void,
-    addPin: (pin: Position) => void,
+    addNotification: (notification: Notification__) => void,
+    addPin: (pin: Position__) => void,
     changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
@@ -16,10 +18,6 @@ interface Actions {
     updateTracks: (point: string) => void,
 }
 
-interface Config {
-    refreshInterval: number,
-}
-
 interface State {
     authenticated: boolean,
     focus: boolean,
@@ -28,7 +26,7 @@ interface State {
     navbar: boolean,
     page: Page,
     pins: Position__[],
-    position: Position,
+    position: Position__,
     power: boolean,
     records: Records,
     signal: Signal,

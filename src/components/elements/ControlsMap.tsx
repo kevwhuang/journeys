@@ -60,13 +60,16 @@ function ControlsMap(): React.ReactElement {
         if (!state.pins.length) {
             state.addPin(new __Position(state.position.lat, state.position.long));
             toast('You\'ve dropped a new pin.', toastOptions);
+            return;
         }
 
         if (state.pins.length) {
             const current = { lat: state.position.lat, long: state.position.long };
-            const old = state.pins[0];
+            const old = state.pins;
 
-            if (JSON.stringify(current) !== JSON.stringify(old)) {
+            if (JSON.stringify(current).includes(JSON.stringify(old).slice(1, old.length - 2))) {
+                toast('You\'ve already added this pin.', { ...toastOptions, icon: '✘' });
+            } else {
                 state.addPin(new __Position(state.position.lat, state.position.long));
                 toast('You\'ve dropped a new pin.', toastOptions);
             }
@@ -109,7 +112,7 @@ function ControlsMap(): React.ReactElement {
             </MuiTooltip>
             <MuiTooltip title="Pin">
                 <PushPinOutlinedIcon
-                    className={state.power ? 'active' : ''}
+                    className={(state.power && state.signal) ? 'active' : ''}
                     onClick={handleClickPin}
                 />
             </MuiTooltip>

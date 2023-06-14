@@ -63,7 +63,6 @@ function GeolocatorCore(): React.ReactElement {
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
             />
-
         </section>
     );
 }

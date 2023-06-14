@@ -14,7 +14,7 @@ function NavbarPagesItem(props: Props): React.ReactElement {
     const page = useZustand(s => s.page);
     const { counter, icon, label, to } = props;
 
-    function getClass() {
+    function getClassName() {
         try {
             return label === `${page[0].toUpperCase()}${page.slice(1)}` ? 'active' : '';
         } catch {
@@ -27,7 +27,7 @@ function NavbarPagesItem(props: Props): React.ReactElement {
     }
 
     return (
-        <li className={getClass()}>
+        <li className={getClassName()}>
             <Link to={to}>
                 <span>
                     {icon}

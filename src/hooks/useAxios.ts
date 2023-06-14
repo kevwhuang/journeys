@@ -1,3 +1,5 @@
+'use strict';
+
 import axios, { AxiosResponse } from 'axios';
 import useSWR, { SWRResponse } from 'swr';
 

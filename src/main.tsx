@@ -40,7 +40,7 @@ import './styles/keyframes.scss';
 import './styles/media.scss';
 import './styles/dev.scss';
 
-const config: Config = {
+const config: { refreshInterval: number } = {
     refreshInterval: 3600e3,
 };
 

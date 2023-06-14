@@ -40,6 +40,6 @@ addEventListener('keyup', (e: KeyboardEvent): void => {
 
     if (s.join('').includes(c)) {
         initialized2 = true;
-        alert('The super secret code is 20230615.');
+        alert('The super secret code is 20230701.');
     }
 });
