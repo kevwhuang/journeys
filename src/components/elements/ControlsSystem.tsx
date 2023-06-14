@@ -14,7 +14,7 @@ import useZustand from '../../hooks/useZustand';
 import MuiTooltip from '../libraries/MuiTooltip';
 
 import toastOptions from '../../features/toastOptions';
-import { _Notification } from '../../features/classes';
+import { __Notification } from '../../features/classes';
 
 function ControlsSystem(): React.ReactElement {
     const state = useZustand();
@@ -24,11 +24,11 @@ function ControlsSystem(): React.ReactElement {
     }
 
     function handleClickTheme(theme: number) {
-        const subject = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
+        const message = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
 
-        state.addNotification(new _Notification('Action', subject, 0));
+        state.addNotification(new __Notification('Action', message));
         state.toggleTheme(theme);
-        toast(subject, toastOptions);
+        toast(message, toastOptions);
     }
 
     return (
@@ -55,8 +55,8 @@ function ControlsSystem(): React.ReactElement {
             <span aria-label={`${state.records.notifications.length} notifications.`}>
                 {state.records.notifications.length}
             </span>
-            <MuiTooltip title={state.settings.theme ? 'Dark' : 'Light'}>
-                {state.settings.theme
+            <MuiTooltip title={state.system.theme ? 'Dark' : 'Light'}>
+                {state.system.theme
                     ? <DarkModeOutlinedIcon onClick={() => handleClickTheme(0)} />
                     : <LightModeOutlinedIcon onClick={() => handleClickTheme(1)} />
                 }

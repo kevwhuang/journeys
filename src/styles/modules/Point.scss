@@ -1,3 +1,8 @@
 @use '../_root' as *;
 
-.point {}
+.point {
+    font-size: $font-4;
+    text-align: center;
+}
+
+.point__actions {}

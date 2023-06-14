@@ -1,3 +1,6 @@
 @use '../_root' as *;
 
-.overlay {}
+.overlay {
+    font-size: $font-4;
+    text-align: center;
+}

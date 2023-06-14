@@ -1,43 +1,43 @@
 'use strict';
 
-function addNotificationAction(s: State, notification: Notification_): Partial<State> {
-    const previous: Notification_[] = [...s.records.notifications];
+function addNotification(s: State, notification: Notification__): Partial<State> {
+    const previous: Notification__[] = [...s.records.notifications];
 
     previous.length === 20 && previous.pop();
 
-    const notifications: Notification_[] = [notification].concat(previous);
+    const notifications: Notification__[] = [notification].concat(previous);
 
     return ({ records: { ...s.records, notifications } });
 }
 
-function addPinAction(s: State, pin: Position): Partial<State> {
-    const previous: Position[] = [...s.records.pins];
-    const pins: Position[] = [pin].concat(previous);
+function addPin(s: State, pin: Position__): Partial<State> {
+    const previous: Position__[] = [...s.pins];
+    const pins: Position__[] = [pin].concat(previous);
 
     localStorage.setItem('pins', JSON.stringify(pins));
-    return ({ records: { ...s.records, pins } });
+    return ({ pins });
 }
 
-function deleteNotificationAction(s: State, index: number): Partial<State> {
-    const notifications: Notification_[]
-        = [...s.records.notifications].filter((e: Notification_, i: number): boolean => i !== index);
+function deleteNotification(s: State, index: number): Partial<State> {
+    const notifications: Notification__[]
+        = [...s.records.notifications].filter((e: Notification__, i: number): boolean => i !== index);
 
     return ({ records: { ...s.records, notifications } });
 }
 
-function deletePinAction(s: State, index: number): Partial<State> {
-    const pins: Position[]
-        = [...s.records.pins].filter((e: Position, i: number): boolean => i !== index);
+function deletePin(s: State, index: number): Partial<State> {
+    const pins: Position__[]
+        = [...s.pins].filter((e: Position__, i: number): boolean => i !== index);
 
     localStorage.setItem('pins', JSON.stringify(pins));
-    return ({ records: { ...s.records, pins } });
+    return ({ pins });
 }
 
-function toggleModalNotificationsAction(s: State): Partial<State> {
+function toggleModalNotifications(s: State): Partial<State> {
     return ({ modals: { ...s.modals, notifications: !(s.modals.notifications) } });
 }
 
-function toggleThemeAction(s: State, theme: number): Partial<State> {
+function toggleTheme(s: State, theme: number): Partial<State> {
     if (!theme) {
         const link: HTMLLinkElement = document.createElement('link');
 
@@ -50,10 +50,10 @@ function toggleThemeAction(s: State, theme: number): Partial<State> {
         x && x.remove();
     }
 
-    return ({ settings: { ...s.settings, theme } });
+    return ({ system: { ...s.system, theme } });
 }
 
-function updateTracksAction(s: State, point: string): Partial<State> {
+function updateTracks(s: State, point: string): Partial<State> {
     const tracks: Set<string> = new Set([point, ...s.tracks]);
 
     localStorage.setItem('tracks', JSON.stringify([...tracks]));
@@ -61,11 +61,11 @@ function updateTracksAction(s: State, point: string): Partial<State> {
 }
 
 export default {
-    addNotificationAction,
-    addPinAction,
-    deleteNotificationAction,
-    deletePinAction,
-    toggleModalNotificationsAction,
-    toggleThemeAction,
-    updateTracksAction
+    addNotification,
+    addPin,
+    deleteNotification,
+    deletePin,
+    toggleModalNotifications,
+    toggleTheme,
+    updateTracks,
 };

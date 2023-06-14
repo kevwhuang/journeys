@@ -4,13 +4,12 @@ import { Outlet } from 'react-router-dom';
 import useZustand from '../hooks/useZustand';
 
 import Controls from '../components/modules/Controls';
-// import Geolocator from '../components/modules/Geolocator';
 import Navbar from '../components/modules/Navbar';
 
 let initialized = false;
 
 function Display(): React.ReactElement {
-    const theme = useZustand(s => s.settings.theme);
+    const theme = useZustand(s => s.system.theme);
 
     if (!initialized) {
         if (!theme) {
@@ -26,7 +25,6 @@ function Display(): React.ReactElement {
 
     return (
         <div id="display">
-            {/* <Geolocator /> */}
             <Controls />
             <Navbar />
             <Outlet />

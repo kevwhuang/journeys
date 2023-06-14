@@ -1,5 +1,27 @@
 @use '../_root' as *;
 
-.points {}
+.points {
+    font-size: $font-4;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            text-align: center;
+
+            a {
+                color: $color-3;
+
+                &:visited {
+                    color: $color-3;
+                }
+            }
+
+            svg {
+                color: $color-3;
+            }
+        }
+    }
+}
 
 .points__table {}

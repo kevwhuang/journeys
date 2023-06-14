@@ -1,6 +1,6 @@
 'use strict';
 
-class _Notification {
+class __Notification {
     constructor(subject: string, message: string, priority?: 0 | 1 | 2) {
         this.message = message;
         this.priority = priority || 0;
@@ -12,7 +12,7 @@ class _Notification {
     subject: string;
 }
 
-class _Pin {
+class __Position {
     constructor(lat: number, long: number) {
         this.lat = lat;
         this.long = long;
@@ -23,6 +23,6 @@ class _Pin {
 }
 
 export {
-    _Notification,
-    _Pin,
+    __Notification,
+    __Position,
 };

@@ -27,39 +27,14 @@ interface State {
     modals: Modals,
     navbar: boolean,
     page: Page,
+    pins: Position__[],
     position: Position,
     power: boolean,
-    profile: UserProfile,
-    records: UserRecords,
-    settings: UserSettings,
+    records: Records,
     signal: Signal,
-    speech: boolean,
+    system: System,
     tracks: Set,
-}
-
-interface UserProfile {
-    bio: string,
-    country: string,
-    email: string,
-    first: string,
-    last: string,
-    page: string,
-    photo: string,
-    registered: Date,
-    username: string,
-}
-
-interface UserRecords {
-    experience: number,
-    notifications: Notification_[],
-    pins: Position[],
-}
-
-interface UserSettings {
-    map: number,
-    sync: Date,
-    theme: number,
-    units: number,
+    user: User,
 }
 
 type Modals = {
@@ -67,7 +42,7 @@ type Modals = {
     notifications: boolean,
 };
 
-type Notification_ = {
+type Notification__ = {
     message: string,
     priority: number,
     subject: string,
@@ -76,9 +51,34 @@ type Notification_ = {
 type Page = '' | 'about' | 'account' | 'contact' | 'guide' | 'home'
     | 'map' | 'pins' | 'privacy' | 'rankings' | 'terms';
 
-type Position = {
+type Position__ = {
     lat: number,
     long: number,
 };
 
+type Records = {
+    experience: number,
+    notifications: Notification__[],
+};
+
 type Signal = 0 | 1 | 2 | 3;
+
+type System = {
+    map: number,
+    sync: Date,
+    theme: number,
+    units: number,
+};
+
+type User = {
+    bio: string,
+    country: string,
+    email: string,
+    first: string,
+    id: number,
+    last: string,
+    page: string,
+    photo: string,
+    registered: Date,
+    username: string,
+};

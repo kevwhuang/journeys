@@ -16,7 +16,7 @@ import useZustand from '../../hooks/useZustand';
 import NavbarPagesItem from './NavbarPagesItem';
 
 function NavbarPages(): React.ReactElement {
-    const pins = useZustand(s => s.records.pins);
+    const pins = useZustand(s => s.pins);
 
     return (
         <section className="navbar__pages">

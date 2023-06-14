@@ -2,6 +2,8 @@ import React from 'react';
 
 import useZustand from '../../hooks/useZustand';
 
+import PointActions from '../elements/PointActions';
+
 import '../../styles/modules/Point.scss';
 
 interface Props {
@@ -9,11 +11,12 @@ interface Props {
 }
 
 function Point(props: Props): React.ReactElement {
-    const pins = useZustand(s => s.records.pins);
+    const pins = useZustand(s => s.pins);
     const current = pins[props.id];
 
     return (
         <section className="point">
+            <PointActions />
             <p>
                 lat: {current.lat}
                 {' | '}

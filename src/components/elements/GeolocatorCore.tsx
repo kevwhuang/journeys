@@ -1,6 +1,5 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { v4 as uuid } from 'uuid';
 
 import useZustand from '../../hooks/useZustand';
 
@@ -10,9 +9,8 @@ let initialized = false;
 
 function GeolocatorCore(): React.ReactElement {
     const [currentPosition, setCurrentPosition]: any = React.useState([]);
-    const [power, tracks] = useZustand(s => [s.power, s.tracks]);
-    const [updatePosition, updateSignal, updateTracks]
-        = useZustand(s => [s.updatePosition, s.updateSignal, s.updateTracks]);
+    const [power, updatePosition, updateSignal, updateTracks]
+        = useZustand(s => [s.power, s.updatePosition, s.updateSignal, s.updateTracks]);
 
     React.useEffect(() => {
         (function geolocation() {
@@ -65,13 +63,7 @@ function GeolocatorCore(): React.ReactElement {
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
             />
-            {[...tracks].map(point => (
-                <p key={uuid()}>
-                    lat: {point.slice(0, point.indexOf(','))}
-                    {' | '}
-                    long: {point.slice(point.indexOf(',') + 1)}
-                </p>
-            ))}
+
         </section>
     );
 }

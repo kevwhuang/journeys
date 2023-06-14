@@ -1,26 +1,28 @@
 [
     {
-        "profile": {
+        "user": {
+            "id": 0,
             "email": "kevin@aephonics.com",
             "username": "janedoe8",
             "first": "Jane",
             "last": "Doe",
             "country": "US",
-            "bio": "I'm an avid animal adventurer.",
             "photo": "",
             "page": "https://www.journeys-app.com",
+            "bio": "I'm an avid animal adventurer.",
             "registered": null
         },
-        "settings": {
+        "system": {
             "theme": 1,
             "units": 1,
             "map": 2,
             "sync": null
         },
         "records": {
+            "experience": 8e6,
             "notifications": [
                 {
-                    "subject": "Theme Switching",
+                    "subject": "Switching Themes",
                     "message": "Light mode is now supported.",
                     "priority": 1
                 },
@@ -34,8 +36,7 @@
                     "message": "Embark on your first Journey.",
                     "priority": 2
                 }
-            ],
-            "experience": 8e6
+            ]
         }
     }
 ]

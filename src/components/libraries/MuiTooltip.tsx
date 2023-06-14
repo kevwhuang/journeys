@@ -13,7 +13,7 @@ interface Props {
 }
 
 function MuiTooltip(props: Props): React.ReactElement {
-    const theme = useZustand(s => s.settings.theme);
+    const theme = useZustand(s => s.system.theme);
 
     const sx = {
         bgcolor: theme ? '#407ad6' : '#d3382f',

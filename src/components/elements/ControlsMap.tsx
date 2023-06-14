@@ -17,7 +17,7 @@ import useZustand from '../../hooks/useZustand';
 import MuiTooltip from '../libraries/MuiTooltip';
 
 import toastOptions from '../../features/toastOptions';
-import { _Pin } from '../../features/classes';
+import { __Position } from '../../features/classes';
 
 function ControlsMap(): React.ReactElement {
     const state = useZustand();
@@ -42,21 +42,42 @@ function ControlsMap(): React.ReactElement {
             signalStatus = 'Strong';
     }
 
-    function handleClick() {
-        if (state.records.pins.length === 100) {
-            return toast('You\'ve reached the 100 pin limit.', { ...toastOptions, icon: '✘' });
+    function handleClickFocus() {
+        if (!state.focus) toast('You\'ve focused the map.', toastOptions);
+        state.toggleFocus();
+    }
+
+    function handleClickPin() {
+        if (!state.position.lat && !state.position.long) {
+            return;
         }
 
-        if (state.records.pins.length) {
+        if (state.pins.length === 100) {
+            toast('You\'ve reached the 100 pin limit.', { ...toastOptions, icon: '✘' });
+            return;
+        }
+
+        if (!state.pins.length) {
+            state.addPin(new __Position(state.position.lat, state.position.long));
+            toast('You\'ve dropped a new pin.', toastOptions);
+        }
+
+        if (state.pins.length) {
             const current = { lat: state.position.lat, long: state.position.long };
-            const old = state.records.pins[0];
+            const old = state.pins[0];
 
             if (JSON.stringify(current) !== JSON.stringify(old)) {
-                state.addPin(new _Pin(state.position.lat, state.position.long));
+                state.addPin(new __Position(state.position.lat, state.position.long));
+                toast('You\'ve dropped a new pin.', toastOptions);
             }
-        } else if (state.position.lat !== 0 && state.position.long !== 0) {
-            state.addPin(new _Pin(state.position.lat, state.position.long));
         }
+    }
+
+    function handleClickPower() {
+        const message = state.power ? 'You\'ve disabled tracking.' : 'You\'ve enabled tracking.';
+
+        state.togglePower();
+        toast(message, toastOptions);
     }
 
     return (
@@ -72,24 +93,24 @@ function ControlsMap(): React.ReactElement {
                 {state.power
                     ? <PowerIcon
                         className="active"
-                        onClick={() => state.togglePower()}
+                        onClick={handleClickPower}
                     />
-                    : <PowerOffOutlinedIcon onClick={() => state.togglePower()} />
+                    : <PowerOffOutlinedIcon onClick={handleClickPower} />
                 }
             </MuiTooltip>
             <MuiTooltip title={state.focus ? 'Focused' : 'Unfocused'}>
                 {state.focus
                     ? <NavigationIcon
                         className="active"
-                        onClick={() => state.toggleFocus()}
+                        onClick={handleClickFocus}
                     />
-                    : <NavigationOutlinedIcon onClick={() => state.toggleFocus()} />
+                    : <NavigationOutlinedIcon onClick={handleClickFocus} />
                 }
             </MuiTooltip>
             <MuiTooltip title="Pin">
                 <PushPinOutlinedIcon
                     className={state.power ? 'active' : ''}
-                    onClick={handleClick}
+                    onClick={handleClickPin}
                 />
             </MuiTooltip>
         </section>
