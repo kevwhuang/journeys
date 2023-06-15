@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -21,7 +21,7 @@
         "appengine": "gcloud app deploy",
         "build": "vite build",
         "dev": "vite",
-        "lint": "eslint src --ext js,cjs,mjs,jsx,ts,tsx",
+        "lint": "eslint {server,src} --ext js,cjs,mjs,jsx,ts,tsx",
         "postappengine": "gcloud app deploy",
         "prebuild": "tsc",
         "preview": "vite preview",
@@ -30,6 +30,7 @@
         "test": "vitest"
     },
     "dependencies": {
+        "@auth0/auth0-react": "*",
         "@emailjs/browser": "*",
         "@emotion/react": "*",
         "@emotion/styled": "*",

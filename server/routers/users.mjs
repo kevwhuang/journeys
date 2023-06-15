@@ -4,7 +4,7 @@ import express from 'express';
 
 import controller from '../controllers/users.mjs';
 
-const router = express.Router();
+const router = express.Router(); // eslint-disable-line new-cap
 
 router.delete('/:id', controller.deleteId);
 router.get('/:id', controller.getId);

@@ -8,7 +8,6 @@ import photo from '../assets/default-photo.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
-    authenticated: false,
     focus: false,
     gallery: '',
     modals: {
@@ -57,7 +56,6 @@ const useZustand = create<Actions & State>(set => ({
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotification(s, index)),
     deletePin: index => set(s => actions.deletePin(s, index)),
-    toggleAuthenticated: () => set(s => ({ authenticated: !(s.authenticated) })),
     toggleFocus: () => set(s => ({ focus: !(s.focus) })),
     toggleModalNotifications: () => set(s => actions.toggleModalNotifications(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),

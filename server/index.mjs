@@ -24,12 +24,14 @@ const OPTS_SESSION = {
     secret: process.env.SERVER_SECRET,
 };
 
+// eslint-disable-next-line space-before-function-paren
 const error = async (err, req, res, next) => {
     res.status(500);
     next(err);
 };
 
 const logger = (req, res, next) => {
+    // eslint-disable-next-line no-console
     console.table({
         time: new Date().toUTCString(),
         url: `${req.protocol}://${req.get('host')}${req.path}`,
@@ -42,6 +44,7 @@ const logger = (req, res, next) => {
 const app = express();
 
 app.listen(process.env.SERVER_PORT, () => {
+    // eslint-disable-next-line no-console
     console.log('\x1b[35m%s\x1b[0m', `Server listening on PORT ${process.env.SERVER_PORT}.`);
 });
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Auth0Provider } from '@auth0/auth0-react';
 import {
     Navigate,
     Route,
@@ -71,8 +72,14 @@ const router: any = createBrowserRouter(createRoutesFromElements(
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
-        <SWRConfig value={config}>
-            <RouterProvider router={router} fallbackElement={<Fallback />} />
-        </SWRConfig>
+        <Auth0Provider
+            domain={import.meta.env.VITE_AUTH0_DOMAIN}
+            clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
+            authorizationParams={{ redirect_uri: location.origin }}
+        >
+            <SWRConfig value={config}>
+                <RouterProvider router={router} fallbackElement={<Fallback />} />
+            </SWRConfig>
+        </Auth0Provider>
     </React.StrictMode>
 );

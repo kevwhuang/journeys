@@ -7,7 +7,7 @@ USE journeys;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(50) UNIQUE NOT NULL,
-    username VARCHAR(25) UNIQUE,
+    username VARCHAR(25) UNIQUE NOT NULL,
     first_name VARCHAR(25),
     last_name VARCHAR(25),
     country CHAR(2),

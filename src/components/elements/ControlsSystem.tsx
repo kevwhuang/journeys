@@ -1,5 +1,6 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
@@ -18,9 +19,19 @@ import { __Notification } from '../../features/classes';
 
 function ControlsSystem(): React.ReactElement {
     const state = useZustand();
+    const { isAuthenticated, isLoading, loginWithRedirect: login, logout } = useAuth0();
+
+    function handleClickLogin() {
+        login();
+    }
+
+    function handleClickLogout() {
+        logout({ logoutParams: { returnTo: location.origin } });
+        toast('You\'ve logged out.', toastOptions);
+    }
 
     function handleClickRefresh() {
-        return;
+        toast('You\'ve refreshed the leaderboards.', toastOptions);
     }
 
     function handleClickTheme(theme: number) {
@@ -61,10 +72,10 @@ function ControlsSystem(): React.ReactElement {
                     : <LightModeOutlinedIcon onClick={() => handleClickTheme(1)} />
                 }
             </MuiTooltip>
-            <MuiTooltip title={state.authenticated ? 'Logged In' : 'Logged Out'}>
-                {state.authenticated
-                    ? <LogoutOutlinedIcon onClick={() => state.toggleAuthenticated()} />
-                    : <LoginOutlinedIcon onClick={() => state.toggleAuthenticated()} />
+            <MuiTooltip title={isAuthenticated ? 'Logout' : 'Login'}>
+                {!isLoading && isAuthenticated
+                    ? <LogoutOutlinedIcon onClick={handleClickLogout} />
+                    : <LoginOutlinedIcon onClick={handleClickLogin} />
                 }
             </MuiTooltip>
         </section>

@@ -7,7 +7,6 @@ interface Actions {
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
     deletePin: (index: number) => void,
-    toggleAuthenticated: () => void,
     toggleFocus: () => void,
     toggleModalNotifications: () => void,
     toggleNavbar: () => void,
@@ -19,7 +18,6 @@ interface Actions {
 }
 
 interface State {
-    authenticated: boolean,
     focus: boolean,
     gallery: string,
     modals: Modals,
