@@ -1,3 +1,25 @@
 @use '../_root' as *;
 
 .leaderboards {}
+
+.leaderboards__data {
+    font-size: $font-4;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            text-align: center;
+
+            a {
+                color: $color-3;
+
+                &:visited {
+                    color: $color-3;
+                }
+            }
+        }
+    }
+}
+
+.leaderboards__headers {}

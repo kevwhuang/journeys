@@ -8,17 +8,15 @@ import MuiTooltip from '../libraries/MuiTooltip';
 
 function ControlsSearch(): React.ReactElement {
     const inputRef = React.useRef<any>();
-    const page = useZustand(s => s.page);
-    const [search, setSearch] = React.useState('');
+    const [page, updateSearch] = useZustand(s => [s.page, s.updateSearch]);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
-        search;
-        setSearch(e.target.value.toLowerCase());
+        updateSearch(e.target.value.toLowerCase());
     }
 
     React.useEffect(() => {
         inputRef.current.value = '';
-        setSearch('');
+        updateSearch('');
     }, [page]);
 
     return (
@@ -31,7 +29,7 @@ function ControlsSearch(): React.ReactElement {
             <input
                 id="input-search"
                 type="text"
-                placeholder="search leaderboard …"
+                placeholder="search leaderboards …"
                 maxLength={100}
                 disabled={page !== 'rankings'}
                 onChange={e => handleChange(e)}

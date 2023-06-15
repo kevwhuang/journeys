@@ -1,3 +1,17 @@
 @use '../_root' as *;
 
 .settings {}
+
+.settings__actions {}
+
+.settings__form {
+    font-size: $font-4;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            text-align: center;
+        }
+    }
+}

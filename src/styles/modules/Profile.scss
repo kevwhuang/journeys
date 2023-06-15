@@ -1,3 +1,17 @@
 @use '../_root' as *;
 
 .profile {}
+
+.profile__actions {}
+
+.profile__view {
+    font-size: $font-4;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            text-align: center;
+        }
+    }
+}

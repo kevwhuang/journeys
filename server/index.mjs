@@ -49,7 +49,6 @@ app.listen(process.env.SERVER_PORT, () => {
 });
 
 app.disable('strict routing');
-app.disable('x-powered-by');
 app.enable('case sensitive routing');
 app.set('env', 'production');
 

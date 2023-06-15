@@ -20,16 +20,16 @@ const connect = (req, res, query, ...values) => {
         });
 };
 
-const deleteId = (req, res) => connect(req, res, '../sql/queries/deleteId.sql');
+const deleteUser = (req, res) => connect(req, res, '../sql/queries/deleteUser.sql', req.params);
 const get = (req, res) => connect(req, res, '../sql/queries/get.sql');
-const getId = (req, res) => connect(req, res, '../sql/queries/getId.sql', req.params);
+const getUser = (req, res) => connect(req, res, '../sql/queries/getUser.sql', req.params);
 const post = (req, res) => connect(req, res, '../sql/queries/post.sql');
-const putId = (req, res) => connect(req, res, '../sql/queries/putId.sql');
+const putUser = (req, res) => connect(req, res, '../sql/queries/putUser.sql', req.params);
 
 export default {
-    deleteId,
+    deleteUser,
     get,
-    getId,
+    getUser,
     post,
-    putId,
+    putUser,
 };

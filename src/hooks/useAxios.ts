@@ -6,7 +6,7 @@ import useSWR, { SWRResponse } from 'swr';
 const BASE: string = '';
 
 function fetcher(endpoint: string): Promise<any> {
-    return axios(`${BASE}${endpoint}`).then((res: AxiosResponse<any, any>): any => res.data);
+    return axios(`${BASE}/${endpoint}`).then((res: AxiosResponse<any, any>): any => res.data);
 }
 
 function useAxios(endpoint: string): any {

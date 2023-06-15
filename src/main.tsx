@@ -54,7 +54,7 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="about" element={<About />} />
         <Route path="account">
             <Route path="" element={<Protect component={<Account />} />} />
-            <Route path=":id" element={<Protect component={<Account_Single />} />} />
+            <Route path=":username" element={<Protect component={<Account_Single />} />} />
         </Route>
         <Route path="contact" element={<Contact />} />
         <Route path="error" element={<Error />} />

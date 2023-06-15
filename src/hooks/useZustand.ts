@@ -26,6 +26,8 @@ const initialize: State = {
         experience: seed[0].records.experience || 0,
         notifications: initializers.notifications(seed[0].records.notifications) || [],
     },
+    refresh: 0,
+    search: '',
     signal: 0,
     system: {
         map: seed[0].system.map || 2,
@@ -60,8 +62,10 @@ const useZustand = create<Actions & State>(set => ({
     toggleModalNotifications: () => set(s => actions.toggleModalNotifications(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
     togglePower: () => set(s => ({ power: !(s.power) })),
+    toggleRefresh: () => set(s => ({ refresh: s.refresh + 1 })),
     toggleTheme: theme => set(s => actions.toggleTheme(s, theme)),
     updatePosition: (lat, long) => set(() => ({ position: { lat, long } })),
+    updateSearch: query => set(() => ({ search: query })),
     updateSignal: strength => set(() => ({ signal: strength })),
     updateTracks: point => set(s => actions.updateTracks(s, point)),
 }));

@@ -6,18 +6,15 @@ interface Props {
 }
 
 function Protect(props: Props): React.ReactElement {
-    const { isAuthenticated, loginWithRedirect: login } = useAuth0();
+    const { isAuthenticated, isLoading, loginWithRedirect: login } = useAuth0();
 
-    if (!isAuthenticated) {
-        login();
-        return <></>;
+    !isLoading && !isAuthenticated && login();
+
+    if (!isLoading && isAuthenticated) {
+        return <>{props.component}</>;
     }
 
-    return (
-        <>
-            {props.component}
-        </>
-    );
+    return <></>;
 }
 
 export default Protect;

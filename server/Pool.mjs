@@ -4,13 +4,13 @@ import mysql from 'mysql2';
 
 const OPTS_POOL = {
     connectionLimit: 100,
-    database: process.env.SERVER_DATABASE,
+    database: process.env.SERVER_DATABASE_SCHEMA,
     debug: false,
-    host: process.env.SERVER_HOST,
+    host: process.env.SERVER_DATABASE_HOST,
     multipleStatements: true,
-    password: process.env.SERVER_PASSWORD,
+    password: process.env.SERVER_DATABASE_PASSWORD,
     queueLimit: 0,
-    user: process.env.SERVER_USERNAME,
+    user: process.env.SERVER_DATABASE_USERNAME,
     waitForConnections: true,
 };
 

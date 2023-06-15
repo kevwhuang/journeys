@@ -1,7 +1,7 @@
 todo.txt
 **/.DS_Store
-**/.env
 
+.git/
 .netlify/
 dist/
 node_modules/

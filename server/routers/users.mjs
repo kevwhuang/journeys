@@ -6,10 +6,10 @@ import controller from '../controllers/users.mjs';
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.delete('/:id', controller.deleteId);
-router.get('/:id', controller.getId);
+router.delete('/:username', controller.deleteUser);
+router.get('/:username', controller.getUser);
 router.get('/', controller.get);
 router.post('/', controller.post);
-router.put('/:id', controller.putId);
+router.put('/:username', controller.putUser);
 
 export default router;

@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -22,11 +22,12 @@
         "build": "vite build",
         "dev": "vite",
         "lint": "eslint {server,src} --ext js,cjs,mjs,jsx,ts,tsx",
+        "netlify": "ntl dev",
         "postappengine": "gcloud app deploy",
         "prebuild": "tsc",
         "preview": "vite preview",
         "server": "nodemon server/index.mjs",
-        "start": "NODE_ENV=production server/index.mjs",
+        "start": "NODE_ENV=production node server/index.mjs",
         "test": "vitest"
     },
     "dependencies": {
@@ -36,6 +37,7 @@
         "@emotion/styled": "*",
         "@mui/icons-material": "*",
         "@mui/material": "*",
+        "@netlify/functions": "*",
         "axios": "*",
         "compression": "*",
         "cookie": "*",

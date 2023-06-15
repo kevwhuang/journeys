@@ -1,6 +1,8 @@
 @use '../_root' as *;
 
-.points {
+.points {}
+
+.points__table {
     font-size: $font-4;
 
     ul {
@@ -23,5 +25,3 @@
         }
     }
 }
-
-.points__table {}

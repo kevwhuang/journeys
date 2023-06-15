@@ -8,7 +8,7 @@ import Profile from '../components/modules/Profile';
 
 function Account_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
-    const id = useParams().id;
+    const username = useParams().username;
 
     scroll(0, 0);
     useTitle('Journeys | Account');
@@ -16,7 +16,7 @@ function Account_Single(): React.ReactElement {
 
     return (
         <main id="account_single">
-            <Profile id={Number(id)} />
+            <Profile username={username ?? ''} />
         </main>
     );
 }

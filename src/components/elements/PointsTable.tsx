@@ -20,7 +20,7 @@ function PointsTable(): React.ReactElement {
                             {' | '}
                             long: {pin.long}
                         </span>
-                        <Link to={`${i}`}>view</Link>
+                        <Link to={`${i + 1}`}>view</Link>
                     </li>
                 ))}
             </ul>

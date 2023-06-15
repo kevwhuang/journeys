@@ -31,6 +31,7 @@ function ControlsSystem(): React.ReactElement {
     }
 
     function handleClickRefresh() {
+        state.toggleRefresh();
         toast('You\'ve refreshed the leaderboards.', toastOptions);
     }
 

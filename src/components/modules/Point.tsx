@@ -12,16 +12,19 @@ interface Props {
 
 function Point(props: Props): React.ReactElement {
     const pins = useZustand(s => s.pins);
-    const current = pins[props.id];
+    const current = pins?.[props.id - 1];
 
     return (
         <section className="point">
             <PointActions />
-            <p>
-                lat: {current.lat}
-                {' | '}
-                long: {current.long}
-            </p>
+            {!current
+                ? <p>Pin not found.</p>
+                : <p>
+                    lat: {current.lat}
+                    {' | '}
+                    long: {current.long}
+                </p>
+            }
         </section>
     );
 }
