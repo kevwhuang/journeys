@@ -29,6 +29,8 @@ import Error from './pages/statuses/Error';
 import Fallback from './pages/statuses/Fallback';
 import NotFound from './pages/statuses/NotFound';
 
+import Protect from './components/Protect';
+
 import './features/keyboard';
 import './features/secret';
 import './features/speech';
@@ -51,21 +53,21 @@ const router: any = createBrowserRouter(createRoutesFromElements(
         <Route path="*" element={<NotFound />} />
         <Route path="about" element={<About />} />
         <Route path="account">
-            <Route path="" element={<Account />} />
-            <Route path=":id" element={<Account_Single />} />
+            <Route path="" element={<Protect component={<Account />} />} />
+            <Route path=":id" element={<Protect component={<Account_Single />} />} />
         </Route>
         <Route path="contact" element={<Contact />} />
         <Route path="error" element={<Error />} />
         <Route path="fallback" element={<Fallback />} />
         <Route path="guide" element={<Guide />} />
         <Route path="home" element={<Navigate to="/" replace={true} />} />
-        <Route path="map" element={<Map />} />
+        <Route path="map" element={<Protect component={<Map />} />} />
         <Route path="pins">
-            <Route path="" element={<Pins />} />
-            <Route path=":id" element={<Pins_Single />} />
+            <Route path="" element={<Protect component={<Pins />} />} />
+            <Route path=":id" element={<Protect component={<Pins_Single />} />} />
         </Route>
         <Route path="privacy" element={<Privacy />} />
-        <Route path="rankings" element={<Rankings />} />
+        <Route path="rankings" element={<Protect component={<Rankings />} />} />
         <Route path="terms" element={<Terms />} />
     </Route>
 ));

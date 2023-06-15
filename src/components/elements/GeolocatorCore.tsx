@@ -26,7 +26,6 @@ function GeolocatorCore(): React.ReactElement {
                 initialized = true;
                 geo.watchPosition(writePos, errorPos);
             } else if (!initialized) {
-                initialized = true;
                 return toast('Your browser does not support geolocation.', { ...toastOptions, icon: '✘' });
             }
 

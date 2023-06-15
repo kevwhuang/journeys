@@ -73,10 +73,10 @@ function ControlsSystem(): React.ReactElement {
                 }
             </MuiTooltip>
             <MuiTooltip title={isAuthenticated ? 'Logout' : 'Login'}>
-                {!isLoading && isAuthenticated
-                    ? <LogoutOutlinedIcon onClick={handleClickLogout} />
-                    : <LoginOutlinedIcon onClick={handleClickLogin} />
-                }
+                <>
+                    {!isLoading && isAuthenticated && <LogoutOutlinedIcon onClick={handleClickLogout} />}
+                    {!isLoading && !isAuthenticated && <LoginOutlinedIcon onClick={handleClickLogin} />}
+                </>
             </MuiTooltip>
         </section>
     );
