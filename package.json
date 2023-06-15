@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -18,16 +18,16 @@
         "url": "https://github.com/kevwhuang/journeys.git"
     },
     "scripts": {
+        "appengine": "gcloud app deploy",
         "build": "vite build",
         "dev": "vite",
         "lint": "eslint src --ext js,cjs,mjs,jsx,ts,tsx",
+        "postappengine": "gcloud app deploy",
         "prebuild": "tsc",
         "preview": "vite preview",
-        "test": "vitest",
-        "deploy": "gcloud app deploy",
-        "nodemon": "nodemon server/express.mjs",
-        "postdeploy": "gcloud app deploy",
-        "start": "NODE_ENV=production ts-node server/express.mjs"
+        "server": "nodemon server/index.mjs",
+        "start": "NODE_ENV=production server/index.mjs",
+        "test": "vitest"
     },
     "dependencies": {
         "@emailjs/browser": "*",
@@ -36,8 +36,17 @@
         "@mui/icons-material": "*",
         "@mui/material": "*",
         "axios": "*",
+        "compression": "*",
         "cookie": "*",
+        "cookie-parser": "*",
+        "cors": "*",
+        "dotenv": "*",
+        "express": "*",
+        "express-actuator": "*",
+        "express-session": "*",
         "google-map-react": "*",
+        "helmet": "*",
+        "mysql2": "*",
         "react": "*",
         "react-dom": "*",
         "react-hook-form": "*",
@@ -46,18 +55,7 @@
         "react-router-dom": "*",
         "swr": "*",
         "uuid": "*",
-        "zustand": "*",
-        "compression": "*",
-        "cookie-parser": "*",
-        "cors": "*",
-        "dotenv": "*",
-        "express": "*",
-        "express-actuator": "*",
-        "express-async-handler": "*",
-        "express-openid-connect": "*",
-        "express-session": "*",
-        "helmet": "*",
-        "mysql": "*"
+        "zustand": "*"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "*",
@@ -77,13 +75,12 @@
         "eslint-plugin-react-hooks": "*",
         "eslint-plugin-react-refresh": "*",
         "jsdom": "*",
+        "nodemon": "*",
         "sass": "*",
         "typescript": "*",
         "vite": "*",
         "vite-plugin-pwa": "*",
-        "vitest": "*",
-        "nodemon": "*",
-        "ts-node": "*"
+        "vitest": "*"
     },
     "private": true
 }

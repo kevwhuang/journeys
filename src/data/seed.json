@@ -1,12 +1,12 @@
 [
     {
         "user": {
-            "id": 0,
-            "email": "kevin@aephonics.com",
-            "username": "janedoe8",
+            "id": 2,
+            "email": "jane@journeys-app.com",
+            "username": "janedoe",
             "first": "Jane",
             "last": "Doe",
-            "country": "US",
+            "country": "CA",
             "photo": "",
             "page": "https://www.journeys-app.com",
             "bio": "I'm an avid animal adventurer.",
