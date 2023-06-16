@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-const BASE = process.env.VITE_SERVER_BASE;
-
 export async function handler(event) {
     if (event.httpMethod === 'GET') {
+        const BASE = 'https://journeys-app.onrender.com/api';
         const res = await axios(`${BASE}/users/${event.headers['x-username']}`);
 
         return {
