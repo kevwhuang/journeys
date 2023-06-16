@@ -18,12 +18,11 @@ interface User {
 
 function LeaderboardsData(): React.ReactElement {
     const [refresh, search] = useZustand(s => [s.refresh, s.search]);
-    const [users, setUsers]: [User[], Function] = React.useState([]);
+    const [users, setUsers]: [User[], any] = React.useState([]);
 
     React.useEffect(() => {
         (async function get() {
             const res = await axios('/.netlify/functions/get');
-            console.log(res.data)
 
             setUsers(res.data);
         }());

@@ -17,7 +17,7 @@ function ControlsSearch(): React.ReactElement {
     React.useEffect(() => {
         inputRef.current.value = '';
         updateSearch('');
-    }, [page]);
+    }, [page, updateSearch]);
 
     return (
         <section className="controls__search">

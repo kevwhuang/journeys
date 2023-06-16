@@ -7,7 +7,9 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
+import path from 'path';
 import session from 'express-session';
+import { fileURLToPath } from 'url';
 
 import routerUsers from './routers/users.mjs';
 
@@ -22,6 +24,15 @@ const OPTS_SESSION = {
     resave: false,
     saveUninitialized: true,
     secret: process.env.SERVER_SECRET,
+};
+
+const OPTS_STATIC = {
+    extensions: ['html'],
+    redirect: false,
+    setHeaders(res) {
+        res.set('Content-Security-Policy',
+            'script-src \'self\' \'unsafe-inline\'');
+    },
 };
 
 // eslint-disable-next-line space-before-function-paren
@@ -64,6 +75,12 @@ app.use(cors(OPTS_CORS));
 app.use(helmet());
 app.use(session(OPTS_SESSION));
 
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url))), OPTS_STATIC));
 app.use(logger);
+
 app.use('/api/users', routerUsers);
+app.all('*', (req, res) => {
+    res.status(308).redirect('/');
+});
+
 app.use(error);

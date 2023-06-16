@@ -1,7 +1,0 @@
-todo.txt
-**/.DS_Store
-
-.git/
-.netlify/
-dist/
-node_modules/

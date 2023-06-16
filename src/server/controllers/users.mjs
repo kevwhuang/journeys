@@ -22,6 +22,7 @@ const connect = (req, res, query, ...values) => {
 
 const deleteUser = (req, res) => connect(req, res, '../sql/queries/deleteUser.sql', req.params);
 const get = (req, res) => connect(req, res, '../sql/queries/get.sql');
+const getSettings = (req, res) => connect(req, res, '../sql/queries/getSettings.sql', req.params);
 const getUser = (req, res) => connect(req, res, '../sql/queries/getUser.sql', req.params);
 const post = (req, res) => connect(req, res, '../sql/queries/post.sql');
 const putUser = (req, res) => connect(req, res, '../sql/queries/putUser.sql', req.params);
@@ -29,6 +30,7 @@ const putUser = (req, res) => connect(req, res, '../sql/queries/putUser.sql', re
 export default {
     deleteUser,
     get,
+    getSettings,
     getUser,
     post,
     putUser,

@@ -20,7 +20,7 @@ interface Props {
 }
 
 function ProfileView(props: Props): React.ReactElement {
-    const [profile, setProfile]: [Profile[], Function] = React.useState([]);
+    const [profile, setProfile]: [Profile[], any] = React.useState([]);
 
     React.useEffect(() => {
         (async function get() {
@@ -32,7 +32,7 @@ function ProfileView(props: Props): React.ReactElement {
 
             setProfile(res.data);
         }());
-    }, []);
+    }, [props.username]);
 
     return (
         <section className="profile__view">

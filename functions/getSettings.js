@@ -4,7 +4,7 @@ const BASE = process.env.VITE_SERVER_BASE;
 
 export async function handler(event) {
     if (event.httpMethod === 'GET') {
-        const res = await axios(`${BASE}/users/${event.headers['x-username']}`);
+        const res = await axios(`${BASE}/users/${event.headers['x-username']}/settings`);
 
         return {
             body: JSON.stringify(res.data),

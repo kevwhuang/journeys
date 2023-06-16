@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.6.5",
+    "version": "0.6.7",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -18,16 +18,14 @@
         "url": "https://github.com/kevwhuang/journeys.git"
     },
     "scripts": {
-        "appengine": "gcloud app deploy",
         "build": "vite build",
         "dev": "vite",
-        "lint": "eslint {server,src} --ext js,cjs,mjs,jsx,ts,tsx",
+        "lint": "eslint src --ext js,cjs,mjs,jsx,ts,tsx",
         "netlify": "ntl dev",
-        "postappengine": "gcloud app deploy",
         "prebuild": "tsc",
         "preview": "vite preview",
-        "server": "nodemon server/index.mjs",
-        "start": "NODE_ENV=production node server/index.mjs",
+        "server": "nodemon src/server/index.mjs",
+        "start": "NODE_ENV=production node src/server/index.mjs",
         "test": "vitest"
     },
     "dependencies": {

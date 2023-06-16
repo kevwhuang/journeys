@@ -6,23 +6,25 @@ import { v4 as uuid } from 'uuid';
 interface Profile {
     bio: string,
     country: string,
-    experience: number,
     first_name: string,
     id: number,
     last_name: string,
+    map: number,
     page: string,
     photo: string,
     registered: string,
+    theme: number,
+    units: number,
     username: string,
 }
 
 function SettingsForm(): React.ReactElement {
-    const [settings, setSettings]: [Profile[], Function] = React.useState([]);
+    const [settings, setSettings]: [Profile[], any] = React.useState([]);
     const { user }: any = useAuth0();
 
     React.useEffect(() => {
         (async function get() {
-            const res = await axios('/.netlify/functions/getUser', {
+            const res = await axios('/.netlify/functions/getSettings', {
                 headers: {
                     'X-Username': user.nickname,
                 },
@@ -30,7 +32,7 @@ function SettingsForm(): React.ReactElement {
 
             setSettings(res.data);
         }());
-    }, []);
+    }, [user.nickname]);
 
     return (
         <section className="settings__form">
@@ -45,13 +47,17 @@ function SettingsForm(): React.ReactElement {
                         {' | '}
                         <span>{field.country}</span>
                         {' | '}
-                        <span>{field.registered.slice(0, 10)}</span>
-                        {' | '}
-                        <span>{field.experience}</span>
-                        {' | '}
                         <span>{field.page}</span>
                         {' | '}
                         <span>{field.bio}</span>
+                        {' | '}
+                        <span>{field.registered.slice(0, 10)}</span>
+                        {' | '}
+                        <span>{field.theme}</span>
+                        {' | '}
+                        <span>{field.units}</span>
+                        {' | '}
+                        <span>{field.map}</span>
                     </li>
                 ))}
             </ul>
