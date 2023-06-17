@@ -43,8 +43,18 @@ import './styles/keyframes.scss';
 import './styles/media.scss';
 import './styles/dev.scss';
 
-const config: { refreshInterval: number } = {
+interface Config {
+    errorRetryCount: number,
+    refreshInterval: number,
+    revalidateOnReconnect: boolean,
+    shouldRetryOnError: boolean,
+}
+
+const config: Config = {
+    errorRetryCount: 5,
     refreshInterval: 3600e3,
+    revalidateOnReconnect: true,
+    shouldRetryOnError: true,
 };
 
 const router: any = createBrowserRouter(createRoutesFromElements(

@@ -18,7 +18,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE settings (
-    id INT UNIQUE,
+    id INT AUTO_INCREMENT UNIQUE,
     theme TINYINT(1),
     units TINYINT(1),
     map TINYINT(1),
@@ -27,8 +27,19 @@ CREATE TABLE settings (
 );
 
 CREATE TABLE records (
-    id INT UNIQUE,
+    id INT AUTO_INCREMENT UNIQUE,
     experience INT,
-    notifications JSON,
+    notifications MEDIUMTEXT,
     FOREIGN KEY (id) REFERENCES users (id) ON DELETE CASCADE
 );
+
+CREATE TABLE history AS
+SELECT
+    *
+FROM
+    users;
+
+ALTER TABLE
+    history DROP photo,
+    DROP page,
+    DROP bio;

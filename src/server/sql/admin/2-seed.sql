@@ -16,18 +16,18 @@ VALUES
         'Kevin',
         'Huang',
         'US',
-        '',
-        '',
-        ''
+        'https://source.unsplash.com/random/200x200/?kevin',
+        'https://journeys-app.com',
+        'I love exploration.'
     ),
     (
-        'jane@journeys-app.com',
+        'janedoe@journeys-app.com',
         'janedoe',
         'Jane',
         'Doe',
         'CA',
-        '',
-        'https://www.journeys-app.com',
+        'https://source.unsplash.com/random/200x200/?jane',
+        'https://journeys-app.com',
         'I''m an avid animal adventurer.'
     ),
     (
@@ -35,22 +35,22 @@ VALUES
         'alexlee',
         'Alex',
         'Lee',
-        'SE',
         '',
-        'https://www.journeys-app.com',
-        'I love exploration.'
+        '',
+        '',
+        ''
     );
 
 INSERT INTO
-    settings (id, theme, units, map)
+    settings (theme, units, map)
 VALUES
-    (1, 1, 1, 2),
-    (2, 1, 1, 2),
-    (3, 0, 0, 0);
+    (1, 1, 2),
+    (1, 1, 2),
+    (0, 0, 0);
 
 INSERT INTO
-    records (id, experience)
+    records (experience, notifications)
 VALUES
-    (1, 999999999),
-    (2, 8000000),
-    (3, 0);
+    (999999999, null),
+    (8000000, null),
+    (0, null);

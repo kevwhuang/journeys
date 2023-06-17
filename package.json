@@ -1,12 +1,12 @@
 {
     "name": "journeys",
-    "version": "0.6.8",
+    "version": "0.6.9",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
         "travel"
     ],
-    "homepage": "https://www.journeys-app.com",
+    "homepage": "https://journeys-app.com",
     "bugs": {
         "url": "https://github.com/kevwhuang/journeys/issues"
     },
@@ -38,7 +38,6 @@
         "@netlify/functions": "*",
         "axios": "*",
         "compression": "*",
-        "cookie": "*",
         "cookie-parser": "*",
         "cors": "*",
         "dotenv": "*",

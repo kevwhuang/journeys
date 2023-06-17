@@ -29,7 +29,7 @@ function ControlsSearch(): React.ReactElement {
             <input
                 id="input-search"
                 type="text"
-                placeholder="search leaderboards …"
+                placeholder={page === 'rankings' ? 'search leaderboards …' : ''}
                 maxLength={100}
                 disabled={page !== 'rankings'}
                 onChange={e => handleChange(e)}

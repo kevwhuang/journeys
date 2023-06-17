@@ -3,9 +3,8 @@
 .leaderboards {}
 
 .leaderboards__data {
-    font-size: $font-4;
-
     ul {
+        font-size: $font-4;
         list-style-type: none;
 
         li {
@@ -20,6 +19,17 @@
             }
         }
     }
-}
 
-.leaderboards__headers {}
+    .leaderboards__data--spinner {
+        align-items: center;
+        display: flex;
+        height: calc(100vh - 60px);
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+
+        svg {
+            color: $color-4;
+        }
+    }
+}

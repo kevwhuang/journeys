@@ -4,7 +4,6 @@ SELECT
     u.first_name,
     u.last_name,
     u.country,
-    u.photo,
     u.registered,
     r.experience
 FROM

@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { v4 as uuid } from 'uuid';
 
+import useRanking from '../../hooks/useRanking';
+
 interface Profile {
     bio: string,
     country: string,
@@ -51,7 +53,7 @@ function ProfileView(props: Props): React.ReactElement {
                             {' | '}
                             <span>{field.registered.slice(0, 10)}</span>
                             {' | '}
-                            <span>{field.experience}</span>
+                            <span>{useRanking(field.experience)}</span>
                             {' | '}
                             <span>{field.page}</span>
                             {' | '}
