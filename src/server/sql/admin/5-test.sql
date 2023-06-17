@@ -16,7 +16,7 @@ VALUES
         'Jessica',
         'Roach',
         'US',
-        'https://source.unsplash.com/random/200x200/?face',
+        'https://source.unsplash.com/random/200x200/?face&v=3',
         'https://journeys-app.com',
         'This is my bio.'
     );

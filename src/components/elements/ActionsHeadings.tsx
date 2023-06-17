@@ -50,6 +50,7 @@ function ActionsHeadings(): React.ReactElement {
                     <img
                         className={getClassName()}
                         src={inView ? SOURCE : ''}
+                        alt="Earth"
                         draggable="false"
                     />
                 </span>

@@ -12,8 +12,8 @@ interface Props {
 function Profile(props: Props): React.ReactElement {
     return (
         <section className="profile">
-            <ProfileView username={props.username} />
             <ProfileActions />
+            <ProfileView username={props.username} />
         </section>
     );
 }

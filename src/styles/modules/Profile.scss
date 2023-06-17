@@ -5,13 +5,29 @@
 .profile__actions {}
 
 .profile__view {
-    font-size: $font-4;
-
     ul {
+        font-size: $font-4;
         list-style-type: none;
 
         li {
             text-align: center;
+        }
+    }
+
+    .profile__view--spinner {
+        align-items: center;
+        display: flex;
+        height: calc(100vh - 60px);
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+
+        svg {
+            color: $color-4;
+        }
+
+        &.loaded {
+            display: none;
         }
     }
 }

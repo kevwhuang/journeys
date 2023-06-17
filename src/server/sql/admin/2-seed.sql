@@ -16,7 +16,7 @@ VALUES
         'Kevin',
         'Huang',
         'US',
-        'https://source.unsplash.com/random/200x200/?kevin',
+        'https://source.unsplash.com/random/200x200/?face&v=1',
         'https://journeys-app.com',
         'I love exploration.'
     ),
@@ -26,7 +26,7 @@ VALUES
         'Jane',
         'Doe',
         'CA',
-        'https://source.unsplash.com/random/200x200/?jane',
+        'https://source.unsplash.com/random/200x200/?face&v=2',
         'https://journeys-app.com',
         'I''m an avid animal adventurer.'
     ),

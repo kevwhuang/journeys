@@ -31,5 +31,9 @@
         svg {
             color: $color-4;
         }
+
+        &.loaded {
+            display: none;
+        }
     }
 }

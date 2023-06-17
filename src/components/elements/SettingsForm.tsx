@@ -26,7 +26,7 @@ function SettingsForm(): React.ReactElement {
         (async function get() {
             const res = await axios('/.netlify/functions/getSettings', {
                 headers: {
-                    'X-Username': user.nickname,
+                    'x-username': user.nickname,
                 },
             });
 

@@ -1,8 +1,16 @@
 import React from 'react';
-import axios from 'axios';
 import { v4 as uuid } from 'uuid';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
+import useAxios from '../../hooks/useAxios';
 import useRanking from '../../hooks/useRanking';
+
+interface Axios {
+    data: Profile[],
+    loading: boolean,
+    mutate: any,
+}
 
 interface Profile {
     bio: string,
@@ -22,46 +30,45 @@ interface Props {
 }
 
 function ProfileView(props: Props): React.ReactElement {
-    const [profile, setProfile]: [Profile[], any] = React.useState([]);
-
-    React.useEffect(() => {
-        (async function get() {
-            const res = await axios('/.netlify/functions/getUser', {
-                headers: {
-                    'X-Username': props.username,
-                },
-            });
-
-            setProfile(res.data);
-        }());
-    }, [props.username]);
+    const { data: profile, loading }: Axios = useAxios({
+        endpoint: 'getUser',
+        options: {
+            headers: {
+                'x-username': props.username,
+            },
+        },
+    });
 
     return (
         <section className="profile__view">
-            {!profile.length
-                ? <p>Profile not found.</p>
-                : <ul>
-                    {profile.map(field => (
-                        <li key={uuid()}>
-                            <img src={field.photo || '/icons/favicon-16x16.png'} alt={`${field.username}`} />
-                            {' | '}
-                            <span>{field.username}</span>
-                            {' | '}
-                            <span>{field.first_name} {field.last_name}</span>
-                            {' | '}
-                            <span>{field.country}</span>
-                            {' | '}
-                            <span>{field.registered.slice(0, 10)}</span>
-                            {' | '}
-                            <span>{useRanking(field.experience)}</span>
-                            {' | '}
-                            <span>{field.page}</span>
-                            {' | '}
-                            <span>{field.bio}</span>
-                        </li>
-                    ))}
-                </ul>
-            }
+            <div className={loading ? 'profile__view--spinner' : 'profile__view--spinner loaded'}>
+                <CircularProgress size={'121.5px'} />
+            </div>
+            <ul>
+                {!loading && profile.map(field => (
+                    <li key={uuid()}>
+                        <img
+                            src={field.photo || '/icons/favicon-16x16.png'}
+                            alt={`${field.username}`}
+                            draggable="false"
+                        />
+                        {' | '}
+                        <span>{field.username}</span>
+                        {' | '}
+                        <span>{field.first_name} {field.last_name}</span>
+                        {' | '}
+                        <span>{field.country}</span>
+                        {' | '}
+                        <span>{field.registered.slice(0, 10)}</span>
+                        {' | '}
+                        <span>{useRanking(field.experience)}</span>
+                        {' | '}
+                        <span>{field.page}</span>
+                        {' | '}
+                        <span>{field.bio}</span>
+                    </li>
+                ))}
+            </ul>
         </section>
     );
 }

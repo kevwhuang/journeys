@@ -26,7 +26,7 @@ interface User {
 
 function LeaderboardsData(): React.ReactElement {
     const [refresh, search] = useZustand(s => [s.refresh, s.search]);
-    const { data: users, loading, mutate }: Axios = useAxios('get');
+    const { data: users, loading, mutate }: Axios = useAxios({ endpoint: 'get' });
 
     React.useEffect(() => {
         (async function get() {
@@ -36,8 +36,8 @@ function LeaderboardsData(): React.ReactElement {
 
     return (
         <section className="leaderboards__data">
-            <div className="leaderboards__data--spinner">
-                {loading && <CircularProgress size={'121.5px'} />}
+            <div className={loading ? 'leaderboards__data--spinner' : 'leaderboards__data--spinner loaded'}>
+                <CircularProgress size={'121.5px'} />
             </div>
             <ul>
                 {!loading && users.filter(user => user.username.includes(search))
