@@ -1,5 +1,6 @@
 SELECT
     u.id,
+    u.email,
     u.username,
     u.first_name,
     u.last_name,

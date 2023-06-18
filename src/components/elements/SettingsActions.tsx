@@ -10,7 +10,7 @@ function SettingsActions(): React.ReactElement {
 
     async function handleClick() {
         const confirmed
-            = confirm('Are you sure you wish to delete your account? This action is irreversible.');
+            = confirm('Are you sure you want to delete your account? This action is irreversible.');
 
         if (!confirmed) return;
 

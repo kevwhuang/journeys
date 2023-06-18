@@ -13,6 +13,7 @@ interface Actions {
     togglePower: () => void,
     toggleRefresh: () => void,
     toggleTheme: (theme: number) => void,
+    updateExperience: () => void,
     updatePosition: (lat: number, long: number) => void,
     updateSearch: (query: string) => void,
     updateSignal: (strength: Signal) => void,
@@ -71,7 +72,6 @@ type Signal = 0 | 1 | 2 | 3;
 
 type System = {
     map: number,
-    sync: string,
     theme: number,
     units: number,
 };

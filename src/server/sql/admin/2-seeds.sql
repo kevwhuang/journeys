@@ -18,7 +18,7 @@ VALUES
         'US',
         'https://source.unsplash.com/random/200x200/?face&v=1',
         'https://journeys-app.com',
-        'I love exploration.'
+        'I love travel and exploration.'
     ),
     (
         'janedoe@journeys-app.com',
@@ -33,8 +33,8 @@ VALUES
     (
         'alex@journeys-app.com',
         'alexlee',
-        'Alex',
-        'Lee',
+        '',
+        '',
         '',
         '',
         '',
@@ -45,12 +45,12 @@ INSERT INTO
     settings (theme, units, map)
 VALUES
     (1, 1, 2),
-    (1, 1, 2),
+    (1, 1, 1),
     (0, 0, 0);
 
 INSERT INTO
     records (experience, notifications)
 VALUES
+    (0, null),
     (999999999, null),
-    (8000000, null),
-    (0, null);
+    (8000000, null);

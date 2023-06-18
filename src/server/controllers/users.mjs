@@ -24,6 +24,20 @@ const deleteUser = (req, res) => connect(req, res, '../sql/queries/deleteUser.sq
 const get = (req, res) => connect(req, res, '../sql/queries/get.sql');
 const getSettings = (req, res) => connect(req, res, '../sql/queries/getSettings.sql', req.params);
 const getUser = (req, res) => connect(req, res, '../sql/queries/getUser.sql', req.params);
+
+const patchUser = (req, res) => {
+    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/patchUser.sql'), 'utf8')
+        .then(template => {
+            const e = req.body.data;
+            const sql = mysql.format(template, [e.experience, e.notifications, e.username]);
+
+            pool.query(sql, err => {
+                if (err) return errors.server(res, err);
+                res.json({ message: 'Records updated.' });
+            });
+        });
+};
+
 const post = (req, res) => connect(req, res, '../sql/queries/post.sql');
 
 const putUser = (req, res) => {
@@ -46,6 +60,7 @@ export default {
     get,
     getSettings,
     getUser,
+    patchUser,
     post,
     putUser,
 };

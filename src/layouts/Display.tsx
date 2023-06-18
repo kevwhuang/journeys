@@ -5,6 +5,7 @@ import useZustand from '../hooks/useZustand';
 
 import Controls from '../components/modules/Controls';
 import Navbar from '../components/modules/Navbar';
+import Sync from '../components/Sync';
 
 let initialized = false;
 
@@ -28,6 +29,7 @@ function Display(): React.ReactElement {
             <Controls />
             <Navbar />
             <Outlet />
+            <Sync />
         </div>
     );
 }

@@ -9,8 +9,8 @@ let initialized = false;
 
 function GeolocatorCore(): React.ReactElement {
     const [currentPosition, setCurrentPosition]: any = React.useState([]);
-    const [power, updatePosition, updateSignal, updateTracks]
-        = useZustand(s => [s.power, s.updatePosition, s.updateSignal, s.updateTracks]);
+    const [power, updateExperience, updatePosition, updateSignal, updateTracks]
+        = useZustand(s => [s.power, s.updateExperience, s.updatePosition, s.updateSignal, s.updateTracks]);
 
     React.useEffect(() => {
         (function geolocation() {
@@ -41,6 +41,7 @@ function GeolocatorCore(): React.ReactElement {
 
             function writePos(pos: any) {
                 power && setCurrentPosition([pos.coords.latitude.toFixed(4), pos.coords.longitude.toFixed(4)]);
+                power && updateExperience();
 
                 if (pos.coords.accuracy >= 20) updateSignal(3);
                 else if (pos.coords.accuracy >= 10) updateSignal(2);

@@ -9,7 +9,7 @@ function notifications(data: any): Notification__[] {
     const notifications: Notification__[] = [];
 
     for (const e of data) {
-        notifications.unshift(new __Notification(e.subject, e.message, e.priority));
+        notifications.push(new __Notification(e.subject, e.message, e.priority));
     }
 
     return notifications;

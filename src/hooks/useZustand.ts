@@ -3,8 +3,8 @@
 import { create } from 'zustand';
 
 import actions from '../features/actions';
+import defaultPhoto from '../assets/default-photo.webp';
 import initializers from '../features/initializers';
-import photo from '../assets/default-photo.webp';
 import seed from '../data/seed.json';
 
 const initialize: State = {
@@ -31,7 +31,6 @@ const initialize: State = {
     signal: 0,
     system: {
         map: seed[0].system.map || 2,
-        sync: seed[0].system.sync || new Date().toISOString(),
         theme: seed[0].system.theme || 1,
         units: seed[0].system.units || 1,
     },
@@ -39,7 +38,7 @@ const initialize: State = {
     user: {
         first: seed[0].user.first || '',
         last: seed[0].user.last || '',
-        photo: seed[0].user.photo || photo,
+        photo: seed[0].user.photo || defaultPhoto,
     },
 };
 
@@ -57,6 +56,7 @@ const useZustand = create<Actions & State>(set => ({
     togglePower: () => set(s => ({ power: !(s.power) })),
     toggleRefresh: () => set(s => ({ refresh: s.refresh + 1 })),
     toggleTheme: theme => set(s => actions.toggleTheme(s, theme)),
+    updateExperience: () => set(s => ({ records: { ...s.records, experience: (s.records.experience + 100) } })),
     updatePosition: (lat, long) => set(() => ({ position: { lat, long } })),
     updateSearch: query => set(() => ({ search: query })),
     updateSignal: strength => set(() => ({ signal: strength })),
