@@ -25,7 +25,21 @@ const get = (req, res) => connect(req, res, '../sql/queries/get.sql');
 const getSettings = (req, res) => connect(req, res, '../sql/queries/getSettings.sql', req.params);
 const getUser = (req, res) => connect(req, res, '../sql/queries/getUser.sql', req.params);
 const post = (req, res) => connect(req, res, '../sql/queries/post.sql');
-const putUser = (req, res) => connect(req, res, '../sql/queries/putUser.sql', req.params);
+
+const putUser = (req, res) => {
+    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/putUser.sql'), 'utf8')
+        .then(template => {
+            const e = req.body.data;
+            const inserts1 = [e.first_name, e.last_name, e.country, e.photo, e.page, e.bio, e.username];
+            const inserts2 = [e.theme, e.units, e.map, e.username];
+            const sql = mysql.format(template, [...inserts1, ...inserts2]);
+
+            pool.query(sql, err => {
+                if (err) return errors.server(res, err);
+                res.json({ message: 'Account updated.' });
+            });
+        });
+};
 
 export default {
     deleteUser,

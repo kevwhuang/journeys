@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useForm } from 'react-hook-form';
@@ -54,8 +55,12 @@ function SettingsForm(): React.ReactElement {
         return className;
     }
 
-    function handleSubmit(data: any) {
-        data;
+    async function handleSubmit(data: any) {
+        await axios(`/.netlify/functions/putUser`, {
+            data,
+            method: 'PUT',
+        });
+
         formState.isSubmitSuccessful
             && toast('Your settings have been updated.', toastOptions);
     }
@@ -80,7 +85,7 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label>Registration Date</label>
+                        <label>Date Registered</label>
                         <input
                             placeholder={settings?.[0].registered.slice(0, 10)}
                             disabled

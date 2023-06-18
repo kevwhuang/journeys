@@ -12,7 +12,7 @@ export async function handler(event) {
     }
 
     return {
-        body: JSON.stringify({ message: `Unsupported method: ${event.httpMethod}.` }),
+        body: JSON.stringify({ message: `Unknown error: ${event.httpMethod}.` }),
         statusCode: 400,
     };
 }

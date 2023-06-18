@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 export async function handler(event) {
-    if (event.httpMethod === 'GET') {
+    if (event.httpMethod === 'PUT') {
         const BASE = 'https://journeys-app.onrender.com/api';
-        const res = await axios(`${BASE}/users/${event.headers['x-username']}`);
+
+        await axios.put(`${BASE}/users/${JSON.parse(event.body).username}`, { data: JSON.parse(event.body) });
 
         return {
-            body: JSON.stringify(res.data),
+            body: JSON.stringify({ message: 'Account updated.' }),
             statusCode: 200,
         };
     }

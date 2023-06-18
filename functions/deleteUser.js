@@ -1,14 +1,11 @@
 import axios from 'axios';
 
 export async function handler(event) {
-    if (event.httpMethod === 'GET') {
+    if (event.httpMethod === 'DELETE') {
         const BASE = 'https://journeys-app.onrender.com/api';
-        const res = await axios(`${BASE}/users/${event.headers['x-username']}`);
 
-        return {
-            body: JSON.stringify(res.data),
-            statusCode: 200,
-        };
+        await axios.delete(`${BASE}/users/${event.headers['x-username']}`);
+        return { statusCode: 204 };
     }
 
     return {
