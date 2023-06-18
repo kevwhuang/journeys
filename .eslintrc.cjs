@@ -35,6 +35,7 @@ module.exports = {
         'max-len': 0,
         'no-plusplus': 0,
         'no-undef': 0,
+        'no-unsafe-optional-chaining': 0,
         // OPTIONS
         'arrow-parens': [2, 'as-needed'],
         'func-style': [2, 'declaration', { 'allowArrowFunctions': true }],

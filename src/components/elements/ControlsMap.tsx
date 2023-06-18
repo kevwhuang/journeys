@@ -58,19 +58,19 @@ function ControlsMap(): React.ReactElement {
         }
 
         if (!state.pins.length) {
-            state.addPin(new __Position(state.position.lat, state.position.long));
+            state.addPin(new __Position(state.position.lat, state.position.long, new Date().toISOString()));
             toast('You\'ve dropped a new pin.', toastOptions);
             return;
         }
 
         if (state.pins.length) {
-            const current = { lat: state.position.lat, long: state.position.long };
-            const old = state.pins;
+            const all = JSON.stringify(state.pins[0]);
+            const current = JSON.stringify({ lat: state.position.lat, long: state.position.long });
 
-            if (JSON.stringify(current).includes(JSON.stringify(old).slice(1, old.length - 2))) {
+            if (all.includes(current.slice(1, current.length - 2))) {
                 toast('You\'ve already added this pin.', { ...toastOptions, icon: '✘' });
             } else {
-                state.addPin(new __Position(state.position.lat, state.position.long));
+                state.addPin(new __Position(state.position.lat, state.position.long, new Date().toISOString()));
                 toast('You\'ve dropped a new pin.', toastOptions);
             }
         }

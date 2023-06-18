@@ -2,7 +2,7 @@
 
 interface Actions {
     addNotification: (notification: Notification__) => void,
-    addPin: (pin: Position__) => void,
+    addPin: (pin: Pin) => void,
     changeGallery: (gallery: string) => void,
     changePage: (page: Page) => void,
     deleteNotification: (index: number) => void,
@@ -25,7 +25,7 @@ interface State {
     modals: Modals,
     navbar: boolean,
     page: Page,
-    pins: Position__[],
+    pins: Pin[],
     position: Position__,
     power: boolean,
     records: Records,
@@ -51,6 +51,12 @@ type Notification__ = {
 type Page = '' | 'about' | 'account' | 'contact' | 'guide' | 'home'
     | 'map' | 'pins' | 'privacy' | 'rankings' | 'terms';
 
+type Pin = {
+    lat: number,
+    long: number,
+    time: string,
+}
+
 type Position__ = {
     lat: number,
     long: number,
@@ -65,20 +71,13 @@ type Signal = 0 | 1 | 2 | 3;
 
 type System = {
     map: number,
-    sync: Date,
+    sync: string,
     theme: number,
     units: number,
 };
 
 type User = {
-    bio: string,
-    country: string,
-    email: string,
     first: string,
-    id: number,
     last: string,
-    page: string,
     photo: string,
-    registered: Date,
-    username: string,
 };

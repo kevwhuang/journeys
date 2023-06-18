@@ -10,9 +10,9 @@ function addNotification(s: State, notification: Notification__): Partial<State>
     return ({ records: { ...s.records, notifications } });
 }
 
-function addPin(s: State, pin: Position__): Partial<State> {
-    const previous: Position__[] = [...s.pins];
-    const pins: Position__[] = [pin].concat(previous);
+function addPin(s: State, pin: Pin): Partial<State> {
+    const previous: Pin[] = [...s.pins];
+    const pins: Pin[] = [pin].concat(previous);
 
     localStorage.setItem('pins', JSON.stringify(pins));
     return ({ pins });
@@ -26,8 +26,8 @@ function deleteNotification(s: State, index: number): Partial<State> {
 }
 
 function deletePin(s: State, index: number): Partial<State> {
-    const pins: Position__[]
-        = [...s.pins].filter((e: Position__, i: number): boolean => i !== index);
+    const pins: Pin[]
+        = [...s.pins].filter((e: Pin, i: number): boolean => i !== index);
 
     localStorage.setItem('pins', JSON.stringify(pins));
     return ({ pins });

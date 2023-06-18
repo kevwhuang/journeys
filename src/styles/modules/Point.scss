@@ -2,9 +2,26 @@
 
 .point {}
 
-.point__actions {}
+.point__actions {
+    display: flex;
+    font-size: $font-4;
+    justify-content: space-between;
+    margin: auto;
+    width: 500px;
 
-.point__map {}
+    a {
+        color: $color-3;
+
+        &:visited {
+            color: $color-3;
+        }
+    }
+}
+
+.point__map {
+    display: flex;
+    justify-content: center;
+}
 
 .point__summary {
     font-size: $font-4;

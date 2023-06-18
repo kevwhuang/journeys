@@ -18,8 +18,8 @@ const initialize: State = {
     page: 'home',
     pins: initializers.pins(),
     position: {
-        lat: 0,
-        long: 0,
+        lat: initializers.position().lat,
+        long: initializers.position().long,
     },
     power: true,
     records: {
@@ -31,22 +31,15 @@ const initialize: State = {
     signal: 0,
     system: {
         map: seed[0].system.map || 2,
-        sync: seed[0].system.sync || new Date(),
+        sync: seed[0].system.sync || new Date().toISOString(),
         theme: seed[0].system.theme || 1,
         units: seed[0].system.units || 1,
     },
     tracks: initializers.tracks(),
     user: {
-        bio: seed[0].user.bio || '',
-        country: seed[0].user.country || '',
-        email: seed[0].user.email || '',
         first: seed[0].user.first || '',
-        id: seed[0].user.id || Math.round(Math.random() * 1e7),
         last: seed[0].user.last || '',
-        page: seed[0].user.page || '',
         photo: seed[0].user.photo || photo,
-        registered: seed[0].user.registered || new Date(),
-        username: seed[0].user.username || '',
     },
 };
 

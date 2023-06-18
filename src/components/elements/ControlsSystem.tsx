@@ -26,6 +26,9 @@ function ControlsSystem(): React.ReactElement {
     }
 
     function handleClickLogout() {
+        const confirmed = confirm('Are you sure you want to logout?');
+
+        if (!confirmed) return;
         logout({ logoutParams: { returnTo: location.origin } });
         toast('You\'ve logged out.', toastOptions);
     }

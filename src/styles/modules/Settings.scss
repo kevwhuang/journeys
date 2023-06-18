@@ -1,17 +1,76 @@
 @use '../_root' as *;
 
-.settings {}
+.settings {
+    text-align: center;
+    padding: 0 40px;
+}
 
-.settings__actions {}
+.settings__actions {
+    button {
+        font-size: $font-4;
+        text-align: center;
+        width: 50%;
+    }
+}
 
 .settings__form {
-    font-size: $font-4;
+    form {
+        font-size: $font-4;
+        margin: auto;
+        width: 100%;
 
-    ul {
-        list-style-type: none;
-
-        li {
+        button {
+            font-size: $font-4;
             text-align: center;
+            width: 50%;
+        }
+
+        h2 {
+            color: $color-4;
+            font-size: $font-5;
+        }
+
+        .settings__form--field {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto 10px;
+
+            input {
+                font-size: $font-4;
+                width: 50%;
+            }
+
+            select {
+                font-size: $font-4;
+                width: 50%;
+            }
+
+            textarea {
+                font-size: $font-4;
+                width: 50%;
+            }
+        }
+    }
+
+    .settings__form--spinner {
+        align-items: center;
+        display: flex;
+        height: calc(100vh - 60px);
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+
+        svg {
+            color: $color-4;
+        }
+
+        &.loaded {
+            display: none;
+        }
+
+        &.opened {
+            width: calc(100vw - 250px);
         }
     }
 }

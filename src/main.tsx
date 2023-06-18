@@ -52,7 +52,7 @@ interface Config {
 
 const config: Config = {
     errorRetryCount: 5,
-    refreshInterval: 3600e3,
+    refreshInterval: 600e3,
     revalidateOnReconnect: true,
     shouldRetryOnError: true,
 };

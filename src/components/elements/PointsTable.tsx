@@ -23,10 +23,29 @@ function PointsTable(): React.ReactElement {
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
             />
-            <ul>
+            <ol>
+                <li>
+                    <span>
+                        #
+                    </span>
+                    {' | '}
+                    <span>Date</span>
+                    {' | '}
+                    <span>Address</span>
+                    {' | '}
+                    <span>Latitude</span>
+                    {' | '}
+                    <span>Longitude</span>
+                    {' | '}
+                    <span>Delete</span>
+                </li>
                 {pins.map((pin, i) => (
                     <li key={uuid()}>
-                        <DeleteOutlinedIcon onClick={() => handleClick(i)} />
+                        <Link to={`${i + 1}`}>{i + 1}</Link>
+                        {' | '}
+                        <span>{pin && pin.time.slice(0, 10)}</span>
+                        {' | '}
+                        <span>{'{address}'}</span>
                         {' | '}
                         <span>
                             lat: {pin.lat}
@@ -34,10 +53,10 @@ function PointsTable(): React.ReactElement {
                             long: {pin.long}
                         </span>
                         {' | '}
-                        <Link to={`${i + 1}`}>view</Link>
+                        <DeleteOutlinedIcon onClick={() => handleClick(i)} />
                     </li>
                 ))}
-            </ul>
+            </ol>
         </section>
     );
 }

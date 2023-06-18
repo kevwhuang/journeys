@@ -35,5 +35,9 @@
         &.loaded {
             display: none;
         }
+
+        &.opened {
+            width: calc(100vw - 250px);
+        }
     }
 }

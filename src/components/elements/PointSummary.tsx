@@ -8,15 +8,16 @@ interface Props {
 
 function PointSummary(props: Props): React.ReactElement {
     const pins = useZustand(s => s.pins);
-    const current = pins?.[props.id - 1];
+    const { lat, long } = pins?.[props.id - 1];
 
     return (
         <section className="point__summary">
-            {current
+            <p>{'{address}'}</p>
+            {lat
                 && <p>
-                    lat: {current.lat}
+                    lat: {lat}
                     {' | '}
-                    long: {current.long}
+                    long: {long}
                 </p>
             }
         </section>

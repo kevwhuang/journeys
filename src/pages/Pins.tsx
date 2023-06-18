@@ -4,7 +4,6 @@ import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
 import Points from '../components/modules/Points';
-import Summary from '../components/modules/Summary';
 
 function Pins(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
@@ -15,7 +14,6 @@ function Pins(): React.ReactElement {
 
     return (
         <main id="pins">
-            <Summary />
             <Points />
         </main>
     );

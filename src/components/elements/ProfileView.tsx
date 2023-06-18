@@ -5,6 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import useAxios from '../../hooks/useAxios';
 import useRanking from '../../hooks/useRanking';
+import useZustand from '../../hooks/useZustand';
 
 interface Axios {
     data: Profile[],
@@ -30,6 +31,8 @@ interface Props {
 }
 
 function ProfileView(props: Props): React.ReactElement {
+    const navbar = useZustand(s => s.navbar);
+
     const { data: profile, loading }: Axios = useAxios({
         endpoint: 'getUser',
         options: {
@@ -39,9 +42,16 @@ function ProfileView(props: Props): React.ReactElement {
         },
     });
 
+    function getClassName() {
+        let className = loading ? 'profile__view--spinner' : 'profile__view--spinner loaded';
+
+        if (navbar) className += ' opened';
+        return className;
+    }
+
     return (
         <section className="profile__view">
-            <div className={loading ? 'profile__view--spinner' : 'profile__view--spinner loaded'}>
+            <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
             <ul>

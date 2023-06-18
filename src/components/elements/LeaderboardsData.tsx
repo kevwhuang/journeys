@@ -25,7 +25,7 @@ interface User {
 }
 
 function LeaderboardsData(): React.ReactElement {
-    const [refresh, search] = useZustand(s => [s.refresh, s.search]);
+    const [navbar, refresh, search] = useZustand(s => [s.navbar, s.refresh, s.search]);
     const { data: users, loading, mutate }: Axios = useAxios({ endpoint: 'get' });
 
     React.useEffect(() => {
@@ -34,9 +34,16 @@ function LeaderboardsData(): React.ReactElement {
         }());
     }, [mutate, refresh]);
 
+    function getClassName() {
+        let className = loading ? 'leaderboards__data--spinner' : 'leaderboards__data--spinner loaded';
+
+        if (navbar) className += ' opened';
+        return className;
+    }
+
     return (
         <section className="leaderboards__data">
-            <div className={loading ? 'leaderboards__data--spinner' : 'leaderboards__data--spinner loaded'}>
+            <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
             <ul>

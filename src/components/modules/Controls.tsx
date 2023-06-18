@@ -15,7 +15,7 @@ function Controls(): React.ReactElement {
 
     return (
         <aside className="controls">
-            <div className={navbar ? 'controls--container' : 'controls--container full'}>
+            <div className={navbar ? 'controls--container' : 'controls--container opened'}>
                 <ControlsModal />
                 <ControlsNavbar />
                 <ControlsMap />

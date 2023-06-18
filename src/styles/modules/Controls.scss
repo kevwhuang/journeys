@@ -33,7 +33,7 @@
         width: calc(100vw - 250px);
         z-index: 100;
 
-        &.full {
+        &.opened {
             max-width: 2560px;
             width: 100vw;
         }

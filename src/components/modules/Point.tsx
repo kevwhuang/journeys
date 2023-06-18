@@ -13,8 +13,8 @@ interface Props {
 function Point(props: Props): React.ReactElement {
     return (
         <section className="point">
-            <PointActions />
-            <PointMap />
+            <PointActions id={props.id} />
+            <PointMap id={props.id} />
             <PointSummary id={props.id} />
         </section>
     );

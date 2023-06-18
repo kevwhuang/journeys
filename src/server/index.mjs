@@ -44,7 +44,7 @@ const error = async (err, req, res, next) => {
 const logger = (req, res, next) => {
     // eslint-disable-next-line no-console
     console.table({
-        time: new Date().toUTCString(),
+        time: new Date().toISOString(),
         url: `${req.protocol}://${req.get('host')}${req.path}`,
         method: req.method,
     });
