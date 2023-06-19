@@ -33,12 +33,12 @@ VALUES
     (
         'alex@journeys-app.com',
         'alexlee',
-        '',
-        '',
-        '',
-        '',
-        '',
-        ''
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
     );
 
 INSERT INTO
@@ -51,6 +51,9 @@ VALUES
 INSERT INTO
     records (experience, notifications)
 VALUES
-    (0, null),
+    (
+        0,
+        '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":0},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
+    ),
     (999999999, null),
     (1000000, null);

@@ -8,7 +8,7 @@ import {
 function notifications(data: any): Notification__[] {
     const notifications: Notification__[] = [];
 
-    for (const e of data) {
+    for (const e of JSON.parse(data)) {
         notifications.push(new __Notification(e.subject, e.message, e.priority));
     }
 

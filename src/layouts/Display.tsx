@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import useZustand from '../hooks/useZustand';
 
 import Controls from '../components/modules/Controls';
+import Initialize from '../components/Initialize';
 import Navbar from '../components/modules/Navbar';
 import Sync from '../components/Sync';
 
@@ -29,6 +30,7 @@ function Display(): React.ReactElement {
             <Controls />
             <Navbar />
             <Outlet />
+            <Initialize />
             <Sync />
         </div>
     );

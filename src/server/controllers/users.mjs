@@ -38,7 +38,18 @@ const patchUser = (req, res) => {
         });
 };
 
-const post = (req, res) => connect(req, res, '../sql/queries/post.sql');
+const post = (req, res) => {
+    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/post.sql'), 'utf8')
+        .then(template => {
+            const e = req.body.data;
+            const sql = mysql.format(template, [e.email, e.username, e.notifications]);
+
+            pool.query(sql, err => {
+                if (err) return errors.server(res, err);
+                res.json({ message: 'Account created.' });
+            });
+        });
+};
 
 const putUser = (req, res) => {
     fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/putUser.sql'), 'utf8')

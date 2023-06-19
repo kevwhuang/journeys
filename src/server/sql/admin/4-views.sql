@@ -6,7 +6,7 @@ SELECT
     s.theme,
     s.units,
     s.map,
-    r.experience,
+    r.experience
 FROM
     users AS u
     JOIN settings AS s ON u.id = s.id

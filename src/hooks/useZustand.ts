@@ -5,7 +5,6 @@ import { create } from 'zustand';
 import actions from '../features/actions';
 import defaultPhoto from '../assets/default-photo.webp';
 import initializers from '../features/initializers';
-import seed from '../data/seed.json';
 
 const initialize: State = {
     focus: false,
@@ -23,22 +22,22 @@ const initialize: State = {
     },
     power: true,
     records: {
-        experience: seed[0].records.experience || 0,
-        notifications: initializers.notifications(seed[0].records.notifications) || [],
+        experience: 0,
+        notifications: [],
     },
     refresh: 0,
     search: '',
     signal: 0,
     system: {
-        map: seed[0].system.map || 2,
-        theme: seed[0].system.theme || 1,
-        units: seed[0].system.units || 1,
+        map: 2,
+        theme: 1,
+        units: 1,
     },
     tracks: initializers.tracks(),
     user: {
-        first: seed[0].user.first || '',
-        last: seed[0].user.last || '',
-        photo: seed[0].user.photo || defaultPhoto,
+        first: '',
+        last: '',
+        photo: defaultPhoto,
     },
 };
 
@@ -50,6 +49,9 @@ const useZustand = create<Actions & State>(set => ({
     changePage: page => set(() => ({ page })),
     deleteNotification: index => set(s => actions.deleteNotification(s, index)),
     deletePin: index => set(s => actions.deletePin(s, index)),
+    initializeRecords: records => set(() => ({ records })),
+    initializeSystem: system => set(() => ({ system })),
+    initializeUser: user => set(() => ({ user })),
     toggleFocus: () => set(s => ({ focus: !(s.focus) })),
     toggleModalNotifications: () => set(s => actions.toggleModalNotifications(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
