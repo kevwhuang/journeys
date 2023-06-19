@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function handler(event) {
     if (event.httpMethod === 'GET') {
-        const BASE = 'https://journeys-app.onrender.com/api';
+        const BASE = process.env.NETLIFY_SERVER_BASE;
         const res = await axios(`${BASE}/users/${event.headers['x-username']}/settings`);
 
         return {

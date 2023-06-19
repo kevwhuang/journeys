@@ -10,6 +10,7 @@ import useAxios from '../../hooks/useAxios';
 import useZustand from '../../hooks/useZustand';
 
 import toastOptions from '../../features/toastOptions';
+import { __Notification } from '../../features/classes';
 
 interface Axios {
     data: Profile[],
@@ -35,8 +36,10 @@ interface Profile {
 }
 
 function SettingsForm(): React.ReactElement {
-    const navbar = useZustand(s => s.navbar);
-    const { user }: any = useAuth0();
+    const state = useZustand();
+    const [addNotification, initializeSystem, initializeUser, navbar]
+        = useZustand(s => [s.addNotification, s.initializeSystem, s.initializeUser, s.navbar]);
+    const { logout, user }: any = useAuth0();
 
     const { data: settings, loading }: Axios = useAxios({
         endpoint: 'getSettings',
@@ -57,15 +60,47 @@ function SettingsForm(): React.ReactElement {
         return className;
     }
 
+    async function handleClick() {
+        const confirmed
+            = confirm('Are you sure you want to delete your account? This action is irreversible.');
+
+        if (!confirmed) return;
+
+        await axios('/.netlify/functions/deleteUser', {
+            headers: {
+                'x-username': user.nickname,
+            },
+            method: 'DELETE',
+        });
+
+        logout({ logoutParams: { returnTo: location.origin } });
+        toast('You\'ve deleted your account.', toastOptions);
+    }
+
     async function handleSubmit(data: any) {
         const res = await axios('/.netlify/functions/putUser', {
             data,
             method: 'PUT',
         });
 
-        res.status === 200
-            ? toast('Your settings have been synced.', toastOptions)
-            : toast('An unknown error has occured.', { ...toastOptions, icon: '✘' });
+        if (res.status === 200) {
+            initializeSystem({
+                map: data.map,
+                theme: state.system.theme,
+                units: data.units,
+            });
+
+            initializeUser({
+                first: data.first_name,
+                last: data.last_name,
+                photo: data.photo,
+            });
+
+            addNotification(new __Notification('Settings', 'You\'ve updated your settings.'));
+            toast('Your settings have been synced.', toastOptions);
+        } else {
+            toast('An unknown error has occured.', { ...toastOptions, icon: '✘' });
+        }
     }
 
     return (
@@ -157,7 +192,7 @@ function SettingsForm(): React.ReactElement {
                         </textarea>
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-theme">Theme</label>
+                        <label htmlFor="input-settings-theme">Startup Theme</label>
                         <select
                             id="input-settings-theme"
                             {...register('theme')}
@@ -188,6 +223,7 @@ function SettingsForm(): React.ReactElement {
                         </select>
                     </div>
                     <button type="submit">Update Settings</button>
+                    <button onClick={handleClick}>Delete Account</button>
                 </form>
             }
         </section>

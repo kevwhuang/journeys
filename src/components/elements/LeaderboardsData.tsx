@@ -103,6 +103,7 @@ function LeaderboardsData(): React.ReactElement {
                         <li key={uuid()}>
                             <Link to={`../account/${user.username}`}>{i + 1}</Link>
                             {' | '}
+                            {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
                             <span>{useRanking(user.experience)}</span>
                             {' | '}
                             <span>{user.username}</span>

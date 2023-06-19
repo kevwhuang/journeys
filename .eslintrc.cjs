@@ -48,7 +48,7 @@ module.exports = {
         'prefer-destructuring': [2, { array: false }],
         'quote-props': [2, 'as-needed'],
         'quotes': [2, 'single'],
-        'space-before-function-paren': [2, 'never'],
+        'space-before-function-paren': [2, { anonymous: 'always', named: 'never' }],
         // ERRORS
         'array-bracket-spacing': 2,
         'array-callback-return': 2,

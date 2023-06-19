@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function handler(event) {
     if (event.httpMethod === 'POST') {
-        const BASE = 'https://journeys-app.onrender.com/api';
+        const BASE = process.env.NETLIFY_SERVER_BASE;
 
         await axios.post(`${BASE}/users`, { data: JSON.parse(event.body) });
 

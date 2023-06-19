@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.7.5",
+    "version": "0.7.6",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -21,7 +21,7 @@
         "build": "vite build",
         "dev": "vite",
         "lint": "eslint src --ext js,cjs,mjs,jsx,ts,tsx",
-        "netlify": "ntl dev",
+        "ntl": "ntl dev",
         "prebuild": "tsc",
         "preview": "vite preview",
         "server": "nodemon src/server/index.mjs",

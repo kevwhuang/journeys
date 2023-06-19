@@ -8,8 +8,10 @@ import { fileURLToPath } from 'url';
 import errors from '../errors.mjs';
 import pool from '../Pool.mjs';
 
+const directory = path.dirname(fileURLToPath(import.meta.url));
+
 const connect = (req, res, query, ...values) => {
-    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), query), 'utf8')
+    fs.readFile(path.join(directory, query), 'utf8')
         .then(template => {
             const sql = mysql.format(template, [...values].length ? Object.values(...values) : null);
 
@@ -26,7 +28,7 @@ const getSettings = (req, res) => connect(req, res, '../sql/queries/getSettings.
 const getUser = (req, res) => connect(req, res, '../sql/queries/getUser.sql', req.params);
 
 const patchUser = (req, res) => {
-    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/patchUser.sql'), 'utf8')
+    fs.readFile(path.join(directory, '../sql/queries/patchUser.sql'), 'utf8')
         .then(template => {
             const e = req.body.data;
             const sql = mysql.format(template, [e.experience, e.notifications, e.username]);
@@ -39,7 +41,7 @@ const patchUser = (req, res) => {
 };
 
 const post = (req, res) => {
-    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/post.sql'), 'utf8')
+    fs.readFile(path.join(directory, '../sql/queries/post.sql'), 'utf8')
         .then(template => {
             const e = req.body.data;
             const sql = mysql.format(template, [e.email, e.username, e.notifications]);
@@ -52,7 +54,7 @@ const post = (req, res) => {
 };
 
 const putUser = (req, res) => {
-    fs.readFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '../sql/queries/putUser.sql'), 'utf8')
+    fs.readFile(path.join(directory, '../sql/queries/putUser.sql'), 'utf8')
         .then(template => {
             const e = req.body.data;
             const inserts1 = [e.first_name, e.last_name, e.country, e.photo, e.page, e.bio, e.username];

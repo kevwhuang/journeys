@@ -48,7 +48,7 @@ function GeolocatorCore(): React.ReactElement {
                 else updateSignal(1);
             }
         }());
-    }, [power, updateSignal]);
+    }, [power, updateExperience, updateSignal]);
 
     React.useEffect(() => {
         if (power && currentPosition.length) {

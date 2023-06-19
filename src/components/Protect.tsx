@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 interface Props {
@@ -6,12 +7,18 @@ interface Props {
 }
 
 function Protect(props: Props): React.ReactElement {
-    const { isAuthenticated, isLoading, loginWithRedirect: login } = useAuth0();
+    const { isAuthenticated, isLoading, loginWithRedirect: login, user } = useAuth0();
 
-    !isLoading && !isAuthenticated && login();
+    if (isLoading) return <></>;
+    !isAuthenticated && login();
 
-    if (!isLoading && isAuthenticated) {
-        return <>{props.component}</>;
+    if (isAuthenticated) {
+        if (user && !user.email_verified) {
+            alert('Please verify your email before continuing.');
+            return <Navigate to="/guide" />;
+        }
+
+        if (user) return <>{props.component}</>;
     }
 
     return <></>;

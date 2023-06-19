@@ -7,13 +7,13 @@ import defaultPhoto from '../assets/default-photo.webp';
 import initializers from '../features/initializers';
 
 const initialize: State = {
-    focus: false,
+    focus: true,
     gallery: '',
     modals: {
         collage: false,
         notifications: false,
     },
-    navbar: false,
+    navbar: true,
     page: 'home',
     pins: initializers.pins(),
     position: {

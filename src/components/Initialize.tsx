@@ -4,13 +4,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 import useZustand from '../hooks/useZustand';
 
+import actions from '../features/actions';
 import initializers from '../features/initializers';
 
 const defaultNotifications = [
     {
         subject: 'New Theme',
         message: 'Dark mode is now supported.',
-        priority: 0,
+        priority: 1,
     }, {
         subject: 'Setup Your Profile',
         message: 'Add your first and last name.',
@@ -25,6 +26,7 @@ const defaultNotifications = [
 let initialized = false;
 
 function Initialize(): React.ReactElement {
+    const state = useZustand();
     const [initializeRecords, initializeSystem, initializeUser]
         = useZustand(s => [s.initializeRecords, s.initializeSystem, s.initializeUser]);
     const { user } = useAuth0();
@@ -72,12 +74,14 @@ function Initialize(): React.ReactElement {
                         last: data.last_name,
                         photo: data.photo,
                     });
+
+                    actions.toggleTheme(state, data.theme);
                 }
 
                 initialized = true;
             }
         }());
-    }, [user]);
+    }, [initializeRecords, initializeSystem, initializeUser, state, user]);
 
     return <></>;
 }

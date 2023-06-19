@@ -35,7 +35,6 @@ const OPTS_STATIC = {
     },
 };
 
-// eslint-disable-next-line space-before-function-paren
 const error = async (err, req, res, next) => {
     res.status(500);
     next(err);

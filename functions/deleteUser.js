@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function handler(event) {
     if (event.httpMethod === 'DELETE') {
-        const BASE = 'https://journeys-app.onrender.com/api';
+        const BASE = process.env.NETLIFY_SERVER_BASE;
 
         await axios.delete(`${BASE}/users/${event.headers['x-username']}`);
         return { statusCode: 204 };

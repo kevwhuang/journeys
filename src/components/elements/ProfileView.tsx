@@ -69,6 +69,7 @@ function ProfileView(props: Props): React.ReactElement {
                 />
                 <p>Name: {profile[0].first_name} {profile[0].last_name}</p>
                 <p>Username: {profile[0].username}</p>
+                {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
                 <p>Rank: {useRanking(profile[0].experience)}</p>
                 <p>Since: {profile[0].registered.slice(0, 10)}</p>
                 <p>Page: {profile[0].page}</p>

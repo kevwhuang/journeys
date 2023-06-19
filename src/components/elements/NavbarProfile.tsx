@@ -11,13 +11,13 @@ function NavbarProfile(): React.ReactElement {
         <section className="navbar__profile">
             <img
                 src={photo}
-                alt="Profile picture"
+                alt=" "
                 draggable="false"
             />
             <span>
-                {first && `${first[0].toUpperCase()}${first.slice(1)}`}
+                {first ? `${first[0].toUpperCase()}${first.slice(1)}` : 'New'}
                 &nbsp;
-                {last && `${last[0].toUpperCase()}${last.slice(1)}`}
+                {last ? `${last[0].toUpperCase()}${last.slice(1)}` : 'User'}
             </span>
             <span>
                 {useRanking(experience)[0].toLowerCase()}

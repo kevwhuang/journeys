@@ -41,7 +41,7 @@ function ControlsSystem(): React.ReactElement {
     function handleClickTheme(theme: number) {
         const message = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
 
-        state.addNotification(new __Notification('Action', message));
+        state.addNotification(new __Notification('Theme', message));
         state.toggleTheme(theme);
         toast(message, toastOptions);
     }
@@ -77,10 +77,10 @@ function ControlsSystem(): React.ReactElement {
                 }
             </MuiTooltip>
             <MuiTooltip title={isAuthenticated ? 'Logout' : 'Login'}>
-                <>
-                    {!isLoading && isAuthenticated && <LogoutOutlinedIcon onClick={handleClickLogout} />}
-                    {!isLoading && !isAuthenticated && <LoginOutlinedIcon onClick={handleClickLogin} />}
-                </>
+                {!isLoading && isAuthenticated
+                    ? <LogoutOutlinedIcon onClick={handleClickLogout} />
+                    : <LoginOutlinedIcon onClick={handleClickLogin} />
+                }
             </MuiTooltip>
         </section>
     );
