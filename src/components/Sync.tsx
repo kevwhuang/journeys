@@ -24,7 +24,7 @@ function Sync(): React.ReactElement {
         }, 300e3);
 
         return () => clearInterval(interval);
-    }, [experience, notifications, user]);
+    }, [user]);
 
     return <></>;
 }

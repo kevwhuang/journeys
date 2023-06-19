@@ -4,7 +4,6 @@ import useTitle from '../hooks/useTitle';
 import useZustand from '../hooks/useZustand';
 
 import Leaderboards from '../components/modules/Leaderboards';
-import Stats from '../components/modules/Stats';
 
 function Rankings(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
@@ -15,7 +14,6 @@ function Rankings(): React.ReactElement {
 
     return (
         <main id="rankings">
-            <Stats />
             <Leaderboards />
         </main>
     );

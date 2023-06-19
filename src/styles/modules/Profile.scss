@@ -2,16 +2,30 @@
 
 .profile {}
 
-.profile__actions {}
+.profile__actions {
+    font-size: $font-4;
+    margin: auto;
+    width: 500px;
+
+    a {
+        color: $color-3;
+
+        &:visited {
+            color: $color-3;
+        }
+    }
+}
 
 .profile__view {
-    ul {
-        font-size: $font-4;
-        list-style-type: none;
+    img {
+        display: block;
+        margin: auto;
+        width: 500px;
+    }
 
-        li {
-            text-align: center;
-        }
+    p {
+        font-size: $font-4;
+        text-align: center;
     }
 
     .profile__view--spinner {

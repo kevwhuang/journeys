@@ -1,3 +1,5 @@
+// @ts-ignore
+import Flag from 'react-world-flags';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
@@ -18,7 +20,6 @@ interface User {
     country: string,
     experience: number,
     first_name: string,
-    id: number,
     last_name: string,
     registered: string,
     username: string,
@@ -26,6 +27,7 @@ interface User {
 
 function LeaderboardsData(): React.ReactElement {
     const [navbar, refresh, search] = useZustand(s => [s.navbar, s.refresh, s.search]);
+    const [stats, setStats]: any = React.useState({});
     const { data: users, loading, mutate }: Axios = useAxios({ endpoint: 'get' });
 
     React.useEffect(() => {
@@ -33,6 +35,33 @@ function LeaderboardsData(): React.ReactElement {
             mutate([]);
         }());
     }, [mutate, refresh]);
+
+    React.useEffect(() => {
+        const totalCountries = new Set();
+        let totalAge = 0;
+        let totalExperience = 0n;
+
+        if (!users) return;
+
+        for (const user of users) {
+            user.country && totalCountries.add(user.country);
+            totalAge += (Date.now() - Date.parse(user.registered)) / 1000 / 60 / 60 / 24;
+            totalExperience += BigInt(user.experience);
+        }
+
+        setStats({
+            age: Math.ceil(totalAge),
+            countries: totalCountries.size,
+            experience: (totalExperience / 1000000n).toString(),
+            users: users.length,
+        });
+    }, [users]);
+
+    function getAge(datetime: string) {
+        const difference = Date.now() - Date.parse(datetime);
+
+        return Math.floor(difference / 1000 / 60 / 60 / 24);
+    }
 
     function getClassName() {
         let className = loading ? 'leaderboards__data--spinner' : 'leaderboards__data--spinner loaded';
@@ -46,24 +75,52 @@ function LeaderboardsData(): React.ReactElement {
             <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
-            <ul>
+            <ol>
+                <li className="leaderboards__data--stats">
+                    <span>Users: {stats.users}</span>
+                    {' | '}
+                    <span>Experience: {stats.experience} million</span>
+                    {' | '}
+                    <span>Countries: {stats.countries}</span>
+                    {' | '}
+                    <span>Age: {stats.age} days</span>
+                </li>
+                <li className="leaderboards__data--headers">
+                    <span>#</span>
+                    {' | '}
+                    <span>Rank</span>
+                    {' | '}
+                    <span>Username</span>
+                    {' | '}
+                    <span>Name</span>
+                    {' | '}
+                    <span>Country</span>
+                    {' | '}
+                    <span>Age</span>
+                </li>
                 {!loading && users.filter(user => user.username.includes(search))
-                    .map(user => (
+                    .map((user, i) => (
                         <li key={uuid()}>
+                            <Link to={`../account/${user.username}`}>{i + 1}</Link>
+                            {' | '}
+                            <span>{useRanking(user.experience)}</span>
+                            {' | '}
                             <span>{user.username}</span>
                             {' | '}
                             <span>{user.first_name} {user.last_name}</span>
                             {' | '}
-                            <span>{user.country}</span>
+                            <span>
+                                <Flag
+                                    code={user.country}
+                                    height={24}
+                                    fallback={<Flag code="AQ" height={24} />}
+                                />
+                            </span>
                             {' | '}
-                            <span>{user.registered.slice(0, 10)}</span>
-                            {' | '}
-                            <span>{useRanking(user.experience)}</span>
-                            {' | '}
-                            <Link to={`../account/${user.username}`}>view</Link>
+                            <span>{getAge(user.registered)} days</span>
                         </li>
                     ))}
-            </ul>
+            </ol>
         </section>
     );
 }

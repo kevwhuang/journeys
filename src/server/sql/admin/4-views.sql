@@ -6,9 +6,7 @@ SELECT
     s.theme,
     s.units,
     s.map,
-    s.sync,
     r.experience,
-    r.notifications
 FROM
     users AS u
     JOIN settings AS s ON u.id = s.id

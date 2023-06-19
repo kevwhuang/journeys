@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.7.3",
+    "version": "0.7.4",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -53,6 +53,7 @@
         "react-hot-toast": "*",
         "react-intersection-observer": "*",
         "react-router-dom": "*",
+        "react-world-flags": "*",
         "swr": "*",
         "uuid": "*",
         "zustand": "*"

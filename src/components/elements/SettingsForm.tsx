@@ -22,7 +22,6 @@ interface Profile {
     country: string,
     email: string,
     first_name: string,
-    id: number,
     last_name: string,
     map: number,
     page: string,

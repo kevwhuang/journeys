@@ -24,10 +24,8 @@ function PointsTable(): React.ReactElement {
                 containerStyle={{ bottom: 20, right: 20 }}
             />
             <ol>
-                <li>
-                    <span>
-                        #
-                    </span>
+                <li className="points__table--headers">
+                    <span>#</span>
                     {' | '}
                     <span>Date</span>
                     {' | '}

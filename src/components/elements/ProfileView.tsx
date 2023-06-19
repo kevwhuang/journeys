@@ -1,11 +1,14 @@
+// @ts-ignore
+import Flag from 'react-world-flags';
 import React from 'react';
-import { v4 as uuid } from 'uuid';
 
 import CircularProgress from '@mui/material/CircularProgress';
 
 import useAxios from '../../hooks/useAxios';
 import useRanking from '../../hooks/useRanking';
 import useZustand from '../../hooks/useZustand';
+
+import defaultPhoto from '../../assets/default-photo.webp';
 
 interface Axios {
     data: Profile[],
@@ -18,7 +21,6 @@ interface Profile {
     country: string,
     experience: number,
     first_name: string,
-    id: number,
     last_name: string,
     page: string,
     photo: string,
@@ -54,31 +56,24 @@ function ProfileView(props: Props): React.ReactElement {
             <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
-            <ul>
-                {!loading && profile.map(field => (
-                    <li key={uuid()}>
-                        <img
-                            src={field.photo || '/icons/favicon-16x16.png'}
-                            alt={`${field.username}`}
-                            draggable="false"
-                        />
-                        {' | '}
-                        <span>{field.username}</span>
-                        {' | '}
-                        <span>{field.first_name} {field.last_name}</span>
-                        {' | '}
-                        <span>{field.country}</span>
-                        {' | '}
-                        <span>{field.registered.slice(0, 10)}</span>
-                        {' | '}
-                        <span>{useRanking(field.experience)}</span>
-                        {' | '}
-                        <span>{field.page}</span>
-                        {' | '}
-                        <span>{field.bio}</span>
-                    </li>
-                ))}
-            </ul>
+            {!loading && (<>
+                <img
+                    src={profile[0].photo || defaultPhoto}
+                    alt={profile[0].username}
+                    draggable="false"
+                />
+                <Flag
+                    code={profile[0].country}
+                    height={24}
+                    fallback={<Flag code="AQ" height={24} />}
+                />
+                <p>Name: {profile[0].first_name} {profile[0].last_name}</p>
+                <p>Username: {profile[0].username}</p>
+                <p>Rank: {useRanking(profile[0].experience)}</p>
+                <p>Since: {profile[0].registered.slice(0, 10)}</p>
+                <p>Page: {profile[0].page}</p>
+                <p>Bio: {profile[0].bio}</p>
+            </>)}
         </section>
     );
 }

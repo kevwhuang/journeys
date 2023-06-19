@@ -16,9 +16,9 @@ VALUES
         'Kevin',
         'Huang',
         'US',
-        'https://source.unsplash.com/random/200x200/?face&v=1',
+        'https://source.unsplash.com/random/500x500/?face&v=1',
         'https://journeys-app.com',
-        'I love travel and exploration.'
+        'I like to travel and explore.'
     ),
     (
         'janedoe@journeys-app.com',
@@ -26,7 +26,7 @@ VALUES
         'Jane',
         'Doe',
         'CA',
-        'https://source.unsplash.com/random/200x200/?face&v=2',
+        'https://source.unsplash.com/random/500x500/?face&v=2',
         'https://journeys-app.com',
         'I''m an avid animal adventurer.'
     ),
@@ -53,4 +53,4 @@ INSERT INTO
 VALUES
     (0, null),
     (999999999, null),
-    (8000000, null);
+    (1000000, null);

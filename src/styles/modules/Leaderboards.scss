@@ -3,7 +3,7 @@
 .leaderboards {}
 
 .leaderboards__data {
-    ul {
+    ol {
         font-size: $font-4;
         list-style-type: none;
 
@@ -18,6 +18,10 @@
                 }
             }
         }
+    }
+
+    .leaderboards__data--headers {
+        color: $color-4;
     }
 
     .leaderboards__data--spinner {
@@ -40,4 +44,7 @@
             width: calc(100vw - 250px);
         }
     }
+
+    .leaderboards__data--stats {}
+
 }
