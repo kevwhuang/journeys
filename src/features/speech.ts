@@ -12,9 +12,7 @@ navigator.permissions.query(query)
 
         res.state !== 'denied' && speech();
     })
-    .catch((err: Error): void => {
-        err;
-    });
+    .catch((err: Error): void => console.log(err));
 
 function speech(): void {
     const commandsList: any = structuredClone(voiceCommands);

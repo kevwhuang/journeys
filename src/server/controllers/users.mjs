@@ -19,7 +19,8 @@ const connect = (req, res, query, ...values) => {
                 if (err) return errors.server(res, err);
                 res.json(results);
             });
-        });
+        })
+        .catch(err => console.log(err));
 };
 
 const deleteUser = (req, res) => connect(req, res, '../sql/queries/deleteUser.sql', req.params);
@@ -37,7 +38,8 @@ const patchUser = (req, res) => {
                 if (err) return errors.server(res, err);
                 res.json({ message: 'Records updated.' });
             });
-        });
+        })
+        .catch(err => console.log(err));
 };
 
 const post = (req, res) => {
@@ -50,7 +52,8 @@ const post = (req, res) => {
                 if (err) return errors.server(res, err);
                 res.json({ message: 'Account created.' });
             });
-        });
+        })
+        .catch(err => console.log(err));
 };
 
 const putUser = (req, res) => {
@@ -65,7 +68,8 @@ const putUser = (req, res) => {
                 if (err) return errors.server(res, err);
                 res.json({ message: 'Account updated.' });
             });
-        });
+        })
+        .catch(err => console.log(err));
 };
 
 export default {

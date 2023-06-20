@@ -1,10 +1,16 @@
+'use strict';
+
 import axios from 'axios';
 
 export async function handler(event) {
     if (event.httpMethod === 'PUT') {
         const BASE = process.env.NETLIFY_SERVER_BASE;
 
-        await axios.put(`${BASE}/users/${JSON.parse(event.body).username}`, { data: JSON.parse(event.body) });
+        await axios.put(`${BASE}/users/${JSON.parse(event.body).username}`,
+            {
+                data: JSON.parse(event.body),
+            })
+            .catch(err => console.log(err));
 
         return {
             body: JSON.stringify({ message: 'Account updated.' }),

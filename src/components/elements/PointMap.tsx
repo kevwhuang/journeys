@@ -16,21 +16,23 @@ function PointMap(props: Props): React.ReactElement {
     const FORMAT = '&format=png';
     const MAPTYPE = '&maptype=hybrid';
     const MARKERS = `&markers=size:mid|color:red|${lat},${long}`;
-    const SCALE = '&scale=1';
+    const SCALE = '&scale=2';
     const SIZE = '&size=500x500';
-    const ZOOM = '&zoom=13';
+    const ZOOM = '&zoom=14';
 
     const endpoint = `${CENTER}${FORMAT}${MAPTYPE}${MARKERS}${SCALE}${SIZE}${ZOOM}`;
 
     React.useEffect(() => {
         (async function get() {
-            const res = await axios('/.netlify/functions/gmpStaticMap', {
-                headers: {
-                    'x-endpoint': endpoint,
-                },
-            });
+            const res = await axios('/.netlify/functions/gmpStaticMap',
+                {
+                    headers: {
+                        'x-endpoint': endpoint,
+                    },
+                })
+                .catch(err => console.log(err));
 
-            setSource(`data:image/png;base64,${res.data}`);
+            res && setSource(`data:image/png;base64,${res.data}`);
         }());
     }, [endpoint]);
 

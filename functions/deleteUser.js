@@ -4,7 +4,9 @@ export async function handler(event) {
     if (event.httpMethod === 'DELETE') {
         const BASE = process.env.NETLIFY_SERVER_BASE;
 
-        await axios.delete(`${BASE}/users/${event.headers['x-username']}`);
+        await axios.delete(`${BASE}/users/${event.headers['x-username']}`)
+            .catch(err => console.log(err));
+
         return { statusCode: 204 };
     }
 

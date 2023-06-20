@@ -66,24 +66,28 @@ function SettingsForm(): React.ReactElement {
 
         if (!confirmed) return;
 
-        await axios('/.netlify/functions/deleteUser', {
-            headers: {
-                'x-username': user.nickname,
-            },
-            method: 'DELETE',
-        });
+        await axios('/.netlify/functions/deleteUser',
+            {
+                headers: {
+                    'x-username': user.nickname,
+                },
+                method: 'DELETE',
+            })
+            .catch(err => console.log(err));
 
         logout({ logoutParams: { returnTo: location.origin } });
         toast('You\'ve deleted your account.', toastOptions);
     }
 
     async function handleSubmit(data: any) {
-        const res = await axios('/.netlify/functions/putUser', {
-            data,
-            method: 'PUT',
-        });
+        const res = await axios('/.netlify/functions/putUser',
+            {
+                data,
+                method: 'PUT',
+            })
+            .catch(err => console.log(err));
 
-        if (res.status === 200) {
+        if (res && res.status === 200) {
             initializeSystem({
                 map: data.map,
                 theme: state.system.theme,

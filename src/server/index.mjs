@@ -41,7 +41,6 @@ const error = async (err, req, res, next) => {
 };
 
 const logger = (req, res, next) => {
-    // eslint-disable-next-line no-console
     console.table({
         time: new Date().toISOString(),
         url: `${req.protocol}://${req.get('host')}${req.path}`,
@@ -54,7 +53,6 @@ const logger = (req, res, next) => {
 const app = express();
 
 app.listen(process.env.SERVER_PORT, () => {
-    // eslint-disable-next-line no-console
     console.log('\x1b[35m%s\x1b[0m', `Server listening on PORT ${process.env.SERVER_PORT}.`);
 });
 

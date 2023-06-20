@@ -13,14 +13,16 @@ function Sync(): React.ReactElement {
         const interval = setInterval(async () => {
             if (!user) return;
 
-            await axios('/.netlify/functions/patchUser', {
-                data: {
-                    experience,
-                    notifications: JSON.stringify(notifications),
-                    username: user.nickname,
-                },
-                method: 'PATCH',
-            });
+            await axios('/.netlify/functions/patchUser',
+                {
+                    data: {
+                        experience,
+                        notifications: JSON.stringify(notifications),
+                        username: user.nickname,
+                    },
+                    method: 'PATCH',
+                })
+                .catch(err => console.log(err));
         }, 300e3);
 
         return () => clearInterval(interval);

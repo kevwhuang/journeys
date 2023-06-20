@@ -1,3 +1,5 @@
+'use strict';
+
 import axios from 'axios';
 import crypto from 'crypto';
 
@@ -24,9 +26,11 @@ export async function handler(event) {
         const endpoint = `${BASE}${KEY}${event.headers['x-endpoint']}`;
         const signedEndpoint = sign(endpoint, process.env.NETLIFY_GMP_SECRET);
 
-        const res = await axios(signedEndpoint, {
-            responseType: 'arraybuffer',
-        });
+        const res = await axios(signedEndpoint,
+            {
+                responseType: 'arraybuffer',
+            })
+            .catch(err => console.log(err));
 
         return {
             body: Buffer.from(res.data, 'binary').toString('base64'),

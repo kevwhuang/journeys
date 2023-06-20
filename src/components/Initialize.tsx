@@ -34,29 +34,35 @@ function Initialize(): React.ReactElement {
     React.useEffect(() => {
         (async function newUser() {
             if (!initialized && user) {
-                const res = await axios('/.netlify/functions/getUser', {
-                    headers: {
-                        'x-username': user.nickname,
-                    },
-                });
-
-                if (!res.data.length) {
-                    await axios('/.netlify/functions/post', {
-                        data: {
-                            email: user.email,
-                            username: user.nickname,
-                            notifications: JSON.stringify(defaultNotifications),
-                        },
-                        method: 'POST',
-                    });
-                } else {
-                    const res = await axios('/.netlify/functions/getSettings', {
+                const res = await axios('/.netlify/functions/getUser',
+                    {
                         headers: {
                             'x-username': user.nickname,
                         },
-                    });
+                    })
+                    .catch(err => console.log(err));
 
-                    const data = res.data[0];
+                if (res && !res.data.length) {
+                    await axios('/.netlify/functions/post',
+                        {
+                            data: {
+                                email: user.email,
+                                notifications: JSON.stringify(defaultNotifications),
+                                username: user.nickname,
+                            },
+                            method: 'POST',
+                        })
+                        .catch(err => console.log(err));
+                } else {
+                    const res = await axios('/.netlify/functions/getSettings',
+                        {
+                            headers: {
+                                'x-username': user.nickname,
+                            },
+                        })
+                        .catch(err => console.log(err));
+
+                    const data = res && res.data[0];
 
                     initializeRecords({
                         experience: data.experience,

@@ -33,6 +33,7 @@ module.exports = {
         'id-length': 0,
         'indent': 0,
         'max-len': 0,
+        'no-console': 0,
         'no-plusplus': 0,
         'no-undef': 0,
         'no-unsafe-optional-chaining': 0,
@@ -98,6 +99,7 @@ module.exports = {
         'no-trailing-spaces': 2,
         'no-underscore-dangle': 2,
         'no-unneeded-ternary': 2,
+        'no-unused-vars': 2,
         'no-useless-constructor': 2,
         'no-useless-escape': 2,
         'no-var': 2,
@@ -118,8 +120,5 @@ module.exports = {
         'spaced-comment': 2,
         'template-curly-spacing': 2,
         'wrap-iife': 2,
-        // WARNINGS
-        'no-console': 1,
-        'no-unused-vars': 1,
     },
 };

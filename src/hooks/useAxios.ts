@@ -15,7 +15,8 @@ const BASE: string = '/.netlify/functions';
 
 function fetcher(params: Params): Promise<any> {
     return axios(`${BASE}/${params.endpoint}`, params.options)
-        .then((res: AxiosResponse<any, any>): any => res.data);
+        .then((res: AxiosResponse<any, any>): any => res.data)
+        .catch((err: Error): void => console.log(err));
 }
 
 function useAxios(params: Params): any {
