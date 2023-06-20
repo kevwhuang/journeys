@@ -13,7 +13,7 @@ const initialize: State = {
         collage: false,
         notifications: false,
     },
-    navbar: true,
+    navbar: false,
     page: 'home',
     pins: initializers.pins(),
     position: {

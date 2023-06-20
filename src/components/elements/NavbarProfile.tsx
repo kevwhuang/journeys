@@ -15,9 +15,10 @@ function NavbarProfile(): React.ReactElement {
                 draggable="false"
             />
             <span>
-                {first ? `${first[0].toUpperCase()}${first.slice(1)}` : 'New'}
+                {first && `${first[0].toUpperCase()}${first.slice(1)}`}
                 &nbsp;
-                {last ? `${last[0].toUpperCase()}${last.slice(1)}` : 'User'}
+                {last && `${last[0].toUpperCase()}${last.slice(1)}`}
+                {!(first + last) && 'New User'}
             </span>
             <span>
                 {useRanking(experience)[0].toLowerCase()}
