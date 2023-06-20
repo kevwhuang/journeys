@@ -59,7 +59,7 @@ function ProfileView(props: Props): React.ReactElement {
             {!loading && (<>
                 <img
                     src={profile[0].photo || defaultPhoto}
-                    alt={profile[0].username}
+                    alt="Loading..."
                     draggable="false"
                 />
                 <Flag

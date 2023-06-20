@@ -43,6 +43,7 @@ function FormContact(): React.ReactElement {
                         type="text"
                         maxLength={50}
                         required
+                        autoComplete="off"
                         {...register('name')}
                     />
                 </div>
@@ -52,6 +53,7 @@ function FormContact(): React.ReactElement {
                         id="input-email"
                         type="email"
                         maxLength={50}
+                        autoComplete="off"
                         {...register('email')}
                     />
                 </div>

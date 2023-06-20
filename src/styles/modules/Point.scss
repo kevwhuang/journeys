@@ -7,7 +7,7 @@
     font-size: $font-4;
     justify-content: space-between;
     margin: auto;
-    width: 1000px;
+    width: 500px;
 
     a {
         color: $color-3;
@@ -21,9 +21,22 @@
 .point__map {
     display: flex;
     justify-content: center;
+
+    img {
+        width: 500px;
+    }
 }
 
 .point__summary {
     font-size: $font-4;
     text-align: center;
+}
+
+.point__view {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 500px;
+    }
 }

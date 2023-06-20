@@ -29,8 +29,6 @@ function PointsTable(): React.ReactElement {
                     {' | '}
                     <span>Date</span>
                     {' | '}
-                    <span>Address</span>
-                    {' | '}
                     <span>Latitude</span>
                     {' | '}
                     <span>Longitude</span>
@@ -42,8 +40,6 @@ function PointsTable(): React.ReactElement {
                         <Link to={`${i + 1}`}>{i + 1}</Link>
                         {' | '}
                         <span>{pin && pin.time.slice(0, 10)}</span>
-                        {' | '}
-                        <span>{'{address}'}</span>
                         {' | '}
                         <span>
                             lat: {pin.lat}

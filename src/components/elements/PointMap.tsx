@@ -8,17 +8,28 @@ interface Props {
 }
 
 function PointMap(props: Props): React.ReactElement {
-    const pins = useZustand(s => s.pins);
-    const [source, setSource] = React.useState('');
+    const [map, pins] = useZustand(s => [s.system.map, s.pins]);
+    const [src, setSrc] = React.useState('');
     const { lat, long } = pins?.[props.id - 1];
 
     const CENTER = `&center=${lat},${long}`;
     const FORMAT = '&format=png';
-    const MAPTYPE = '&maptype=hybrid';
-    const MARKERS = `&markers=size:mid|color:red|${lat},${long}`;
+    const MARKERS = `&markers=color:0xd3382f|size:mid|${lat},${long}`;
     const SCALE = '&scale=2';
     const SIZE = '&size=500x500';
     const ZOOM = '&zoom=14';
+    let MAPTYPE = '&maptype=';
+
+    switch (map) {
+        case 0:
+            MAPTYPE += 'roadmap';
+            break;
+        case 1:
+            MAPTYPE += 'satellite';
+            break;
+        case 2:
+            MAPTYPE += 'hybrid';
+    }
 
     const endpoint = `${CENTER}${FORMAT}${MAPTYPE}${MARKERS}${SCALE}${SIZE}${ZOOM}`;
 
@@ -32,15 +43,15 @@ function PointMap(props: Props): React.ReactElement {
                 })
                 .catch(err => console.log(err));
 
-            res && setSource(`data:image/png;base64,${res.data}`);
+            res && setSrc(`data:image/png;base64,${res.data}`);
         }());
     }, [endpoint]);
 
     return (
         <section className="point__map">
             <img
-                src={source}
-                alt=" "
+                src={src}
+                alt="Loading..."
                 draggable="false"
             />
         </section>

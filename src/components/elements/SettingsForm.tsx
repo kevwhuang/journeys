@@ -120,22 +120,25 @@ function SettingsForm(): React.ReactElement {
                 && <form onSubmit={onSubmit(handleSubmit)}>
                     <h2>Account Settings</h2>
                     <div className="settings__form--field">
-                        <label>Date Registered</label>
+                        <label htmlFor="input-settings-registered">Date Registered</label>
                         <input
+                            id="input-settings-registered"
                             placeholder={settings?.[0].registered.slice(0, 10)}
                             disabled
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label>Email</label>
+                        <label htmlFor="input-settings-email">Email</label>
                         <input
+                            id="input-settings-email"
                             placeholder={settings?.[0].email}
                             disabled
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label>Username</label>
+                        <label htmlFor="input-settings-username">Username</label>
                         <input
+                            id="input-settings-username"
                             placeholder={settings?.[0].username}
                             disabled
                         />
@@ -146,6 +149,7 @@ function SettingsForm(): React.ReactElement {
                             id="input-settings-first-name"
                             type="text"
                             maxLength={25}
+                            autoComplete="off"
                             {...register('first_name')}
                         />
                     </div>
@@ -165,6 +169,7 @@ function SettingsForm(): React.ReactElement {
                             type="text"
                             minLength={2}
                             maxLength={2}
+                            autoComplete="off"
                             {...register('country')}
                         />
                     </div>
