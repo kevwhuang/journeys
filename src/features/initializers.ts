@@ -41,8 +41,8 @@ function position(): { lat: number, long: number } {
     const coordinates: string = JSON.parse(data);
 
     return {
-        lat: Number(coordinates.slice(0, coordinates.indexOf(','))),
-        long: Number(coordinates.slice(coordinates.indexOf(',') + 1)),
+        lat: Number(coordinates[0].slice(0, coordinates[0].indexOf(','))),
+        long: Number(coordinates[0].slice(coordinates[0].indexOf(',') + 1)),
     };
 }
 

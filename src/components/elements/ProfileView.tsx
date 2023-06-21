@@ -59,13 +59,13 @@ function ProfileView(props: Props): React.ReactElement {
             {!loading && (<>
                 <img
                     src={profile[0].photo || defaultPhoto}
-                    alt="Loading..."
+                    alt="Profile Photo"
                     draggable="false"
                 />
                 <Flag
                     code={profile[0].country}
-                    height={24}
-                    fallback={<Flag code="AQ" height={24} />}
+                    height={121.5}
+                    fallback={<Flag code="AQ" height={121.5} />}
                 />
                 <p>Name: {profile[0].first_name} {profile[0].last_name}</p>
                 <p>Username: {profile[0].username}</p>

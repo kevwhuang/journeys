@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 import useZustand from '../../hooks/useZustand';
 
 interface Props {
@@ -49,11 +51,16 @@ function PointMap(props: Props): React.ReactElement {
 
     return (
         <section className="point__map">
-            <img
-                src={src}
-                alt="Loading..."
-                draggable="false"
-            />
+            {!src
+                ? <div className="point__map--spinner">
+                    <CircularProgress size={'121.5px'} />
+                </div>
+                : <img
+                    src={src}
+                    alt="Static Map"
+                    draggable="false"
+                />
+            }
         </section>
     );
 }

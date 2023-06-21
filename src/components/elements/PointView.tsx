@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 import useZustand from '../../hooks/useZustand';
 
 interface Props {
@@ -36,11 +38,16 @@ function PointView(props: Props): React.ReactElement {
 
     return (
         <section className="point__view">
-            <img
-                src={src}
-                alt="Loading..."
-                draggable="false"
-            />
+            {!src
+                ? <div className="point__view--spinner">
+                    <CircularProgress size={'121.5px'} />
+                </div>
+                : <img
+                    src={src}
+                    alt="Static Street View"
+                    draggable="false"
+                />
+            }
         </section>
     );
 }

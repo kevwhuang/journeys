@@ -89,9 +89,9 @@ function SettingsForm(): React.ReactElement {
 
         if (res && res.status === 200) {
             initializeSystem({
-                map: data.map,
-                theme: state.system.theme,
-                units: data.units,
+                map: Number(data.map),
+                theme: Number(state.system.theme),
+                units: Number(data.units),
             });
 
             initializeUser({

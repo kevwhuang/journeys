@@ -113,8 +113,8 @@ function LeaderboardsData(): React.ReactElement {
                             <span>
                                 <Flag
                                     code={user.country}
-                                    height={24}
-                                    fallback={<Flag code="AQ" height={24} />}
+                                    height={36}
+                                    fallback={<Flag code="AQ" height={36} />}
                                 />
                             </span>
                             {' | '}

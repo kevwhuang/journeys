@@ -1,5 +1,17 @@
 @use '../_root' as *;
 
+%spinner {
+    align-items: center;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    width: 500px;
+
+    svg {
+        color: $color-4;
+    }
+}
+
 .point {}
 
 .point__actions {
@@ -25,6 +37,10 @@
     img {
         width: 500px;
     }
+
+    .point__map--spinner {
+        @extend %spinner;
+    }
 }
 
 .point__summary {
@@ -38,5 +54,9 @@
 
     img {
         width: 500px;
+    }
+
+    .point__view--spinner {
+        @extend %spinner;
     }
 }
