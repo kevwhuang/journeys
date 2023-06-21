@@ -11,7 +11,7 @@ import Sync from '../components/Sync';
 let initialized = false;
 
 function Display(): React.ReactElement {
-    const theme = useZustand(s => s.system.theme);
+    const [navbar, theme, toggleNavbar] = useZustand(s => [s.navbar, s.system.theme, s.toggleNavbar]);
 
     if (!initialized) {
         if (!theme) {
@@ -32,6 +32,10 @@ function Display(): React.ReactElement {
             <Outlet />
             <Initialize />
             <Sync />
+            <div className={navbar ? 'display__zone' : 'display__zone--closed'}
+                onClick={() => toggleNavbar()}
+            >
+            </div>
         </div>
     );
 }

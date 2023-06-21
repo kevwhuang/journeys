@@ -3,14 +3,14 @@
 %navbar {
     background: $color-2;
     bottom: 0;
-    cursor: navbar;
+    cursor: default;
     overflow-x: hidden;
     overscroll-behavior: contain;
     position: fixed;
     top: 0;
     transition: width 1s;
     user-select: none;
-    z-index: 100;
+    z-index: 200;
 
     &::-webkit-scrollbar {
         display: none;

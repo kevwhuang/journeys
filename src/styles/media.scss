@@ -14,7 +14,21 @@
 
 @media screen and (max-width: 1280px) {}
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    #display {
+        grid-template-columns: 0 auto;
+
+        .display__zone {
+            display: block;
+        }
+    }
+
+    .controls {
+        .controls--container {
+            width: 100vw;
+        }
+    }
+}
 
 @media screen and (max-width: 768px) {}
 
