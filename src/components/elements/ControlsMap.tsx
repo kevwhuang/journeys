@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
 import NavigationIcon from '@mui/icons-material/Navigation';
@@ -47,7 +48,19 @@ function ControlsMap(): React.ReactElement {
         state.toggleFocus();
     }
 
-    function handleClickPin() {
+    async function getAddress(lat: number, long: number) {
+        const res = await axios('/.netlify/functions/gmpReverseGeocoding',
+            {
+                headers: {
+                    'x-coordinates': `latlng=${lat},${long}`,
+                },
+            })
+            .catch(err => console.log(err));
+
+        return res?.data ?? 'Unknown Address';
+    }
+
+    async function handleClickPin() {
         if (!state.position.lat && !state.position.long) {
             return;
         }
@@ -57,20 +70,22 @@ function ControlsMap(): React.ReactElement {
             return;
         }
 
+        const [lat, long] = [state.position.lat, state.position.long];
+
         if (!state.pins.length) {
-            state.addPin(new __Position(state.position.lat, state.position.long, new Date().toISOString()));
+            state.addPin(new __Position(lat, long, await getAddress(lat, long), new Date().toISOString()));
             toast('You\'ve dropped a new pin.', toastOptions);
             return;
         }
 
         if (state.pins.length) {
             const all = JSON.stringify(state.pins[0]);
-            const current = JSON.stringify({ lat: state.position.lat, long: state.position.long });
+            const current = JSON.stringify({ lat, long });
 
             if (all.includes(current.slice(1, current.length - 2))) {
                 toast('You\'ve already added this pin.', { ...toastOptions, icon: '✘' });
             } else {
-                state.addPin(new __Position(state.position.lat, state.position.long, new Date().toISOString()));
+                state.addPin(new __Position(lat, long, await getAddress(lat, long), new Date().toISOString()));
                 toast('You\'ve dropped a new pin.', toastOptions);
             }
         }

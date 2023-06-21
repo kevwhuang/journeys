@@ -58,6 +58,7 @@ type Page = '' | 'about' | 'account' | 'contact' | 'guide' | 'home'
 type Pin = {
     lat: number,
     long: number,
+    address: string,
     time: string,
 }
 

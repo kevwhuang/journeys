@@ -13,13 +13,15 @@ export class __Notification {
 }
 
 export class __Position {
-    constructor(lat: number, long: number, time: string) {
+    constructor(lat: number, long: number, address: string, time: string) {
         this.lat = lat;
         this.long = long;
+        this.address = address;
         this.time = time;
     }
 
     lat: number;
     long: number;
+    address: string;
     time: string;
 }

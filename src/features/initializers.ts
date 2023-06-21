@@ -22,7 +22,7 @@ function pins(): Pin[] {
     if (data === null || data === '{}') return [];
 
     for (const e of JSON.parse(data)) {
-        pins.push(new __Position(e.lat, e.long, e.time));
+        pins.push(new __Position(e.lat, e.long, e.address, e.time));
     }
 
     return pins;

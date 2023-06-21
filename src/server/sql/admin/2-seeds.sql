@@ -101,10 +101,10 @@ VALUES
         'Experience the world like none other.'
     ),
     (
-        'madison.moore@journeys-app.com',
+        'madison.clark@journeys-app.com',
         'ultimatechoice',
         'Madison',
-        'Moore',
+        'Clark',
         'NO',
         'https://images.unsplash.com/photo-1514846326710-096e4a8035e0?fit=crop&w=500&h=500',
         'https://journeys-app.com/account/ultimatechoice',
