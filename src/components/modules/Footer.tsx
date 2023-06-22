@@ -12,8 +12,8 @@ function Footer(): React.ReactElement {
         <footer className="footer">
             <FooterLogo />
             <FooterPages />
-            <div className="footer--divider-1"></div>
-            <div className="footer--divider-2"></div>
+            <div className="footer--divider-1" />
+            <div className="footer--divider-2" />
             <FooterSocials />
             <FooterLegal />
         </footer>

@@ -13,7 +13,7 @@ function Navbar(): React.ReactElement {
 
     return (
         <>
-            <div className={navbar ? 'navbar__gutter' : 'navbar__gutter--closed'}></div>
+            <div className={navbar ? 'navbar__gutter' : 'navbar__gutter--closed'} />
             <nav className={navbar ? 'navbar' : 'navbar--closed'}>
                 <NavbarLogo />
                 <NavbarProfile />

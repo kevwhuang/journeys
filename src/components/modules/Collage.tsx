@@ -12,7 +12,7 @@ function Collage(): React.ReactElement {
                 <CollageModal />
                 <CollageImages />
             </section>
-            <div className="collage--gutter"></div>
+            <div className="collage--gutter" />
         </>
     );
 }

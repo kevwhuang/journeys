@@ -23,6 +23,7 @@ function MuiTooltip(props: Props): React.ReactElement {
         fontSize: '16px',
         top: props.offset || '-5px',
         userSelect: 'none',
+        zIndex: '0',
         '& .MuiTooltip-arrow': {
             color: theme ? '#407ad6' : '#d3382f',
         },

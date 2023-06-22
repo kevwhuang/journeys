@@ -1,0 +1,24 @@
+@use '../_root' as *;
+
+.view {
+    height: calc(100vh - 60px);
+}
+
+.view__map {
+    height: 100%;
+}
+
+.view__overlay {
+    height: 100%;
+}
+
+.view__render {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 60px);
+    justify-content: center;
+
+    svg {
+        color: $color-4;
+    }
+}

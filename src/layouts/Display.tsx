@@ -34,8 +34,7 @@ function Display(): React.ReactElement {
             <Sync />
             <div className={navbar ? 'display__zone' : 'display__zone--closed'}
                 onClick={() => toggleNavbar()}
-            >
-            </div>
+            />
         </div>
     );
 }
