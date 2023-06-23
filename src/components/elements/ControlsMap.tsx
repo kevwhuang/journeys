@@ -79,7 +79,7 @@ function ControlsMap(): React.ReactElement {
         }
 
         if (state.pins.length) {
-            const all = JSON.stringify(state.pins[0]);
+            const all = JSON.stringify(state.pins);
             const current = JSON.stringify({ lat, long });
 
             if (all.includes(current.slice(1, current.length - 2))) {

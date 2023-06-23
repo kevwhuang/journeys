@@ -1,6 +1,6 @@
 {
     "name": "journeys",
-    "version": "0.8.5",
+    "version": "0.8.6",
     "description": "Journeys™ is an exploration app that unveils the world around you as you travel.",
     "keywords": [
         "exploration",
@@ -45,7 +45,6 @@
         "express": "*",
         "express-actuator": "*",
         "express-session": "*",
-        "google-map-react": "*",
         "helmet": "*",
         "mysql2": "*",
         "react": "*",
@@ -68,7 +67,6 @@
         "@types/express": "*",
         "@types/express-actuator": "*",
         "@types/express-session": "*",
-        "@types/google-map-react": "*",
         "@types/google.maps": "*",
         "@types/node": "*",
         "@types/react": "*",

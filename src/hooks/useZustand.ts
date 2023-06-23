@@ -29,7 +29,7 @@ const initialize: State = {
     search: '',
     signal: 0,
     system: {
-        map: 2,
+        map: 1,
         theme: 1,
         units: 1,
     },

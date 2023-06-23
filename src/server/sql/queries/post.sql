@@ -24,7 +24,7 @@ VALUES
 INSERT INTO
     settings (theme, units, map)
 VALUES
-    (1, 1, 2);
+    (1, 1, 1);
 
 INSERT INTO
     records (experience, notifications)

@@ -7,9 +7,7 @@ import ViewMap from './ViewMap';
 import ViewRender from './ViewRender';
 
 function ViewOverlay(): React.ReactElement {
-    const [position, tracks] = useZustand(s => [s.position, s.tracks]);
-
-    const center = { lat: position.lat, lng: position.long };
+    const tracks = useZustand(s => s.tracks);
 
     tracks;
 
@@ -20,10 +18,7 @@ function ViewOverlay(): React.ReactElement {
                     || 'AIzaSyD85Q1bw8sPrcsYutSH5TWQ--ZMTPlWKhs'}
                 render={ViewRender}
             >
-                <ViewMap
-                    center={center}
-                    zoom={15}
-                />
+                <ViewMap />
             </Wrapper>
         </section>
     );

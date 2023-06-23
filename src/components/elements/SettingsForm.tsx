@@ -201,7 +201,7 @@ function SettingsForm(): React.ReactElement {
                         </textarea>
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-theme">Startup Theme</label>
+                        <label htmlFor="input-settings-theme">Theme</label>
                         <select
                             id="input-settings-theme"
                             {...register('theme')}
