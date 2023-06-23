@@ -1,7 +1,7 @@
 @use '../_root' as *;
 
 .view {
-    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
 }
 
 .view__map {
@@ -32,17 +32,17 @@
     }
 }
 
-.view__overlay {
-    height: 100%;
-}
-
 .view__render {
     align-items: center;
     display: flex;
-    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
     justify-content: center;
 
     svg {
         color: $color-4;
     }
+}
+
+.view__wrapper {
+    height: 100%;
 }

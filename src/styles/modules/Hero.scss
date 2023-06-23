@@ -10,7 +10,7 @@
     cursor: default;
     display: flex;
     flex-direction: column;
-    height: clamp(500px, calc(100vh - 60px), 1440px);
+    height: clamp(500px, calc(100dvh - 60px), 1440px);
     justify-content: center;
     padding-left: 150px;
     transition: filter 2s;

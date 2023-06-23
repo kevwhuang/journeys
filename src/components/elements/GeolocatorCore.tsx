@@ -18,9 +18,9 @@ function GeolocatorCore(): React.ReactElement {
 
             if (!initialized && geo) {
                 if (navigator.userAgent.search(/Macintosh|Windows NT/) === -1) {
-                    toast('You are tracking on a mobile device.', toastOptions);
+                    toast('You\'re tracking on a mobile device.', toastOptions);
                 } else {
-                    toast('You are tracking on a computer.', toastOptions);
+                    toast('You\'re tracking on a computer.', toastOptions);
                 }
 
                 initialized = true;
@@ -40,7 +40,7 @@ function GeolocatorCore(): React.ReactElement {
             }
 
             function writePos(pos: any) {
-                power && setCurrentPosition([pos.coords.latitude.toFixed(4), pos.coords.longitude.toFixed(4)]);
+                power && setCurrentPosition([pos.coords.latitude.toFixed(6), pos.coords.longitude.toFixed(6)]);
                 power && updateExperience();
 
                 if (pos.coords.accuracy >= 20) updateSignal(3);

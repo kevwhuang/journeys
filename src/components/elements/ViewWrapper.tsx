@@ -1,18 +1,12 @@
 import React from 'react';
 import { Wrapper } from '@googlemaps/react-wrapper';
 
-import useZustand from '../../hooks/useZustand';
-
 import ViewMap from './ViewMap';
 import ViewRender from './ViewRender';
 
-function ViewOverlay(): React.ReactElement {
-    const tracks = useZustand(s => s.tracks);
-
-    tracks;
-
+function ViewWrapper(): React.ReactElement {
     return (
-        <section className="view__overlay">
+        <section className="view__wrapper">
             <Wrapper
                 apiKey={import.meta.env.VITE_LOCAL_GMP_API_KEY
                     || 'AIzaSyD85Q1bw8sPrcsYutSH5TWQ--ZMTPlWKhs'}
@@ -24,4 +18,4 @@ function ViewOverlay(): React.ReactElement {
     );
 }
 
-export default ViewOverlay;
+export default ViewWrapper;
