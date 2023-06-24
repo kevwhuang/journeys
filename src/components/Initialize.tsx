@@ -87,7 +87,7 @@ function Initialize(): React.ReactElement {
                 initialized = true;
             }
         }());
-    }, [initializeRecords, initializeSystem, initializeUser, state, user]);
+    }, [state, user]);
 
     return <></>;
 }

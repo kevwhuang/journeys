@@ -6,7 +6,10 @@
 
 .view__map {
     height: 100%;
-    outline: none;
+
+    * {
+        outline: none;
+    }
 
     .gm-control-active {
         background: #f3f4f5 !important;

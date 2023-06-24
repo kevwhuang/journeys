@@ -14,7 +14,7 @@ function Protect(props: Props): React.ReactElement {
 
     if (isAuthenticated) {
         if (user && !user.email_verified) {
-            alert('Please verify your email before continuing.');
+            alert('Please verify your email to continue.');
             return <Navigate to="/guide" />;
         }
 

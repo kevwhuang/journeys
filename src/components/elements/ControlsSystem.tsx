@@ -21,10 +21,6 @@ function ControlsSystem(): React.ReactElement {
     const state = useZustand();
     const { isAuthenticated, isLoading, loginWithRedirect: login, logout } = useAuth0();
 
-    function handleClickLogin() {
-        login();
-    }
-
     function handleClickLogout() {
         const confirmed = confirm('Are you sure you want to logout?');
 
@@ -79,7 +75,7 @@ function ControlsSystem(): React.ReactElement {
             <MuiTooltip title={isAuthenticated ? 'Logout' : 'Login'}>
                 {!isLoading && isAuthenticated
                     ? <LogoutOutlinedIcon onClick={handleClickLogout} />
-                    : <LoginOutlinedIcon onClick={handleClickLogin} />
+                    : <LoginOutlinedIcon onClick={() => login()} />
                 }
             </MuiTooltip>
         </section>

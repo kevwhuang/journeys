@@ -8,8 +8,7 @@ function ViewWrapper(): React.ReactElement {
     return (
         <section className="view__wrapper">
             <Wrapper
-                apiKey={import.meta.env.VITE_LOCAL_GMP_API_KEY
-                    || 'AIzaSyD85Q1bw8sPrcsYutSH5TWQ--ZMTPlWKhs'}
+                apiKey={import.meta.env.VITE_LOCAL_GMP_API_KEY || import.meta.env.VITE_GMP_API_KEY}
                 render={ViewRender}
             >
                 <ViewMap />

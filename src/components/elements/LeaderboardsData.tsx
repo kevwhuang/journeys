@@ -34,7 +34,7 @@ function LeaderboardsData(): React.ReactElement {
         (async function get() {
             mutate([]);
         }());
-    }, [mutate, refresh]);
+    }, [refresh]);
 
     React.useEffect(() => {
         const totalCountries = new Set();

@@ -48,14 +48,14 @@ function GeolocatorCore(): React.ReactElement {
                 else updateSignal(1);
             }
         }());
-    }, [power, updateExperience, updateSignal]);
+    }, [power]);
 
     React.useEffect(() => {
         if (power && currentPosition.length) {
             updatePosition(Number(currentPosition[0]), Number(currentPosition[1]));
             updateTracks(String(currentPosition));
         }
-    }, [currentPosition, power, updatePosition, updateTracks]);
+    }, [currentPosition, power]);
 
     return (
         <section className="geolocator__core">

@@ -16,6 +16,7 @@ function ViewMap() {
 
     React.useEffect(() => {
         (async function createWorld() {
+            const mobile = navigator.userAgent.search(/Macintosh|Windows NT/) === -1;
             const { Map }: any = await google.maps.importLibrary('maps');
             let mapType = 'roadmap';
 
@@ -63,7 +64,9 @@ function ViewMap() {
                 restriction: null,
                 rotateControl: true,
                 rotateControlOptions: {
-                    position: google.maps.ControlPosition.RIGHT_BOTTOM,
+                    position: mobile
+                        ? google.maps.ControlPosition.LEFT_TOP
+                        : google.maps.ControlPosition.RIGHT_BOTTOM,
                 },
                 scaleControl: true,
                 scaleControlOptions: null,
@@ -71,7 +74,9 @@ function ViewMap() {
                 streetView: null,
                 streetViewControl: true,
                 streetViewControlOptions: {
-                    position: google.maps.ControlPosition.RIGHT_BOTTOM,
+                    position: mobile
+                        ? google.maps.ControlPosition.LEFT_TOP
+                        : google.maps.ControlPosition.RIGHT_BOTTOM,
                 },
                 styles: (!map && theme) ? night : null,
                 tilt: null,

@@ -1,6 +1,12 @@
 'use strict';
 
-const night = [
+interface Night {
+    elementType: string,
+    featureType?: string,
+    stylers: [{ color: string }],
+}
+
+const night: Night[] = [
     {
         elementType: 'geometry',
         stylers: [{ color: '#242f3e' }],

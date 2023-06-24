@@ -37,8 +37,6 @@ interface Profile {
 
 function SettingsForm(): React.ReactElement {
     const state = useZustand();
-    const [addNotification, initializeSystem, initializeUser, navbar]
-        = useZustand(s => [s.addNotification, s.initializeSystem, s.initializeUser, s.navbar]);
     const { logout, user }: any = useAuth0();
 
     const { data: settings, loading }: Axios = useAxios({
@@ -56,7 +54,7 @@ function SettingsForm(): React.ReactElement {
     function getClassName() {
         let className = loading ? 'settings__form--spinner' : 'settings__form--spinner loaded';
 
-        if (navbar) className += ' opened';
+        if (state.navbar) className += ' opened';
         return className;
     }
 
@@ -88,19 +86,19 @@ function SettingsForm(): React.ReactElement {
             .catch(err => console.log(err));
 
         if (res && res.status === 200) {
-            initializeSystem({
+            state.initializeSystem({
                 map: Number(data.map),
                 theme: Number(state.system.theme),
                 units: Number(data.units),
             });
 
-            initializeUser({
+            state.initializeUser({
                 first: data.first_name,
                 last: data.last_name,
                 photo: data.photo,
             });
 
-            addNotification(new __Notification('Settings', 'You\'ve updated your settings.'));
+            state.addNotification(new __Notification('Settings', 'You\'ve updated your settings.'));
             toast('Your settings have been synced.', toastOptions);
         } else {
             toast('An unknown error has occured.', { ...toastOptions, icon: '✘' });

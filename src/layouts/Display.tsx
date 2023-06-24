@@ -32,7 +32,8 @@ function Display(): React.ReactElement {
             <Outlet />
             <Initialize />
             <Sync />
-            <div className={navbar ? 'display__zone' : 'display__zone--closed'}
+            <div
+                className={navbar ? 'display__zone' : 'display__zone--closed'}
                 onClick={() => toggleNavbar()}
             />
         </div>

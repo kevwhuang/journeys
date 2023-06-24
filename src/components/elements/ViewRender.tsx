@@ -5,9 +5,7 @@ import { Status } from '@googlemaps/react-wrapper';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function ViewRender(status: Status): React.ReactElement {
-    if (status === Status.FAILURE) {
-        return <Navigate to="/error" />;
-    }
+    if (status === Status.FAILURE) return <Navigate to="/error" />;
 
     return (
         <div className="view__render">

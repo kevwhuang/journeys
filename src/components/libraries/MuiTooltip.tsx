@@ -8,8 +8,8 @@ import useZustand from '../../hooks/useZustand';
 interface Props {
     children: React.ReactElement,
     delay?: number,
-    title: string,
     offset?: string,
+    title: string,
 }
 
 function MuiTooltip(props: Props): React.ReactElement {
@@ -35,8 +35,8 @@ function MuiTooltip(props: Props): React.ReactElement {
             title={props.title}
             enterDelay={props.delay || 1500}
             leaveDelay={100}
-            TransitionComponent={Zoom}
             componentsProps={{ tooltip: { sx } }}
+            TransitionComponent={Zoom}
         >
             {props.children}
         </Tooltip>

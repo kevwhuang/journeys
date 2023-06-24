@@ -1,5 +1,3 @@
-'use strict';
-
 interface Actions {
     addNotification: (notification: Notification__) => void,
     addPin: (pin: Pin) => void,

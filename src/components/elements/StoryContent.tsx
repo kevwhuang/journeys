@@ -11,8 +11,8 @@ import {
 } from '../../data/lorem';
 
 const options = {
-    delay: 200,
-    threshold: 0.9,
+    delay: 100,
+    rootMargin: '0px 0px -500px 0px',
     triggerOnce: true,
 };
 
@@ -32,9 +32,9 @@ function StoryContent(): React.ReactElement {
                 </article>
             </div>
             <div className="story__content--item">
-                <article ref={ref1}>
+                <article>
                     <h2>Shanghai</h2>
-                    <h3>Growing up overseas</h3>
+                    <h3 ref={ref1}>Growing up overseas</h3>
                     <p>{lorem100}</p>
                 </article>
                 <img
@@ -51,16 +51,16 @@ function StoryContent(): React.ReactElement {
                     alt="Production"
                     draggable="false"
                 />
-                <article ref={ref2}>
+                <article>
                     <h2>Production</h2>
-                    <h3>Exploring my creative side</h3>
+                    <h3 ref={ref2}>Exploring my creative side</h3>
                     <p>{lorem100}</p>
                 </article>
             </div>
             <div className="story__content--item">
-                <article ref={ref3}>
+                <article>
                     <h2>Austin</h2>
-                    <h3>Relocating to a new city</h3>
+                    <h3 ref={ref3}>Relocating to a new city</h3>
                     <p>{lorem100}</p>
                 </article>
                 <img
@@ -77,9 +77,9 @@ function StoryContent(): React.ReactElement {
                     alt="Programming"
                     draggable="false"
                 />
-                <article ref={ref4}>
+                <article>
                     <h2>Programming</h2>
-                    <h3>Pursuing a tech career</h3>
+                    <h3 ref={ref4}>Pursuing a tech career</h3>
                     <p>{lorem100}</p>
                 </article>
             </div>

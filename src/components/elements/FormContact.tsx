@@ -18,7 +18,7 @@ function FormContact(): React.ReactElement {
 
     React.useEffect(() => {
         formState.isSubmitSuccessful && reset(defaultValues);
-    }, [formState, reset]);
+    }, [formState]);
 
     function handleSubmit(data: any) {
         const $key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
