@@ -28,7 +28,7 @@ function AccordionsPins(): React.ReactElement {
                 />
                 <MuiAccordion
                     aria="pins-3"
-                    header="Rendering"
+                    header="Views"
                     content={lorem200}
                 />
                 <MuiAccordion

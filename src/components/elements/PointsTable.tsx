@@ -39,11 +39,11 @@ function PointsTable(): React.ReactElement {
                 </li>
                 {pins.map((pin, i) => (
                     <li key={uuid()}>
-                        <Link to={`${i + 1}`}>{i + 1}</Link>
+                        {i + 1}
                         {' | '}
                         <span>{pin && pin.time.slice(0, 10)}</span>
                         {' | '}
-                        <span>{pin.address}</span>
+                        <Link to={`${i + 1}`}>{pin.address}</Link>
                         {' | '}
                         <span>
                             lat: {pin.lat}

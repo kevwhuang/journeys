@@ -40,6 +40,7 @@ FROM
     users;
 
 ALTER TABLE
-    history DROP photo,
+    history DROP country,
+    DROP photo,
     DROP page,
     DROP bio;

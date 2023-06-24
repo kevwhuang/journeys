@@ -12,6 +12,8 @@ VALUES
         OLD.id,
         OLD.email,
         OLD.username,
+        OLD.first_name,
+        OLD.last_name,
         OLD.registered
     );
 

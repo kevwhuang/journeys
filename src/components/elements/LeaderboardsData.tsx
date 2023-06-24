@@ -101,12 +101,12 @@ function LeaderboardsData(): React.ReactElement {
                 {!loading && users.filter(user => user.username.includes(search))
                     .map((user, i) => (
                         <li key={uuid()}>
-                            <Link to={`../account/${user.username}`}>{i + 1}</Link>
+                            {i + 1}
                             {' | '}
                             {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
                             <span>{useRanking(user.experience)}</span>
                             {' | '}
-                            <span>{user.username}</span>
+                            <Link to={`../account/${user.username}`}>{user.username}</Link>
                             {' | '}
                             <span>{user.first_name} {user.last_name}</span>
                             {' | '}

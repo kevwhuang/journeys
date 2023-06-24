@@ -3,6 +3,10 @@ import React from 'react';
 import logo from '../../assets/logo.png';
 
 function FooterLogo(): React.ReactElement {
+    function handleClick() {
+        alert('Version: July 01, 2023');
+    }
+
     return (
         <section className="footer__logo">
             <img
@@ -10,7 +14,7 @@ function FooterLogo(): React.ReactElement {
                 alt="Logo"
                 draggable="false"
             />
-            <span>Journeys</span>
+            <span onClick={handleClick}>Journeys</span>
         </section>
     );
 }

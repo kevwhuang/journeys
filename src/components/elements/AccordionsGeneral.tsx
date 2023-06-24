@@ -24,12 +24,12 @@ function AccordionsGeneral(): React.ReactElement {
                 />
                 <MuiAccordion
                     aria="general-2"
-                    header="Key Features"
+                    header="Disclaimer"
                     content={lorem100}
                 />
                 <MuiAccordion
                     aria="general-3"
-                    header="Open Source"
+                    header="Key Features"
                     content={lorem100}
                 />
                 <MuiAccordion
@@ -44,7 +44,7 @@ function AccordionsGeneral(): React.ReactElement {
                 />
                 <MuiAccordion
                     aria="general-6"
-                    header="Disclaimer"
+                    header="Open Source"
                     content={lorem100}
                 />
             </MuiAccordionParent>

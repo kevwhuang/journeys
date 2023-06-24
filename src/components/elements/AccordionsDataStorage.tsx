@@ -28,11 +28,16 @@ function AccordionsDataStorage(): React.ReactElement {
                 />
                 <MuiAccordion
                     aria="data-storage-3"
-                    header="Cloud Sync"
+                    header="Database"
                     content={lorem150}
                 />
                 <MuiAccordion
                     aria="data-storage-4"
+                    header="Cloud Sync"
+                    content={lorem150}
+                />
+                <MuiAccordion
+                    aria="data-storage-5"
                     header="Backups"
                     content={lorem150}
                 />

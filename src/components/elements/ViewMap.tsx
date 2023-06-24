@@ -55,7 +55,7 @@ function ViewMap() {
                     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
                 },
                 mapTypeId: mapType,
-                maxZoom: 17,
+                maxZoom: 16,
                 minZoom: 3,
                 noClear: false,
                 panControl: false,
@@ -75,7 +75,7 @@ function ViewMap() {
                 },
                 styles: (!map && theme) ? night : null,
                 tilt: null,
-                zoom: 17,
+                zoom: 16,
                 zoomControl: false,
                 zoomControlOptions: null,
             }));
@@ -106,7 +106,7 @@ function ViewMap() {
                 map: world,
                 maxIntensity: 1,
                 opacity: 1,
-                radius: 20,
+                radius: 25,
             }));
 
             setHeatmapPoints(points);

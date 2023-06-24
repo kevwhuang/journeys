@@ -3,7 +3,7 @@ UPDATE
 SET
     first_name = ?,
     last_name = ?,
-    country = ?,
+    country = UPPER(?),
     photo = ?,
     page = ?,
     bio = ?
