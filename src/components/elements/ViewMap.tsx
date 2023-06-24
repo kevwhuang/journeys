@@ -2,6 +2,7 @@ import React from 'react';
 
 import useZustand from '../../hooks/useZustand';
 
+import focusIcon from '../../assets/focus.png';
 import night from '../../features/night';
 
 function ViewMap() {
@@ -10,6 +11,7 @@ function ViewMap() {
         = useZustand(s => [s.focus, s.system.map, s.position, s.power, s.system.theme, s.tracks]);
     const [heatmap, setHeatmap]: any = React.useState(null);
     const [heatmapPoints, setHeatmapPoints]: any = React.useState([]);
+    const [marker, setMarker]: any = React.useState(null);
     const [world, setWorld]: any = React.useState(null);
 
     React.useEffect(() => {
@@ -45,7 +47,7 @@ function ViewMap() {
                 heading: null,
                 isFractionalZoomEnabled: true,
                 keyboardShortcuts: false,
-                mapId: null,
+                mapId: 'world',
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                     mapTypeIds: ['hybrid', 'roadmap', 'satellite'],
@@ -98,7 +100,7 @@ function ViewMap() {
                 data: points,
                 dissipating: true,
                 gradient: [
-                    'rgba(0, 0, 0, 0.5)',
+                    'rgba(0, 0, 0, 0.7)',
                     'rgba(0, 0, 0, 0)',
                 ],
                 map: world,
@@ -110,6 +112,39 @@ function ViewMap() {
             setHeatmapPoints(points);
         }());
     }, [world]);
+
+    React.useEffect(() => {
+        (async function createMarker() {
+            const { Marker }: any = await google.maps.importLibrary('marker');
+
+            setMarker(new Marker({
+                anchorPoint: null,
+                animation: null,
+                clickable: false,
+                collisionBehavior: google.maps.CollisionBehavior.REQUIRED,
+                crossOnDrag: false,
+                cursor: 'crosshair',
+                draggable: false,
+                icon: focusIcon,
+                label: null,
+                map: world,
+                opacity: 1,
+                optimized: true,
+                position: {
+                    lat: position.lat,
+                    lng: position.long,
+                },
+                shape: null,
+                title: 'current position',
+                visible: true,
+                zIndex: 0,
+            }));
+        }());
+    }, [world]);
+
+    React.useEffect(() => {
+        marker && marker.setPosition(new google.maps.LatLng(position.lat, position.long));
+    }, [marker, position]);
 
     React.useEffect(() => {
         focus && world && world.setCenter(new google.maps.LatLng(position.lat, position.long));
