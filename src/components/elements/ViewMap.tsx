@@ -7,8 +7,8 @@ import night from '../../features/night';
 
 function ViewMap() {
     const ref: React.MutableRefObject<any> = React.useRef();
-    const [focus, map, position, power, theme, tracks]
-        = useZustand(s => [s.focus, s.system.map, s.position, s.power, s.system.theme, s.tracks]);
+    const [focus, map, pins, position, power, theme, tracks]
+        = useZustand(s => [s.focus, s.system.map, s.pins, s.position, s.power, s.system.theme, s.tracks]);
     const [heatmap, setHeatmap]: any = React.useState(null);
     const [heatmapPoints, setHeatmapPoints]: any = React.useState([]);
     const [marker, setMarker]: any = React.useState(null);
@@ -80,7 +80,7 @@ function ViewMap() {
                 },
                 styles: (!map && theme) ? night : null,
                 tilt: null,
-                zoom: 16,
+                zoom: 15,
                 zoomControl: false,
                 zoomControlOptions: null,
             }));
@@ -111,12 +111,38 @@ function ViewMap() {
                 map: world,
                 maxIntensity: 1,
                 opacity: 1,
-                radius: 25,
+                radius: 22.5,
             }));
 
             setHeatmapPoints(points);
         }());
     }, [world]);
+
+    React.useEffect(() => {
+        (async function createPins() {
+            for (const pin of pins) {
+                new google.maps.Circle({
+                    center: {
+                        lat: pin.lat,
+                        lng: pin.long,
+                    },
+                    clickable: false,
+                    draggable: false,
+                    editable: false,
+                    fillColor: '#d3382f',
+                    fillOpacity: 0.5,
+                    map: world,
+                    radius: 22,
+                    strokeColor: '#d3382f',
+                    strokeOpacity: 1,
+                    strokePosition: google.maps.StrokePosition.CENTER,
+                    strokeWeight: 3,
+                    visible: true,
+                    zIndex: 0,
+                });
+            }
+        }());
+    }, [pins, world]);
 
     React.useEffect(() => {
         (async function createMarker() {
@@ -166,6 +192,10 @@ function ViewMap() {
             heatmap.setData(points);
         }
     }, [heatmap, tracks]);
+
+    world && world.addListener('zoom_changed', () => {
+        heatmap && heatmap.setOptions({ radius: world.getZoom() * 1.5 });
+    });
 
     return <section className="view__map" ref={ref} />;
 }
