@@ -60,7 +60,7 @@ function ControlsSystem(): React.ReactElement {
             <MuiTooltip title="Notifications">
                 <NotificationsNoneOutlinedIcon
                     className={state.modals.notifications ? 'active' : ''}
-                    onClick={() => state.toggleModalNotifications()}
+                    onClick={() => state.toggleNotifications()}
                 />
             </MuiTooltip>
             <span aria-label={`${state.records.notifications.length} notifications.`}>

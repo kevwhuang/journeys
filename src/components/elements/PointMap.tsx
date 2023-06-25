@@ -10,7 +10,8 @@ interface Props {
 }
 
 function PointMap(props: Props): React.ReactElement {
-    const [map, pins] = useZustand(s => [s.system.map, s.pins]);
+    const [changeGallery, map, pins]
+        = useZustand(s => [s.changeGallery, s.system.map, s.pins]);
     const [src, setSrc] = React.useState('');
     const { lat, long } = pins?.[props.id - 1];
 
@@ -49,6 +50,16 @@ function PointMap(props: Props): React.ReactElement {
         }());
     }, [endpoint]);
 
+    function handleClick(e: any) {
+        // @ts-ignore
+        document.startViewTransition(() => {
+            const modal = document.querySelector('.gallery');
+
+            modal && modal.classList.remove('closed');
+            changeGallery(e.target.src);
+        });
+    }
+
     return (
         <section className="point__map">
             {!src
@@ -59,6 +70,7 @@ function PointMap(props: Props): React.ReactElement {
                     src={src}
                     alt="Static Map"
                     draggable="false"
+                    onClick={e => handleClick(e)}
                 />
             }
         </section>

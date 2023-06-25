@@ -5,7 +5,7 @@ import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 
 import useZustand from '../../hooks/useZustand';
 
-function ControlsModal(): React.ReactElement {
+function Notifications(): React.ReactElement {
     const [deleteNotification, modal, notifications]
         = useZustand(s => [s.deleteNotification, s.modals.notifications, s.records.notifications]);
 
@@ -25,7 +25,7 @@ function ControlsModal(): React.ReactElement {
     }
 
     return (
-        <section className={modal ? 'controls__modal' : 'controls__modal closed'}>
+        <section className={modal ? 'notifications' : 'notifications closed'}>
             <span>{notifications.length} {isPlural(notifications.length)}</span>
             <ul>
                 {notifications.map((notification, i) => (
@@ -44,4 +44,4 @@ function ControlsModal(): React.ReactElement {
     );
 }
 
-export default ControlsModal;
+export default Notifications;

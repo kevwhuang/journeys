@@ -10,7 +10,7 @@ const initialize: State = {
     focus: true,
     gallery: '',
     modals: {
-        collage: false,
+        gallery: false,
         notifications: false,
     },
     navbar: false,
@@ -53,7 +53,7 @@ const useZustand = create<Actions & State>(set => ({
     initializeSystem: system => set(() => ({ system })),
     initializeUser: user => set(() => ({ user })),
     toggleFocus: () => set(s => ({ focus: !(s.focus) })),
-    toggleModalNotifications: () => set(s => actions.toggleModalNotifications(s)),
+    toggleNotifications: () => set(s => actions.toggleNotifications(s)),
     toggleNavbar: () => set(s => ({ navbar: !(s.navbar) })),
     togglePower: () => set(s => ({ power: !(s.power) })),
     toggleRefresh: () => set(s => ({ refresh: s.refresh + 1 })),

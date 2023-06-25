@@ -3,7 +3,6 @@ import React from 'react';
 import useZustand from '../../hooks/useZustand';
 
 import ControlsMap from '../elements/ControlsMap';
-import ControlsModal from '../modals/ControlsModal';
 import ControlsNavbar from '../elements/ControlsNavbar';
 import ControlsSearch from '../elements/ControlsSearch';
 import ControlsSystem from '../elements/ControlsSystem';
@@ -16,7 +15,6 @@ function Controls(): React.ReactElement {
     return (
         <aside className="controls">
             <div className={navbar ? 'controls--container' : 'controls--container opened'}>
-                <ControlsModal />
                 <ControlsNavbar />
                 <ControlsMap />
                 <ControlsSearch />

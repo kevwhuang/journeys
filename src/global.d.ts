@@ -9,7 +9,7 @@ interface Actions {
     initializeSystem: (system: System) => void,
     initializeUser: (user: User) => void,
     toggleFocus: () => void,
-    toggleModalNotifications: () => void,
+    toggleNotifications: () => void,
     toggleNavbar: () => void,
     togglePower: () => void,
     toggleRefresh: () => void,
@@ -40,7 +40,7 @@ interface State {
 }
 
 type Modals = {
-    collage: boolean,
+    gallery: boolean,
     notifications: boolean,
 };
 

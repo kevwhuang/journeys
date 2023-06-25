@@ -33,7 +33,7 @@ function deletePin(s: State, index: number): Partial<State> {
     return ({ pins });
 }
 
-function toggleModalNotifications(s: State): Partial<State> {
+function toggleNotifications(s: State): Partial<State> {
     return ({ modals: { ...s.modals, notifications: !(s.modals.notifications) } });
 }
 
@@ -65,7 +65,7 @@ export default {
     addPin,
     deleteNotification,
     deletePin,
-    toggleModalNotifications,
+    toggleNotifications,
     toggleTheme,
     updateTracks,
 };

@@ -43,8 +43,8 @@ function GeolocatorCore(): React.ReactElement {
                 power && setCurrentPosition([pos.coords.latitude.toFixed(6), pos.coords.longitude.toFixed(6)]);
                 power && updateExperience();
 
-                if (pos.coords.accuracy >= 25) updateSignal(1);
-                else if (pos.coords.accuracy >= 10) updateSignal(2);
+                if (pos.coords.accuracy >= 40) updateSignal(1);
+                else if (pos.coords.accuracy >= 20) updateSignal(2);
                 else updateSignal(3);
             }
         }());

@@ -13,7 +13,7 @@ function CollageImagesItem(props: Props): React.ReactElement {
     function handleClick() {
         // @ts-ignore
         document.startViewTransition(() => {
-            const modal = document.querySelector('.collage__modal');
+            const modal = document.querySelector('.gallery');
 
             modal && modal.classList.remove('closed');
             changeGallery(`/assets/collage/${props.source}.webp`);

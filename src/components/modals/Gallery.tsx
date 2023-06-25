@@ -2,8 +2,10 @@ import React from 'react';
 
 import useZustand from '../../hooks/useZustand';
 
-function ControlsModal(): React.ReactElement {
-    const [gallery, modal] = useZustand(s => [s.gallery, s.modals.collage]);
+import '../../styles/modals/Gallery.scss';
+
+function Gallery(): React.ReactElement {
+    const [gallery, modal] = useZustand(s => [s.gallery, s.modals.gallery]);
 
     function handleClick(e: any) {
         // @ts-ignore
@@ -14,7 +16,7 @@ function ControlsModal(): React.ReactElement {
 
     return (
         <section
-            className={modal ? 'collage__modal' : 'collage__modal closed'}
+            className={modal ? 'gallery' : 'gallery closed'}
             onClick={e => handleClick(e)}
         >
             <img
@@ -26,4 +28,4 @@ function ControlsModal(): React.ReactElement {
     );
 }
 
-export default ControlsModal;
+export default Gallery;

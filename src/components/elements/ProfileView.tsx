@@ -33,7 +33,7 @@ interface Props {
 }
 
 function ProfileView(props: Props): React.ReactElement {
-    const navbar = useZustand(s => s.navbar);
+    const [changeGallery, navbar] = useZustand(s => [s.changeGallery, s.navbar]);
 
     const { data: profile, loading }: Axios = useAxios({
         endpoint: 'getUser',
@@ -51,6 +51,16 @@ function ProfileView(props: Props): React.ReactElement {
         return className;
     }
 
+    function handleClick(e: any) {
+        // @ts-ignore
+        document.startViewTransition(() => {
+            const modal = document.querySelector('.gallery');
+
+            modal && modal.classList.remove('closed');
+            changeGallery(e.target.src);
+        });
+    }
+
     return (
         <section className="profile__view">
             <div className={getClassName()}>
@@ -61,6 +71,7 @@ function ProfileView(props: Props): React.ReactElement {
                     src={profile[0].photo || defaultPhoto}
                     alt="Profile Photo"
                     draggable="false"
+                    onClick={e => handleClick(e)}
                 />
                 <Flag
                     code={profile[0].country}
