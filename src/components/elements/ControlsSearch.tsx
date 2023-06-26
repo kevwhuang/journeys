@@ -10,6 +10,18 @@ function ControlsSearch(): React.ReactElement {
     const inputRef = React.useRef<any>();
     const [page, updateSearch] = useZustand(s => [s.page, s.updateSearch]);
 
+    function getDisabled() {
+        if (page === 'pins') return false;
+        if (page === 'rankings') return false;
+        return true;
+    }
+
+    function getPlaceholder() {
+        if (page === 'pins') return 'search pins …';
+        if (page === 'rankings') return 'search leaderboards …';
+        return '';
+    }
+
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
         updateSearch(e.target.value.toLowerCase());
     }
@@ -23,15 +35,17 @@ function ControlsSearch(): React.ReactElement {
         <section className="controls__search">
             <MuiTooltip title="Search">
                 <label htmlFor="input-search">
-                    <SearchOutlinedIcon className={page === 'rankings' ? 'active' : ''} />
+                    <SearchOutlinedIcon
+                        className={(page === 'pins' || page === 'rankings') ? 'active' : ''}
+                    />
                 </label>
             </MuiTooltip>
             <input
                 id="input-search"
                 type="text"
-                placeholder={page === 'rankings' ? 'search leaderboards …' : ''}
+                placeholder={getPlaceholder()}
                 maxLength={100}
-                disabled={page !== 'rankings'}
+                disabled={getDisabled()}
                 onChange={e => handleChange(e)}
                 ref={inputRef}
             />

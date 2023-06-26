@@ -1,0 +1,59 @@
+@use '../_root' as *;
+
+@media screen and (max-width: 768px) {
+    .controls {
+        .controls--container {
+            grid-template-columns: min-content auto min-content;
+        }
+    }
+
+    .controls__navbar {
+        margin: 0;
+    }
+
+    .controls__search {
+        display: none;
+    }
+
+    .controls__system {
+        margin: 0;
+
+        span {
+            right: 115px;
+        }
+
+        svg {
+            &:nth-of-type(1) {
+                display: none;
+            }
+
+            &:nth-of-type(2) {
+                display: none;
+            }
+        }
+    }
+
+    #error {
+        section {
+            h1 {
+                font-size: $font-5;
+            }
+        }
+    }
+
+    #fallback {
+        section {
+            h1 {
+                font-size: $font-5;
+            }
+        }
+    }
+
+    #not-found {
+        section {
+            h1 {
+                font-size: $font-5;
+            }
+        }
+    }
+}

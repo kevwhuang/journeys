@@ -1,0 +1,17 @@
+@use '../_root' as *;
+
+@media screen and (max-width: 1024px) {
+    .controls {
+        .controls--container {
+            width: 100vw;
+        }
+    }
+
+    #display {
+        grid-template-columns: 0 auto;
+
+        .display__zone {
+            display: block;
+        }
+    }
+}

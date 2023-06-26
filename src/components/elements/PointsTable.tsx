@@ -10,7 +10,7 @@ import useZustand from '../../hooks/useZustand';
 import toastOptions from '../../features/toastOptions';
 
 function PointsTable(): React.ReactElement {
-    const [deletePin, pins] = useZustand(s => [s.deletePin, s.pins]);
+    const [deletePin, pins, search] = useZustand(s => [s.deletePin, s.pins, s.search]);
 
     function handleClick(i: number) {
         deletePin(i);
@@ -37,23 +37,28 @@ function PointsTable(): React.ReactElement {
                     {' | '}
                     <span>Delete</span>
                 </li>
-                {pins.map((pin, i) => (
-                    <li key={uuid()}>
-                        {i + 1}
-                        {' | '}
-                        <span>{pin && pin.time.slice(0, 10)}</span>
-                        {' | '}
-                        <Link to={`${i + 1}`}>{pin.address}</Link>
-                        {' | '}
-                        <span>
-                            lat: {pin.lat}
+                {pins
+                    .filter(pin => pin.address
+                        .replaceAll(',', '')
+                        .toLowerCase()
+                        .includes(search))
+                    .map((pin, i) => (
+                        <li key={uuid()}>
+                            {i + 1}
                             {' | '}
-                            long: {pin.long}
-                        </span>
-                        {' | '}
-                        <DeleteOutlinedIcon onClick={() => handleClick(i)} />
-                    </li>
-                ))}
+                            <span>{pin && pin.time.slice(0, 10)}</span>
+                            {' | '}
+                            <Link to={`${i + 1}`}>{pin.address}</Link>
+                            {' | '}
+                            <span>
+                                lat: {pin.lat}
+                                {' | '}
+                                long: {pin.long}
+                            </span>
+                            {' | '}
+                            <DeleteOutlinedIcon onClick={() => handleClick(i)} />
+                        </li>
+                    ))}
             </ol>
         </section>
     );

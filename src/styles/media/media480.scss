@@ -1,0 +1,47 @@
+@use '../_root' as *;
+
+@media screen and (max-width: 480px) {
+    .controls__map {
+        justify-content: space-evenly;
+    }
+
+    .controls__system {
+        span {
+            display: none;
+        }
+
+        svg {
+            &:nth-of-type(3) {
+                display: none;
+            }
+
+            &:nth-of-type(4) {
+                display: none;
+            }
+        }
+    }
+
+    #error {
+        section {
+            h1 {
+                font-size: $font-4;
+            }
+        }
+    }
+
+    #fallback {
+        section {
+            h1 {
+                font-size: $font-4;
+            }
+        }
+    }
+
+    #not-found {
+        section {
+            h1 {
+                font-size: $font-4;
+            }
+        }
+    }
+}

@@ -23,7 +23,7 @@ function Sync(): React.ReactElement {
                     method: 'PATCH',
                 })
                 .catch(err => console.log(err));
-        }, 300e3);
+        }, 180e3);
 
         return () => clearInterval(interval);
     }, [experience, notifications, user]);

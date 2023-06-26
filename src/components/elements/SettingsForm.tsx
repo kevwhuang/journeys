@@ -78,6 +78,17 @@ function SettingsForm(): React.ReactElement {
     }
 
     async function handleSubmit(data: any) {
+        await axios('/.netlify/functions/patchUser',
+            {
+                data: {
+                    experience: state.records.experience,
+                    notifications: JSON.stringify(state.records.notifications),
+                    username: user.nickname,
+                },
+                method: 'PATCH',
+            })
+            .catch(err => console.log(err));
+
         const res = await axios('/.netlify/functions/putUser',
             {
                 data,

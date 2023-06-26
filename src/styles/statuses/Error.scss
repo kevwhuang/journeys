@@ -7,7 +7,7 @@
         background-position: center;
         background-size: cover;
         display: flex;
-        height: calc(100dvh - 60px);
+        height: 100dvh;
         margin: auto;
         max-height: 1440px;
         justify-content: center;
@@ -18,6 +18,7 @@
             font-size: $font-6;
             opacity: 20px;
             padding: 20px 40px;
+            text-align: center;
         }
     }
 }

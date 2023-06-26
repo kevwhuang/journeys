@@ -98,7 +98,10 @@ function LeaderboardsData(): React.ReactElement {
                     {' | '}
                     <span>Age</span>
                 </li>
-                {!loading && users.filter(user => user.username.includes(search))
+                {!loading && users
+                    .filter(user => `${user.username} ${user.first_name} ${user.last_name}`
+                        .toLowerCase()
+                        .includes(search))
                     .map((user, i) => (
                         <li key={uuid()}>
                             {i + 1}

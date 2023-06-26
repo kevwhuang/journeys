@@ -40,7 +40,10 @@ import './styles/root.scss';
 import './styles/main.scss';
 import './styles/utilities.scss';
 import './styles/keyframes.scss';
-import './styles/media.scss';
+import './styles/media/media.scss';
+import './styles/media/media1024.scss';
+import './styles/media/media768.scss';
+import './styles/media/media480.scss';
 import './styles/dev.scss';
 
 interface Config {
