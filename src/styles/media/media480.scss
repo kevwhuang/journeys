@@ -21,6 +21,53 @@
         }
     }
 
+    .footer {
+        padding: 0 10px 20px;
+    }
+
+    .footer__legal {
+        ul {
+            li {
+                p {
+                    font-size: $font-2;
+                }
+            }
+        }
+    }
+
+    .footer__socials {
+        svg {
+            font-size: $font-4;
+        }
+    }
+
+    .notifications {
+        display: none;
+    }
+
+    .policy {
+        font-size: $font-2;
+        padding: 20px 20px 10px;
+
+        * {
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: $font-4;
+            margin-top: 20px;
+        }
+
+        h5 {
+            font-size: $font-3;
+            margin-top: 10px;
+        }
+
+        h6 {
+            font-size: $font-2;
+        }
+    }
+
     #error {
         section {
             h1 {

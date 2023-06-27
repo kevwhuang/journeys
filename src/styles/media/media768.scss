@@ -33,6 +33,26 @@
         }
     }
 
+    .footer {
+        display: block;
+    }
+
+    .footer__legal {
+        ul {
+            display: block;
+
+            li {
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .footer__socials {
+        text-align: center;
+    }
+
     #error {
         section {
             h1 {

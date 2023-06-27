@@ -7,6 +7,45 @@
         }
     }
 
+    .footer {
+        grid-template-areas: 'legal socials';
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 60px;
+        padding: 0 40px 20px;
+    }
+
+    .footer--divider-1 {
+        display: none;
+    }
+
+    .footer--divider-2 {
+        display: none;
+    }
+
+    .footer__legal {
+        ul {
+            li {
+                font-size: $font-3;
+
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .footer__logo {
+        display: none;
+    }
+
+    .footer__pages {
+        display: none;
+    }
+
+    .policy {
+        padding: 40px 40px 20px;
+    }
+
     #display {
         grid-template-columns: 0 auto;
 
