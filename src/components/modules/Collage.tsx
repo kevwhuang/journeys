@@ -1,16 +1,20 @@
 import React from 'react';
 
+import useZustand from '../../hooks/useZustand';
+
 import CollageImages from '../elements/CollageImages';
 
 import '../../styles/modules/Collage.scss';
 
 function Collage(): React.ReactElement {
+    const navbar = useZustand(s => s.navbar);
+
     return (
         <>
             <section className="collage">
                 <CollageImages />
             </section>
-            <div className="collage--gutter" />
+            {!navbar && <div className="collage--gutter" />}
         </>
     );
 }

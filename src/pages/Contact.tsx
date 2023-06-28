@@ -7,16 +7,19 @@ import Footer from '../components/modules/Footer';
 import Form from '../components/modules/Form';
 
 function Contact(): React.ReactElement {
-    const changePage = useZustand(s => s.changePage);
+    const [changePage, navbar] = useZustand(s => [s.changePage, s.navbar]);
 
-    scroll(0, 0);
     useTitle('Journeys | Contact');
-    React.useEffect(() => changePage('contact'));
+
+    React.useEffect(() => {
+        changePage('contact');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="contact">
             <Form />
-            <Footer />
+            {!navbar && <Footer />}
         </main>
     );
 }

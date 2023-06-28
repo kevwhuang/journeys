@@ -8,9 +8,12 @@ import Points from '../components/modules/Points';
 function Pins(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
-    scroll(0, 0);
     useTitle('Journeys | Pins');
-    React.useEffect(() => changePage('pins'));
+
+    React.useEffect(() => {
+        changePage('pins');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="pins">

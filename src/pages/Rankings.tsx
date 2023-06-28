@@ -8,9 +8,12 @@ import Leaderboards from '../components/modules/Leaderboards';
 function Rankings(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
-    scroll(0, 0);
     useTitle('Journeys | Rankings');
-    React.useEffect(() => changePage('rankings'));
+
+    React.useEffect(() => {
+        changePage('rankings');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="rankings">

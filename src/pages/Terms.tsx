@@ -7,16 +7,19 @@ import Footer from '../components/modules/Footer';
 import Service from '../components/modules/Service';
 
 function Terms(): React.ReactElement {
-    const changePage = useZustand(s => s.changePage);
+    const [changePage, navbar] = useZustand(s => [s.changePage, s.navbar]);
 
-    scroll(0, 0);
     useTitle('Journeys | Terms');
-    React.useEffect(() => changePage('terms'));
+
+    React.useEffect(() => {
+        changePage('terms');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="terms">
             <Service />
-            <Footer />
+            {!navbar && <Footer />}
         </main>
     );
 }

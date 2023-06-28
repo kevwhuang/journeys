@@ -9,9 +9,12 @@ import View from '../components/modules/View';
 function Map(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
-    scroll(0, 0);
     useTitle('Journeys | Map');
-    React.useEffect(() => changePage('map'));
+
+    React.useEffect(() => {
+        changePage('map');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="map">

@@ -10,9 +10,12 @@ function Account_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
     const username = useParams().username;
 
-    scroll(0, 0);
     useTitle('Journeys | Account');
-    React.useEffect(() => changePage(''));
+
+    React.useEffect(() => {
+        changePage('');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="account_single">

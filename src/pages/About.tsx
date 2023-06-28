@@ -7,16 +7,19 @@ import Footer from '../components/modules/Footer';
 import Story from '../components/modules/Story';
 
 function About(): React.ReactElement {
-    const changePage = useZustand(s => s.changePage);
+    const [changePage, navbar] = useZustand(s => [s.changePage, s.navbar]);
 
-    scroll(0, 0);
     useTitle('Journeys | About');
-    React.useEffect(() => changePage('about'));
+
+    React.useEffect(() => {
+        changePage('about');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="about">
             <Story />
-            <Footer />
+            {!navbar && <Footer />}
         </main>
     );
 }

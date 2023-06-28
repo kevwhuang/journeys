@@ -8,9 +8,12 @@ import Settings from '../components/modules/Settings';
 function Account(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
 
-    scroll(0, 0);
     useTitle('Journeys | Account');
-    React.useEffect(() => changePage('account'));
+
+    React.useEffect(() => {
+        changePage('account');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="account">

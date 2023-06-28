@@ -15,7 +15,8 @@ import '../styles/modals/Notifications.scss';
 let initialized = false;
 
 function Display(): React.ReactElement {
-    const [navbar, theme, toggleNavbar] = useZustand(s => [s.navbar, s.system.theme, s.toggleNavbar]);
+    const [navbar, theme, toggleNavbar]
+        = useZustand(s => [s.navbar, s.system.theme, s.toggleNavbar]);
 
     if (!initialized) {
         if (!theme) {

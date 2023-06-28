@@ -7,16 +7,19 @@ import Footer from '../components/modules/Footer';
 import Policy from '../components/modules/Policy';
 
 function Privacy(): React.ReactElement {
-    const changePage = useZustand(s => s.changePage);
+    const [changePage, navbar] = useZustand(s => [s.changePage, s.navbar]);
 
-    scroll(0, 0);
     useTitle('Journeys | Privacy');
-    React.useEffect(() => changePage('privacy'));
+
+    React.useEffect(() => {
+        changePage('privacy');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="privacy">
             <Policy />
-            <Footer />
+            {!navbar && <Footer />}
         </main>
     );
 }

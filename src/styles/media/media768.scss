@@ -1,14 +1,14 @@
 @use '../_root' as *;
 
 @media screen and (max-width: 768px) {
+    .actions {
+        display: none;
+    }
+
     .controls {
         .controls--container {
             grid-template-columns: min-content auto min-content;
         }
-    }
-
-    .controls__navbar {
-        margin: 0;
     }
 
     .controls__search {
@@ -16,8 +16,6 @@
     }
 
     .controls__system {
-        margin: 0;
-
         span {
             right: 115px;
         }
@@ -31,6 +29,32 @@
                 display: none;
             }
         }
+    }
+
+    .features {
+        article {
+            h2 {
+                font-size: $font-4;
+            }
+
+            p {
+                padding: 0 20px;
+            }
+
+            svg {
+                font-size: $font-7;
+            }
+        }
+    }
+
+    .features__part-a {
+        background: $color-2;
+        padding: 20px 40px;
+    }
+
+    .features__part-b {
+        background: $color-1;
+        padding: 20px 40px;
     }
 
     .footer {
@@ -51,6 +75,19 @@
 
     .footer__socials {
         text-align: center;
+    }
+
+    .hero {
+        background-position: right 0;
+        height: clamp(500px, calc(50dvh - 60px), 1440px);
+    }
+
+    .hero__actions {
+        display: none;
+    }
+
+    .hero__content {
+        display: none;
     }
 
     #error {

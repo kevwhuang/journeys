@@ -1,8 +1,8 @@
 @use '../_root' as *;
 
 @media screen and (max-width: 480px) {
-    .controls__map {
-        justify-content: space-evenly;
+    .collage {
+        padding: max(10vh, 20px) max(5vw, 20px);
     }
 
     .controls__system {
@@ -18,11 +18,46 @@
             &:nth-of-type(4) {
                 display: none;
             }
+
+            &:nth-of-type(5) {
+                display: none;
+            }
         }
     }
 
+    .features {
+        article {
+            display: flex;
+            height: 250px;
+            justify-content: center;
+
+            h2 {
+                align-self: center;
+                font-size: $font-4;
+                margin: 10px 0;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            svg {
+                font-size: $font-6;
+            }
+        }
+    }
+
+    .features__part-a {
+        padding: 20px 10px;
+    }
+
+    .features__part-b {
+        padding: 20px 10px;
+    }
+
     .footer {
-        padding: 0 10px 20px;
+        padding: 0 10px 30px;
     }
 
     .footer__legal {
@@ -41,11 +76,38 @@
         }
     }
 
+    .hero {
+        height: clamp(240px, calc(50dvh - 60px), 1440px);
+    }
+
     .notifications {
         display: none;
     }
 
     .policy {
+        font-size: $font-2;
+        padding: 20px 20px 10px;
+
+        * {
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: $font-4;
+            margin-top: 20px;
+        }
+
+        h5 {
+            font-size: $font-3;
+            margin-top: 10px;
+        }
+
+        h6 {
+            font-size: $font-2;
+        }
+    }
+
+    .service {
         font-size: $font-2;
         padding: 20px 20px 10px;
 

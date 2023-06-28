@@ -1,9 +1,84 @@
 @use '../_root' as *;
 
 @media screen and (max-width: 1024px) {
+    .actions__headings {
+        .actions__headings--container {
+            span {
+                word-spacing: 1px;
+
+                &:nth-child(8) {
+                    img {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .collage {
+        padding: max(10vh, 40px) max(5vw, 40px);
+    }
+
     .controls {
         .controls--container {
             width: 100vw;
+        }
+    }
+
+    .features {
+        article {
+            display: grid;
+            grid-template-areas:
+                'icon heading'
+                'icon content';
+            height: 200px;
+            width: 100%;
+
+            h2 {
+                align-self: flex-end;
+                font-size: $font-5;
+                grid-area: heading;
+                justify-self: center;
+                margin-bottom: 5px;
+            }
+
+            p {
+                align-self: flex-start;
+                grid-area: content;
+                margin-top: 5px;
+                padding: 0 40px;
+            }
+
+            svg {
+                font-size: 150px;
+                grid-area: icon;
+                justify-self: center;
+                margin: 0;
+            }
+        }
+    }
+
+    .features__part-a {
+        padding: 40px 80px;
+
+        .features__part-a--container {
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+
+    .features__part-b {
+        padding: 40px 80px;
+
+        .features__part-b--container {
+            flex-direction: column;
+            row-gap: 20px;
+
+            article {
+                grid-template-areas:
+                    'heading icon'
+                    'content icon';
+            }
         }
     }
 
@@ -11,7 +86,7 @@
         grid-template-areas: 'legal socials';
         grid-template-columns: max-content 1fr;
         grid-template-rows: 60px;
-        padding: 0 40px 20px;
+        padding: 0 40px 40px;
     }
 
     .footer--divider-1 {
@@ -42,7 +117,15 @@
         display: none;
     }
 
+    .hero {
+        padding-left: 40px;
+    }
+
     .policy {
+        padding: 40px 40px 20px;
+    }
+
+    .service {
         padding: 40px 40px 20px;
     }
 

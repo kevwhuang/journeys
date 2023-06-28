@@ -10,10 +10,14 @@ import Footer from '../components/modules/Footer';
 import Hero from '../components/modules/Hero';
 
 function Home(): React.ReactElement {
-    const changePage = useZustand(s => s.changePage);
+    const [changePage, navbar] = useZustand(s => [s.changePage, s.navbar]);
 
     useTitle('Journeys | Home');
-    React.useEffect(() => changePage('home'));
+
+    React.useEffect(() => {
+        changePage('home');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="home">
@@ -21,7 +25,7 @@ function Home(): React.ReactElement {
             <Features />
             <Actions />
             <Collage />
-            <Footer />
+            {!navbar && <Footer />}
         </main>
     );
 }

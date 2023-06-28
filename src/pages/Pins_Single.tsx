@@ -10,9 +10,12 @@ function Pins_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
     const id = useParams().id;
 
-    scroll(0, 0);
     useTitle('Journeys | Pin');
-    React.useEffect(() => changePage(''));
+
+    React.useEffect(() => {
+        changePage('');
+        scroll(0, 0);
+    }, []);
 
     return (
         <main id="pins_single">
