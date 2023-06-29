@@ -1,35 +1,90 @@
 @use '../_root' as *;
 
-.profile {}
-
-.profile__actions {
-    font-size: $font-4;
+.profile {
     margin: auto;
-    width: 500px;
-
-    a {
-        color: $color-3;
-
-        &:visited {
-            color: $color-3;
-        }
-    }
+    max-width: 1600px;
+    padding: 80px;
 }
 
 .profile__view {
-    img {
-        display: block;
-        margin: auto;
-        width: 500px;
+    align-items: center;
+    background: $color-2;
+    display: grid;
+    grid-template-areas: 'image . details';
+    grid-template-columns: 500px 80px 1fr;
 
-        &:first-of-type {
-            cursor: pointer;
+    .profile__view--details {
+        cursor: default;
+        font-family: 'Libre Franklin';
+        font-size: $font-4;
+        grid-area: details;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        user-select: none;
+
+        a {
+            color: $color-3;
+            display: block;
+
+            &:nth-of-type(1) {
+                line-height: 35px;
+                margin-bottom: $font-3;
+            }
+
+            &:nth-of-type(2) {
+                width: 100%;
+            }
+
+            &:visited {
+                color: $color-3;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        p {
+            &:nth-of-type(1) {
+                color: $color-4;
+                font-size: $font-5;
+                font-weight: 500;
+                margin-bottom: $font-3;
+                text-transform: uppercase;
+            }
+
+            &:nth-of-type(2) {
+                align-items: center;
+                display: flex;
+                font-weight: 200;
+
+                img {
+                    height: $font-4;
+                }
+            }
+
+            &:nth-of-type(3) {
+                font-weight: 200;
+                margin-bottom: $font-3;
+            }
+
+            &:nth-of-type(4) {
+                cursor: text;
+                font-size: $font-3;
+                font-style: italic;
+                font-weight: 200;
+                margin-bottom: $font-3;
+                user-select: text;
+            }
         }
     }
 
-    p {
-        font-size: $font-4;
-        text-align: center;
+    .profile__view--image {
+        cursor: pointer;
+        grid-area: image;
+        margin: auto;
+        user-select: none;
+        width: 500px;
     }
 
     .profile__view--spinner {
@@ -50,6 +105,28 @@
 
         &.opened {
             width: calc(100vw - 250px);
+        }
+    }
+
+    &.opened {
+        background: none;
+        grid-template-areas:
+            'image'
+            'details';
+        grid-template-columns: 1fr;
+
+        .profile__view--details {
+            text-align: center;
+
+            p {
+                &:nth-of-type(2) {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .profile__view--image {
+            margin-bottom: 80px;
         }
     }
 }

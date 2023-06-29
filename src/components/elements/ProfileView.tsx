@@ -1,6 +1,7 @@
 // @ts-ignore
 import Flag from 'react-world-flags';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -62,29 +63,40 @@ function ProfileView(props: Props): React.ReactElement {
     }
 
     return (
-        <section className="profile__view">
+        <section className={navbar ? 'profile__view opened' : 'profile__view'}>
             <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
             {!loading && (<>
                 <img
+                    className="profile__view--image"
                     src={profile[0].photo || defaultPhoto}
                     alt="Profile Photo"
                     draggable="false"
                     onClick={e => handleClick(e)}
                 />
-                <Flag
-                    code={profile[0].country}
-                    height={121.5}
-                    fallback={<Flag code="AQ" height={121.5} />}
-                />
-                <p>Name: {profile[0].first_name} {profile[0].last_name}</p>
-                <p>Username: {profile[0].username}</p>
-                {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
-                <p>Rank: {useRanking(profile[0].experience)}</p>
-                <p>Since: {profile[0].registered.slice(0, 10)}</p>
-                <p>Page: {profile[0].page}</p>
-                <p>Bio: {profile[0].bio}</p>
+                <section className="profile__view--details">
+                    <p>{profile[0].first_name} {profile[0].last_name}</p>
+                    <p>
+                        {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
+                        {useRanking(profile[0].experience)}
+                        &nbsp;&nbsp;
+                        <Flag
+                            code={profile[0].country}
+                            height={121.5}
+                            draggable="false"
+                            fallback={<Flag code="AQ" height={121.5} draggable="false" />}
+                        />
+                    </p>
+                    <p>Since {profile[0].registered.slice(0, 10)}</p>
+                    <p>{profile[0].bio}</p>
+                    {profile[0].page
+                        && <a href={profile[0].page} target="_blank">
+                            {profile[0].username}'s page
+                        </a>
+                    }
+                    <Link to="../../rankings">go back</Link>
+                </section>
             </>)}
         </section>
     );

@@ -20,7 +20,7 @@
     }
 
     .collage {
-        padding: max(10vh, 20px) max(5vw, 20px);
+        padding: max(10dvh, 20px) max(5vw, 20px);
     }
 
     .controls__map {
@@ -160,6 +160,59 @@
 
         h6 {
             font-size: $font-2;
+        }
+    }
+
+    .profile {
+        padding: 20px 10px;
+    }
+
+    .profile__view {
+        .profile__view--details {
+            a {
+                font-size: $font-3;
+
+                &:nth-of-type(1) {
+                    line-height: 20px;
+                    margin-bottom: $font-2;
+                }
+            }
+
+            p {
+                &:nth-of-type(1) {
+                    font-size: $font-3;
+                    margin-bottom: $font-2;
+                }
+
+                &:nth-of-type(2) {
+                    font-size: $font-3;
+                    font-weight: 400;
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    font-size: $font-3;
+                    font-weight: 400;
+                    margin-bottom: $font-2;
+                }
+
+                &:nth-of-type(4) {
+                    margin-bottom: $font-2;
+                }
+            }
+        }
+
+        .profile__view--image {
+            margin-bottom: $font-2;
+        }
+
+        &.opened {
+            .profile__view--image {
+                margin-bottom: $font-2;
+            }
         }
     }
 

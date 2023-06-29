@@ -5,7 +5,15 @@ import useZustand from '../../hooks/useZustand';
 import '../../styles/modals/Gallery.scss';
 
 function Gallery(): React.ReactElement {
-    const [gallery, modal] = useZustand(s => [s.gallery, s.modals.gallery]);
+    const [gallery, modal, navbar]
+        = useZustand(s => [s.gallery, s.modals.gallery, s.navbar]);
+
+    function getClassName() {
+        let className = modal ? 'gallery' : 'gallery closed';
+
+        if (navbar) className += ' menu';
+        return className;
+    }
 
     function handleClick(e: any) {
         // @ts-ignore
@@ -16,7 +24,7 @@ function Gallery(): React.ReactElement {
 
     return (
         <section
-            className={modal ? 'gallery' : 'gallery closed'}
+            className={getClassName()}
             onClick={e => handleClick(e)}
         >
             <img

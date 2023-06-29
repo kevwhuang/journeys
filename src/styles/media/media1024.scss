@@ -20,7 +20,7 @@
     }
 
     .collage {
-        padding: max(10vh, 40px) max(5vw, 40px);
+        padding: max(10dvh, 40px) max(5vw, 40px);
     }
 
     .controls {
@@ -132,6 +132,30 @@
 
     .policy {
         padding: 40px 40px 20px;
+    }
+
+    .profile {
+        padding: 40px;
+    }
+
+    .profile__view {
+        .profile__view--details {
+            p {
+                &:nth-of-type(1) {
+                    font-size: $font-4;
+                }
+            }
+        }
+
+        .profile__view--image {
+            margin-bottom: 40px;
+        }
+
+        &.opened {
+            .profile__view--image {
+                margin-bottom: 40px;
+            }
+        }
     }
 
     .service {

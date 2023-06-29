@@ -70,6 +70,10 @@
     color: var(--color-1);
 }
 
+.profile__view {
+    background: var(--color-bg);
+}
+
 .story__content .story__content--item {
     background: var(--color-bg);
 }

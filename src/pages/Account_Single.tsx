@@ -10,7 +10,7 @@ function Account_Single(): React.ReactElement {
     const changePage = useZustand(s => s.changePage);
     const username = useParams().username;
 
-    useTitle('Journeys | Account');
+    useTitle('Journeys | Profile');
 
     React.useEffect(() => {
         changePage('');

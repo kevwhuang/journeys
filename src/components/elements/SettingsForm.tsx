@@ -196,7 +196,7 @@ function SettingsForm(): React.ReactElement {
                         <input
                             id="input-settings-page"
                             type="url"
-                            maxLength={25}
+                            maxLength={100}
                             {...register('page')}
                         />
                     </div>
