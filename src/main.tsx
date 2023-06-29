@@ -47,6 +47,10 @@ import './styles/media/media768.scss';
 import './styles/media/media480.scss';
 import './styles/dev.scss';
 
+if (navigator.userAgent.search(/Macintosh|Windows NT/) === -1) {
+    import('./styles/media/mobile.scss');
+}
+
 interface Config {
     errorRetryCount: number,
     refreshInterval: number,
