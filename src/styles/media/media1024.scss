@@ -1,6 +1,10 @@
 @use '../_root' as *;
 
 @media screen and (max-width: 1024px) {
+    .accordions {
+        padding: 40px;
+    }
+
     .actions__headings {
         .actions__headings--container {
             span {
@@ -117,6 +121,11 @@
         display: none;
     }
 
+    .form {
+        max-width: 720px;
+        padding: 40px;
+    }
+
     .hero {
         padding-left: 40px;
     }
@@ -127,6 +136,10 @@
 
     .service {
         padding: 40px 40px 20px;
+    }
+
+    #about {
+        padding: 0 40px;
     }
 
     #display {

@@ -41,6 +41,7 @@ import './styles/main.scss';
 import './styles/utilities.scss';
 import './styles/keyframes.scss';
 import './styles/media/media.scss';
+import './styles/media/media1280.scss';
 import './styles/media/media1024.scss';
 import './styles/media/media768.scss';
 import './styles/media/media480.scss';

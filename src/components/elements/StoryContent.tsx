@@ -11,8 +11,8 @@ import {
 } from '../../data/lorem';
 
 const options = {
-    delay: 100,
-    rootMargin: '0px 0px -500px 0px',
+    delay: 200,
+    threshold: 1,
     triggerOnce: true,
 };
 
@@ -34,7 +34,7 @@ function StoryContent(): React.ReactElement {
             <div className="story__content--item">
                 <article>
                     <h2>Shanghai</h2>
-                    <h3 ref={ref1}>Growing up overseas</h3>
+                    <h3>Growing up overseas</h3>
                     <p>{lorem100}</p>
                 </article>
                 <img
@@ -43,6 +43,7 @@ function StoryContent(): React.ReactElement {
                     alt="Shanghai"
                     draggable="false"
                 />
+                <div className="story__content--trigger" ref={ref1} />
             </div>
             <div className="story__content--item">
                 <img
@@ -53,14 +54,15 @@ function StoryContent(): React.ReactElement {
                 />
                 <article>
                     <h2>Production</h2>
-                    <h3 ref={ref2}>Exploring my creative side</h3>
+                    <h3>Exploring my creative side</h3>
                     <p>{lorem100}</p>
                 </article>
+                <div className="story__content--trigger" ref={ref2} />
             </div>
             <div className="story__content--item">
                 <article>
                     <h2>Austin</h2>
-                    <h3 ref={ref3}>Relocating to a new city</h3>
+                    <h3>Relocating to a new city</h3>
                     <p>{lorem100}</p>
                 </article>
                 <img
@@ -69,6 +71,7 @@ function StoryContent(): React.ReactElement {
                     alt="Austin"
                     draggable="false"
                 />
+                <div className="story__content--trigger" ref={ref3} />
             </div>
             <div className="story__content--item">
                 <img
@@ -79,9 +82,10 @@ function StoryContent(): React.ReactElement {
                 />
                 <article>
                     <h2>Programming</h2>
-                    <h3 ref={ref4}>Pursuing a tech career</h3>
+                    <h3>Pursuing a tech career</h3>
                     <p>{lorem100}</p>
                 </article>
+                <div className="story__content--trigger" ref={ref4} />
             </div>
         </section>
     );

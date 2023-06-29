@@ -4,6 +4,7 @@
     margin: auto;
     max-width: 1600px;
     padding: 80px;
+    user-select: none;
 
     h2 {
         font-size: $font-3;
@@ -14,6 +15,7 @@
         color: $color-6;
         font-size: $font-3;
         padding-bottom: 20px;
+        user-select: text;
     }
 
     .MuiAccordion-root {

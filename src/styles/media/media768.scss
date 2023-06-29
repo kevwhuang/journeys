@@ -78,8 +78,9 @@
     }
 
     .hero {
-        background-position: right 0;
-        height: clamp(500px, calc(50dvh - 60px), 1440px);
+        background: none;
+        height: min-content;
+        padding: 40px;
     }
 
     .hero__actions {
@@ -87,7 +88,35 @@
     }
 
     .hero__content {
-        display: none;
+        animation: none;
+        margin: auto;
+
+        article {
+            animation-delay: 1s;
+            background: none;
+            color: $color-5;
+            cursor: text;
+            font-family: 'SF Pro Display';
+            line-height: $font-4;
+            margin: 0;
+            mix-blend-mode: normal;
+            padding: 0;
+            text-align: center;
+            user-select: text;
+            width: 100%;
+        }
+
+        h1 {
+            display: none;
+        }
+    }
+
+    .story__content {
+        .story__content--item {
+            h3 {
+                font-size: $font-4;
+            }
+        }
     }
 
     #error {

@@ -44,8 +44,17 @@ function ControlsMap(): React.ReactElement {
     }
 
     function handleClickFocus() {
-        if (!state.focus) toast('You\'ve focused the map.', toastOptions);
+        const message = state.focus ? 'You\'ve unfocused the map.' : 'You\'ve focused the map.';
+
         state.toggleFocus();
+        toast(message, toastOptions);
+    }
+
+    function handleClickPower() {
+        const message = state.power ? 'You\'ve disabled tracking.' : 'You\'ve enabled tracking.';
+
+        state.togglePower();
+        toast(message, toastOptions);
     }
 
     async function getAddress(lat: number, long: number) {
@@ -89,13 +98,6 @@ function ControlsMap(): React.ReactElement {
                 toast('You\'ve dropped a new pin.', toastOptions);
             }
         }
-    }
-
-    function handleClickPower() {
-        const message = state.power ? 'You\'ve disabled tracking.' : 'You\'ve enabled tracking.';
-
-        state.togglePower();
-        toast(message, toastOptions);
     }
 
     return (

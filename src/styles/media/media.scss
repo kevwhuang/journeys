@@ -30,33 +30,3 @@
         }
     }
 }
-
-@media screen and (max-width: 1280px) {
-    .actions {
-        height: 300px;
-    }
-
-    .actions__headings {
-        .actions__headings--container {
-            span {
-                font-size: $font-5;
-            }
-        }
-    }
-
-    .features__part-a {
-        padding: 40px 40px;
-
-        .features__part-a--container {
-            column-gap: 20px;
-        }
-    }
-
-    .features__part-b {
-        padding: 40px 40px;
-
-        .features__part-b--container {
-            column-gap: 20px;
-        }
-    }
-}

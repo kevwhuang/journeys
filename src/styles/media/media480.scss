@@ -1,8 +1,30 @@
 @use '../_root' as *;
 
 @media screen and (max-width: 480px) {
+    .accordions {
+        padding: 0;
+
+        p {
+            padding-bottom: 10px;
+        }
+
+        .MuiAccordion-root {
+            padding: 0;
+
+            .MuiAccordion-root {
+                &:last-of-type {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
     .collage {
         padding: max(10vh, 20px) max(5vw, 20px);
+    }
+
+    .controls__map {
+        justify-self: flex-end;
     }
 
     .controls__system {
@@ -76,8 +98,42 @@
         }
     }
 
+    .form {
+        padding: 0;
+    }
+
+    .form__contact {
+        background: $color-1;
+        padding: 20px;
+
+        button {
+            background: $color-2;
+        }
+
+        h2 {
+            font-size: $font-4;
+        }
+
+        .form__contact--field {
+            input {
+                background: $color-2;
+                border-color: $color-2;
+            }
+
+            select {
+                background-color: $color-2;
+                border-color: $color-2;
+            }
+
+            textarea {
+                background: $color-2;
+                border-color: $color-2;
+            }
+        }
+    }
+
     .hero {
-        height: clamp(240px, calc(50dvh - 60px), 1440px);
+        padding: 40px 10px;
     }
 
     .notifications {
@@ -128,6 +184,94 @@
         h6 {
             font-size: $font-2;
         }
+    }
+
+    .story__content {
+        .story__content--item {
+            article {
+                margin-bottom: 0;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            &:nth-child(1) {
+                margin-bottom: 20px;
+                padding: 20px 0 0;
+                width: 95%;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 0;
+                padding: 20px;
+
+                img {
+                    margin-bottom: 20px;
+                    order: -1;
+                }
+
+                .story__content--trigger {
+                    order: -1;
+                }
+            }
+
+            &:nth-child(3) {
+                background-color: $color-1;
+                margin-bottom: 0;
+                padding: 20px;
+
+                img {
+                    margin-bottom: 20px;
+                    order: 1;
+                }
+
+                .story__content--trigger {
+                    order: 0;
+                }
+            }
+
+            &:nth-child(4) {
+                margin-bottom: 0;
+                padding: 20px;
+
+                img {
+                    margin-bottom: 20px;
+                    order: -1;
+                }
+
+                .story__content--trigger {
+                    order: -1;
+                }
+            }
+
+            &:nth-child(5) {
+                background-color: $color-1;
+                margin-bottom: 0;
+                padding: 20px;
+
+                img {
+                    margin-bottom: 20px;
+                    order: 1;
+                }
+
+                .story__content--trigger {
+                    order: 0;
+                }
+            }
+        }
+    }
+
+    #about {
+        padding: 0;
     }
 
     #error {
