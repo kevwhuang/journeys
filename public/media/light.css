@@ -70,6 +70,14 @@
     color: var(--color-1);
 }
 
+.point__map img:hover {
+    outline-color: var(--color-4);
+}
+
+.point__view img:hover {
+    outline-color: var(--color-4);
+}
+
 .profile__view {
     background: var(--color-bg);
 }

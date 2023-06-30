@@ -13,13 +13,13 @@ function PointActions(props: Props): React.ReactElement {
 
     return (
         <section className="point__actions">
-            <Link to="..">Back</Link>
             <a
                 href={`https://www.google.com/search?q=${lat},${long}`}
                 target="_blank"
             >
-                Search
+                web search
             </a>
+            <Link to="..">go back</Link>
         </section>
     );
 }

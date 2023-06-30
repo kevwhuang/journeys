@@ -49,7 +49,27 @@ const manifest: Partial<ManifestOptions> = {
             type: 'image/png',
         },
     ],
-    screenshots: [],
+    screenshots: [
+        {
+            label: 'Hero module',
+            platform: 'wide',
+            sizes: '2560x1440',
+            src: '/screenshots/screeshot-1.webp',
+            type: 'image/webp',
+        }, {
+            label: 'Gallery module',
+            platform: 'wide',
+            sizes: '2560x1440',
+            src: '/screenshots/screeshot-2.webp',
+            type: 'image/webp',
+        }, {
+            label: 'Map module',
+            platform: 'wide',
+            sizes: '2560x1440',
+            src: '/screenshots/screeshot-3.webp',
+            type: 'image/webp',
+        },
+    ],
 };
 
 const vite: UserConfigExport = defineConfig({

@@ -130,6 +130,23 @@
         padding-left: 40px;
     }
 
+    .point {
+        padding: 40px;
+    }
+
+    .point__summary {
+        p {
+            &:first-child {
+                margin-bottom: 10px;
+                text-transform: none;
+            }
+
+            &:last-child {
+                font-size: $font-4;
+            }
+        }
+    }
+
     .policy {
         padding: 40px 40px 20px;
     }

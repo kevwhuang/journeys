@@ -12,14 +12,14 @@ function PointSummary(props: Props): React.ReactElement {
 
     return (
         <section className="point__summary">
+            <p>{address}</p>
             {lat
                 && <p>
                     lat: {lat}
-                    {' | '}
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
                     long: {long}
                 </p>
             }
-            <p>{address}</p>
         </section>
     );
 }

@@ -29,4 +29,34 @@
             }
         }
     }
+
+    .point {
+        &.opened {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            .point__actions {
+                display: flex;
+                justify-content: space-evenly;
+                margin-bottom: 10px;
+                order: -2;
+                width: 500px;
+
+                a {
+                    margin: 0;
+                }
+            }
+
+            .point__map {
+                margin-bottom: 40px;
+            }
+
+            .point__summary {
+                margin-bottom: 40px;
+                order: -1;
+            }
+        }
+    }
 }

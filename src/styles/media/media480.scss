@@ -140,6 +140,44 @@
         display: none;
     }
 
+    .point {
+        padding: 10px;
+    }
+
+    .point__actions {
+        font-size: $font-3;
+        justify-content: space-between;
+        width: 100%;
+
+        a {
+            &:nth-of-type(1) {
+                padding: 0 10px;
+            }
+
+            &:nth-of-type(2) {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .point__map {
+        margin-bottom: 10px;
+    }
+
+    .point__summary {
+        margin-bottom: 10px;
+
+        p {
+            &:first-child {
+                font-size: $font-3;
+            }
+
+            &:last-child {
+                font-size: $font-3;
+            }
+        }
+    }
+
     .policy {
         font-size: $font-2;
         padding: 20px 20px 10px;
