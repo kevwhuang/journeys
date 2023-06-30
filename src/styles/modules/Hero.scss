@@ -120,21 +120,23 @@
         white-space: nowrap;
         width: 0;
 
-        span:first-child {
-            animation:
-                hero-bug 10s 8s infinite,
-                hero-reveal 1s 7s ease-out forwards;
-            display: inline-block;
-            font-family: 'Noto Emoji';
-            opacity: 0;
-            transform: scale(-1, 1);
-            vertical-align: text-top;
-        }
+        span {
+            &:first-child {
+                animation:
+                    hero-bug 10s 8s infinite,
+                    hero-reveal 1s 7s ease-out forwards;
+                display: inline-block;
+                font-family: 'Noto Emoji';
+                opacity: 0;
+                transform: scale(-1, 1);
+                vertical-align: text-top;
+            }
 
-        span:last-child {
-            animation: hero-ellipsis 1s 5s infinite;
-            font-family: 'Libre Franklin';
-            font-weight: 500;
+            &:last-child {
+                animation: hero-ellipsis 1s 5s infinite;
+                font-family: 'Libre Franklin';
+                font-weight: 500;
+            }
         }
     }
 }

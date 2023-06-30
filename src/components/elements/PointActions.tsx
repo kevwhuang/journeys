@@ -17,7 +17,7 @@ function PointActions(props: Props): React.ReactElement {
                 href={`https://www.google.com/search?q=${lat},${long}`}
                 target="_blank"
             >
-                web search
+                search web
             </a>
             <Link to="..">go back</Link>
         </section>

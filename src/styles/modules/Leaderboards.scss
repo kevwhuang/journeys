@@ -32,16 +32,16 @@
         position: fixed;
         width: 100%;
 
-        svg {
-            color: $color-4;
-        }
-
         &.loaded {
             display: none;
         }
 
         &.opened {
             width: calc(100vw - 250px);
+        }
+
+        svg {
+            color: $color-4;
         }
     }
 

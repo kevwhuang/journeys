@@ -1,38 +1,89 @@
 @use '../_root' as *;
 
 .settings {
-    text-align: center;
-    padding: 0 40px;
+    margin: auto;
+    max-width: 1600px;
+    padding: 80px;
+    user-select: none;
 }
 
 .settings__form {
     form {
         font-size: $font-4;
-        margin: auto;
-        width: 100%;
 
         button {
-            display: block;
+            background: $color-1;
+            border: 1px solid $color-3;
+            border-radius: 100px;
+            display: inline-block;
             font-size: $font-4;
             margin: auto;
+            padding: 10px 0;
             text-align: center;
-            width: 50%;
+            transition:
+                color 250ms,
+                transform 250ms;
+            width: 45%;
+
+            &:hover {
+                color: $color-3;
+            }
+
+            &:active {
+                transform: scale(95%);
+            }
+
+            &:first-of-type {
+                margin-right: 5%;
+            }
+
+            &:last-of-type {
+                margin-left: 5%;
+            }
         }
 
         h2 {
             color: $color-4;
             font-size: $font-5;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .settings__form--field {
             align-items: center;
             display: flex;
-            justify-content: space-between;
-            margin: 0 auto 10px;
+            margin-bottom: 20px;
+
+            &:nth-of-type(1) {
+                * {
+                    color: $color-6;
+                    cursor: default;
+                }
+            }
+
+            &:nth-of-type(2) {
+                * {
+                    color: $color-6;
+                    cursor: default;
+                }
+            }
+
+            &:nth-of-type(3) {
+                * {
+                    color: $color-6;
+                    cursor: default;
+                }
+            }
 
             input {
+                flex: 1;
                 font-size: $font-4;
-                width: 50%;
+                margin-left: 50px;
+            }
+
+            label {
+                flex-basis: 250px;
+                text-align: right;
             }
 
             select {
@@ -55,16 +106,16 @@
         position: fixed;
         width: 100%;
 
-        svg {
-            color: $color-4;
-        }
-
         &.loaded {
             display: none;
         }
 
         &.opened {
             width: calc(100vw - 250px);
+        }
+
+        svg {
+            color: $color-4;
         }
     }
 }

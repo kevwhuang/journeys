@@ -50,11 +50,25 @@
     .features__part-a {
         background: $color-2;
         padding: 20px 40px;
+
+        .features__part-a--container {
+            article {
+                animation: hero-reveal 1s 1s ease-out forwards;
+                opacity: 0;
+            }
+        }
     }
 
     .features__part-b {
         background: $color-1;
         padding: 20px 40px;
+
+        .features__part-b--container {
+            article {
+                animation: hero-reveal 1s 1s ease-out forwards;
+                opacity: 0;
+            }
+        }
     }
 
     .footer {
@@ -131,11 +145,23 @@
 
     .point__map {
         margin-bottom: 20px;
+
+        .point__map--spinner {
+            max-width: 500px;
+            width: min-content;
+        }
     }
 
     .point__summary {
         margin-bottom: 20px;
         order: -1;
+    }
+
+    .point__view {
+        .point__view--spinner {
+            max-width: 500px;
+            width: min-content;
+        }
     }
 
     .story__content {

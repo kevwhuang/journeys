@@ -13,6 +13,28 @@
     grid-template-areas: 'image . details';
     grid-template-columns: 500px 80px 1fr;
 
+    &.opened {
+        background: none;
+        grid-template-areas:
+            'image'
+            'details';
+        grid-template-columns: 1fr;
+
+        .profile__view--details {
+            text-align: center;
+
+            p {
+                &:nth-of-type(2) {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .profile__view--image {
+            margin-bottom: 80px;
+        }
+    }
+
     .profile__view--details {
         cursor: default;
         font-family: 'Libre Franklin';
@@ -85,48 +107,5 @@
         margin: auto;
         user-select: none;
         width: 500px;
-    }
-
-    .profile__view--spinner {
-        align-items: center;
-        display: flex;
-        height: calc(100dvh - 60px);
-        justify-content: center;
-        position: fixed;
-        width: 100%;
-
-        svg {
-            color: $color-4;
-        }
-
-        &.loaded {
-            display: none;
-        }
-
-        &.opened {
-            width: calc(100vw - 250px);
-        }
-    }
-
-    &.opened {
-        background: none;
-        grid-template-areas:
-            'image'
-            'details';
-        grid-template-columns: 1fr;
-
-        .profile__view--details {
-            text-align: center;
-
-            p {
-                &:nth-of-type(2) {
-                    justify-content: center;
-                }
-            }
-        }
-
-        .profile__view--image {
-            margin-bottom: 80px;
-        }
     }
 }

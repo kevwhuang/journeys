@@ -132,22 +132,10 @@ VALUES
         12524929,
         '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":1},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
     ),
-    (
-        10147438,
-        '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":1},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
-    ),
-    (
-        8019941,
-        '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":1},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
-    ),
-    (
-        6142456,
-        '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":1},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
-    ),
-    (
-        4514960,
-        '[{"subject":"New Theme","message":"Dark mode is now supported.","priority":1},{"subject":"Setup Your Profile","message":"Add your first and last name.","priority":1},{"subject":"Welcome","message":"Embark on your first Journey.","priority":2}]'
-    ),
+    (10147438, null),
+    (8019941, null),
+    (6142456, null),
+    (4514960, null),
     (3137471, null),
     (2009976, null),
     (1132484, null),

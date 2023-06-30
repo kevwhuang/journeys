@@ -22,6 +22,12 @@
     margin: auto;
     width: clamp(480px, auto, 2560px);
 
+    &.lazy {
+        div {
+            background-image: none;
+        }
+    }
+
     div {
         box-shadow:
             0 10px 20px rgba(0, 0, 0, 20%),
@@ -182,12 +188,6 @@
             &:hover {
                 height: 105%;
             }
-        }
-    }
-
-    &.lazy {
-        div {
-            background-image: none;
         }
     }
 }

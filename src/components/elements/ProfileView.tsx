@@ -3,8 +3,6 @@ import Flag from 'react-world-flags';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CircularProgress from '@mui/material/CircularProgress';
-
 import useAxios from '../../hooks/useAxios';
 import useRanking from '../../hooks/useRanking';
 import useZustand from '../../hooks/useZustand';
@@ -45,13 +43,6 @@ function ProfileView(props: Props): React.ReactElement {
         },
     });
 
-    function getClassName() {
-        let className = loading ? 'profile__view--spinner' : 'profile__view--spinner loaded';
-
-        if (navbar) className += ' opened';
-        return className;
-    }
-
     function handleClick(e: any) {
         // @ts-ignore
         document.startViewTransition(() => {
@@ -64,9 +55,6 @@ function ProfileView(props: Props): React.ReactElement {
 
     return (
         <section className={navbar ? 'profile__view opened' : 'profile__view'}>
-            <div className={getClassName()}>
-                <CircularProgress size={'121.5px'} />
-            </div>
             {!loading && (<>
                 <img
                     className="profile__view--image"

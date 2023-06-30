@@ -129,7 +129,7 @@ function SettingsForm(): React.ReactElement {
                 && <form onSubmit={onSubmit(handleSubmit)}>
                     <h2>Account Settings</h2>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-registered">Date Registered</label>
+                        <label htmlFor="input-settings-registered">Registered</label>
                         <input
                             id="input-settings-registered"
                             placeholder={settings?.[0].registered.slice(0, 10)}
@@ -158,6 +158,7 @@ function SettingsForm(): React.ReactElement {
                             id="input-settings-first-name"
                             type="text"
                             maxLength={25}
+                            pattern="[A-Za-z ]*"
                             autoComplete="off"
                             {...register('first_name')}
                         />
@@ -168,6 +169,8 @@ function SettingsForm(): React.ReactElement {
                             id="input-settings-last-name"
                             type="text"
                             maxLength={25}
+                            pattern="[A-Za-z ]*"
+                            autoComplete="off"
                             {...register('last_name')}
                         />
                     </div>
@@ -178,6 +181,7 @@ function SettingsForm(): React.ReactElement {
                             type="text"
                             minLength={2}
                             maxLength={2}
+                            pattern="[A-Z]*"
                             autoComplete="off"
                             {...register('country')}
                         />
@@ -240,8 +244,8 @@ function SettingsForm(): React.ReactElement {
                             <option value="2">Hybrid</option>
                         </select>
                     </div>
-                    <button type="submit">Update Settings</button>
                     <button onClick={handleClick}>Delete Account</button>
+                    <button type="submit">Update Settings</button>
                 </form>
             }
         </section>
