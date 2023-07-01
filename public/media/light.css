@@ -41,6 +41,10 @@
     background: var(--color-hover);
 }
 
+.form__contact {
+    padding: 0;
+}
+
 .form__contact button {
     background: var(--color-bg);
     border: 1px solid var(--color-3);
@@ -78,10 +82,24 @@
     outline-color: var(--color-4);
 }
 
+.points__table ol .points__table--card:hover {
+    background: var(--color-bg);
+}
+
+.points__table ol .points__table--row:hover {
+    background: var(--color-bg);
+}
+
 .profile__view {
     background: var(--color-bg);
 }
 
 .story__content .story__content--item {
     background: var(--color-bg);
+}
+
+@media screen and (max-width: 480px) {
+    .form__contact {
+        padding: 20px;
+    }
 }

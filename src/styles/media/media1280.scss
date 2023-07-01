@@ -57,6 +57,24 @@
         order: -1;
     }
 
+    .points__table {
+        &.opened {
+            ol {
+                .points__table--card {
+                    display: block;
+                }
+
+                .points__table--headers {
+                    display: none;
+                }
+
+                .points__table--row {
+                    display: none;
+                }
+            }
+        }
+    }
+
     .profile__view {
         background: none;
         grid-template-areas:
@@ -83,7 +101,7 @@
     .story__content {
         .story__content--item {
             &:nth-child(1) {
-                padding: 40px 0 0;
+                padding: 80px 0 0;
                 width: 90%;
             }
 

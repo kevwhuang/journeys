@@ -58,9 +58,10 @@ function LeaderboardsData(): React.ReactElement {
     }, [users]);
 
     function getAge(datetime: string) {
-        const difference = Date.now() - Date.parse(datetime);
+        const age = Math.floor((Date.now() - Date.parse(datetime)) / 1000 / 60 / 60 / 24);
 
-        return Math.floor(difference / 1000 / 60 / 60 / 24);
+        if (!age) return 'new';
+        return `${age} ${age === 1 ? 'day' : 'days'}`;
     }
 
     function getClassName() {
@@ -88,7 +89,7 @@ function LeaderboardsData(): React.ReactElement {
                 <li className="leaderboards__data--headers">
                     <span>#</span>
                     {' | '}
-                    <span>Rank</span>
+                    <span>Title</span>
                     {' | '}
                     <span>Username</span>
                     {' | '}
@@ -122,7 +123,7 @@ function LeaderboardsData(): React.ReactElement {
                                 />
                             </span>
                             {' | '}
-                            <span>{getAge(user.registered)} days</span>
+                            <span>{getAge(user.registered)}</span>
                         </li>
                     ))}
             </ol>

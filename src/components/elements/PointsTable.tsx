@@ -4,59 +4,117 @@ import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
 import useZustand from '../../hooks/useZustand';
 
 import toastOptions from '../../features/toastOptions';
 
+interface Row {
+    address: string,
+    id: number,
+    lat: number,
+    long: number,
+    time: string,
+}
+
+const initialize = {
+    address: 'You don\'t have any pins!',
+    id: 0,
+    lat: 0,
+    long: 0,
+    time: new Date().toISOString(),
+};
+
 function PointsTable(): React.ReactElement {
-    const [deletePin, pins, search] = useZustand(s => [s.deletePin, s.pins, s.search]);
+    const [deletePin, navbar, pins, search]
+        = useZustand(s => [s.deletePin, s.navbar, s.pins, s.search]);
+    const [rows, setRows]: [Row[], any] = React.useState([initialize]);
+
+    React.useEffect(() => {
+        const data: Row[] = [];
+
+        pins.forEach((pin, i) => data.push({ ...pin, id: i + 1 }));
+        data.length && setRows(data);
+    }, [pins]);
+
+    function formatCoordinate(coordinate: number) {
+        return String(coordinate)[0] === '-' ? coordinate : `+${coordinate}`;
+    }
 
     function handleClick(i: number) {
+        rows.length === 1 && setRows([initialize]);
         deletePin(i);
         toast('You\'ve removed a pin.', toastOptions);
     }
 
     return (
-        <section className="points__table">
+        <section className={navbar ? 'points__table opened' : 'points__table'}>
             <Toaster
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
             />
             <ol>
                 <li className="points__table--headers">
-                    <span>#</span>
-                    {' | '}
+                    <span>
+                        <DeleteOutlinedIcon />
+                    </span>
+                    <span>
+                        <FormatListNumberedOutlinedIcon />
+                    </span>
                     <span>Date</span>
-                    {' | '}
                     <span>Address</span>
-                    {' | '}
-                    <span>Latitude</span>
-                    {' | '}
-                    <span>Longitude</span>
-                    {' | '}
-                    <span>Delete</span>
+                    <span>Lat</span>
+                    <span>Long</span>
                 </li>
-                {pins
-                    .filter(pin => pin.address
+                {rows
+                    .filter(row => row.address
                         .replaceAll(',', '')
                         .toLowerCase()
                         .includes(search))
-                    .map((pin, i) => (
-                        <li key={uuid()}>
-                            {i + 1}
-                            {' | '}
-                            <span>{pin && pin.time.slice(0, 10)}</span>
-                            {' | '}
-                            <Link to={`${i + 1}`}>{pin.address}</Link>
-                            {' | '}
+                    .map(row => (
+                        <li className="points__table--row" key={uuid()}>
                             <span>
-                                lat: {pin.lat}
-                                {' | '}
-                                long: {pin.long}
+                                {row.id
+                                    ? <DeleteOutlinedIcon onClick={() => handleClick(row.id - 1)} />
+                                    : ''
+                                }
                             </span>
-                            {' | '}
-                            <DeleteOutlinedIcon onClick={() => handleClick(i)} />
+                            <span>{row.id}</span>
+                            <span>{row.time.slice(0, 10)}</span>
+                            <span>
+                                {row.id
+                                    ? <Link to={`${row.id}`}>{row.address}</Link>
+                                    : <Link to="../map">{row.address}</Link>
+                                }
+                            </span>
+                            <span>{formatCoordinate(row.lat)}</span>
+                            <span>{formatCoordinate(row.long)}</span>
+                        </li>
+                    ))}
+                {rows
+                    .filter(row => row.address
+                        .replaceAll(',', '')
+                        .toLowerCase()
+                        .includes(search))
+                    .map(row => (
+                        <li className="points__table--card" key={uuid()}>
+                            <p>
+                                {formatCoordinate(row.lat)}
+                                ,&nbsp;
+                                {formatCoordinate(row.long)}
+                                &nbsp;
+                                {row.id
+                                    ? <DeleteOutlinedIcon onClick={() => handleClick(row.id - 1)} />
+                                    : ''
+                                }
+                            </p>
+                            <p>
+                                {row.id
+                                    ? <Link to={`${row.id}`}>{row.address}</Link>
+                                    : <Link to="../map">{row.address}</Link>
+                                }
+                            </p>
                         </li>
                     ))}
             </ol>

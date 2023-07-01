@@ -33,7 +33,7 @@ td {
 
 th {
     padding: 0 40px;
-    text-align: left;
+    text-align: start;
 }
 
 @media screen and (max-width: 480px) {

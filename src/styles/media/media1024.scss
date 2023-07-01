@@ -147,6 +147,26 @@
         }
     }
 
+    .points {
+        padding: 40px;
+    }
+
+    .points__table {
+        ol {
+            .points__table--card {
+                display: block;
+            }
+
+            .points__table--headers {
+                display: none;
+            }
+
+            .points__table--row {
+                display: none;
+            }
+        }
+    }
+
     .policy {
         padding: 40px 40px 20px;
     }
@@ -177,6 +197,14 @@
 
     .service {
         padding: 40px 40px 20px;
+    }
+
+    .story__content {
+        .story__content--item {
+            &:nth-child(1) {
+                padding: 40px 0 0;
+            }
+        }
     }
 
     #about {

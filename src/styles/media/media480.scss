@@ -108,6 +108,7 @@
 
         button {
             background: $color-2;
+            width: 100%;
         }
 
         h2 {
@@ -141,7 +142,7 @@
     }
 
     .point {
-        padding: 10px;
+        padding: 20px 10px;
     }
 
     .point__actions {
@@ -176,6 +177,10 @@
                 font-size: $font-3;
             }
         }
+    }
+
+    .points {
+        padding: 20px 10px;
     }
 
     .policy {

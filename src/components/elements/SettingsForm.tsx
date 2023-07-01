@@ -244,8 +244,8 @@ function SettingsForm(): React.ReactElement {
                             <option value="2">Hybrid</option>
                         </select>
                     </div>
-                    <button onClick={handleClick}>Delete Account</button>
                     <button type="submit">Update Settings</button>
+                    <button onClick={handleClick}>Delete Account</button>
                 </form>
             }
         </section>
