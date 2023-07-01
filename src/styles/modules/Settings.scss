@@ -103,14 +103,20 @@
         display: flex;
         height: calc(100dvh - 60px);
         justify-content: center;
+        left: 0;
         position: fixed;
-        width: 100%;
+        top: 60px;
+        transition:
+            left 1s,
+            width 1s;
+        width: 100vw;
 
         &.loaded {
             display: none;
         }
 
         &.opened {
+            left: 250px;
             width: calc(100vw - 250px);
         }
 

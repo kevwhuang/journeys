@@ -71,9 +71,8 @@ function ProfileView(props: Props): React.ReactElement {
                         &nbsp;&nbsp;
                         <Flag
                             code={profile[0].country}
-                            height={121.5}
                             draggable="false"
-                            fallback={<Flag code="AQ" height={121.5} draggable="false" />}
+                            fallback={<Flag code="AQ" draggable="false" />}
                         />
                     </p>
                     <p>Since {profile[0].registered.slice(0, 10)}</p>

@@ -4,7 +4,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CircularProgress from '@mui/material/CircularProgress';
+import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
+import LeaderboardOutlinedIcon from '@mui/icons-material/LeaderboardOutlined';
 
 import useAxios from '../../hooks/useAxios';
 import useRanking from '../../hooks/useRanking';
@@ -57,11 +60,8 @@ function LeaderboardsData(): React.ReactElement {
         });
     }, [users]);
 
-    function getAge(datetime: string) {
-        const age = Math.floor((Date.now() - Date.parse(datetime)) / 1000 / 60 / 60 / 24);
-
-        if (!age) return 'new';
-        return `${age} ${age === 1 ? 'day' : 'days'}`;
+    function getDays(datetime: string) {
+        return Math.floor((Date.now() - Date.parse(datetime)) / 1000 / 60 / 60 / 24);
     }
 
     function getClassName() {
@@ -76,54 +76,48 @@ function LeaderboardsData(): React.ReactElement {
             <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
+            <section className="leaderboards__data--stats">
+                <span>{stats.users} users</span>
+                <span>{stats.experience} xp</span>
+                <span>{stats.age} days</span>
+                <span>{stats.countries} countries</span>
+            </section>
             <ol>
-                <li className="leaderboards__data--stats">
-                    <span>Users: {stats.users}</span>
-                    {' | '}
-                    <span>Experience: {stats.experience} million</span>
-                    {' | '}
-                    <span>Countries: {stats.countries}</span>
-                    {' | '}
-                    <span>Age: {stats.age} days</span>
-                </li>
                 <li className="leaderboards__data--headers">
-                    <span>#</span>
-                    {' | '}
+                    <span>
+                        <LeaderboardOutlinedIcon />
+                    </span>
                     <span>Title</span>
-                    {' | '}
                     <span>Username</span>
-                    {' | '}
                     <span>Name</span>
-                    {' | '}
-                    <span>Country</span>
-                    {' | '}
-                    <span>Age</span>
+                    <span>
+                        <CalendarMonthOutlinedIcon />
+                    </span>
+                    <span>
+                        <FlagOutlinedIcon />
+                    </span>
                 </li>
                 {!loading && users
                     .filter(user => `${user.username} ${user.first_name} ${user.last_name}`
                         .toLowerCase()
                         .includes(search))
                     .map((user, i) => (
-                        <li key={uuid()}>
-                            {i + 1}
-                            {' | '}
+                        <li className="leaderboards__data--row" key={uuid()}>
+                            <span>{i + 1}</span>
                             {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
                             <span>{useRanking(user.experience)}</span>
-                            {' | '}
-                            <Link to={`../account/${user.username}`}>{user.username}</Link>
-                            {' | '}
+                            <span>
+                                <Link to={`../account/${user.username}`}>{user.username}</Link>
+                            </span>
                             <span>{user.first_name} {user.last_name}</span>
-                            {' | '}
+                            <span>{getDays(user.registered)}</span>
                             <span>
                                 <Flag
                                     code={user.country}
-                                    height={36}
                                     draggable="false"
-                                    fallback={<Flag code="AQ" height={36} draggable="false" />}
+                                    fallback={<Flag code="AQ" draggable="false" />}
                                 />
                             </span>
-                            {' | '}
-                            <span>{getAge(user.registered)}</span>
                         </li>
                     ))}
             </ol>

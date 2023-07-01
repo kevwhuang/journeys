@@ -17,6 +17,7 @@
 .points__table {
     ol {
         font-size: $font-3;
+        list-style-type: none;
 
         .points__table--card {
             border-top: 1px solid $color-6;
@@ -66,7 +67,7 @@
 
                     a {
                         color: $color-4;
-                        word-break: keep-all;
+                        word-break: break-all;
 
                         &:visited {
                             color: $color-4;
@@ -92,12 +93,14 @@
 
                 &:nth-of-type(1) {
                     display: flex;
-                    scale: 110%;
                 }
 
                 &:nth-of-type(2) {
                     display: flex;
                     justify-content: center;
+                }
+
+                svg {
                     scale: 110%;
                 }
             }
@@ -134,8 +137,7 @@
                 }
 
                 &:nth-of-type(2) {
-                    display: flex;
-                    justify-content: center;
+                    text-align: center;
                 }
 
                 &:nth-of-type(4) {
