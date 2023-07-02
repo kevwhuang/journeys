@@ -19,6 +19,57 @@
         font-size: $font-3;
         list-style-type: none;
 
+        .leaderboards__data--card {
+            border-top: 1px solid $color-6;
+            display: none;
+            transition: background-color 100ms;
+
+            &:hover {
+                background: $color-2;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $color-6;
+            }
+
+            p {
+                text-align: center;
+
+                &:first-child {
+                    align-items: center;
+                    color: $color-6;
+                    display: flex;
+                    font-style: italic;
+                    justify-content: center;
+                    padding: 20px 0 5px;
+                    text-transform: uppercase;
+
+                    img {
+                        height: $font-4;
+                        margin-left: 15px;
+                    }
+                }
+
+                &:last-child {
+                    font-size: $font-4;
+                    padding-bottom: 20px;
+
+                    a {
+                        color: $color-4;
+                        word-break: break-all;
+
+                        &:visited {
+                            color: $color-4;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
         .leaderboards__data--headers {
             @extend %grid;
             border-top: 1px solid $color-6;
@@ -111,6 +162,7 @@
 
     .leaderboards__data--spinner {
         align-items: center;
+        background: $color-1;
         display: flex;
         height: calc(100dvh - 60px);
         justify-content: center;
@@ -121,6 +173,7 @@
             left 1s,
             width 1s;
         width: 100vw;
+        z-index: 100;
 
         &.loaded {
             display: none;
@@ -147,7 +200,7 @@
         word-spacing: 2px;
 
         span {
-            padding: 10px 0;
+            padding-bottom: 10px;
             text-align: center;
         }
     }

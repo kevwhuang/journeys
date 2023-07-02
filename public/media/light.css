@@ -62,6 +62,10 @@
         linear-gradient(135deg, var(--color-5) 50%, transparent 50%);
 }
 
+.leaderboards__data ol .leaderboards__data--card:hover {
+    background: var(--color-bg);
+}
+
 .leaderboards__data ol .leaderboards__data--row:hover {
     background: var(--color-bg);
 }

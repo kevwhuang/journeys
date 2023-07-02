@@ -137,6 +137,26 @@
         padding: 40px 10px;
     }
 
+    .leaderboards {
+        padding: 20px 10px;
+
+        .leaderboards__data--stats {
+            grid-template-columns: 1fr 1fr;
+
+            span {
+                padding-bottom: 5px;
+
+                &:nth-child(1) {
+                    padding: 0;
+                }
+
+                &:nth-child(2) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
     .notifications {
         display: none;
     }

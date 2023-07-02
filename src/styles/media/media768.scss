@@ -125,6 +125,40 @@
         }
     }
 
+    .leaderboards {
+        padding: 20px;
+    }
+
+    .leaderboards__data {
+        ol {
+            .leaderboards__data--card {
+                p {
+                    &:first-child {
+                        font-size: $font-2;
+                        padding: 10px 0 0;
+
+                        img {
+                            display: none;
+                        }
+                    }
+
+                    &:last-child {
+                        font-size: $font-3;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .leaderboards__data--stats {
+            font-size: $font-1;
+
+            span {
+                padding-bottom: 5px;
+            }
+        }
+    }
+
     .point {
         padding: 20px;
     }

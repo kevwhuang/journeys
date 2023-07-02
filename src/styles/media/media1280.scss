@@ -29,6 +29,28 @@
         }
     }
 
+    .leaderboards__data {
+        &.opened {
+            ol {
+                .leaderboards__data--card {
+                    display: block;
+                }
+
+                .leaderboards__data--headers {
+                    display: none;
+                }
+
+                .leaderboards__data--row {
+                    display: none;
+                }
+            }
+
+            .leaderboards__data--stats {
+                color: $color-5;
+            }
+        }
+    }
+
     .point {
         align-items: center;
         display: flex;

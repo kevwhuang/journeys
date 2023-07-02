@@ -72,7 +72,7 @@ function LeaderboardsData(): React.ReactElement {
     }
 
     return (
-        <section className="leaderboards__data">
+        <section className={navbar ? 'leaderboards__data opened' : 'leaderboards__data'}>
             <div className={getClassName()}>
                 <CircularProgress size={'121.5px'} />
             </div>
@@ -118,6 +118,26 @@ function LeaderboardsData(): React.ReactElement {
                                     fallback={<Flag code="AQ" draggable="false" />}
                                 />
                             </span>
+                        </li>
+                    ))}
+                {!loading && users
+                    .filter(user => `${user.username} ${user.first_name} ${user.last_name}`
+                        .toLowerCase()
+                        .includes(search))
+                    .map(user => (
+                        <li className="leaderboards__data--card" key={uuid()}>
+                            <p>
+                                {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
+                                {useRanking(user.experience)}
+                                <Flag
+                                    code={user.country}
+                                    draggable="false"
+                                    fallback={<Flag code="AQ" draggable="false" />}
+                                />
+                            </p>
+                            <p>
+                                <Link to={`../account/${user.username}`}>{user.username}</Link>
+                            </p>
                         </li>
                     ))}
             </ol>
