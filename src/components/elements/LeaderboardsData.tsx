@@ -80,7 +80,7 @@ function LeaderboardsData(): React.ReactElement {
                 <span>{stats.users} users</span>
                 <span>{stats.experience} xp</span>
                 <span>{stats.age} days</span>
-                <span>{stats.countries} countries</span>
+                <span>{stats.countries} flags</span>
             </section>
             <ol>
                 <li className="leaderboards__data--headers">

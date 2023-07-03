@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png';
 
 function FooterLogo(): React.ReactElement {
     function handleClick() {
-        alert('Version: 1.0.0\nDate: July 1, 2023');
+        alert('Version: 1.0.0\nDate: July 4, 2023');
     }
 
     return (

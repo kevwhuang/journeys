@@ -9,14 +9,14 @@
 
 .settings__form {
     form {
-        font-size: $font-4;
+        font-size: $font-3;
 
         button {
             background: $color-1;
             border: 1px solid $color-3;
             border-radius: 100px;
             display: inline-block;
-            font-size: $font-4;
+            font-size: $font-3;
             margin: auto;
             padding: 10px 0;
             text-align: center;
@@ -44,6 +44,7 @@
 
         h2 {
             color: $color-4;
+            cursor: default;
             font-size: $font-5;
             margin-bottom: 20px;
             text-align: center;
@@ -77,7 +78,7 @@
 
             input {
                 flex: 1;
-                font-size: $font-4;
+                font-size: $font-3;
                 margin-left: 50px;
             }
 
@@ -87,12 +88,12 @@
             }
 
             select {
-                font-size: $font-4;
+                font-size: $font-3;
                 width: 50%;
             }
 
             textarea {
-                font-size: $font-4;
+                font-size: $font-3;
                 width: 50%;
             }
         }

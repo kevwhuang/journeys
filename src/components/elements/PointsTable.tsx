@@ -19,7 +19,7 @@ interface Row {
 }
 
 const initialize = {
-    address: 'You don\'t have any pins!',
+    address: 'You haven\'t saved any pins!',
     id: 0,
     lat: 0,
     long: 0,

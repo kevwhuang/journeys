@@ -4,7 +4,7 @@ function ServicePartA(): React.ReactElement {
     return (
         <section className="service__part-a">
             <h4>Terms of Service</h4>
-            <p>Last updated: July 01, 2023</p>
+            <p>Last updated: July 4, 2023</p>
             <h5>Agreement to Our Legal Terms</h5>
             <p>We are Journeys ("<strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>," "<strong>our</strong>"), a company registered in Texas, United States at 1100 Congress Ave., Austin, TX 78747.</p>
             <p>We operate the website <a href="https://journeys-app.com" target="_blank">https://journeys-app.com</a> (the "<strong>Site</strong>"), the mobile application Journeys (the "<strong>App</strong>"), as well as any other related products and services that refer or link to these legal terms (the "<strong>Legal Terms</strong>") (collectively, the "<strong>Services</strong>").</p>

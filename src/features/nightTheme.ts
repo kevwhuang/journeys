@@ -1,12 +1,12 @@
 'use strict';
 
-interface Night {
+interface NightTheme {
     elementType: string,
     featureType?: string,
     stylers: [{ color: string }],
 }
 
-const night: Night[] = [
+const nightTheme: NightTheme[] = [
     {
         elementType: 'geometry',
         stylers: [{ color: '#242f3e' }],
@@ -79,4 +79,4 @@ const night: Night[] = [
     },
 ];
 
-export default night;
+export default nightTheme;

@@ -3,7 +3,7 @@ import React from 'react';
 import useZustand from '../../hooks/useZustand';
 
 import focusIcon from '../../assets/focus.png';
-import night from '../../features/night';
+import nightTheme from '../../features/nightTheme';
 
 function ViewMap() {
     const ref: React.MutableRefObject<any> = React.useRef();
@@ -48,7 +48,7 @@ function ViewMap() {
                 heading: null,
                 isFractionalZoomEnabled: true,
                 keyboardShortcuts: false,
-                mapId: 'world',
+                mapId: null,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                     mapTypeIds: ['hybrid', 'roadmap', 'satellite'],
@@ -78,14 +78,14 @@ function ViewMap() {
                         ? google.maps.ControlPosition.LEFT_TOP
                         : google.maps.ControlPosition.RIGHT_BOTTOM,
                 },
-                styles: (!map && theme) ? night : null,
+                styles: (!map && theme) ? nightTheme : null,
                 tilt: null,
                 zoom: 15,
                 zoomControl: false,
                 zoomControlOptions: null,
             }));
         }());
-    }, []);
+    }, [map]);
 
     React.useEffect(() => {
         (async function createHeatmap() {
@@ -192,6 +192,14 @@ function ViewMap() {
             heatmap.setData(points);
         }
     }, [heatmap, tracks]);
+
+    world && world.addListener('maptypeid_changed', () => {
+        if (world.mapTypeId === 'roadmap' && theme) {
+            world.setOptions({ styles: nightTheme });
+        } else {
+            world.setOptions({ styles: null });
+        }
+    });
 
     world && world.addListener('zoom_changed', () => {
         heatmap && heatmap.setOptions({ radius: world.getZoom() * 1.5 });

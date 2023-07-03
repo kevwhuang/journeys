@@ -6,12 +6,12 @@ interface Secret {
 }
 
 const secret1: Secret = {
-    code: 'journeys',
+    code: 'journeys-app',
     sequence: [],
 };
 
 const secret2: Secret = {
-    code: '404512',
+    code: '20230704',
     sequence: [],
 };
 
@@ -27,7 +27,7 @@ addEventListener('keyup', (e: KeyboardEvent): void => {
 
     if (s.join('').includes(c)) {
         initialized1 = true;
-        alert('The secret code is 404512.');
+        alert('The secret code is 20230704.');
     }
 });
 
@@ -40,6 +40,6 @@ addEventListener('keyup', (e: KeyboardEvent): void => {
 
     if (s.join('').includes(c)) {
         initialized2 = true;
-        alert('The super secret code is 20230701.');
+        alert('The super secret code is 404512.');
     }
 });
