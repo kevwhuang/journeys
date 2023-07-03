@@ -20,7 +20,7 @@ function Home(): React.ReactElement {
     }, []);
 
     return (
-        <main id="home">
+        <main id="home" className={navbar ? 'opened' : ''}>
             <Hero />
             <Features />
             <Actions />

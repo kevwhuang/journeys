@@ -105,7 +105,13 @@
         cursor: pointer;
         grid-area: image;
         margin: auto;
+        outline: 1px solid transparent;
+        transition: outline 500ms;
         user-select: none;
         width: 500px;
+
+        &:hover {
+            outline: 1px solid $color-3;
+        }
     }
 }

@@ -3,6 +3,8 @@ import React from 'react';
 import useRanking from '../../hooks/useRanking';
 import useZustand from '../../hooks/useZustand';
 
+import defaultPhoto from '../../assets/default-photo.webp';
+
 function NavbarProfile(): React.ReactElement {
     const [experience, first, photo]
         = useZustand(s => [s.records.experience, s.user.first, s.user.photo]);
@@ -10,8 +12,8 @@ function NavbarProfile(): React.ReactElement {
     return (
         <section className="navbar__profile">
             <img
-                src={photo}
-                alt=" "
+                src={photo || defaultPhoto}
+                alt="Profile"
                 draggable="false"
             />
             <span>

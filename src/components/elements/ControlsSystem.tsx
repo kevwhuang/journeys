@@ -15,7 +15,6 @@ import useZustand from '../../hooks/useZustand';
 import MuiTooltip from '../libraries/MuiTooltip';
 
 import toastOptions from '../../features/toastOptions';
-import { __Notification } from '../../features/classes';
 
 function ControlsSystem(): React.ReactElement {
     const state = useZustand();
@@ -37,7 +36,6 @@ function ControlsSystem(): React.ReactElement {
     function handleClickTheme(theme: number) {
         const message = theme ? 'You\'ve turned off the lights.' : 'You\'ve turned on the lights.';
 
-        state.addNotification(new __Notification('Theme', message));
         state.toggleTheme(theme);
         toast(message, toastOptions);
     }

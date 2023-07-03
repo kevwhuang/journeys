@@ -59,7 +59,7 @@ function ProfileView(props: Props): React.ReactElement {
                 <img
                     className="profile__view--image"
                     src={profile[0].photo || defaultPhoto}
-                    alt="Profile Photo"
+                    alt="Profile"
                     draggable="false"
                     onClick={e => handleClick(e)}
                 />

@@ -326,6 +326,8 @@
                 }
 
                 .settings__form--label {
+                    display: flex;
+
                     label {
                         color: $color-6;
                         font-size: $font-2;
