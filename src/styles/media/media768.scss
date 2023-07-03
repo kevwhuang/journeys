@@ -232,6 +232,42 @@
         }
     }
 
+    .settings__form {
+        form {
+            button {
+                display: block;
+                width: 100%;
+
+                &:first-of-type {
+                    margin: 0 0 40px 0;
+                }
+
+                &:last-of-type {
+                    margin-left: 0;
+                }
+            }
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            .settings__form--field {
+                display: block;
+                padding: 0;
+
+                .settings__form--label {
+                    margin-bottom: 5px;
+                    padding: 0;
+                    text-align: left;
+
+                    label {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .story__content {
         .story__content--item {
             h3 {

@@ -117,7 +117,7 @@ function SettingsForm(): React.ReactElement {
     }
 
     return (
-        <section className="settings__form">
+        <section className={state.navbar ? 'settings__form opened' : 'settings__form'}>
             <Toaster
                 gutter={20}
                 containerStyle={{ bottom: 20, right: 20 }}
@@ -127,9 +127,11 @@ function SettingsForm(): React.ReactElement {
             </div>
             {!loading
                 && <form onSubmit={onSubmit(handleSubmit)}>
-                    <h2>Account Settings</h2>
+                    <h2>Settings</h2>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-registered">Registered</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-registered">Registered</label>
+                        </div>
                         <input
                             id="input-settings-registered"
                             placeholder={settings?.[0].registered.slice(0, 10)}
@@ -137,7 +139,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-email">Email</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-email">Email</label>
+                        </div>
                         <input
                             id="input-settings-email"
                             placeholder={settings?.[0].email}
@@ -145,7 +149,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-username">Username</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-username">Username</label>
+                        </div>
                         <input
                             id="input-settings-username"
                             placeholder={settings?.[0].username}
@@ -153,7 +159,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-first-name">First Name</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-first-name">First Name</label>
+                        </div>
                         <input
                             id="input-settings-first-name"
                             type="text"
@@ -164,7 +172,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-last-name">Last Name</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-last-name">Last Name</label>
+                        </div>
                         <input
                             id="input-settings-last-name"
                             type="text"
@@ -175,7 +185,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-country">Country</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-country">Country</label>
+                        </div>
                         <input
                             id="input-settings-country"
                             type="text"
@@ -187,7 +199,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-photo">Photo</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-photo">Photo</label>
+                        </div>
                         <input
                             id="input-settings-photo"
                             type="url"
@@ -196,7 +210,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-page">Page</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-page">Page</label>
+                        </div>
                         <input
                             id="input-settings-page"
                             type="url"
@@ -205,7 +221,9 @@ function SettingsForm(): React.ReactElement {
                         />
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-bio">Bio</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-bio">Bio</label>
+                        </div>
                         <textarea
                             id="input-settings-bio"
                             maxLength={1000}
@@ -214,7 +232,9 @@ function SettingsForm(): React.ReactElement {
                         </textarea>
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-theme">Theme</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-theme">Theme</label>
+                        </div>
                         <select
                             id="input-settings-theme"
                             {...register('theme')}
@@ -224,7 +244,9 @@ function SettingsForm(): React.ReactElement {
                         </select>
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-units">Units</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-units">Units</label>
+                        </div>
                         <select
                             id="input-settings-units"
                             {...register('units')}
@@ -234,7 +256,9 @@ function SettingsForm(): React.ReactElement {
                         </select>
                     </div>
                     <div className="settings__form--field">
-                        <label htmlFor="input-settings-map">Map</label>
+                        <div className="settings__form--label">
+                            <label htmlFor="input-settings-map">Map</label>
+                        </div>
                         <select
                             id="input-settings-map"
                             {...register('map')}
@@ -245,7 +269,12 @@ function SettingsForm(): React.ReactElement {
                         </select>
                     </div>
                     <button type="submit">Update Settings</button>
-                    <button onClick={handleClick}>Delete Account</button>
+                    <button
+                        type="button"
+                        onClick={handleClick}
+                    >
+                        Delete Account
+                    </button>
                 </form>
             }
         </section>

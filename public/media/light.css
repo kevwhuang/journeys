@@ -45,17 +45,17 @@
     padding: 0;
 }
 
-.form__contact button {
+.form__contact form button {
     background: var(--color-bg);
     border: 1px solid var(--color-3);
     width: 100%;
 }
 
-.form__contact .form__contact--field :is(input, textarea) {
+.form__contact form .form__contact--field :is(input, textarea) {
     background: var(--color-bg);
 }
 
-.form__contact .form__contact--field select {
+.form__contact form .form__contact--field select {
     background-color: var(--color-bg);
     background-image:
         linear-gradient(45deg, transparent 50%, var(--color-5) 50%),
@@ -100,6 +100,22 @@
 
 .profile__view {
     background: var(--color-bg);
+}
+
+.settings__form form button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-3);
+}
+
+.settings__form form .settings__form--field :is(input, textarea) {
+    background: var(--color-bg);
+}
+
+.settings__form form .settings__form--field select {
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--color-5) 50%),
+        linear-gradient(135deg, var(--color-5) 50%, transparent 50%);
 }
 
 .story__content .story__content--item {

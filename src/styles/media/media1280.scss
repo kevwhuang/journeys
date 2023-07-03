@@ -120,6 +120,16 @@
         }
     }
 
+    .settings__form {
+        &.opened {
+            form {
+                .settings__form--field {
+                    padding: 0 40px;
+                }
+            }
+        }
+    }
+
     .story__content {
         .story__content--item {
             &:nth-child(1) {
