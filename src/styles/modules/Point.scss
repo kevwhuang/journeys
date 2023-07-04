@@ -1,0 +1,114 @@
+@use '../_root' as *;
+
+%spinner {
+    align-items: center;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    width: 500px;
+
+    svg {
+        color: $color-4;
+    }
+}
+
+.point {
+    display: grid;
+    font-family: 'Libre Franklin';
+    gap: 40px;
+    grid-template-areas:
+        'map view'
+        'summary summary'
+        'actions actions';
+    grid-template-rows: 500px auto auto;
+    margin: auto;
+    max-width: 1600px;
+    padding: 80px;
+    user-select: none;
+}
+
+.point__actions {
+    display: grid;
+    font-size: $font-4;
+    grid-area: actions;
+    grid-template-columns: 500px 40px 500px;
+    margin: auto;
+    text-align: center;
+
+    a {
+        color: $color-3;
+        margin: auto;
+        padding: 0 10px;
+        width: max-content;
+
+        &:visited {
+            color: $color-3;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:nth-of-type(2) {
+            grid-column: 3/4;
+        }
+    }
+}
+
+.point__map {
+    grid-area: map;
+    justify-self: end;
+
+    img {
+        cursor: pointer;
+        outline: 1px solid transparent;
+        transition: outline 500ms;
+        width: 500px;
+
+        &:hover {
+            outline: 1px solid $color-3;
+        }
+    }
+
+    .point__map--spinner {
+        @extend %spinner;
+    }
+}
+
+.point__summary {
+    cursor: default;
+    font-weight: 200;
+    grid-area: summary;
+    text-align: center;
+
+    p {
+        &:first-child {
+            font-size: $font-4;
+            text-transform: uppercase;
+        }
+
+        &:last-child {
+            font-size: $font-5;
+        }
+    }
+}
+
+.point__view {
+    grid-area: view;
+    justify-self: start;
+
+    img {
+        cursor: pointer;
+        outline: 1px solid transparent;
+        transition: outline 500ms;
+        width: 500px;
+
+        &:hover {
+            outline: 1px solid $color-3;
+        }
+    }
+
+    .point__view--spinner {
+        @extend %spinner;
+    }
+}

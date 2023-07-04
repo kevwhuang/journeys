@@ -1,0 +1,257 @@
+@use '../_root' as *;
+
+@media screen and (max-width: 1024px) {
+    .accordions {
+        padding: 40px;
+    }
+
+    .actions__headings {
+        .actions__headings--container {
+            span {
+                word-spacing: 1px;
+
+                &:nth-child(8) {
+                    img {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .collage {
+        padding: max(10dvh, 40px) max(5vw, 40px);
+    }
+
+    .controls {
+        .controls--container {
+            width: 100vw;
+        }
+    }
+
+    .features {
+        article {
+            display: grid;
+            grid-template-areas:
+                'icon heading'
+                'icon content';
+            height: 200px;
+            width: 100%;
+
+            h2 {
+                align-self: flex-end;
+                font-size: $font-5;
+                grid-area: heading;
+                justify-self: center;
+                margin-bottom: 5px;
+            }
+
+            p {
+                align-self: flex-start;
+                grid-area: content;
+                margin-top: 5px;
+                padding: 0 40px;
+            }
+
+            svg {
+                font-size: 150px;
+                grid-area: icon;
+                justify-self: center;
+                margin: 0;
+            }
+        }
+    }
+
+    .features__part-a {
+        padding: 40px 80px;
+
+        .features__part-a--container {
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+
+    .features__part-b {
+        padding: 40px 80px;
+
+        .features__part-b--container {
+            flex-direction: column;
+            row-gap: 20px;
+
+            article {
+                grid-template-areas:
+                    'heading icon'
+                    'content icon';
+            }
+        }
+    }
+
+    .footer {
+        grid-template-areas: 'legal socials';
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 60px;
+        padding: 0 40px 40px;
+    }
+
+    .footer--divider-1 {
+        display: none;
+    }
+
+    .footer--divider-2 {
+        display: none;
+    }
+
+    .footer__legal {
+        ul {
+            li {
+                font-size: $font-3;
+
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .footer__logo {
+        display: none;
+    }
+
+    .footer__pages {
+        display: none;
+    }
+
+    .form {
+        max-width: 720px;
+        padding: 40px;
+    }
+
+    .hero {
+        padding-left: 40px;
+    }
+
+    .leaderboards {
+        padding: 40px;
+    }
+
+    .leaderboards__data {
+        ol {
+            .leaderboards__data--card {
+                display: block;
+            }
+
+            .leaderboards__data--headers {
+                display: none;
+            }
+
+            .leaderboards__data--row {
+                display: none;
+            }
+        }
+
+        .leaderboards__data--stats {
+            color: $color-5;
+        }
+    }
+
+    .point {
+        padding: 40px;
+    }
+
+    .point__summary {
+        p {
+            &:first-child {
+                margin-bottom: 10px;
+                text-transform: none;
+            }
+
+            &:last-child {
+                font-size: $font-4;
+            }
+        }
+    }
+
+    .points {
+        padding: 40px;
+    }
+
+    .points__table {
+        ol {
+            .points__table--card {
+                display: block;
+            }
+
+            .points__table--headers {
+                display: none;
+            }
+
+            .points__table--row {
+                display: none;
+            }
+        }
+    }
+
+    .policy {
+        padding: 40px 40px 20px;
+    }
+
+    .profile {
+        padding: 40px;
+    }
+
+    .profile__view {
+        &.opened {
+            .profile__view--image {
+                margin-bottom: 40px;
+            }
+        }
+
+        .profile__view--details {
+            p {
+                &:nth-of-type(1) {
+                    font-size: $font-4;
+                }
+            }
+        }
+
+        .profile__view--image {
+            margin-bottom: 40px;
+        }
+    }
+
+    .service {
+        padding: 40px 40px 20px;
+    }
+
+    .settings {
+        padding: 40px;
+    }
+
+    .settings__form {
+        form {
+            .settings__form--field {
+                padding: 0 40px;
+            }
+        }
+    }
+
+    .story__content {
+        .story__content--item {
+            &:nth-child(1) {
+                padding: 40px 0 0;
+            }
+        }
+    }
+
+    #about {
+        padding: 0 40px;
+    }
+
+    #display {
+        grid-template-columns: 0 auto;
+
+        .display__zone {
+            display: block;
+        }
+    }
+}

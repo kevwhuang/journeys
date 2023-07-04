@@ -1,0 +1,51 @@
+@use '_root' as *;
+
+:root {
+    --color-1: #1b2635;
+    --color-2: #233044;
+    --color-3: #407ad6;
+    --color-4: #478e3d;
+    --color-5: #f3f4f5;
+    --color-6: #898e96;
+}
+
+::-webkit-scrollbar {
+    height: 2px;
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-3;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::selection {
+    background: $color-6;
+}
+
+::view-transition-new(root) {
+    animation-delay: 500ms;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+html {
+    background: $color-1;
+    color: $color-5;
+    font-family:
+        'SF Pro Display',
+        'Helvetica Neue',
+        sans-serif;
+}
+
+main {
+    min-height: 420px;
+}

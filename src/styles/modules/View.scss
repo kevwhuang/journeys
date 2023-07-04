@@ -1,0 +1,48 @@
+@use '../_root' as *;
+
+.view {
+    height: calc(100dvh - 60px);
+}
+
+.view__map {
+    height: 100%;
+
+    * {
+        outline: none;
+    }
+
+    .gm-control-active {
+        background: #f3f4f5 !important;
+    }
+
+    .gm-style-cc {
+        background: #f3f4f5 !important;
+    }
+
+    .gm-style-mtc {
+        background: #f3f4f5 !important;
+
+        button {
+            font-family: 'SF Pro Display' !important;
+        }
+    }
+
+    .gm-svpc {
+        background: #f3f4f5 !important;
+    }
+}
+
+.view__render {
+    align-items: center;
+    display: flex;
+    height: calc(100dvh - 60px);
+    justify-content: center;
+
+    svg {
+        color: $color-4;
+    }
+}
+
+.view__wrapper {
+    height: 100%;
+}

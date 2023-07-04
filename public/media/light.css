@@ -1,0 +1,131 @@
+:root {
+    --color-1: #f3f4f5;
+    --color-2: #f3f4f5;
+    --color-3: #407ad6;
+    --color-4: #d3382f;
+    --color-5: #202021;
+    --color-6: #696a6b;
+    --color-bg: rgba(0, 0, 0, 5%);
+    --color-hover: rgba(0, 0, 0, 15%);
+}
+
+.actions {
+    background: var(--color-bg);
+}
+
+.collage__images div {
+    opacity: 90%;
+}
+
+.controls--container {
+    border-bottom: 2px solid var(--color-5);
+}
+
+.controls__toast {
+    color: var(--color-1);
+}
+
+.controls__system span {
+    color: var(--color-1);
+}
+
+.features__part-a {
+    background: var(--color-bg);
+}
+
+.features__part-b {
+    background: var(--color-bg);
+}
+
+.footer__pages ul li a:hover {
+    background: var(--color-hover);
+}
+
+.form__contact {
+    padding: 0;
+}
+
+.form__contact form button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-3);
+    width: 100%;
+}
+
+.form__contact form .form__contact--field :is(input, textarea) {
+    background: var(--color-bg);
+}
+
+.form__contact form .form__contact--field select {
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--color-5) 50%),
+        linear-gradient(135deg, var(--color-5) 50%, transparent 50%);
+}
+
+.leaderboards__data ol .leaderboards__data--card:hover {
+    background: var(--color-bg);
+}
+
+.leaderboards__data ol .leaderboards__data--row:hover {
+    background: var(--color-bg);
+}
+
+.navbar {
+    border-right: 1px solid var(--color-5);
+}
+
+.navbar__pages ul li:is(:hover, .active) {
+    background: var(--color-hover);
+}
+
+.navbar__pages ul li a span:nth-of-type(2) {
+    color: var(--color-1);
+}
+
+.point__map img:hover {
+    outline-color: var(--color-4);
+}
+
+.point__view img:hover {
+    outline-color: var(--color-4);
+}
+
+.points__table ol .points__table--card:hover {
+    background: var(--color-bg);
+}
+
+.points__table ol .points__table--row:hover {
+    background: var(--color-bg);
+}
+
+.settings__form form button {
+    background: var(--color-bg);
+    border: 1px solid var(--color-3);
+}
+
+.settings__form form .settings__form--field :is(input, textarea) {
+    background: var(--color-bg);
+}
+
+.settings__form form .settings__form--field select {
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--color-5) 50%),
+        linear-gradient(135deg, var(--color-5) 50%, transparent 50%);
+}
+
+.story__content .story__content--item {
+    background: var(--color-bg);
+}
+
+@media screen and (min-width: 1280px) {
+    .profile__view {
+        background: var(--color-bg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form__contact {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "go to about": [
+        "okay, going to about",
+        "about"
+    ],
+    "go to account": [
+        "okay, going to account",
+        "account"
+    ],
+    "go to contact": [
+        "okay, going to contact",
+        "contact"
+    ],
+    "go to guide": [
+        "okay, going to guide",
+        "guide"
+    ],
+    "go to home": [
+        "okay, going to home",
+        ""
+    ],
+    "go to map": [
+        "okay, going to map",
+        "map"
+    ],
+    "go to pins": [
+        "okay, going to pins",
+        "pins"
+    ],
+    "go to privacy": [
+        "okay, going to privacy",
+        "privacy"
+    ],
+    "go to rankings": [
+        "okay, going to rankings",
+        "rankings"
+    ],
+    "go to terms": [
+        "okay, going to terms",
+        "terms"
+    ]
+}
